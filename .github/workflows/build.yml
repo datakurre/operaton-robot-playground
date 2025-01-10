@@ -15,10 +15,9 @@ jobs:
     - uses: cachix/cachix-action@v15
       with:
         name: datakurre
-#       signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
     - run: >
-        make -C docs nix-html
-        touch docs/_build/html/.nojekyll;
+        make -C docs nix-html;
+        touch docs/_build/html/.nojekyll
     - uses: JamesIves/github-pages-deploy-action@v4.7.2
       with:
         branch: gh-pages
