@@ -21,7 +21,6 @@ in
         pkgs.vscode-extensions.ms-vscode.makefile-tools
         pkgs.vscode-extensions.ms-vsliveshare.vsliveshare
         pkgs.vscode-extensions.vscodevim.vim
-
         (pkgs.vscode-extensions.charliermarsh.ruff.overrideAttrs (old: {
           postInstall = ''
             rm -f $out/share/vscode/extensions/charliermarsh.ruff/bundled/libs/bin/ruff
@@ -29,6 +28,7 @@ in
           '';
         }))
         extensions.vscode-marketplace.d-biehl.robotcode
+        extensions.vscode-marketplace.miragon-gmbh.vs-code-bpmn-modeler
       ];
     })
   ];
