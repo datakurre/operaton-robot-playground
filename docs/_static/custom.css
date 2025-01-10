@@ -1,0 +1,30 @@
+.clear-both { clear: both; }
+
+figcaption { margin-top: 2ex; }
+
+.djs-container > svg { min-height: 400px; max-height: 60vh; }
+.bts-toggle-mode { display: none; }
+button.fa-play, button.fa-stop { margin: 0 0.5ex 0 0.5ex; padding: 0 0.5ex 0 0.5ex; border: none; background: none; }
+
+.tjs-table { margin-bottom: 3ex; }
+th.annotation.header { width: 18em !important; }
+
+img.role-bpmn { scale: 1.1; height: 3ex; margin-top: -0.5ex; }
+img.role-bpmn[src$="-task.svg"] { scale: 3; margin: 0 -4.5ex -5ex 3ex; clip-path: polygon(8% 13%, 13% 9%, 30% 9%, 30% 35%, 8% 35%); }
+img.role-bpmn[src$="manual-task.svg"],
+img.role-bpmn[src$="business-rule-task.svg"] { scale: 3; margin: 0 -4ex -5ex 3ex; clip-path: polygon(8% 13%, 13% 9%, 33% 9%, 33% 35%, 8% 35%); }
+img.role-bpmn[src$="-subprocess-start-event.svg"] { scale: 3; clip-path: inset(33% 33% 33% 33%); }
+img.role-bpmn[src$="-boundary-event.svg"] { scale: 3; margin: -5ex 1ex 0 1ex; clip-path: inset(60% 25% 2% 25%); }
+img.role-bpmn[src$="-multi-instance.svg"],
+img.role-bpmn[src$="call-activity-task.svg"] { scale: 4; margin: -7.5ex -1ex 0 -0.75ex; clip-path: inset(68% 42% 10% 40%); }
+
+.fjs-container {
+  max-width: 400px;
+}
+
+.figure.bordered {
+  border: 1px solid #eee;
+  margin-bottom: 1ex;
+}
+
+
