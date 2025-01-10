@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0zsvo3v" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.22.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.21.0">
+  <bpmn:process id="heartbeat" name="Heartbeat" isExecutable="true" camunda:historyTimeToLive="1">
+    <bpmn:startEvent id="StartEvent_1" name="Interested in BPMN driven automation">
+      <bpmn:outgoing>Flow_0ixkmvw</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_0ixkmvw" sourceRef="StartEvent_1" targetRef="Activity_0an9lsz" />
+    <bpmn:sequenceFlow id="Flow_1i4ccru" sourceRef="Activity_0an9lsz" targetRef="Activity_0b6wb16" />
+    <bpmn:userTask id="Activity_0an9lsz" name="Open robocon.io">
+      <bpmn:incoming>Flow_0ixkmvw</bpmn:incoming>
+      <bpmn:outgoing>Flow_1i4ccru</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_0b6wb16" name="Register for the workshop">
+      <bpmn:incoming>Flow_1i4ccru</bpmn:incoming>
+      <bpmn:outgoing>Flow_1lbmqkz</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_1lbmqkz" sourceRef="Activity_0b6wb16" targetRef="Event_0sdc71q" />
+    <bpmn:sequenceFlow id="Flow_0j6valh" sourceRef="Event_0sdc71q" targetRef="Activity_0dyp4a0" />
+    <bpmn:userTask id="Activity_0dyp4a0" name="Attend the workshop">
+      <bpmn:incoming>Flow_0j6valh</bpmn:incoming>
+      <bpmn:outgoing>Flow_14z2rn4</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:endEvent id="Event_0zuzobz" name="Competence achieved">
+      <bpmn:incoming>Flow_14z2rn4</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_14z2rn4" sourceRef="Activity_0dyp4a0" targetRef="Event_0zuzobz" />
+    <bpmn:intermediateCatchEvent id="Event_0sdc71q" name="Wait for 12th of Feb 2025">
+      <bpmn:incoming>Flow_1lbmqkz</bpmn:incoming>
+      <bpmn:outgoing>Flow_0j6valh</bpmn:outgoing>
+      <bpmn:timerEventDefinition id="TimerEventDefinition_05j426i" />
+    </bpmn:intermediateCatchEvent>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="heartbeat">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="99" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="165" y="142" width="65" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0y3bci6_di" bpmnElement="Activity_0an9lsz">
+        <dc:Bounds x="270" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_074r9v3_di" bpmnElement="Activity_0b6wb16">
+        <dc:Bounds x="430" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0x7gyd6_di" bpmnElement="Activity_0dyp4a0">
+        <dc:Bounds x="690" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0zuzobz_di" bpmnElement="Event_0zuzobz">
+        <dc:Bounds x="852" y="99" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="839" y="142" width="63" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0u29455_di" bpmnElement="Event_0sdc71q">
+        <dc:Bounds x="592" y="99" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="573" y="142" width="75" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0ixkmvw_di" bpmnElement="Flow_0ixkmvw">
+        <di:waypoint x="215" y="117" />
+        <di:waypoint x="270" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1i4ccru_di" bpmnElement="Flow_1i4ccru">
+        <di:waypoint x="370" y="117" />
+        <di:waypoint x="430" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1lbmqkz_di" bpmnElement="Flow_1lbmqkz">
+        <di:waypoint x="530" y="117" />
+        <di:waypoint x="592" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0j6valh_di" bpmnElement="Flow_0j6valh">
+        <di:waypoint x="628" y="117" />
+        <di:waypoint x="690" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_14z2rn4_di" bpmnElement="Flow_14z2rn4">
+        <di:waypoint x="790" y="117" />
+        <di:waypoint x="852" y="117" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="Definitions_14ou3p3" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.6.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+  <decision id="BusTicketPrice" name="Bus ticket price">
+    <decisionTable id="DecisionTable_0vlcsn5" biodi:annotationsWidth="400">
+      <input id="Input_1" label="Age" biodi:width="150">
+        <inputExpression id="InputExpression_1" typeRef="integer">
+          <text>age</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1jelwl2" label="Discount group" biodi:width="191">
+        <inputExpression id="LiteralExpression_0xnzxb8" typeRef="string">
+          <text>discountGroup</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_02sftzn">
+          <text></text>
+        </inputValues>
+      </input>
+      <input id="InputClause_0rq4sqm" label="Travelling alone" biodi:width="150">
+        <inputExpression id="LiteralExpression_09d3qk1" typeRef="boolean">
+          <text>alone</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Price" name="price" typeRef="double" biodi:width="150" />
+      <rule id="DecisionRule_0116we3">
+        <description></description>
+        <inputEntry id="UnaryTests_1qlx0m9">
+          <text>[0..4]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vy3p5x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nlfw83">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0gw4sh3">
+          <text>0.00</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_132d8fs">
+        <description></description>
+        <inputEntry id="UnaryTests_0rtzdb7">
+          <text>[5..6]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0arsg87">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00pijc3">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0gr1w35">
+          <text>0.00</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1y24mll">
+        <inputEntry id="UnaryTests_060i93w">
+          <text>[5..6]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09keagb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lwzpjz">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_09zmwuc">
+          <text>2.00</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0is7tp2">
+        <description></description>
+        <inputEntry id="UnaryTests_0k9qo93">
+          <text>[7..11]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ummwf6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0z1xg2d">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0szzy4f">
+          <text>2.00</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1wn9fn2">
+        <description>20 % discount</description>
+        <inputEntry id="UnaryTests_0t8xs4a">
+          <text>&gt;=12</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ufh34r">
+          <text>"student"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0d1taqv">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1m9o2mg">
+          <text>2.80</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0nzy7ho">
+        <description>20 % discount</description>
+        <inputEntry id="UnaryTests_0gsv7em">
+          <text>&gt;=12</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mntds7">
+          <text>"pensioner"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05li26a">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12494zh">
+          <text>2.80</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0wdj9r3">
+        <description>Regular price</description>
+        <inputEntry id="UnaryTests_1c7jvck">
+          <text>&gt;=12</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bj4b9z">
+          <text>not(["student", "pensioner"])</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16t20i8">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ro39q4">
+          <text>3.50</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="BusTicketPrice">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

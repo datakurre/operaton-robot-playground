@@ -10,6 +10,8 @@
 .pre-commit-config.yaml
 .pytest_cache/
 __pycache__/
+build/
+_build/
 devenv.local.nix
 env
 fixture/target/
