@@ -20,7 +20,7 @@ In addition to start and end events, BPMN has {bpmn}`../bpmn/intermediate-throw-
 
 ## Business rule task
 
-```{bpmn-figure} business-rule-task
+```{bpmn-figure} ../bpmn/business-rule-task
 **Business rule task** {bpmn}`../bpmn/business-rule-task` is a special task type reserved for automated rule-based decision making in a process. It's typically configured to use DMN (Decision Model and Notation) decision tables, designed to describe business rules. In addition, DMN tables can be maintained separately from the process models, for example, to allow faster iterations.
 ```
 

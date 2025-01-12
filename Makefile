@@ -1,37 +1,37 @@
 help:
 	@grep -Eh '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' | uniq
 
-INDEX_URL ?= https://pypi.python.org/simple
-INDEX_HOSTNAME ?= pypi.python.org
-
-export PYTHONPATH=$(PWD)/src
-
-env:  ## Build and link the Python virtual environment
+env:
 	ln -s $(shell devenv build outputs.python.virtualenv) env
 
-clean:  ## Remove build artifacts and temporary files
+clean:
 	devenv gc
 
-devenv-up:  ## Start background services
+devenv-up:
 	devenv processes up -d
 
-devenv-attach:  ## Attach to background services monitor
+devenv-attach:
 	devenv shell -- process-compose attach
 
-devenv-down:  ## Stop background services
+devenv-down:
 	devenv processes down
 
-devenv-test: ## Run all test and checks with background services
+devenv-test:
 	devenv test
 
-format:  ## Format the codebase
+format:
 	treefmt
 
-shell:  ## Start an interactive development shell
-	@devenv shell
+shell:  ## Enter development shell
+	devenv shell
 
-show:  ## Show build environment information
-	@devenv info
+show:
+	devenv info
+
+start: devenv-up  ## Start background services
+
+watch-docs:  ## Start docs development server
+	make -C docs nix-watch
 
 ###
 

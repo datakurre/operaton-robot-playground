@@ -19,10 +19,13 @@ help:
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
+watch:
+	@sphinx-autobuild -b html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
 shell:
-	nix develop github:datakurre/automation-playground#docs
+	nix develop github:datakurre/automation-playground/devcontainer#docs
 
 ###
 
 nix-%:  ## Run command in devenv shell
-	nix develop github:datakurre/automation-playground#docs --command $(MAKE) $*
+	nix develop github:datakurre/automation-playground/devcontainer#docs --command $(MAKE) $*
