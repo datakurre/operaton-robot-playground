@@ -9,29 +9,47 @@ function handleClickAndPress(myfunc) {
 jQuery(function($) {
 
   $('a[href$=".bpmn"]').each(function(id, el) {
-    var play = $('<button class="icon fa-play" title="Token simulation"/>');
-    var stop = $('<button class="icon fa-stop" title="Close simulation"/>');
+    var play = $('<button class="btn btn-text" title="Token simulation"><i class="fa-solid fa-play"></i></button>');
+    var stop = $('<button class="btn btn-text" title="Close simulation"><i class="fa-solid fa-stop"></i></button>');
     var id = "simulation-" + Math.floor(Math.random() * (new Date().getTime()));
+    var pres = window.location.search === "?pres=";
+    var scrollTop = $(window).scrollTop();
     play.bind("click keypress", handleClickAndPress(function (e) {
       if (!document.getElementById(id)) {
         play.hide();
         stop.show().focus();
         if ($(el).parents("figcaption").length) {
           $(el).parents("figcaption").siblings().hide();
-          $(el).parents("figcaption").before('<div id="'+ id + '"/>');
+          if (pres) {
+            $(el).parents("figure").addClass("has-djs-presentation");
+            $(el).parents("figcaption").before('<div id="'+ id + '" class="djs-presentation" />');
+            $(window).scrollTop($('#' + id).offset().top);
+          } else {
+            $(el).parents("figcaption").before('<div id="'+ id + '"/>');
+          }
         } else {
-          $(el).after('<div id="'+ id + '"/>');
+          if (pres) {
+            $(el).after('<div id="'+ id + '" class="djs-presentation" />');
+          } else {
+            $(el).after('<div id="'+ id + '"/>');
+          }
         }
+        scrollTop = $(window).scrollTop();
         TokenSimulation(id, $(el).attr("href"));
       }
     }));
     stop.bind("click keypress", handleClickAndPress(function (e) {
+      var pres = window.location.search === "?pres=";
       if (document.getElementById(id)) {
         $('#' + id).remove();
         stop.hide();
         play.show().focus();
         if ($(el).parents("figcaption").length) {
           $(el).parents("figcaption").siblings().show();
+          if (pres) {
+            $(el).parents("figure").removeClass("has-djs-presentation");
+            $(window).scrollTop(scrollTop);
+          }
         }
       }
     }));
@@ -45,8 +63,8 @@ jQuery(function($) {
   })
 
   $('a[href$=".form"]').each(function(id, el) {
-    var play = $('<button class="icon fa-play" title="Show form"/>');
-    var stop = $('<button class="icon fa-stop" title="Hide form"/>');
+    var play = $('<button class="btn btn-text" title="Show form"><i class="fa-solid fa-play"></i></button>');
+    var stop = $('<button class="btn btn-text" title="Hide form"><i class="fa-solid fa-stop"></i></button>');
     var id = "form-js-" + Math.floor(Math.random() * (new Date().getTime()));
     var schemaUrl = $(el).attr("href");
     var dataUrl = $(el).siblings('a[href$=".json"]').hide().first().attr("href");
@@ -106,8 +124,8 @@ jQuery(function($) {
   $('a[href$=".dmn"]').each(function(id, el) {
     var url = $(el).siblings('a[href$=".html"]').hide().first().attr("href");
     if (!!url) {
-      var play = $('<button class="icon fa-play" title="Show decision table"/>');
-      var stop = $('<button class="icon fa-stop" title="Hide decision table"/>');
+    var play = $('<button class="btn btn-text" title="Show decision table"><i class="fa-solid fa-play"></i></button>');
+    var stop = $('<button class="btn btn-text" title="Hide decision table"><i class="fa-solid fa-stop"></i></button>');
       var id = "dmn-js-" + Math.floor(Math.random() * (new Date().getTime()));
       play.bind("click keypress", handleClickAndPress(function (e) {
         if (!document.getElementById(id)) {

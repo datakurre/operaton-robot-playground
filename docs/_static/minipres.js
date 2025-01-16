@@ -224,6 +224,14 @@ function hide() {
     $(".wy-nav-content-wrap").css('margin-left', 0);
     $('.rst-versions').remove();  // readthedocs version selector
 
+    // This is for sphinx_book_theme
+    $(".bd-sidebar-primary").remove();
+    $(".bd-header-article").remove();
+    $(".bd-sidebar-secondary").remove();
+    $(".bd-footer-content").remove();
+    $(".bd-article-container").css('max-width', '100%');
+    $(".bd-article").css('padding-top', '15vh');
+
     // Add other formats here.
 }
 

@@ -18,6 +18,7 @@ import sys
 
 sys.path.append(os.path.abspath("exts"))
 extensions = [
+    "sphinxcontrib.jquery",
     "myst_parser",
     "sphinx_copybutton",
     "bpmn_to_image",
@@ -32,11 +33,15 @@ myst_heading_anchors = 3
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = "sphinx_rtd_theme"
+html_theme = "sphinx_book_theme"
 html_show_copyright = False
 html_show_sourcelink = False
 html_show_sphinx = False
-html_theme_options = dict(display_version=False, logo_only=True)
+html_theme_options = dict(
+    logo=dict(text=project),
+    use_download_button=False,
+    use_fullscreen_button=True,
+)
 html_static_path = ["_static"]
 html_css_files = [
     "diagram-js.css",
@@ -56,6 +61,7 @@ html_js_files = [
     "form-viewer.umd.js",
     "custom.js",
 ]
+html_favicon = "favicon.ico"
 
 # FEEL lexer
 

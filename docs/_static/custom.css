@@ -1,8 +1,25 @@
+.prev-next-subtitle { display: none; }
+.#pst-back-to-top { display: none; }
+.theme-pres-button a {
+  color: var(--pst-color-text-muted);
+}
+
 .clear-both { clear: both; }
 
 figcaption { margin-top: 2ex; }
+figure figcaption { margin-left: 0; margin-right: 0; padding-left: 0; text-align: left; }
 
 .djs-container > svg { min-height: 400px; max-height: 60vh; }
+.djs-presentation .djs-container > svg { height: 90vh; max-height: 90vh; }
+.has-djs-presentation {
+    position: static;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+}
+
 .bts-toggle-mode { display: none; }
 button.fa-play, button.fa-stop { margin: 0 0.5ex 0 0.5ex; padding: 0 0.5ex 0 0.5ex; border: none; background: none; }
 
@@ -17,6 +34,7 @@ img.role-bpmn[src$="-subprocess-start-event.svg"] { scale: 3; clip-path: inset(3
 img.role-bpmn[src$="-boundary-event.svg"] { scale: 3; margin: -5ex 1ex 0 1ex; clip-path: inset(60% 25% 2% 25%); }
 img.role-bpmn[src$="-multi-instance.svg"],
 img.role-bpmn[src$="call-activity-task.svg"] { scale: 4; margin: -7.5ex -1ex 0 -0.75ex; clip-path: inset(68% 42% 10% 40%); }
+img.role-bpmn[src$="non-interrupting-message-start-event.svg"] { scale: 3; margin: 0 -0.2ex 0 -0.2ex; clip-path: inset(30% 35% 30% 35%); }
 
 .fjs-container {
   max-width: 400px;
