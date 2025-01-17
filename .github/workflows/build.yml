@@ -15,7 +15,7 @@ jobs:
       with:
         name: datakurre
     - run: >
-        make -C docs nix-html;
+        make -C docs nix-ci-html;
         touch docs/_build/html/.nojekyll
     - uses: JamesIves/github-pages-deploy-action@v4.7.2
       with:

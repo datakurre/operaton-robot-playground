@@ -23,9 +23,12 @@ watch:
 	@sphinx-autobuild -b html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 shell:
-	nix develop github:datakurre/sphinx-shell
+	nix develop github:datakurre/sphinx-shell/devcontainer
 
 ###
 
 nix-%:  ## Run command in devenv shell
+	nix develop github:datakurre/sphinx-shell/devcontainer --command $(MAKE) $*
+
+nix-ci-%:  ## Run command in devenv shell
 	nix develop github:datakurre/sphinx-shell --command $(MAKE) $*
