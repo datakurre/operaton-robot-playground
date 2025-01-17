@@ -31,7 +31,7 @@ show:
 start: devenv-up  ## Start background services
 
 watch-docs:  ## Start docs development server
-	make -C docs nix-watch
+	LC_ALL=C make -C docs nix-watch
 
 ###
 
