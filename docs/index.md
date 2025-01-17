@@ -8,7 +8,7 @@ Sometime, a sequential pipeline is too limited for automated (test) processes: D
 
 * BPMN basics by examples
 
-Coffee
+Break
 
 * BPMN Modeling exercises
 
@@ -18,19 +18,29 @@ Coffee
 * Service tasks in action
 * Service task exercises
 
-Coffee
+Break
 
 * Advanced topics
   * DMN & FEEL
   * More gateways (inclusive, event-based)
   * Compensation
 
-18.00 Conclusion
+16.00 Conclusion
 
 ```{bpmn-figure} hello-world
 {download}`hello-world.bpmn`
 ```
 
+## Workshop requirements
+
+- Computer: Capable of running VSCode Devcontainers
+  - VSCode
+  - Docker / Podman
+  - git for checking out the workshop repository
+
+## Preparations
+
+Checking out the repository and opening it with VSCode devcontainer setup and waiting for the "ok".
 
 ## Table of Contents
 
