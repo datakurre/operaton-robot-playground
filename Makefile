@@ -30,6 +30,8 @@ show:
 
 start: devenv-up  ## Start background services
 
+start-monitor: devenv-attach  ## Open process monitor
+
 watch-docs:  ## Start docs development server
 	LC_ALL=C make -C docs nix-watch
 

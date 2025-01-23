@@ -30,8 +30,11 @@
     });
   };
 
+  processes.gateway.exec = "operaton-robot-runner --log-level=DEBUG";
+
   packages = [
     pkgs.entr
+    pkgs.git
     pkgs.findutils
     pkgs.gnumake
     pkgs.openssl
