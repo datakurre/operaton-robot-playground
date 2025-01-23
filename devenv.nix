@@ -13,6 +13,22 @@
 
   package.operaton.path = ./fixture;
   languages.python.interpreter = pkgs.python312;
+  languages.python.pyprojectOverrides = final: prev: {
+    "operaton-robot-runner" = prev."operaton-robot-runner".overrideAttrs (old: {
+      nativeBuildInputs =
+        old.nativeBuildInputs
+        ++ final.resolveBuildSystem ({
+          "hatchling" = [ ];
+        });
+    });
+    "operaton-tasks" = prev."operaton-tasks".overrideAttrs (old: {
+      nativeBuildInputs =
+        old.nativeBuildInputs
+        ++ final.resolveBuildSystem ({
+          "hatchling" = [ ];
+        });
+    });
+  };
 
   packages = [
     pkgs.entr

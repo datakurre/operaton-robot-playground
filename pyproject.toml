@@ -8,6 +8,7 @@ requires-python = ">= 3.9"
 dependencies =[
     "requests>=2.32.3",
     "robotframework>=7.1.1",
+    "operaton-robot-runner",
 ]
 
 [dependency-groups]
@@ -16,6 +17,10 @@ dev = [
     "isort>=5.13.2",
     "mypy>=1.13.0",
 ]
+
+[tool.uv.sources]
+operaton-robot-runner = { git = "https://github.com/datakurre/operaton-robot-runner.git" }
+operaton-tasks = { git = "https://github.com/datakurre/operaton-tasks.git" }
 
 [tool.isort]
 force_alphabetical_sort_within_sections = true
