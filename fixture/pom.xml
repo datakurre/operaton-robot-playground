@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.example.workflow</groupId>
-  <artifactId>my-fixture</artifactId>
+  <artifactId>operaton</artifactId>
   <version>1.0.0-SNAPSHOT</version>
 
   <properties>
@@ -53,6 +53,18 @@
     <dependency>
       <groupId>org.operaton.spin</groupId>
       <artifactId>operaton-spin-dataformat-all</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.graalvm.js</groupId>
+      <artifactId>js</artifactId>
+      <version>23.0.6</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.graalvm.js</groupId>
+      <artifactId>js-scriptengine</artifactId>
+      <version>23.0.6</version>
     </dependency>
 
     <dependency>

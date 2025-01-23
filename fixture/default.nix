@@ -10,7 +10,7 @@ let
   };
 in
 stdenv.mkDerivation rec {
-  pname = "my-fixture";
+  pname = "operaton";
   version = "1.0.0-SNAPSHOT";
   name = "${pname}-${version}.jar";
   src = ./.;

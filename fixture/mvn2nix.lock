@@ -315,6 +315,16 @@
       "sha256": "0d4503a01a4c7a62f91ae1a6271339cf806f2a462defe0beff5effd5a611e398",
       "url": "https://repo.maven.apache.org/maven2/com/h2database/h2/2.2.224/h2-2.2.224.pom"
     },
+    "com.ibm.icu:icu4j:jar:72.1": {
+      "layout": "com/ibm/icu/icu4j/72.1/icu4j-72.1.jar",
+      "sha256": "3df572b240a68d13b5cd778ad2393e885d26411434cd8f098ac5987ea2e64ce3",
+      "url": "https://repo.maven.apache.org/maven2/com/ibm/icu/icu4j/72.1/icu4j-72.1.jar"
+    },
+    "com.ibm.icu:icu4j:pom:72.1": {
+      "layout": "com/ibm/icu/icu4j/72.1/icu4j-72.1.pom",
+      "sha256": "3def2b29af4a19ad805cb153056925a89a903f92fbee1adee12ed2fc14c44ee8",
+      "url": "https://repo.maven.apache.org/maven2/com/ibm/icu/icu4j/72.1/icu4j-72.1.pom"
+    },
     "com.querydsl:querydsl-bom:pom:5.1.0": {
       "layout": "com/querydsl/querydsl-bom/5.1.0/querydsl-bom-5.1.0.pom",
       "sha256": "8853dce132c9ece4c295c7f4d4f3c2832eee0d7d44930870c0666fa72043ca56",
@@ -2059,6 +2069,56 @@
       "layout": "org/glassfish/jersey/project/3.1.8/project-3.1.8.pom",
       "sha256": "3f08f9879479d0324f9544249964c7059730db12584e9b03beeb84117aa3e75c",
       "url": "https://repo.maven.apache.org/maven2/org/glassfish/jersey/project/3.1.8/project-3.1.8.pom"
+    },
+    "org.graalvm.js:js-scriptengine:jar:23.0.6": {
+      "layout": "org/graalvm/js/js-scriptengine/23.0.6/js-scriptengine-23.0.6.jar",
+      "sha256": "b96b40207e9dbd9c17726c847742605459409fadd869b4bf3a7eeb3e529ccea6",
+      "url": "https://repo.maven.apache.org/maven2/org/graalvm/js/js-scriptengine/23.0.6/js-scriptengine-23.0.6.jar"
+    },
+    "org.graalvm.js:js-scriptengine:pom:23.0.6": {
+      "layout": "org/graalvm/js/js-scriptengine/23.0.6/js-scriptengine-23.0.6.pom",
+      "sha256": "d68931978e9b57d93fcf6dbddbce35837397dee9953d88f72684186ecadf5f28",
+      "url": "https://repo.maven.apache.org/maven2/org/graalvm/js/js-scriptengine/23.0.6/js-scriptengine-23.0.6.pom"
+    },
+    "org.graalvm.js:js:jar:23.0.6": {
+      "layout": "org/graalvm/js/js/23.0.6/js-23.0.6.jar",
+      "sha256": "fe1a43328bf58fab7d482fa96a7d4f6ff95664b3f124b45a435544806382e28c",
+      "url": "https://repo.maven.apache.org/maven2/org/graalvm/js/js/23.0.6/js-23.0.6.jar"
+    },
+    "org.graalvm.js:js:pom:23.0.6": {
+      "layout": "org/graalvm/js/js/23.0.6/js-23.0.6.pom",
+      "sha256": "8615bad31fb721a2ab66c71a0434fa52a608b1f4a06bd2bdf3bf1e5573ce8396",
+      "url": "https://repo.maven.apache.org/maven2/org/graalvm/js/js/23.0.6/js-23.0.6.pom"
+    },
+    "org.graalvm.regex:regex:jar:23.0.6": {
+      "layout": "org/graalvm/regex/regex/23.0.6/regex-23.0.6.jar",
+      "sha256": "991b1846857a7d3592897fdda2cd3325184352f4b3fcb82fb95fd92e18019b4a",
+      "url": "https://repo.maven.apache.org/maven2/org/graalvm/regex/regex/23.0.6/regex-23.0.6.jar"
+    },
+    "org.graalvm.regex:regex:pom:23.0.6": {
+      "layout": "org/graalvm/regex/regex/23.0.6/regex-23.0.6.pom",
+      "sha256": "ec984b85edc37f87b8fc38a4faaec3ecca4d86505567237f35605f23fa3faa12",
+      "url": "https://repo.maven.apache.org/maven2/org/graalvm/regex/regex/23.0.6/regex-23.0.6.pom"
+    },
+    "org.graalvm.sdk:graal-sdk:jar:23.0.6": {
+      "layout": "org/graalvm/sdk/graal-sdk/23.0.6/graal-sdk-23.0.6.jar",
+      "sha256": "9b81713444695f75890ad10176d1ceacad88c7b89021260c701e5f1578f89699",
+      "url": "https://repo.maven.apache.org/maven2/org/graalvm/sdk/graal-sdk/23.0.6/graal-sdk-23.0.6.jar"
+    },
+    "org.graalvm.sdk:graal-sdk:pom:23.0.6": {
+      "layout": "org/graalvm/sdk/graal-sdk/23.0.6/graal-sdk-23.0.6.pom",
+      "sha256": "21e6ad39100d3eab83c9df2d51517e55f4f1e59099623d098953c93fa7083cfa",
+      "url": "https://repo.maven.apache.org/maven2/org/graalvm/sdk/graal-sdk/23.0.6/graal-sdk-23.0.6.pom"
+    },
+    "org.graalvm.truffle:truffle-api:jar:23.0.6": {
+      "layout": "org/graalvm/truffle/truffle-api/23.0.6/truffle-api-23.0.6.jar",
+      "sha256": "49f55c94104b35b4f231b2b5fbe95310e89e9eab752b5fbe40c870f40a7d4200",
+      "url": "https://repo.maven.apache.org/maven2/org/graalvm/truffle/truffle-api/23.0.6/truffle-api-23.0.6.jar"
+    },
+    "org.graalvm.truffle:truffle-api:pom:23.0.6": {
+      "layout": "org/graalvm/truffle/truffle-api/23.0.6/truffle-api-23.0.6.pom",
+      "sha256": "0b2cf173b6199453d024a3fcaee8210dbd75a973360f2f521f68d38196903204",
+      "url": "https://repo.maven.apache.org/maven2/org/graalvm/truffle/truffle-api/23.0.6/truffle-api-23.0.6.pom"
     },
     "org.hibernate.validator:hibernate-validator-parent:pom:8.0.1.Final": {
       "layout": "org/hibernate/validator/hibernate-validator-parent/8.0.1.Final/hibernate-validator-parent-8.0.1.Final.pom",
