@@ -30,8 +30,6 @@
     });
   };
 
-  processes.gateway.exec = "operaton-robot-runner --log-level=DEBUG";
-
   packages = [
     pkgs.entr
     pkgs.git

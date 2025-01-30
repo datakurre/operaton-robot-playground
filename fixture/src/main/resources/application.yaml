@@ -1,3 +1,5 @@
 operaton.bpm.admin-user:
   id: demo
   password: demo
+server:
+  forward-headers-strategy: native
