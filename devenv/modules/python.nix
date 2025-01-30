@@ -62,7 +62,6 @@ in
     ];
     enterShell = ''
       unset PYTHONPATH
-      export UV_NO_SYNC=1
       export UV_PYTHON_DOWNLOADS=never
       export REPO_ROOT=$(git rev-parse --show-toplevel)
     '';

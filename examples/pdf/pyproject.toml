@@ -1,0 +1,15 @@
+[project]
+name = "example-bot"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9,<3.13"
+dependencies = [
+    "pypdf2>=3.0.1",
+    "reportlab>=4.2.5",
+    "robotframework>=7.1.1",
+]
+
+["bpmn:serviceTask"]
+"Create PDF" = { name = "Create PDF" }
+"Merge PDF" = { name = "Merge PDF" }

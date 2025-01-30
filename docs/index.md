@@ -42,14 +42,19 @@ Break
 
 Checking out the repository and opening it with VSCode devcontainer setup and waiting for the "ok".
 
+<!--
 ## Table of Contents
+
+TOC is published once sections are ready.
 
 ```{toctree}
 :maxdepth: 1
 
+```
+
 bpmn/index.md
 advanced/index.md
-```
+-->
 
 
 <!-- See: https://myst-parser.readthedocs.io/ -->
