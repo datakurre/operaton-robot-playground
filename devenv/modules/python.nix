@@ -57,11 +57,13 @@ in
       };
     };
     packages = [
-      cfg.uv.package
+      # cfg.uv.package  # bwrap issue in codespaces
+      pkgs.uv
       config.outputs.python.virtualenv
     ];
     enterShell = ''
       unset PYTHONPATH
+      export UV_LINK_MODE=copy
       export UV_PYTHON_DOWNLOADS=never
       export REPO_ROOT=$(git rev-parse --show-toplevel)
     '';
