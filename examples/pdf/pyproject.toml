@@ -10,6 +10,6 @@ dependencies = [
     "robotframework>=7.1.1",
 ]
 
-["bpmn:serviceTask"]
+[tool.purjo.topics]
 "Create PDF" = { name = "Create PDF" }
 "Merge PDF" = { name = "Merge PDF" }

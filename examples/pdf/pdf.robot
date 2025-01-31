@@ -4,18 +4,18 @@ Library  PDF
 
 *** Variables ***
 
-${BPMN}       local
+${BPMN:TASK}  local
 ${message}    Hello, World!
 ${output}     ${CURDIR}/output.pdf
-${a}          MISSING
-${b}          MISSING
+${a}          ${None}
+${b}          ${None}
 
 *** Test Cases ***
 
 Create PDF
     Create PDF    ${output}    ${message}
-    VAR    ${output}    ${output}    scope=${BPMN}
+    VAR    ${output}    ${output}    scope=${BPMN:TASK}
 
 Merge PDF
     Merge PDF    ${a}    ${b}    ${output}
-    VAR    ${output}    ${output}    scope=${BPMN}
+    VAR    ${output}    ${output}    scope=${BPMN:TASK}
