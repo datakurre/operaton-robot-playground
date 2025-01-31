@@ -31,8 +31,6 @@
 
   cachix.pull = [ "datakurre" ];
 
-  devcontainer.enable = true;
-
   git-hooks.hooks.treefmt = {
     enable = true;
     settings.formatters = [
