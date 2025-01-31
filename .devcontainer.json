@@ -2,7 +2,11 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "mkhl.direnv"
+        "mkhl.direnv",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "daniel-biehl.robotcode",
+        "tamasfe.even-better-toml"
       ]
     }
   },
