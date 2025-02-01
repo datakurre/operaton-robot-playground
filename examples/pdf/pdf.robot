@@ -1,17 +1,16 @@
 *** Settings ***
+Library     PDF.py
 
-Library  PDF
 
 *** Variables ***
+${BPMN:TASK}    local
+${message}      Hello, World!
+${output}       ${CURDIR}/output.pdf
+${a}            ${None}
+${b}            ${None}
 
-${BPMN:TASK}  local
-${message}    Hello, World!
-${output}     ${CURDIR}/output.pdf
-${a}          ${None}
-${b}          ${None}
 
 *** Test Cases ***
-
 Create PDF
     Create PDF    ${output}    ${message}
     VAR    ${output}    ${output}    scope=${BPMN:TASK}

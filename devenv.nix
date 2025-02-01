@@ -8,12 +8,9 @@
 {
   imports = [
     ./devenv/modules/operaton.nix
-    ./devenv/modules/python.nix
   ];
 
   package.operaton.path = ./fixture;
-  languages.python.interpreter = pkgs.python312;
-  languages.python.pyprojectOverrides = final: prev: { };
 
   packages = [
     pkgs.entr
@@ -21,12 +18,22 @@
     pkgs.findutils
     pkgs.gnumake
     pkgs.openssl
+    pkgs.uv
   ];
 
   dotenv.disableHint = true;
 
   enterTest = ''
     wait_for_port 8080 60
+  '';
+
+  enterShell = ''
+    unset PYTHONPATH
+    export UV_LINK_MODE=copy
+    export UV_PYTHON_DOWNLOADS=never
+    uv venv --allow-existing
+    source .venv/bin/activate
+    uv pip install black robotframework-tidy purjo pathspec
   '';
 
   cachix.pull = [ "datakurre" ];
