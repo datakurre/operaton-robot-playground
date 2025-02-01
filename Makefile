@@ -32,7 +32,9 @@ start: devenv-up  ## Start background services
 
 start-monitor: devenv-attach  ## Open process monitor
 
-watch-docs:  ## Start docs development server
+stop: devenv-down  ## Stop background services
+
+watch-docs:
 	LC_ALL=C make -C docs nix-watch
 
 ###

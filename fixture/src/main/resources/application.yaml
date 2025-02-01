@@ -1,5 +1,7 @@
-operaton.bpm.admin-user:
-  id: demo
-  password: demo
+operaton.bpm:
+  admin-user:
+    id: demo
+    password: demo
+  enableExceptionsAfterUnhandledBpmnError: true
 server:
   forward-headers-strategy: native
