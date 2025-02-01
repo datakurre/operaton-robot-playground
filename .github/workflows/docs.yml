@@ -14,6 +14,7 @@ jobs:
     - uses: cachix/cachix-action@v15
       with:
         name: datakurre
+        authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
     - run: >
         make -C docs nix-ci-html;
         touch docs/_build/html/.nojekyll
