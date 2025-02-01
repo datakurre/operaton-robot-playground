@@ -16,7 +16,7 @@ jobs:
         name: datakurre
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
     - run: >
-        make -C docs nix-ci-html;
+        cachix watch-exec datakurre -- make -C docs nix-ci-html;
         touch docs/_build/html/.nojekyll
     - uses: JamesIves/github-pages-deploy-action@v4.7.2
       with:
