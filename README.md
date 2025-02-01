@@ -4,6 +4,8 @@ This repository hosts a playground and documentation for orchestrating [Robot Fr
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/datakurre/operaton-robot-playground)
 
+![Screenshot of GitHub Codespaces](./docs/README.png)
+
 ## Getting started
 
 To get started, pick any of the following options:
