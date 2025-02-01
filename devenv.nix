@@ -33,7 +33,8 @@
     export UV_PYTHON_DOWNLOADS=never
     uv venv
     source .venv/bin/activate
-    uv pip install "black>24,<26" "robotframework-tidy>3,<5" "robotframework>6,<8" "purjo>=1.0.0a3"
+    uv pip install -r requirements.txt
+    alias pip="uv pip"
   '';
 
   cachix.pull = [ "datakurre" ];
