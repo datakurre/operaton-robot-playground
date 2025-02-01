@@ -1,7 +1,7 @@
 name: Test and cache environment
 on: [push]
 jobs:
-  build-and-deploy:
+  devenv-test:
     concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
     steps:
@@ -16,5 +16,5 @@ jobs:
         extraPullNames: devenv
     - run: nix profile install nixpkgs#devenv
     - run: >
-        echo { cachix.push = "datakurre"; }' > devenv.local.nix
+        echo '{ cachix.push = "datakurre"; }' > devenv.local.nix
     - run: devenv test
