@@ -210,10 +210,10 @@
       "sha256": "1f472b0bc2004d5cf421ac48871417f84189e78f35c049718387fd8b44fb9f32",
       "url": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.17.2/jackson-bom-2.17.2.pom"
     },
-    "com.fasterxml.jackson:jackson-bom:pom:2.17.3": {
-      "layout": "com/fasterxml/jackson/jackson-bom/2.17.3/jackson-bom-2.17.3.pom",
-      "sha256": "f0bf8f6ccab0686343dcfc42a80037c7865129dd06c037df1886c82163e41408",
-      "url": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.17.3/jackson-bom-2.17.3.pom"
+    "com.fasterxml.jackson:jackson-bom:pom:2.18.2": {
+      "layout": "com/fasterxml/jackson/jackson-bom/2.18.2/jackson-bom-2.18.2.pom",
+      "sha256": "5247cdc301725d3f67f7ef049037289d5af709d6972bcf4b17096e4548d2956b",
+      "url": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.18.2/jackson-bom-2.18.2.pom"
     },
     "com.fasterxml.jackson:jackson-parent:pom:2.14": {
       "layout": "com/fasterxml/jackson/jackson-parent/2.14/jackson-parent-2.14.pom",
@@ -234,6 +234,11 @@
       "layout": "com/fasterxml/jackson/jackson-parent/2.17/jackson-parent-2.17.pom",
       "sha256": "aee6de4a97283b040e43f4dad575e7b74796cd984d89276f7ec7567380c8a29d",
       "url": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-parent/2.17/jackson-parent-2.17.pom"
+    },
+    "com.fasterxml.jackson:jackson-parent:pom:2.18.1": {
+      "layout": "com/fasterxml/jackson/jackson-parent/2.18.1/jackson-parent-2.18.1.pom",
+      "sha256": "d0822fac1a0226844b8ad445c920c49a4f619169d09b1010a7dfeed19910998c",
+      "url": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-parent/2.18.1/jackson-parent-2.18.1.pom"
     },
     "com.fasterxml.uuid:java-uuid-generator:jar:4.3.0": {
       "layout": "com/fasterxml/uuid/java-uuid-generator/4.3.0/java-uuid-generator-4.3.0.jar",
@@ -274,6 +279,11 @@
       "layout": "com/fasterxml/oss-parent/58/oss-parent-58.pom",
       "sha256": "5670e6ac1c4ddcc9d413cf87997a5da2efaa4d2abe439363af9ef102a0a09e40",
       "url": "https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/58/oss-parent-58.pom"
+    },
+    "com.fasterxml:oss-parent:pom:61": {
+      "layout": "com/fasterxml/oss-parent/61/oss-parent-61.pom",
+      "sha256": "3649513cf597e9186da0855986a8c543e12bdbd805edeef9c124db56dd036544",
+      "url": "https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/61/oss-parent-61.pom"
     },
     "com.github.luben:zstd-jni:jar:1.5.5-11": {
       "layout": "com/github/luben/zstd-jni/1.5.5-11/zstd-jni-1.5.5-11.jar",
@@ -460,15 +470,10 @@
       "sha256": "c43d705a4787c8e429e9b305b0aa6255fbe2097d477183f00809dd8a76763369",
       "url": "https://repo.maven.apache.org/maven2/io/micrometer/micrometer-bom/1.13.3/micrometer-bom-1.13.3.pom"
     },
-    "io.micrometer:micrometer-bom:pom:1.13.7": {
-      "layout": "io/micrometer/micrometer-bom/1.13.7/micrometer-bom-1.13.7.pom",
-      "sha256": "d2e930883797cf321244bc153c34dc642f22b5b567a777ea0a3a21c48ab283b8",
-      "url": "https://repo.maven.apache.org/maven2/io/micrometer/micrometer-bom/1.13.7/micrometer-bom-1.13.7.pom"
-    },
-    "io.micrometer:micrometer-bom:pom:1.13.8": {
-      "layout": "io/micrometer/micrometer-bom/1.13.8/micrometer-bom-1.13.8.pom",
-      "sha256": "a94be0779d0c30dc7513e427c221ff6caaee05391bb0ae9a8830ee942df16fc4",
-      "url": "https://repo.maven.apache.org/maven2/io/micrometer/micrometer-bom/1.13.8/micrometer-bom-1.13.8.pom"
+    "io.micrometer:micrometer-bom:pom:1.14.2": {
+      "layout": "io/micrometer/micrometer-bom/1.14.2/micrometer-bom-1.14.2.pom",
+      "sha256": "91b61d90af1dc52c298ca98d80c0376b26807336e644a733d654d6428bc06078",
+      "url": "https://repo.maven.apache.org/maven2/io/micrometer/micrometer-bom/1.14.2/micrometer-bom-1.14.2.pom"
     },
     "io.micrometer:micrometer-commons:jar:1.12.9": {
       "layout": "io/micrometer/micrometer-commons/1.12.9/micrometer-commons-1.12.9.jar",
@@ -515,10 +520,10 @@
       "sha256": "6ac83c98be515e8819ea00aef940b9c1a02159b43058c3afedb08c05095818b8",
       "url": "https://repo.maven.apache.org/maven2/io/micrometer/micrometer-tracing-bom/1.3.3/micrometer-tracing-bom-1.3.3.pom"
     },
-    "io.micrometer:micrometer-tracing-bom:pom:1.3.6": {
-      "layout": "io/micrometer/micrometer-tracing-bom/1.3.6/micrometer-tracing-bom-1.3.6.pom",
-      "sha256": "91c65fd63ba74ec8d495032b795d8bc628e8e85613b511491506eacdc623cea6",
-      "url": "https://repo.maven.apache.org/maven2/io/micrometer/micrometer-tracing-bom/1.3.6/micrometer-tracing-bom-1.3.6.pom"
+    "io.micrometer:micrometer-tracing-bom:pom:1.4.1": {
+      "layout": "io/micrometer/micrometer-tracing-bom/1.4.1/micrometer-tracing-bom-1.4.1.pom",
+      "sha256": "073495238ef7331ec5fbf3a2a2b0dd0d3ceb99ab49e4240a0c3e356a9ade9cd0",
+      "url": "https://repo.maven.apache.org/maven2/io/micrometer/micrometer-tracing-bom/1.4.1/micrometer-tracing-bom-1.4.1.pom"
     },
     "io.netty:netty-bom:pom:4.1.107.Final": {
       "layout": "io/netty/netty-bom/4.1.107.Final/netty-bom-4.1.107.Final.pom",
@@ -530,35 +535,40 @@
       "sha256": "bb4bb9911faa26ea15410de48644e5748eae1c3c9897b8228a96434c81487647",
       "url": "https://repo.maven.apache.org/maven2/io/netty/netty-bom/4.1.112.Final/netty-bom-4.1.112.Final.pom"
     },
-    "io.netty:netty-bom:pom:4.1.115.Final": {
-      "layout": "io/netty/netty-bom/4.1.115.Final/netty-bom-4.1.115.Final.pom",
-      "sha256": "25dc8bb8337dfc186c49fc8cf4f6a5b6c7cf4146362f5f440dacadcd0df9761b",
-      "url": "https://repo.maven.apache.org/maven2/io/netty/netty-bom/4.1.115.Final/netty-bom-4.1.115.Final.pom"
+    "io.netty:netty-bom:pom:4.1.116.Final": {
+      "layout": "io/netty/netty-bom/4.1.116.Final/netty-bom-4.1.116.Final.pom",
+      "sha256": "f06521f4ac88da351ab49a969e1948bb11489ae51712bab3acf5a782a3108603",
+      "url": "https://repo.maven.apache.org/maven2/io/netty/netty-bom/4.1.116.Final/netty-bom-4.1.116.Final.pom"
     },
     "io.opentelemetry:opentelemetry-bom:pom:1.37.0": {
       "layout": "io/opentelemetry/opentelemetry-bom/1.37.0/opentelemetry-bom-1.37.0.pom",
       "sha256": "c1409111c5a85ad8905630e1ca4eaaeea9379f2c78a3a1939883c009e6ff2409",
       "url": "https://repo.maven.apache.org/maven2/io/opentelemetry/opentelemetry-bom/1.37.0/opentelemetry-bom-1.37.0.pom"
     },
-    "io.opentelemetry:opentelemetry-bom:pom:1.38.0": {
-      "layout": "io/opentelemetry/opentelemetry-bom/1.38.0/opentelemetry-bom-1.38.0.pom",
-      "sha256": "48ace8c40e06af2df022e4c156dbbe4af98e40f8cf0574274ea4c33581f53b78",
-      "url": "https://repo.maven.apache.org/maven2/io/opentelemetry/opentelemetry-bom/1.38.0/opentelemetry-bom-1.38.0.pom"
-    },
-    "io.projectreactor:reactor-bom:pom:2023.0.12": {
-      "layout": "io/projectreactor/reactor-bom/2023.0.12/reactor-bom-2023.0.12.pom",
-      "sha256": "e4a8c43151b7f322b59f569ddf67455b7f473eb1db4f14629577ff90b9605875",
-      "url": "https://repo.maven.apache.org/maven2/io/projectreactor/reactor-bom/2023.0.12/reactor-bom-2023.0.12.pom"
+    "io.opentelemetry:opentelemetry-bom:pom:1.43.0": {
+      "layout": "io/opentelemetry/opentelemetry-bom/1.43.0/opentelemetry-bom-1.43.0.pom",
+      "sha256": "a12bfcfe266079c5ccbcbefce5122db3f99b13abba2afad22a4ced9fefe8c479",
+      "url": "https://repo.maven.apache.org/maven2/io/opentelemetry/opentelemetry-bom/1.43.0/opentelemetry-bom-1.43.0.pom"
     },
     "io.projectreactor:reactor-bom:pom:2023.0.9": {
       "layout": "io/projectreactor/reactor-bom/2023.0.9/reactor-bom-2023.0.9.pom",
       "sha256": "8cab8ce20ca35d6f627dfb16e9ebf0898094b7d634d04d9b37c8c014843e8e2c",
       "url": "https://repo.maven.apache.org/maven2/io/projectreactor/reactor-bom/2023.0.9/reactor-bom-2023.0.9.pom"
     },
+    "io.projectreactor:reactor-bom:pom:2024.0.1": {
+      "layout": "io/projectreactor/reactor-bom/2024.0.1/reactor-bom-2024.0.1.pom",
+      "sha256": "b154c1340f944a6d481f13171e68a2872288bb3ac984acdbc40a8d24261cc314",
+      "url": "https://repo.maven.apache.org/maven2/io/projectreactor/reactor-bom/2024.0.1/reactor-bom-2024.0.1.pom"
+    },
     "io.prometheus:client_java:pom:1.2.1": {
       "layout": "io/prometheus/client_java/1.2.1/client_java-1.2.1.pom",
       "sha256": "fc8f7fe2b4ef0ceedc84393b8900a93d64b19c983ff82166c84a33667070ba7d",
       "url": "https://repo.maven.apache.org/maven2/io/prometheus/client_java/1.2.1/client_java-1.2.1.pom"
+    },
+    "io.prometheus:client_java:pom:1.3.5": {
+      "layout": "io/prometheus/client_java/1.3.5/client_java-1.3.5.pom",
+      "sha256": "9798404cc4dc70d792af1e4f0441cd29a1de7ad4e00407ca40036983b26ed662",
+      "url": "https://repo.maven.apache.org/maven2/io/prometheus/client_java/1.3.5/client_java-1.3.5.pom"
     },
     "io.prometheus:parent:pom:0.16.0": {
       "layout": "io/prometheus/parent/0.16.0/parent-0.16.0.pom",
@@ -570,6 +580,11 @@
       "sha256": "8da77a7d98063f48152ebe8b5f5a7e0a7163e499fdd22048f1966756020e6a7b",
       "url": "https://repo.maven.apache.org/maven2/io/prometheus/prometheus-metrics-bom/1.2.1/prometheus-metrics-bom-1.2.1.pom"
     },
+    "io.prometheus:prometheus-metrics-bom:pom:1.3.5": {
+      "layout": "io/prometheus/prometheus-metrics-bom/1.3.5/prometheus-metrics-bom-1.3.5.pom",
+      "sha256": "7ed9772d6079e32446fe1de8840424c2ae0d1d9b9a0ed771cec508049eca4120",
+      "url": "https://repo.maven.apache.org/maven2/io/prometheus/prometheus-metrics-bom/1.3.5/prometheus-metrics-bom-1.3.5.pom"
+    },
     "io.prometheus:simpleclient_bom:pom:0.16.0": {
       "layout": "io/prometheus/simpleclient_bom/0.16.0/simpleclient_bom-0.16.0.pom",
       "sha256": "af441d3295de11a70e35febeb3d919ba2ed17552753163325b954d53594d55c3",
@@ -579,6 +594,11 @@
       "layout": "io/rest-assured/rest-assured-bom/5.4.0/rest-assured-bom-5.4.0.pom",
       "sha256": "3f03da385d3fc79ccca5b32236e2bd20e45c8049501cd0317e7f8d966082d6ab",
       "url": "https://repo.maven.apache.org/maven2/io/rest-assured/rest-assured-bom/5.4.0/rest-assured-bom-5.4.0.pom"
+    },
+    "io.rest-assured:rest-assured-bom:pom:5.5.0": {
+      "layout": "io/rest-assured/rest-assured-bom/5.5.0/rest-assured-bom-5.5.0.pom",
+      "sha256": "f6edd9206176b7b7d44055a0f1e86927b654787d637d51113ceea7399b4587cc",
+      "url": "https://repo.maven.apache.org/maven2/io/rest-assured/rest-assured-bom/5.5.0/rest-assured-bom-5.5.0.pom"
     },
     "io.rsocket:rsocket-bom:pom:1.1.3": {
       "layout": "io/rsocket/rsocket-bom/1.1.3/rsocket-bom-1.1.3.pom",
@@ -595,10 +615,10 @@
       "sha256": "eb324ff64d4c8224506bdd95f10e315c9019f92145bbde6087e5ef70f7269cea",
       "url": "https://repo.maven.apache.org/maven2/io/zipkin/reporter2/zipkin-reporter-bom/3.4.0/zipkin-reporter-bom-3.4.0.pom"
     },
-    "io.zipkin.reporter2:zipkin-reporter-bom:pom:3.4.2": {
-      "layout": "io/zipkin/reporter2/zipkin-reporter-bom/3.4.2/zipkin-reporter-bom-3.4.2.pom",
-      "sha256": "d9d56cea4aebc2a4b4deb6f9ddf21e7d54dada9a6a132be27235c11530d4f518",
-      "url": "https://repo.maven.apache.org/maven2/io/zipkin/reporter2/zipkin-reporter-bom/3.4.2/zipkin-reporter-bom-3.4.2.pom"
+    "io.zipkin.reporter2:zipkin-reporter-bom:pom:3.4.3": {
+      "layout": "io/zipkin/reporter2/zipkin-reporter-bom/3.4.3/zipkin-reporter-bom-3.4.3.pom",
+      "sha256": "80d6c4985786276030c79f99b7e1250deeeca1bf99d330db5dc38a87a6e9919f",
+      "url": "https://repo.maven.apache.org/maven2/io/zipkin/reporter2/zipkin-reporter-bom/3.4.3/zipkin-reporter-bom-3.4.3.pom"
     },
     "jakarta.activation:jakarta.activation-api:jar:2.1.3": {
       "layout": "jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar",
@@ -800,10 +820,20 @@
       "sha256": "02c0fea0e8e6ab94663b42eff3b71613be2b941c54a0aad8f5d07c13720242f2",
       "url": "https://repo.maven.apache.org/maven2/org/apache/activemq/artemis-bom/2.33.0/artemis-bom-2.33.0.pom"
     },
+    "org.apache.activemq:artemis-bom:pom:2.37.0": {
+      "layout": "org/apache/activemq/artemis-bom/2.37.0/artemis-bom-2.37.0.pom",
+      "sha256": "dcf09353707849641004d54ec5413d39a8127269be381f5257391e71ee80de84",
+      "url": "https://repo.maven.apache.org/maven2/org/apache/activemq/artemis-bom/2.37.0/artemis-bom-2.37.0.pom"
+    },
     "org.apache.activemq:artemis-project:pom:2.33.0": {
       "layout": "org/apache/activemq/artemis-project/2.33.0/artemis-project-2.33.0.pom",
       "sha256": "a1eccd2890f61f074ba02850e5a7a53acf30fa290e582e1365c78bae3829d167",
       "url": "https://repo.maven.apache.org/maven2/org/apache/activemq/artemis-project/2.33.0/artemis-project-2.33.0.pom"
+    },
+    "org.apache.activemq:artemis-project:pom:2.37.0": {
+      "layout": "org/apache/activemq/artemis-project/2.37.0/artemis-project-2.37.0.pom",
+      "sha256": "51eb2a8e7852738b5d2d254620676473265783f2d8dd9c1dc9cac6c9c1ada85e",
+      "url": "https://repo.maven.apache.org/maven2/org/apache/activemq/artemis-project/2.37.0/artemis-project-2.37.0.pom"
     },
     "org.apache.cassandra:java-driver-bom:pom:4.18.1": {
       "layout": "org/apache/cassandra/java-driver-bom/4.18.1/java-driver-bom-4.18.1.pom",
@@ -975,6 +1005,11 @@
       "sha256": "372396e0458d4cd32c096cadabe0cc9330ec10f4f57fa3be2e74f79b5e178a35",
       "url": "https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-bom/2.23.1/log4j-bom-2.23.1.pom"
     },
+    "org.apache.logging.log4j:log4j-bom:pom:2.24.3": {
+      "layout": "org/apache/logging/log4j/log4j-bom/2.24.3/log4j-bom-2.24.3.pom",
+      "sha256": "b17ab7f328f4586b7e71f8c94fc35a5da2bce80705a5d63004022c1928833558",
+      "url": "https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-bom/2.24.3/log4j-bom-2.24.3.pom"
+    },
     "org.apache.logging.log4j:log4j-to-slf4j:jar:2.23.1": {
       "layout": "org/apache/logging/log4j/log4j-to-slf4j/2.23.1/log4j-to-slf4j-2.23.1.jar",
       "sha256": "7937a84055156910234e3b42868f55e68ff4b7becbb6ffd10146f72f5bf54dd5",
@@ -994,6 +1029,11 @@
       "layout": "org/apache/logging/logging-parent/10.6.0/logging-parent-10.6.0.pom",
       "sha256": "f827475840a64083b585ec8dbbf7093b6fd02624293cec37d56edf9fc354109e",
       "url": "https://repo.maven.apache.org/maven2/org/apache/logging/logging-parent/10.6.0/logging-parent-10.6.0.pom"
+    },
+    "org.apache.logging:logging-parent:pom:11.3.0": {
+      "layout": "org/apache/logging/logging-parent/11.3.0/logging-parent-11.3.0.pom",
+      "sha256": "a5c985b56fe1c58433393b5091a6f39e5b9f78518dd8fc92134690599b64d7d0",
+      "url": "https://repo.maven.apache.org/maven2/org/apache/logging/logging-parent/11.3.0/logging-parent-11.3.0.pom"
     },
     "org.apache.maven.plugins:maven-compiler-plugin:jar:3.13.0": {
       "layout": "org/apache/maven/plugins/maven-compiler-plugin/3.13.0/maven-compiler-plugin-3.13.0.jar",
@@ -1345,6 +1385,11 @@
       "sha256": "b589e35140d1ab960047e4d51e18a83b07696ea859c6d062cd0a66147f7534fd",
       "url": "https://repo.maven.apache.org/maven2/org/apache/pulsar/pulsar-bom/3.2.4/pulsar-bom-3.2.4.pom"
     },
+    "org.apache.pulsar:pulsar-bom:pom:3.3.3": {
+      "layout": "org/apache/pulsar/pulsar-bom/3.3.3/pulsar-bom-3.3.3.pom",
+      "sha256": "10714e27be04509ca839dae123f36b4918b2ad5cc4700a744fab5a460b5494d3",
+      "url": "https://repo.maven.apache.org/maven2/org/apache/pulsar/pulsar-bom/3.3.3/pulsar-bom-3.3.3.pom"
+    },
     "org.apache.tomcat.embed:tomcat-embed-core:jar:10.1.28": {
       "layout": "org/apache/tomcat/embed/tomcat-embed-core/10.1.28/tomcat-embed-core-10.1.28.jar",
       "sha256": "891877ec6780c57daf6961f232e019be2e984e22014f8a223d7c29a7ab116cac",
@@ -1430,10 +1475,25 @@
       "sha256": "d78bd8524c5f8380a190a6525686629a95dfe512df21111383a6d8c0923a4415",
       "url": "https://repo.maven.apache.org/maven2/org/apache/apache/33/apache-33.pom"
     },
+    "org.apiguardian:apiguardian-api:jar:1.1.2": {
+      "layout": "org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar",
+      "sha256": "b509448ac506d607319f182537f0b35d71007582ec741832a1f111e5b5b70b38",
+      "url": "https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar"
+    },
+    "org.apiguardian:apiguardian-api:pom:1.1.2": {
+      "layout": "org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.pom",
+      "sha256": "32355081d109095c3d5d374d5a43b4f4c1b75d549e983ef50723e2772e5302a0",
+      "url": "https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.pom"
+    },
     "org.assertj:assertj-bom:pom:3.25.3": {
       "layout": "org/assertj/assertj-bom/3.25.3/assertj-bom-3.25.3.pom",
       "sha256": "91b7a19b77af5462c7290b91ac7c72c44d6483afea0b62536816e98f8d53f257",
       "url": "https://repo.maven.apache.org/maven2/org/assertj/assertj-bom/3.25.3/assertj-bom-3.25.3.pom"
+    },
+    "org.assertj:assertj-bom:pom:3.26.3": {
+      "layout": "org/assertj/assertj-bom/3.26.3/assertj-bom-3.26.3.pom",
+      "sha256": "e14279049c8f80c473170cd50a9683e75c668e00dd35d0465f8fd8ec63b45e46",
+      "url": "https://repo.maven.apache.org/maven2/org/assertj/assertj-bom/3.26.3/assertj-bom-3.26.3.pom"
     },
     "org.assertj:assertj-core:jar:3.25.3": {
       "layout": "org/assertj/assertj-core/3.25.3/assertj-core-3.25.3.jar",
@@ -1770,20 +1830,20 @@
       "sha256": "93b4c40f05056850d71a8e6b639e47851f3e141475157d42e90adbcddb52a5f6",
       "url": "https://repo.maven.apache.org/maven2/org/eclipse/jetty/ee10/jetty-ee10-bom/12.0.12/jetty-ee10-bom-12.0.12.pom"
     },
-    "org.eclipse.jetty.ee10:jetty-ee10-bom:pom:12.0.15": {
-      "layout": "org/eclipse/jetty/ee10/jetty-ee10-bom/12.0.15/jetty-ee10-bom-12.0.15.pom",
-      "sha256": "7e4fb6ebaed7021d9dc20b5db41b98241d84c28999cf6488338a2c812d846e28",
-      "url": "https://repo.maven.apache.org/maven2/org/eclipse/jetty/ee10/jetty-ee10-bom/12.0.15/jetty-ee10-bom-12.0.15.pom"
+    "org.eclipse.jetty.ee10:jetty-ee10-bom:pom:12.0.16": {
+      "layout": "org/eclipse/jetty/ee10/jetty-ee10-bom/12.0.16/jetty-ee10-bom-12.0.16.pom",
+      "sha256": "39564e31ced77bb052117a9226c7dd7aaf9b663e3c870e8c86bad50bd125e6c7",
+      "url": "https://repo.maven.apache.org/maven2/org/eclipse/jetty/ee10/jetty-ee10-bom/12.0.16/jetty-ee10-bom-12.0.16.pom"
     },
     "org.eclipse.jetty:jetty-bom:pom:12.0.12": {
       "layout": "org/eclipse/jetty/jetty-bom/12.0.12/jetty-bom-12.0.12.pom",
       "sha256": "7734680505375372368ff8a9690c273ae488c7b0dd2083879b4341ed6150e8c4",
       "url": "https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-bom/12.0.12/jetty-bom-12.0.12.pom"
     },
-    "org.eclipse.jetty:jetty-bom:pom:12.0.15": {
-      "layout": "org/eclipse/jetty/jetty-bom/12.0.15/jetty-bom-12.0.15.pom",
-      "sha256": "9116e5b33c20acee2bb80302bcdaf403794999cfe1abbfeef39641e9c6a90774",
-      "url": "https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-bom/12.0.15/jetty-bom-12.0.15.pom"
+    "org.eclipse.jetty:jetty-bom:pom:12.0.16": {
+      "layout": "org/eclipse/jetty/jetty-bom/12.0.16/jetty-bom-12.0.16.pom",
+      "sha256": "dcd720fe0bfb042e5df99887732d27d83151c5ee06ec99c0d4002050c114284e",
+      "url": "https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-bom/12.0.16/jetty-bom-12.0.16.pom"
     },
     "org.eclipse.jetty:jetty-bom:pom:9.4.54.v20240208": {
       "layout": "org/eclipse/jetty/jetty-bom/9.4.54.v20240208/jetty-bom-9.4.54.v20240208.pom",
@@ -2255,6 +2315,76 @@
       "sha256": "29d69842bb7d449be2aa4ade6a4a7ce6aa55827d0ab13d168745fe6d95739332",
       "url": "https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-serialization-bom/1.6.3/kotlinx-serialization-bom-1.6.3.pom"
     },
+    "org.junit.platform:junit-platform-commons:jar:1.10.3": {
+      "layout": "org/junit/platform/junit-platform-commons/1.10.3/junit-platform-commons-1.10.3.jar",
+      "sha256": "9787f04d49db59397cdd7555d421a5bd2d1445666997d327b94f85e38bed57f1",
+      "url": "https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.10.3/junit-platform-commons-1.10.3.jar"
+    },
+    "org.junit.platform:junit-platform-commons:pom:1.10.3": {
+      "layout": "org/junit/platform/junit-platform-commons/1.10.3/junit-platform-commons-1.10.3.pom",
+      "sha256": "7597572c59f1975262f8d8fcf88ec6783376854bf08ce8a93d99dbdc89ee43f9",
+      "url": "https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.10.3/junit-platform-commons-1.10.3.pom"
+    },
+    "org.junit.platform:junit-platform-engine:jar:1.10.3": {
+      "layout": "org/junit/platform/junit-platform-engine/1.10.3/junit-platform-engine-1.10.3.jar",
+      "sha256": "df7c32bf75cf47c4c8ddd1942091027947a7d765d30b731fe00830115fafa133",
+      "url": "https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.10.3/junit-platform-engine-1.10.3.jar"
+    },
+    "org.junit.platform:junit-platform-engine:pom:1.10.3": {
+      "layout": "org/junit/platform/junit-platform-engine/1.10.3/junit-platform-engine-1.10.3.pom",
+      "sha256": "6f9b99bca0c17ddc19f51bc037e3b17cab0fc7e6f1da70387a30ab4e05207228",
+      "url": "https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.10.3/junit-platform-engine-1.10.3.pom"
+    },
+    "org.junit.platform:junit-platform-launcher:jar:1.10.3": {
+      "layout": "org/junit/platform/junit-platform-launcher/1.10.3/junit-platform-launcher-1.10.3.jar",
+      "sha256": "deaeede2f011eaf94f5bc681e04eee2f4a0f6d69771e1a79aa950d898b405d8d",
+      "url": "https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.10.3/junit-platform-launcher-1.10.3.jar"
+    },
+    "org.junit.platform:junit-platform-launcher:pom:1.10.3": {
+      "layout": "org/junit/platform/junit-platform-launcher/1.10.3/junit-platform-launcher-1.10.3.pom",
+      "sha256": "70134cb9fc0727562065d5fe7da58f105e4a1c7877e899d49149b5d3f8fd6d17",
+      "url": "https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.10.3/junit-platform-launcher-1.10.3.pom"
+    },
+    "org.junit.platform:junit-platform-suite-api:jar:1.10.3": {
+      "layout": "org/junit/platform/junit-platform-suite-api/1.10.3/junit-platform-suite-api-1.10.3.jar",
+      "sha256": "bdb1de13d1a86a17a8093f2612014cd3271a1625b46fedee01c9982a3b4287af",
+      "url": "https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-suite-api/1.10.3/junit-platform-suite-api-1.10.3.jar"
+    },
+    "org.junit.platform:junit-platform-suite-api:pom:1.10.3": {
+      "layout": "org/junit/platform/junit-platform-suite-api/1.10.3/junit-platform-suite-api-1.10.3.pom",
+      "sha256": "da4f5de7330a64bba2c197cac9a0df2471a7536de47f73d8c4c77ed3966d30d0",
+      "url": "https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-suite-api/1.10.3/junit-platform-suite-api-1.10.3.pom"
+    },
+    "org.junit.platform:junit-platform-suite-commons:jar:1.10.3": {
+      "layout": "org/junit/platform/junit-platform-suite-commons/1.10.3/junit-platform-suite-commons-1.10.3.jar",
+      "sha256": "da51c58786762602848f38bcf45d9d18387ed10d030308ebd8d4989cfae7fd59",
+      "url": "https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-suite-commons/1.10.3/junit-platform-suite-commons-1.10.3.jar"
+    },
+    "org.junit.platform:junit-platform-suite-commons:pom:1.10.3": {
+      "layout": "org/junit/platform/junit-platform-suite-commons/1.10.3/junit-platform-suite-commons-1.10.3.pom",
+      "sha256": "e8673d3a086193acb6b02d288b18f739af8eeda13306aad60b023b4d05f63baa",
+      "url": "https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-suite-commons/1.10.3/junit-platform-suite-commons-1.10.3.pom"
+    },
+    "org.junit.platform:junit-platform-suite-engine:jar:1.10.3": {
+      "layout": "org/junit/platform/junit-platform-suite-engine/1.10.3/junit-platform-suite-engine-1.10.3.jar",
+      "sha256": "65887849bc0ae1e11f19500116e1c1a68bfb101813bfc4c63e72225cf3354340",
+      "url": "https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-suite-engine/1.10.3/junit-platform-suite-engine-1.10.3.jar"
+    },
+    "org.junit.platform:junit-platform-suite-engine:pom:1.10.3": {
+      "layout": "org/junit/platform/junit-platform-suite-engine/1.10.3/junit-platform-suite-engine-1.10.3.pom",
+      "sha256": "71d5fd1c4fac848ce9316bc10e628d170ad9f6775318e864b21a0ced5936a205",
+      "url": "https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-suite-engine/1.10.3/junit-platform-suite-engine-1.10.3.pom"
+    },
+    "org.junit.platform:junit-platform-suite:jar:1.10.3": {
+      "layout": "org/junit/platform/junit-platform-suite/1.10.3/junit-platform-suite-1.10.3.jar",
+      "sha256": "17f9384f40dcb480784277b2d1a96e560d69936eda6296c15c68c209e476828b",
+      "url": "https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-suite/1.10.3/junit-platform-suite-1.10.3.jar"
+    },
+    "org.junit.platform:junit-platform-suite:pom:1.10.3": {
+      "layout": "org/junit/platform/junit-platform-suite/1.10.3/junit-platform-suite-1.10.3.pom",
+      "sha256": "1ffa89b956e2047bd7c65e3079e2b542f1b7e8dc6e6505374c197a85920bd27e",
+      "url": "https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-suite/1.10.3/junit-platform-suite-1.10.3.pom"
+    },
     "org.junit:junit-bom:pom:5.10.0": {
       "layout": "org/junit/junit-bom/5.10.0/junit-bom-5.10.0.pom",
       "sha256": "e006dd8894f9fc7b75fc32bb12fe5ed8be65667d5b454f99e2e0b8c5bb8d30b3",
@@ -2275,11 +2405,6 @@
       "sha256": "10937d44c425984cb8739225d34712e1a3145641ca93ac3f7ef186fa25f6babc",
       "url": "https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.10.3/junit-bom-5.10.3.pom"
     },
-    "org.junit:junit-bom:pom:5.10.5": {
-      "layout": "org/junit/junit-bom/5.10.5/junit-bom-5.10.5.pom",
-      "sha256": "83e405ccadab37badf22b7dd67a2d2f74bcf2e6801fb55bb2d5d7e7942372e1a",
-      "url": "https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.10.5/junit-bom-5.10.5.pom"
-    },
     "org.junit:junit-bom:pom:5.11.0": {
       "layout": "org/junit/junit-bom/5.11.0/junit-bom-5.11.0.pom",
       "sha256": "e67459d4882424ac6374f40db1c8f4a2e88946b340ba072c80be932a2be4644d",
@@ -2289,6 +2414,11 @@
       "layout": "org/junit/junit-bom/5.11.3/junit-bom-5.11.3.pom",
       "sha256": "f13df2e4caf1febce567667e7c378101a0331d53d1324d6e2dfe3aecfb1f7774",
       "url": "https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.11.3/junit-bom-5.11.3.pom"
+    },
+    "org.junit:junit-bom:pom:5.11.4": {
+      "layout": "org/junit/junit-bom/5.11.4/junit-bom-5.11.4.pom",
+      "sha256": "19d4b747b204805325b6334553296f986562277a4ac1cb5e593a5e4c4f5e4115",
+      "url": "https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.11.4/junit-bom-5.11.4.pom"
     },
     "org.junit:junit-bom:pom:5.7.1": {
       "layout": "org/junit/junit-bom/5.7.1/junit-bom-5.7.1.pom",
@@ -2320,6 +2450,11 @@
       "sha256": "9d2f46b14c21ffcc8eb7f02901e37d9dc5497e65843050184d1a2134071d56b3",
       "url": "https://repo.maven.apache.org/maven2/org/mockito/mockito-bom/5.11.0/mockito-bom-5.11.0.pom"
     },
+    "org.mockito:mockito-bom:pom:5.14.2": {
+      "layout": "org/mockito/mockito-bom/5.14.2/mockito-bom-5.14.2.pom",
+      "sha256": "6fd3113613a972fcd1cfabbd96948fdce943607ecf9a9cc19758a603b9a6307e",
+      "url": "https://repo.maven.apache.org/maven2/org/mockito/mockito-bom/5.14.2/mockito-bom-5.14.2.pom"
+    },
     "org.mybatis:mybatis-parent:pom:41": {
       "layout": "org/mybatis/mybatis-parent/41/mybatis-parent-41.pom",
       "sha256": "2d1d08c3128bc4bd547627f4395e74d8ac2bac3a1f84f453d85c4412ba8793d9",
@@ -2335,335 +2470,350 @@
       "sha256": "4acad31df322240efd5f931de8d70e18db413bec48b256f6e81c0310f7153439",
       "url": "https://repo.maven.apache.org/maven2/org/mybatis/mybatis/3.5.15/mybatis-3.5.15.pom"
     },
-    "org.operaton.bpm.dmn:operaton-engine-dmn-root:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/dmn/operaton-engine-dmn-root/1.0.0-beta-2/operaton-engine-dmn-root-1.0.0-beta-2.pom",
-      "sha256": "cb1b0f48385ebad50209c50ef30706aca62e3e21dd37528a76a7a36b28791f9c",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/dmn/operaton-engine-dmn-root/1.0.0-beta-2/operaton-engine-dmn-root-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm.dmn:operaton-engine-dmn:jar:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/dmn/operaton-engine-dmn/1.0.0-beta-2/operaton-engine-dmn-1.0.0-beta-2.jar",
-      "sha256": "0347ed79689020a66ab6c61bc442e40e93f1b43ed8fa2dfcff73058d64eba269",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/dmn/operaton-engine-dmn/1.0.0-beta-2/operaton-engine-dmn-1.0.0-beta-2.jar"
-    },
-    "org.operaton.bpm.dmn:operaton-engine-dmn:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/dmn/operaton-engine-dmn/1.0.0-beta-2/operaton-engine-dmn-1.0.0-beta-2.pom",
-      "sha256": "163b5e43b7144c13b3ff0e5ede801c77061de1bdf778d4761164689c8b0b1124",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/dmn/operaton-engine-dmn/1.0.0-beta-2/operaton-engine-dmn-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm.dmn:operaton-engine-feel-api:jar:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/dmn/operaton-engine-feel-api/1.0.0-beta-2/operaton-engine-feel-api-1.0.0-beta-2.jar",
-      "sha256": "c90a871ec8a3c31fa7a875e730a9219449af73012360ed6465c74e36a3091521",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/dmn/operaton-engine-feel-api/1.0.0-beta-2/operaton-engine-feel-api-1.0.0-beta-2.jar"
-    },
-    "org.operaton.bpm.dmn:operaton-engine-feel-api:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/dmn/operaton-engine-feel-api/1.0.0-beta-2/operaton-engine-feel-api-1.0.0-beta-2.pom",
-      "sha256": "37c7ebd541b6475a2e519e70079ccde18befb492c47fb6ac1ba9c9b39ed8bcc3",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/dmn/operaton-engine-feel-api/1.0.0-beta-2/operaton-engine-feel-api-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm.dmn:operaton-engine-feel-juel:jar:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/dmn/operaton-engine-feel-juel/1.0.0-beta-2/operaton-engine-feel-juel-1.0.0-beta-2.jar",
-      "sha256": "fd3e1ae04d0fe2d89817068704fb10848c9445974e90f1d6f305c98a22e77649",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/dmn/operaton-engine-feel-juel/1.0.0-beta-2/operaton-engine-feel-juel-1.0.0-beta-2.jar"
-    },
-    "org.operaton.bpm.dmn:operaton-engine-feel-juel:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/dmn/operaton-engine-feel-juel/1.0.0-beta-2/operaton-engine-feel-juel-1.0.0-beta-2.pom",
-      "sha256": "914c90c91e1efe35bac7715d18af661f6e9af67cf58057f8282b17d058ebde48",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/dmn/operaton-engine-feel-juel/1.0.0-beta-2/operaton-engine-feel-juel-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm.dmn:operaton-engine-feel-scala:jar:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/dmn/operaton-engine-feel-scala/1.0.0-beta-2/operaton-engine-feel-scala-1.0.0-beta-2.jar",
-      "sha256": "cabcba7fbc0c95d91e1cfaaf803083ad7239c062b140282f4390ca2ff5292365",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/dmn/operaton-engine-feel-scala/1.0.0-beta-2/operaton-engine-feel-scala-1.0.0-beta-2.jar"
-    },
-    "org.operaton.bpm.dmn:operaton-engine-feel-scala:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/dmn/operaton-engine-feel-scala/1.0.0-beta-2/operaton-engine-feel-scala-1.0.0-beta-2.pom",
-      "sha256": "2311db386e6c638c39647c8c594e6f6f9db4d8528eed9cb6763fe59bf625cef9",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/dmn/operaton-engine-feel-scala/1.0.0-beta-2/operaton-engine-feel-scala-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm.juel:operaton-juel:jar:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/juel/operaton-juel/1.0.0-beta-2/operaton-juel-1.0.0-beta-2.jar",
-      "sha256": "eef362eb1766f8958e5bbac3ab9821412633cdeff4d286d223d34f06cad0c787",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/juel/operaton-juel/1.0.0-beta-2/operaton-juel-1.0.0-beta-2.jar"
-    },
-    "org.operaton.bpm.juel:operaton-juel:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/juel/operaton-juel/1.0.0-beta-2/operaton-juel-1.0.0-beta-2.pom",
-      "sha256": "50f0478c0e77ef979cd4c225c7176022711e737621939651a2306643ec4dd331",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/juel/operaton-juel/1.0.0-beta-2/operaton-juel-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm.model:operaton-bpmn-model:jar:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/model/operaton-bpmn-model/1.0.0-beta-2/operaton-bpmn-model-1.0.0-beta-2.jar",
-      "sha256": "c61e33645e73fff9624061e12be1675566d1f15e96c928cb3121849b3a2e2da8",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/model/operaton-bpmn-model/1.0.0-beta-2/operaton-bpmn-model-1.0.0-beta-2.jar"
-    },
-    "org.operaton.bpm.model:operaton-bpmn-model:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/model/operaton-bpmn-model/1.0.0-beta-2/operaton-bpmn-model-1.0.0-beta-2.pom",
-      "sha256": "a7a64757536627279fde7bc6b9f14120e62e13efee486f06a1d6d4107920d0c0",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/model/operaton-bpmn-model/1.0.0-beta-2/operaton-bpmn-model-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm.model:operaton-cmmn-model:jar:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/model/operaton-cmmn-model/1.0.0-beta-2/operaton-cmmn-model-1.0.0-beta-2.jar",
-      "sha256": "26b3c03e71e56e6d71317fefada519bc35e538b96a2b13e1157a424f73c92143",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/model/operaton-cmmn-model/1.0.0-beta-2/operaton-cmmn-model-1.0.0-beta-2.jar"
-    },
-    "org.operaton.bpm.model:operaton-cmmn-model:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/model/operaton-cmmn-model/1.0.0-beta-2/operaton-cmmn-model-1.0.0-beta-2.pom",
-      "sha256": "e1220eecd4cac958fb62a6dcb95964472cb5e8f9bbf88102bca77b6f64983b5f",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/model/operaton-cmmn-model/1.0.0-beta-2/operaton-cmmn-model-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm.model:operaton-dmn-model:jar:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/model/operaton-dmn-model/1.0.0-beta-2/operaton-dmn-model-1.0.0-beta-2.jar",
-      "sha256": "92de9e76c0229230e047fac05629fcb3973aee33bd4ed7f596474187ac750fbe",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/model/operaton-dmn-model/1.0.0-beta-2/operaton-dmn-model-1.0.0-beta-2.jar"
-    },
-    "org.operaton.bpm.model:operaton-dmn-model:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/model/operaton-dmn-model/1.0.0-beta-2/operaton-dmn-model-1.0.0-beta-2.pom",
-      "sha256": "09d9676863b7f6e9d0f5d9b10498b8d45b8f6d91f144bf388040b960adf74583",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/model/operaton-dmn-model/1.0.0-beta-2/operaton-dmn-model-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm.model:operaton-model-apis:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/model/operaton-model-apis/1.0.0-beta-2/operaton-model-apis-1.0.0-beta-2.pom",
-      "sha256": "4953213465d2ca9152bf52935f3cb1442ce314522240701a373b6e7990127def",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/model/operaton-model-apis/1.0.0-beta-2/operaton-model-apis-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm.model:operaton-xml-model:jar:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/model/operaton-xml-model/1.0.0-beta-2/operaton-xml-model-1.0.0-beta-2.jar",
-      "sha256": "8a48b9558d18ecdfc584e5aa714df89390ad595182a056c4857a0c8b6c652c16",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/model/operaton-xml-model/1.0.0-beta-2/operaton-xml-model-1.0.0-beta-2.jar"
-    },
-    "org.operaton.bpm.model:operaton-xml-model:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/model/operaton-xml-model/1.0.0-beta-2/operaton-xml-model-1.0.0-beta-2.pom",
-      "sha256": "bf8ed7bcce63fecabe6b7a975188077790d0ad5fe3ccb0fd0ebdf9e495c627af",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/model/operaton-xml-model/1.0.0-beta-2/operaton-xml-model-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm.springboot.project:operaton-bpm-spring-boot-starter-root:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/springboot/project/operaton-bpm-spring-boot-starter-root/1.0.0-beta-2/operaton-bpm-spring-boot-starter-root-1.0.0-beta-2.pom",
-      "sha256": "a6508d814e9ebb014c1b84cd57fe57baff0fdb309ebad1f66612d2bab50090ef",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/springboot/project/operaton-bpm-spring-boot-starter-root/1.0.0-beta-2/operaton-bpm-spring-boot-starter-root-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm.springboot:operaton-bpm-spring-boot-starter-rest:jar:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter-rest/1.0.0-beta-2/operaton-bpm-spring-boot-starter-rest-1.0.0-beta-2.jar",
-      "sha256": "b2af25db81b3f33913c5f3a2bef79a2faae7f3927991fa516470e23ca6c32c05",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter-rest/1.0.0-beta-2/operaton-bpm-spring-boot-starter-rest-1.0.0-beta-2.jar"
-    },
-    "org.operaton.bpm.springboot:operaton-bpm-spring-boot-starter-rest:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter-rest/1.0.0-beta-2/operaton-bpm-spring-boot-starter-rest-1.0.0-beta-2.pom",
-      "sha256": "50af67a09688a37065b49304f709bab867ff332fa3c485086f9fe189b50f30c2",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter-rest/1.0.0-beta-2/operaton-bpm-spring-boot-starter-rest-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm.springboot:operaton-bpm-spring-boot-starter-webapp-core:jar:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter-webapp-core/1.0.0-beta-2/operaton-bpm-spring-boot-starter-webapp-core-1.0.0-beta-2.jar",
-      "sha256": "864706bceb6f22b30e01ba4c840500a18294af7b04153cc23101c9ebfd3b3865",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter-webapp-core/1.0.0-beta-2/operaton-bpm-spring-boot-starter-webapp-core-1.0.0-beta-2.jar"
-    },
-    "org.operaton.bpm.springboot:operaton-bpm-spring-boot-starter-webapp-core:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter-webapp-core/1.0.0-beta-2/operaton-bpm-spring-boot-starter-webapp-core-1.0.0-beta-2.pom",
-      "sha256": "864741e8a130c79a148c1962114bb3ea0bdd0e72f16cdf0d5ef9d6eb668ffab0",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter-webapp-core/1.0.0-beta-2/operaton-bpm-spring-boot-starter-webapp-core-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm.springboot:operaton-bpm-spring-boot-starter-webapp:jar:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter-webapp/1.0.0-beta-2/operaton-bpm-spring-boot-starter-webapp-1.0.0-beta-2.jar",
-      "sha256": "5b0e110f3f903705f2f26df1bf02f97babd0810fd883d303fb856e1f7bc98986",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter-webapp/1.0.0-beta-2/operaton-bpm-spring-boot-starter-webapp-1.0.0-beta-2.jar"
-    },
-    "org.operaton.bpm.springboot:operaton-bpm-spring-boot-starter-webapp:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter-webapp/1.0.0-beta-2/operaton-bpm-spring-boot-starter-webapp-1.0.0-beta-2.pom",
-      "sha256": "0be4968a4eee9c09201086103a701643835ee0ae35907314c9786781023d09a8",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter-webapp/1.0.0-beta-2/operaton-bpm-spring-boot-starter-webapp-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm.springboot:operaton-bpm-spring-boot-starter:jar:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter/1.0.0-beta-2/operaton-bpm-spring-boot-starter-1.0.0-beta-2.jar",
-      "sha256": "4ae6913631dfcaedb01116e0c8cb8c2d2809f92fccbe24c9ce3e6fbd42e46d33",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter/1.0.0-beta-2/operaton-bpm-spring-boot-starter-1.0.0-beta-2.jar"
-    },
-    "org.operaton.bpm.springboot:operaton-bpm-spring-boot-starter:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter/1.0.0-beta-2/operaton-bpm-spring-boot-starter-1.0.0-beta-2.pom",
-      "sha256": "9e73d860ed04fc4d6f5acea49431e2f604679edbf8f49177a2bf1d812b742f39",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter/1.0.0-beta-2/operaton-bpm-spring-boot-starter-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm.webapp:operaton-webapp-jakarta:jar:classes:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/webapp/operaton-webapp-jakarta/1.0.0-beta-2/operaton-webapp-jakarta-1.0.0-beta-2-classes.jar",
-      "sha256": "2c81ea5207a2db5a22c6bbe7382a15f7948350717710b3c60c5edb5f20ff48e3",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/webapp/operaton-webapp-jakarta/1.0.0-beta-2/operaton-webapp-jakarta-1.0.0-beta-2-classes.jar"
-    },
-    "org.operaton.bpm.webapp:operaton-webapp-jakarta:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/webapp/operaton-webapp-jakarta/1.0.0-beta-2/operaton-webapp-jakarta-1.0.0-beta-2.pom",
-      "sha256": "a5237e76749460fa1dbb475c0564530fa1acc0a86c07c13bb44ae82f9fcbb5ad",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/webapp/operaton-webapp-jakarta/1.0.0-beta-2/operaton-webapp-jakarta-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm.webapp:operaton-webapp-root:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/webapp/operaton-webapp-root/1.0.0-beta-2/operaton-webapp-root-1.0.0-beta-2.pom",
-      "sha256": "a4983dc5c3815416f288147971ee28863ad3470b6c96e230cf11c2d2050c0cdd",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/webapp/operaton-webapp-root/1.0.0-beta-2/operaton-webapp-root-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm.webapp:operaton-webapp-webjar:jar:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/webapp/operaton-webapp-webjar/1.0.0-beta-2/operaton-webapp-webjar-1.0.0-beta-2.jar",
-      "sha256": "91bf82c5a6628ba77cd88fd54b561d36b22251ea39c7ae405856998b60eaa95f",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/webapp/operaton-webapp-webjar/1.0.0-beta-2/operaton-webapp-webjar-1.0.0-beta-2.jar"
-    },
-    "org.operaton.bpm.webapp:operaton-webapp-webjar:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/webapp/operaton-webapp-webjar/1.0.0-beta-2/operaton-webapp-webjar-1.0.0-beta-2.pom",
-      "sha256": "5b6b9c8c92595bb2f8cf92c886d7ea738ed71cfc3c42d7c82fcf50200562bcec",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/webapp/operaton-webapp-webjar/1.0.0-beta-2/operaton-webapp-webjar-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm:operaton-bom-root:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/operaton-bom-root/1.0.0-beta-2/operaton-bom-root-1.0.0-beta-2.pom",
-      "sha256": "c3c8767a753cd85f1290cc21e4d41192a82d460d8a8ac83b24c8a06f96c6f358",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-bom-root/1.0.0-beta-2/operaton-bom-root-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm:operaton-bom:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/operaton-bom/1.0.0-beta-2/operaton-bom-1.0.0-beta-2.pom",
-      "sha256": "7d24e024530815d926c5b9b1316b0d4624f338d6971e14f9de01f4d2a87364aa",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-bom/1.0.0-beta-2/operaton-bom-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm:operaton-core-internal-dependencies:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/operaton-core-internal-dependencies/1.0.0-beta-2/operaton-core-internal-dependencies-1.0.0-beta-2.pom",
-      "sha256": "48068a187ab315bf784c7793bd9937866c9f5967ff3fc27e261b34c3b152a044",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-core-internal-dependencies/1.0.0-beta-2/operaton-core-internal-dependencies-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm:operaton-database-settings:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/operaton-database-settings/1.0.0-beta-2/operaton-database-settings-1.0.0-beta-2.pom",
-      "sha256": "7fe49064ee086491553785e2d7f04c12e7ee994b788abef68c871db2035ae9e0",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-database-settings/1.0.0-beta-2/operaton-database-settings-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm:operaton-engine-plugin-spin:jar:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/operaton-engine-plugin-spin/1.0.0-beta-2/operaton-engine-plugin-spin-1.0.0-beta-2.jar",
-      "sha256": "ad06c745ed940ac4066ed5423d923ddadc3c5121d7f5ffc13f5870510553010c",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-engine-plugin-spin/1.0.0-beta-2/operaton-engine-plugin-spin-1.0.0-beta-2.jar"
-    },
-    "org.operaton.bpm:operaton-engine-plugin-spin:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/operaton-engine-plugin-spin/1.0.0-beta-2/operaton-engine-plugin-spin-1.0.0-beta-2.pom",
-      "sha256": "5ad7e9ea7f897c971de757ef263dcc5b53b56b1e75a32e06667d72ba0e7e3ada",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-engine-plugin-spin/1.0.0-beta-2/operaton-engine-plugin-spin-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm:operaton-engine-plugins:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/operaton-engine-plugins/1.0.0-beta-2/operaton-engine-plugins-1.0.0-beta-2.pom",
-      "sha256": "354a7382545d3a5e807c25d9f7b5317e599d89201f3095b269f793e9f9c613b3",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-engine-plugins/1.0.0-beta-2/operaton-engine-plugins-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm:operaton-engine-rest-core-jakarta:jar:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/operaton-engine-rest-core-jakarta/1.0.0-beta-2/operaton-engine-rest-core-jakarta-1.0.0-beta-2.jar",
-      "sha256": "6b03d5308e8a4cd03d1d0355b93fa2eb6bb239788a92c28cd0ca9620c54190a3",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-engine-rest-core-jakarta/1.0.0-beta-2/operaton-engine-rest-core-jakarta-1.0.0-beta-2.jar"
-    },
-    "org.operaton.bpm:operaton-engine-rest-core-jakarta:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/operaton-engine-rest-core-jakarta/1.0.0-beta-2/operaton-engine-rest-core-jakarta-1.0.0-beta-2.pom",
-      "sha256": "8008da5a7d07a3dedb26b2a9a1996d9b76c6f6a79caa6d70d5bb0a898e72bfc7",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-engine-rest-core-jakarta/1.0.0-beta-2/operaton-engine-rest-core-jakarta-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm:operaton-engine-rest-root:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/operaton-engine-rest-root/1.0.0-beta-2/operaton-engine-rest-root-1.0.0-beta-2.pom",
-      "sha256": "447b7163347f01ad94c5fee2ade2fea60c03090e4a484609e385647e48fcc27b",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-engine-rest-root/1.0.0-beta-2/operaton-engine-rest-root-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm:operaton-engine-spring-6:jar:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/operaton-engine-spring-6/1.0.0-beta-2/operaton-engine-spring-6-1.0.0-beta-2.jar",
-      "sha256": "0dc4605dec7ec039921db0de5505d52ad162fc971eab5a1bd495d3cbd9f73a27",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-engine-spring-6/1.0.0-beta-2/operaton-engine-spring-6-1.0.0-beta-2.jar"
-    },
-    "org.operaton.bpm:operaton-engine-spring-6:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/operaton-engine-spring-6/1.0.0-beta-2/operaton-engine-spring-6-1.0.0-beta-2.pom",
-      "sha256": "cdd921845be555fca019094c3bfc37466e7b60a290e6b2b4e8a90ee90a972d0f",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-engine-spring-6/1.0.0-beta-2/operaton-engine-spring-6-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm:operaton-engine:jar:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/operaton-engine/1.0.0-beta-2/operaton-engine-1.0.0-beta-2.jar",
-      "sha256": "0f2a2f9608196c4f73d92bc2d4e1109f87b70276debfd6f6bb4c64b67eadbb34",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-engine/1.0.0-beta-2/operaton-engine-1.0.0-beta-2.jar"
-    },
-    "org.operaton.bpm:operaton-engine:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/operaton-engine/1.0.0-beta-2/operaton-engine-1.0.0-beta-2.pom",
-      "sha256": "a9fb9c259d1050618856b7a748f8ab391460851d79d67df7a4999e84e02c9284",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-engine/1.0.0-beta-2/operaton-engine-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm:operaton-only-bom:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/operaton-only-bom/1.0.0-beta-2/operaton-only-bom-1.0.0-beta-2.pom",
-      "sha256": "f1d3b8f75cde1b80823f2919868c5de3242a5edcca38d19e62d74fffb325514f",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-only-bom/1.0.0-beta-2/operaton-only-bom-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm:operaton-parent:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/operaton-parent/1.0.0-beta-2/operaton-parent-1.0.0-beta-2.pom",
-      "sha256": "6a1f504270e28e5940f41ff6d2db6fc527b410856a23b8189cb4357a82d577a6",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-parent/1.0.0-beta-2/operaton-parent-1.0.0-beta-2.pom"
-    },
-    "org.operaton.bpm:operaton-root:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/bpm/operaton-root/1.0.0-beta-2/operaton-root-1.0.0-beta-2.pom",
-      "sha256": "49a44955b0ee03ee594e31d759e23e40ccfad26df3ddc516c41a72f79e0395d9",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-root/1.0.0-beta-2/operaton-root-1.0.0-beta-2.pom"
-    },
-    "org.operaton.commons:operaton-commons-bom:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/commons/operaton-commons-bom/1.0.0-beta-2/operaton-commons-bom-1.0.0-beta-2.pom",
-      "sha256": "417b0758494a478100c44fa816a8ed59565167cf8c172e83876bee56d6d244c2",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/commons/operaton-commons-bom/1.0.0-beta-2/operaton-commons-bom-1.0.0-beta-2.pom"
-    },
-    "org.operaton.commons:operaton-commons-logging:jar:1.0.0-beta-2": {
-      "layout": "org/operaton/commons/operaton-commons-logging/1.0.0-beta-2/operaton-commons-logging-1.0.0-beta-2.jar",
-      "sha256": "796f3379df18b3c8d2b495020099f6235597aed8c846d2735d950af0263c34cf",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/commons/operaton-commons-logging/1.0.0-beta-2/operaton-commons-logging-1.0.0-beta-2.jar"
-    },
-    "org.operaton.commons:operaton-commons-logging:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/commons/operaton-commons-logging/1.0.0-beta-2/operaton-commons-logging-1.0.0-beta-2.pom",
-      "sha256": "352bc8df0cdd3785a4449c6fe399314c97b4ccbe04aa86ea2fa447872d20ed37",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/commons/operaton-commons-logging/1.0.0-beta-2/operaton-commons-logging-1.0.0-beta-2.pom"
-    },
-    "org.operaton.commons:operaton-commons-root:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/commons/operaton-commons-root/1.0.0-beta-2/operaton-commons-root-1.0.0-beta-2.pom",
-      "sha256": "e5faea8858eaced2723c3da6d4a244be28644329cbbf4455550657707893943d",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/commons/operaton-commons-root/1.0.0-beta-2/operaton-commons-root-1.0.0-beta-2.pom"
-    },
-    "org.operaton.commons:operaton-commons-typed-values:jar:1.0.0-beta-2": {
-      "layout": "org/operaton/commons/operaton-commons-typed-values/1.0.0-beta-2/operaton-commons-typed-values-1.0.0-beta-2.jar",
-      "sha256": "c766225c08808199a7e12d58ffa42c5e84a9b753ddfb6096f1a9e6fea77b3583",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/commons/operaton-commons-typed-values/1.0.0-beta-2/operaton-commons-typed-values-1.0.0-beta-2.jar"
-    },
-    "org.operaton.commons:operaton-commons-typed-values:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/commons/operaton-commons-typed-values/1.0.0-beta-2/operaton-commons-typed-values-1.0.0-beta-2.pom",
-      "sha256": "b44b52aea81d511c923bddef62f1f614744f02ffe73580739d541c8b21acc4e3",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/commons/operaton-commons-typed-values/1.0.0-beta-2/operaton-commons-typed-values-1.0.0-beta-2.pom"
-    },
-    "org.operaton.commons:operaton-commons-utils:jar:1.0.0-beta-2": {
-      "layout": "org/operaton/commons/operaton-commons-utils/1.0.0-beta-2/operaton-commons-utils-1.0.0-beta-2.jar",
-      "sha256": "15ec052ac7451ed2c59b0b951bdb4c66e0a1ed65e4322c4819cc721b176e37d7",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/commons/operaton-commons-utils/1.0.0-beta-2/operaton-commons-utils-1.0.0-beta-2.jar"
-    },
-    "org.operaton.commons:operaton-commons-utils:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/commons/operaton-commons-utils/1.0.0-beta-2/operaton-commons-utils-1.0.0-beta-2.pom",
-      "sha256": "8c43d8aa327eedd9c5b155c600c6bf381502115286dceaa64c2189c4f99370dd",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/commons/operaton-commons-utils/1.0.0-beta-2/operaton-commons-utils-1.0.0-beta-2.pom"
-    },
-    "org.operaton.connect:operaton-connect-bom:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/connect/operaton-connect-bom/1.0.0-beta-2/operaton-connect-bom-1.0.0-beta-2.pom",
-      "sha256": "d9e75e6c119c1ed710cd16f63b267543790e85380a8dc2a87e01d62aa40c42fa",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/connect/operaton-connect-bom/1.0.0-beta-2/operaton-connect-bom-1.0.0-beta-2.pom"
-    },
-    "org.operaton.spin:operaton-spin-bom:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/spin/operaton-spin-bom/1.0.0-beta-2/operaton-spin-bom-1.0.0-beta-2.pom",
-      "sha256": "99db40937c2882e3737ae06920f3cec24c8c4910730e6bdc1e36a8b3ab85dafc",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/spin/operaton-spin-bom/1.0.0-beta-2/operaton-spin-bom-1.0.0-beta-2.pom"
-    },
-    "org.operaton.spin:operaton-spin-core:jar:1.0.0-beta-2": {
-      "layout": "org/operaton/spin/operaton-spin-core/1.0.0-beta-2/operaton-spin-core-1.0.0-beta-2.jar",
-      "sha256": "9c0c44b77898f0f8ed7aa1e5fc2cde81bc270b01a06c0a6ceb525f08c4136e37",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/spin/operaton-spin-core/1.0.0-beta-2/operaton-spin-core-1.0.0-beta-2.jar"
-    },
-    "org.operaton.spin:operaton-spin-core:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/spin/operaton-spin-core/1.0.0-beta-2/operaton-spin-core-1.0.0-beta-2.pom",
-      "sha256": "9790c744941c1062a574bc87d03560f127bd33ed5fc151b31a2f90b219c51247",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/spin/operaton-spin-core/1.0.0-beta-2/operaton-spin-core-1.0.0-beta-2.pom"
-    },
-    "org.operaton.spin:operaton-spin-dataformat-all:jar:1.0.0-beta-2": {
-      "layout": "org/operaton/spin/operaton-spin-dataformat-all/1.0.0-beta-2/operaton-spin-dataformat-all-1.0.0-beta-2.jar",
-      "sha256": "13ecf746244f3b6de32f9f7b21c1e5dd06b23b21958b43529d82ccde9d673d9e",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/spin/operaton-spin-dataformat-all/1.0.0-beta-2/operaton-spin-dataformat-all-1.0.0-beta-2.jar"
-    },
-    "org.operaton.spin:operaton-spin-dataformat-all:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/spin/operaton-spin-dataformat-all/1.0.0-beta-2/operaton-spin-dataformat-all-1.0.0-beta-2.pom",
-      "sha256": "145b0ef83ee78ce7dd28ea2ac639b2faf9eb9d7b3d6cd4fb3a32f9175228ab77",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/spin/operaton-spin-dataformat-all/1.0.0-beta-2/operaton-spin-dataformat-all-1.0.0-beta-2.pom"
-    },
-    "org.operaton.spin:operaton-spin-root:pom:1.0.0-beta-2": {
-      "layout": "org/operaton/spin/operaton-spin-root/1.0.0-beta-2/operaton-spin-root-1.0.0-beta-2.pom",
-      "sha256": "8f264b4d08c0728afed0eeee7d0726b0e7a4c5506a89d969837dd7917647e253",
-      "url": "https://repo.maven.apache.org/maven2/org/operaton/spin/operaton-spin-root/1.0.0-beta-2/operaton-spin-root-1.0.0-beta-2.pom"
+    "org.opentest4j:opentest4j:jar:1.3.0": {
+      "layout": "org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar",
+      "sha256": "48e2df636cab6563ced64dcdff8abb2355627cb236ef0bf37598682ddf742f1b",
+      "url": "https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar"
+    },
+    "org.opentest4j:opentest4j:pom:1.3.0": {
+      "layout": "org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.pom",
+      "sha256": "9bf7cffc410f3e8372c2522578df9ca56d9d43bd937e30948706c232a943b355",
+      "url": "https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.pom"
+    },
+    "org.operaton.bpm.dmn:operaton-engine-dmn-root:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/dmn/operaton-engine-dmn-root/1.0.0-beta-3/operaton-engine-dmn-root-1.0.0-beta-3.pom",
+      "sha256": "d5d31808f6bd549226e1a1c40e4fb2d69311041f7d82a9a04c6c8984eda5a03c",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/dmn/operaton-engine-dmn-root/1.0.0-beta-3/operaton-engine-dmn-root-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm.dmn:operaton-engine-dmn:jar:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/dmn/operaton-engine-dmn/1.0.0-beta-3/operaton-engine-dmn-1.0.0-beta-3.jar",
+      "sha256": "8ba82a1db0a13b9bfaf4f4aa08b755659db704388fa55f2ff9d7d7c81c5be411",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/dmn/operaton-engine-dmn/1.0.0-beta-3/operaton-engine-dmn-1.0.0-beta-3.jar"
+    },
+    "org.operaton.bpm.dmn:operaton-engine-dmn:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/dmn/operaton-engine-dmn/1.0.0-beta-3/operaton-engine-dmn-1.0.0-beta-3.pom",
+      "sha256": "a9cd78e9d708e2b67c2d8b2bf6bcc5a5e18d9f0ae09659391cb181d2d517d592",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/dmn/operaton-engine-dmn/1.0.0-beta-3/operaton-engine-dmn-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm.dmn:operaton-engine-feel-api:jar:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/dmn/operaton-engine-feel-api/1.0.0-beta-3/operaton-engine-feel-api-1.0.0-beta-3.jar",
+      "sha256": "7c09eef691c536d2da666e6f20ad01cd2a9651115983313c24c1d59955129bc0",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/dmn/operaton-engine-feel-api/1.0.0-beta-3/operaton-engine-feel-api-1.0.0-beta-3.jar"
+    },
+    "org.operaton.bpm.dmn:operaton-engine-feel-api:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/dmn/operaton-engine-feel-api/1.0.0-beta-3/operaton-engine-feel-api-1.0.0-beta-3.pom",
+      "sha256": "b848197ef85d66d7f6d3954e8224fa9796b4b116240625645d1aa112d2c1dcfb",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/dmn/operaton-engine-feel-api/1.0.0-beta-3/operaton-engine-feel-api-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm.dmn:operaton-engine-feel-juel:jar:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/dmn/operaton-engine-feel-juel/1.0.0-beta-3/operaton-engine-feel-juel-1.0.0-beta-3.jar",
+      "sha256": "b1ce58e068f8d13addd58f0016280298b96008e6a7dd25d0afd4d5502b8e0c69",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/dmn/operaton-engine-feel-juel/1.0.0-beta-3/operaton-engine-feel-juel-1.0.0-beta-3.jar"
+    },
+    "org.operaton.bpm.dmn:operaton-engine-feel-juel:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/dmn/operaton-engine-feel-juel/1.0.0-beta-3/operaton-engine-feel-juel-1.0.0-beta-3.pom",
+      "sha256": "b423d4096418855d9fcee40e7a11991bfcf840e8ffdd069f96d03f354fdf5ddf",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/dmn/operaton-engine-feel-juel/1.0.0-beta-3/operaton-engine-feel-juel-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm.dmn:operaton-engine-feel-scala:jar:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/dmn/operaton-engine-feel-scala/1.0.0-beta-3/operaton-engine-feel-scala-1.0.0-beta-3.jar",
+      "sha256": "23f376c64d4bc3991a7e316217142ecc9fd5dfd9d45921a03bacb98d33677376",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/dmn/operaton-engine-feel-scala/1.0.0-beta-3/operaton-engine-feel-scala-1.0.0-beta-3.jar"
+    },
+    "org.operaton.bpm.dmn:operaton-engine-feel-scala:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/dmn/operaton-engine-feel-scala/1.0.0-beta-3/operaton-engine-feel-scala-1.0.0-beta-3.pom",
+      "sha256": "b4ef2c46193ec6e8aee223c9c7182d225deee3e0594e02b8dd6782209304b136",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/dmn/operaton-engine-feel-scala/1.0.0-beta-3/operaton-engine-feel-scala-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm.juel:operaton-juel:jar:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/juel/operaton-juel/1.0.0-beta-3/operaton-juel-1.0.0-beta-3.jar",
+      "sha256": "7d44f3ff5999721506491802190e7345b154a2478b80a4332e8be61673153afc",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/juel/operaton-juel/1.0.0-beta-3/operaton-juel-1.0.0-beta-3.jar"
+    },
+    "org.operaton.bpm.juel:operaton-juel:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/juel/operaton-juel/1.0.0-beta-3/operaton-juel-1.0.0-beta-3.pom",
+      "sha256": "943ae9b1da4264ba3d4251a977941af2d4ea58c89ffbfcb52c125ebc3f889d34",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/juel/operaton-juel/1.0.0-beta-3/operaton-juel-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm.model:operaton-bpmn-model:jar:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/model/operaton-bpmn-model/1.0.0-beta-3/operaton-bpmn-model-1.0.0-beta-3.jar",
+      "sha256": "254653a00cd68ba85cde9e77f9bc58ab747d2031a5d52d1dc80970fc445c7364",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/model/operaton-bpmn-model/1.0.0-beta-3/operaton-bpmn-model-1.0.0-beta-3.jar"
+    },
+    "org.operaton.bpm.model:operaton-bpmn-model:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/model/operaton-bpmn-model/1.0.0-beta-3/operaton-bpmn-model-1.0.0-beta-3.pom",
+      "sha256": "e31c18a4d30ce099874a5894009b5e48cb07ae162db5a1e3fccf74761724db42",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/model/operaton-bpmn-model/1.0.0-beta-3/operaton-bpmn-model-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm.model:operaton-cmmn-model:jar:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/model/operaton-cmmn-model/1.0.0-beta-3/operaton-cmmn-model-1.0.0-beta-3.jar",
+      "sha256": "2bb2a5708abe66cccbb4daa317aecf95fa4c42c8fe24c4bb89b6a129bdf97f6f",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/model/operaton-cmmn-model/1.0.0-beta-3/operaton-cmmn-model-1.0.0-beta-3.jar"
+    },
+    "org.operaton.bpm.model:operaton-cmmn-model:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/model/operaton-cmmn-model/1.0.0-beta-3/operaton-cmmn-model-1.0.0-beta-3.pom",
+      "sha256": "82efa76fa74ff9c8c2dd041808adf41977409c2e31dd7758958468ccf0187647",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/model/operaton-cmmn-model/1.0.0-beta-3/operaton-cmmn-model-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm.model:operaton-dmn-model:jar:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/model/operaton-dmn-model/1.0.0-beta-3/operaton-dmn-model-1.0.0-beta-3.jar",
+      "sha256": "ef9af83b297f1f146df5566f63eeead34eec12130eefd3e9c8a794e9615536ad",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/model/operaton-dmn-model/1.0.0-beta-3/operaton-dmn-model-1.0.0-beta-3.jar"
+    },
+    "org.operaton.bpm.model:operaton-dmn-model:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/model/operaton-dmn-model/1.0.0-beta-3/operaton-dmn-model-1.0.0-beta-3.pom",
+      "sha256": "c6369965a26571216f8b78a14461fbb2d9e7488f5197938e0b8e07aef027bff7",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/model/operaton-dmn-model/1.0.0-beta-3/operaton-dmn-model-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm.model:operaton-model-apis:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/model/operaton-model-apis/1.0.0-beta-3/operaton-model-apis-1.0.0-beta-3.pom",
+      "sha256": "7d715211e5fd86f2b97f5f5a446e639f28ede5d2bedf76fadb527367254e12ba",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/model/operaton-model-apis/1.0.0-beta-3/operaton-model-apis-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm.model:operaton-xml-model:jar:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/model/operaton-xml-model/1.0.0-beta-3/operaton-xml-model-1.0.0-beta-3.jar",
+      "sha256": "5f925ab4a03c9d1431cc63125bc073a9353caadbd32b82902a6974868848b2a2",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/model/operaton-xml-model/1.0.0-beta-3/operaton-xml-model-1.0.0-beta-3.jar"
+    },
+    "org.operaton.bpm.model:operaton-xml-model:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/model/operaton-xml-model/1.0.0-beta-3/operaton-xml-model-1.0.0-beta-3.pom",
+      "sha256": "39a0dea62ed34720216e86ea53dfde85382b61a0b4642809cc76d0c3c2a804d4",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/model/operaton-xml-model/1.0.0-beta-3/operaton-xml-model-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm.springboot.project:operaton-bpm-spring-boot-starter-root:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/springboot/project/operaton-bpm-spring-boot-starter-root/1.0.0-beta-3/operaton-bpm-spring-boot-starter-root-1.0.0-beta-3.pom",
+      "sha256": "0c3d683f768d70df97f3bd19033887a779f7a4a375f749189bdb79ede9dfc531",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/springboot/project/operaton-bpm-spring-boot-starter-root/1.0.0-beta-3/operaton-bpm-spring-boot-starter-root-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm.springboot:operaton-bpm-spring-boot-starter-rest:jar:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter-rest/1.0.0-beta-3/operaton-bpm-spring-boot-starter-rest-1.0.0-beta-3.jar",
+      "sha256": "5294f684d877642324089567de3a0f4469d27b4565cc2b9b830ecbe17fb0b629",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter-rest/1.0.0-beta-3/operaton-bpm-spring-boot-starter-rest-1.0.0-beta-3.jar"
+    },
+    "org.operaton.bpm.springboot:operaton-bpm-spring-boot-starter-rest:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter-rest/1.0.0-beta-3/operaton-bpm-spring-boot-starter-rest-1.0.0-beta-3.pom",
+      "sha256": "90580b999f76901208445c31a0e935a64c1aed9b0699300b50e9c7937215bf3e",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter-rest/1.0.0-beta-3/operaton-bpm-spring-boot-starter-rest-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm.springboot:operaton-bpm-spring-boot-starter-webapp-core:jar:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter-webapp-core/1.0.0-beta-3/operaton-bpm-spring-boot-starter-webapp-core-1.0.0-beta-3.jar",
+      "sha256": "33feca6116af7ddf6afabf79fe945a55a2ccabddef86ab673c51847f407fcc58",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter-webapp-core/1.0.0-beta-3/operaton-bpm-spring-boot-starter-webapp-core-1.0.0-beta-3.jar"
+    },
+    "org.operaton.bpm.springboot:operaton-bpm-spring-boot-starter-webapp-core:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter-webapp-core/1.0.0-beta-3/operaton-bpm-spring-boot-starter-webapp-core-1.0.0-beta-3.pom",
+      "sha256": "f44c86b99de2bf9f2fa567f9a6ec347da4965e36887afb3b7c80442b6cb071ba",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter-webapp-core/1.0.0-beta-3/operaton-bpm-spring-boot-starter-webapp-core-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm.springboot:operaton-bpm-spring-boot-starter-webapp:jar:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter-webapp/1.0.0-beta-3/operaton-bpm-spring-boot-starter-webapp-1.0.0-beta-3.jar",
+      "sha256": "334829568487ce4d3bdddd2a760aa2f4e3705433c4b8a5f7ccd3d554901160b9",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter-webapp/1.0.0-beta-3/operaton-bpm-spring-boot-starter-webapp-1.0.0-beta-3.jar"
+    },
+    "org.operaton.bpm.springboot:operaton-bpm-spring-boot-starter-webapp:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter-webapp/1.0.0-beta-3/operaton-bpm-spring-boot-starter-webapp-1.0.0-beta-3.pom",
+      "sha256": "d6e212b7f3fa41c8f63e371cc3ecf402956d69f42c17a509e16d90b2aab4ecc3",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter-webapp/1.0.0-beta-3/operaton-bpm-spring-boot-starter-webapp-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm.springboot:operaton-bpm-spring-boot-starter:jar:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter/1.0.0-beta-3/operaton-bpm-spring-boot-starter-1.0.0-beta-3.jar",
+      "sha256": "0cfb2066e2dc99a5198a08a3591b1503a711ea3a2073408afec824a4011e72f7",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter/1.0.0-beta-3/operaton-bpm-spring-boot-starter-1.0.0-beta-3.jar"
+    },
+    "org.operaton.bpm.springboot:operaton-bpm-spring-boot-starter:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter/1.0.0-beta-3/operaton-bpm-spring-boot-starter-1.0.0-beta-3.pom",
+      "sha256": "5fa82977614733824b49c2f912e6b47fb59d013f24b64129637ceba6f60016b3",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/springboot/operaton-bpm-spring-boot-starter/1.0.0-beta-3/operaton-bpm-spring-boot-starter-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm.webapp:operaton-webapp-jakarta:jar:classes:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/webapp/operaton-webapp-jakarta/1.0.0-beta-3/operaton-webapp-jakarta-1.0.0-beta-3-classes.jar",
+      "sha256": "92d51d00464ecfa7c8daaf553b5484b7b5e0bdf69111addd27f5a851a001d15a",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/webapp/operaton-webapp-jakarta/1.0.0-beta-3/operaton-webapp-jakarta-1.0.0-beta-3-classes.jar"
+    },
+    "org.operaton.bpm.webapp:operaton-webapp-jakarta:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/webapp/operaton-webapp-jakarta/1.0.0-beta-3/operaton-webapp-jakarta-1.0.0-beta-3.pom",
+      "sha256": "84adb6e239c3145fb0ca57ef8fd6e7b13d0b7a46d32d0e360e43abeaf1825aed",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/webapp/operaton-webapp-jakarta/1.0.0-beta-3/operaton-webapp-jakarta-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm.webapp:operaton-webapp-root:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/webapp/operaton-webapp-root/1.0.0-beta-3/operaton-webapp-root-1.0.0-beta-3.pom",
+      "sha256": "79dbd1b15c56da3f8dc7aa9b47441df28bf7dd0f527097518ec8ea6660beaa1d",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/webapp/operaton-webapp-root/1.0.0-beta-3/operaton-webapp-root-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm.webapp:operaton-webapp-webjar:jar:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/webapp/operaton-webapp-webjar/1.0.0-beta-3/operaton-webapp-webjar-1.0.0-beta-3.jar",
+      "sha256": "b3459c50a732796a7404db0296904a6815c11ee29d9621df7cf7e3151b8222a4",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/webapp/operaton-webapp-webjar/1.0.0-beta-3/operaton-webapp-webjar-1.0.0-beta-3.jar"
+    },
+    "org.operaton.bpm.webapp:operaton-webapp-webjar:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/webapp/operaton-webapp-webjar/1.0.0-beta-3/operaton-webapp-webjar-1.0.0-beta-3.pom",
+      "sha256": "fef76014e6d1cb2422c975fdf23e0645946f0ad5b9889b17112b56f4de2f77e3",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/webapp/operaton-webapp-webjar/1.0.0-beta-3/operaton-webapp-webjar-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm:operaton-bom-root:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/operaton-bom-root/1.0.0-beta-3/operaton-bom-root-1.0.0-beta-3.pom",
+      "sha256": "3bf237824dbe2ae273da43ec4d4b6db9a5b5ae28d6225b0b106b3662fe76b245",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-bom-root/1.0.0-beta-3/operaton-bom-root-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm:operaton-bom:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/operaton-bom/1.0.0-beta-3/operaton-bom-1.0.0-beta-3.pom",
+      "sha256": "40bc653b2d94b2f255ae232ea83082bb0e48c25eae757d6947ca5d4d82292835",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-bom/1.0.0-beta-3/operaton-bom-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm:operaton-core-internal-dependencies:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/operaton-core-internal-dependencies/1.0.0-beta-3/operaton-core-internal-dependencies-1.0.0-beta-3.pom",
+      "sha256": "8a78225ec427c298aa916a584b03720120892db3ab42e8a5a45f5282a81fad51",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-core-internal-dependencies/1.0.0-beta-3/operaton-core-internal-dependencies-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm:operaton-database-settings:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/operaton-database-settings/1.0.0-beta-3/operaton-database-settings-1.0.0-beta-3.pom",
+      "sha256": "7564379ffa5e9188f8a1f5207f987d6d23bcb8412b3a96d39413970d24d22bd7",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-database-settings/1.0.0-beta-3/operaton-database-settings-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm:operaton-engine-plugin-spin:jar:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/operaton-engine-plugin-spin/1.0.0-beta-3/operaton-engine-plugin-spin-1.0.0-beta-3.jar",
+      "sha256": "13ddf4b2cf55dc5fa6ddaf10bd41b2570feeb568f8e6af0a8004bf478b4f804a",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-engine-plugin-spin/1.0.0-beta-3/operaton-engine-plugin-spin-1.0.0-beta-3.jar"
+    },
+    "org.operaton.bpm:operaton-engine-plugin-spin:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/operaton-engine-plugin-spin/1.0.0-beta-3/operaton-engine-plugin-spin-1.0.0-beta-3.pom",
+      "sha256": "7202076ee862319208bd727812ca92713fab6cf3427d24dbcc226a62158dac58",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-engine-plugin-spin/1.0.0-beta-3/operaton-engine-plugin-spin-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm:operaton-engine-plugins:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/operaton-engine-plugins/1.0.0-beta-3/operaton-engine-plugins-1.0.0-beta-3.pom",
+      "sha256": "9fc6dd5eb365ac1723f6f7b154ec3354be1abe5cb6f89aa6c1edf29930c31c5c",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-engine-plugins/1.0.0-beta-3/operaton-engine-plugins-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm:operaton-engine-rest-core-jakarta:jar:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/operaton-engine-rest-core-jakarta/1.0.0-beta-3/operaton-engine-rest-core-jakarta-1.0.0-beta-3.jar",
+      "sha256": "ae3c48ec8ee6cfc29bff48ee8a941ec20dea55273cf260ced06926d5ea742b75",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-engine-rest-core-jakarta/1.0.0-beta-3/operaton-engine-rest-core-jakarta-1.0.0-beta-3.jar"
+    },
+    "org.operaton.bpm:operaton-engine-rest-core-jakarta:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/operaton-engine-rest-core-jakarta/1.0.0-beta-3/operaton-engine-rest-core-jakarta-1.0.0-beta-3.pom",
+      "sha256": "dde1917a1d6c97ecb4738dc8a90e2ca8d33e5cd25e5f4648992ef72a5da25103",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-engine-rest-core-jakarta/1.0.0-beta-3/operaton-engine-rest-core-jakarta-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm:operaton-engine-rest-root:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/operaton-engine-rest-root/1.0.0-beta-3/operaton-engine-rest-root-1.0.0-beta-3.pom",
+      "sha256": "c85eecd0b1668923ad78aac1fee07a02a24275aed7da2fb6e7042b8a6266e7a7",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-engine-rest-root/1.0.0-beta-3/operaton-engine-rest-root-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm:operaton-engine-spring-6:jar:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/operaton-engine-spring-6/1.0.0-beta-3/operaton-engine-spring-6-1.0.0-beta-3.jar",
+      "sha256": "1a399a18f9064fcfe1c1d541cf2e6e4e3abf859c6f776d39871b4aa170fe71fa",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-engine-spring-6/1.0.0-beta-3/operaton-engine-spring-6-1.0.0-beta-3.jar"
+    },
+    "org.operaton.bpm:operaton-engine-spring-6:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/operaton-engine-spring-6/1.0.0-beta-3/operaton-engine-spring-6-1.0.0-beta-3.pom",
+      "sha256": "e9c4c6347a83939ce9e8f5460670330f4b7cfb9a007bec370b5962fb57fd46d6",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-engine-spring-6/1.0.0-beta-3/operaton-engine-spring-6-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm:operaton-engine:jar:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/operaton-engine/1.0.0-beta-3/operaton-engine-1.0.0-beta-3.jar",
+      "sha256": "432727075174230b456061be933d950e7280fee54231541b7bb70c42747cc7c5",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-engine/1.0.0-beta-3/operaton-engine-1.0.0-beta-3.jar"
+    },
+    "org.operaton.bpm:operaton-engine:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/operaton-engine/1.0.0-beta-3/operaton-engine-1.0.0-beta-3.pom",
+      "sha256": "0d572e8b9293ec318880dc9488f95a3f84a82814eabc516bf3d8d0f57ad533fd",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-engine/1.0.0-beta-3/operaton-engine-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm:operaton-only-bom:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/operaton-only-bom/1.0.0-beta-3/operaton-only-bom-1.0.0-beta-3.pom",
+      "sha256": "a822a5c817f1613164ffa953bffda2af5b4a90db0da7d697f8944a49983c4192",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-only-bom/1.0.0-beta-3/operaton-only-bom-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm:operaton-parent:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/operaton-parent/1.0.0-beta-3/operaton-parent-1.0.0-beta-3.pom",
+      "sha256": "aa3f9db371ed7d1548fb3983d16aa80b06b2d7a8b53165cbd2f1d6bcf0d5cd95",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-parent/1.0.0-beta-3/operaton-parent-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm:operaton-root:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/operaton-root/1.0.0-beta-3/operaton-root-1.0.0-beta-3.pom",
+      "sha256": "ff313ab142adc51e6f3071b5a988a9147aa1ecde5c82e852399fe400cb7cc14f",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-root/1.0.0-beta-3/operaton-root-1.0.0-beta-3.pom"
+    },
+    "org.operaton.bpm:operaton-spring-compatibility-root:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/bpm/operaton-spring-compatibility-root/1.0.0-beta-3/operaton-spring-compatibility-root-1.0.0-beta-3.pom",
+      "sha256": "3eab8a1e9af730d03062cd8d153460d1e05205a4b3c50a25d5a41355ed3c179d",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/bpm/operaton-spring-compatibility-root/1.0.0-beta-3/operaton-spring-compatibility-root-1.0.0-beta-3.pom"
+    },
+    "org.operaton.commons:operaton-commons-bom:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/commons/operaton-commons-bom/1.0.0-beta-3/operaton-commons-bom-1.0.0-beta-3.pom",
+      "sha256": "d41a64e4376ccb2f62f69a81fcef50967d9e27e25e050d3d4b02bf99a3c4e280",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/commons/operaton-commons-bom/1.0.0-beta-3/operaton-commons-bom-1.0.0-beta-3.pom"
+    },
+    "org.operaton.commons:operaton-commons-logging:jar:1.0.0-beta-3": {
+      "layout": "org/operaton/commons/operaton-commons-logging/1.0.0-beta-3/operaton-commons-logging-1.0.0-beta-3.jar",
+      "sha256": "60cafe3134b3cb0ac8d6fac8971fee8201e003869990513f2ed1089e9bd764cd",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/commons/operaton-commons-logging/1.0.0-beta-3/operaton-commons-logging-1.0.0-beta-3.jar"
+    },
+    "org.operaton.commons:operaton-commons-logging:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/commons/operaton-commons-logging/1.0.0-beta-3/operaton-commons-logging-1.0.0-beta-3.pom",
+      "sha256": "ef9fc720cded3d65baaad900976f339e00157e721ab35324952e3ab481702347",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/commons/operaton-commons-logging/1.0.0-beta-3/operaton-commons-logging-1.0.0-beta-3.pom"
+    },
+    "org.operaton.commons:operaton-commons-root:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/commons/operaton-commons-root/1.0.0-beta-3/operaton-commons-root-1.0.0-beta-3.pom",
+      "sha256": "4c6ed590d266a6846361714f8f30264902aa2f84dba0fea2b9b74aa83f59a237",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/commons/operaton-commons-root/1.0.0-beta-3/operaton-commons-root-1.0.0-beta-3.pom"
+    },
+    "org.operaton.commons:operaton-commons-typed-values:jar:1.0.0-beta-3": {
+      "layout": "org/operaton/commons/operaton-commons-typed-values/1.0.0-beta-3/operaton-commons-typed-values-1.0.0-beta-3.jar",
+      "sha256": "4a8f6bba407faf0414f52b269adaac70c813c7d0341a8231732866b0d20c4b93",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/commons/operaton-commons-typed-values/1.0.0-beta-3/operaton-commons-typed-values-1.0.0-beta-3.jar"
+    },
+    "org.operaton.commons:operaton-commons-typed-values:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/commons/operaton-commons-typed-values/1.0.0-beta-3/operaton-commons-typed-values-1.0.0-beta-3.pom",
+      "sha256": "be76de00e0cdfe2615559094f016877a78a43043f831e4298da0dce487e32804",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/commons/operaton-commons-typed-values/1.0.0-beta-3/operaton-commons-typed-values-1.0.0-beta-3.pom"
+    },
+    "org.operaton.commons:operaton-commons-utils:jar:1.0.0-beta-3": {
+      "layout": "org/operaton/commons/operaton-commons-utils/1.0.0-beta-3/operaton-commons-utils-1.0.0-beta-3.jar",
+      "sha256": "29b7b3c05b1dc7955efcf5675d90b34d8fff30ca98cdba91354a6b409a2f8746",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/commons/operaton-commons-utils/1.0.0-beta-3/operaton-commons-utils-1.0.0-beta-3.jar"
+    },
+    "org.operaton.commons:operaton-commons-utils:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/commons/operaton-commons-utils/1.0.0-beta-3/operaton-commons-utils-1.0.0-beta-3.pom",
+      "sha256": "1e2ab62c8d52b970bffd7230e0e91cfeccb4e1ee6868210210c7082e0efa0275",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/commons/operaton-commons-utils/1.0.0-beta-3/operaton-commons-utils-1.0.0-beta-3.pom"
+    },
+    "org.operaton.connect:operaton-connect-bom:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/connect/operaton-connect-bom/1.0.0-beta-3/operaton-connect-bom-1.0.0-beta-3.pom",
+      "sha256": "5bd63aee48e1c1e8080665b6356cb6bb9c5e2bb4c6e5d73e295bd5afb1d75df2",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/connect/operaton-connect-bom/1.0.0-beta-3/operaton-connect-bom-1.0.0-beta-3.pom"
+    },
+    "org.operaton.spin:operaton-spin-bom:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/spin/operaton-spin-bom/1.0.0-beta-3/operaton-spin-bom-1.0.0-beta-3.pom",
+      "sha256": "891c4086549da6292e0681109ff30b28b67b28489e8ea7dc61a7d34b7613adcb",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/spin/operaton-spin-bom/1.0.0-beta-3/operaton-spin-bom-1.0.0-beta-3.pom"
+    },
+    "org.operaton.spin:operaton-spin-core:jar:1.0.0-beta-3": {
+      "layout": "org/operaton/spin/operaton-spin-core/1.0.0-beta-3/operaton-spin-core-1.0.0-beta-3.jar",
+      "sha256": "10bad8e874ce6a55101f1e1a4d15aef0101a3cbf4ae7b8bdb5c7c55fde8ff19c",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/spin/operaton-spin-core/1.0.0-beta-3/operaton-spin-core-1.0.0-beta-3.jar"
+    },
+    "org.operaton.spin:operaton-spin-core:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/spin/operaton-spin-core/1.0.0-beta-3/operaton-spin-core-1.0.0-beta-3.pom",
+      "sha256": "cc502b1d02e8d6235e2fe57c95c86f9bb112afcec5e92b18323dc59903737800",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/spin/operaton-spin-core/1.0.0-beta-3/operaton-spin-core-1.0.0-beta-3.pom"
+    },
+    "org.operaton.spin:operaton-spin-dataformat-all:jar:1.0.0-beta-3": {
+      "layout": "org/operaton/spin/operaton-spin-dataformat-all/1.0.0-beta-3/operaton-spin-dataformat-all-1.0.0-beta-3.jar",
+      "sha256": "27fa9e5cd476b16b5edea5d556bf0366b2f81071e722585dca69703f09a8302b",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/spin/operaton-spin-dataformat-all/1.0.0-beta-3/operaton-spin-dataformat-all-1.0.0-beta-3.jar"
+    },
+    "org.operaton.spin:operaton-spin-dataformat-all:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/spin/operaton-spin-dataformat-all/1.0.0-beta-3/operaton-spin-dataformat-all-1.0.0-beta-3.pom",
+      "sha256": "815d2ce2fe892bad39a395ca2eda69af89716ef49e00d7a00524f298b0c07be9",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/spin/operaton-spin-dataformat-all/1.0.0-beta-3/operaton-spin-dataformat-all-1.0.0-beta-3.pom"
+    },
+    "org.operaton.spin:operaton-spin-root:pom:1.0.0-beta-3": {
+      "layout": "org/operaton/spin/operaton-spin-root/1.0.0-beta-3/operaton-spin-root-1.0.0-beta-3.pom",
+      "sha256": "1086b55832b2fe0445da474065978363764944bd0020ed33ffaf28c7dcff0489",
+      "url": "https://repo.maven.apache.org/maven2/org/operaton/spin/operaton-spin-root/1.0.0-beta-3/operaton-spin-root-1.0.0-beta-3.pom"
     },
     "org.ow2.asm:asm-commons:jar:9.5": {
       "layout": "org/ow2/asm/asm-commons/9.5/asm-commons-9.5.jar",
@@ -2724,6 +2874,11 @@
       "layout": "org/seleniumhq/selenium/selenium-bom/4.19.1/selenium-bom-4.19.1.pom",
       "sha256": "f101f9fb1b6e0b39d3739499a00e821d35e1f3f6e817619137368260964cda68",
       "url": "https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-bom/4.19.1/selenium-bom-4.19.1.pom"
+    },
+    "org.seleniumhq.selenium:selenium-bom:pom:4.25.0": {
+      "layout": "org/seleniumhq/selenium/selenium-bom/4.25.0/selenium-bom-4.25.0.pom",
+      "sha256": "596a271c4201722cb4aad10ff4c9cebb6f89fc08b12f6be34b1c0c173f91fa6f",
+      "url": "https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-bom/4.25.0/selenium-bom-4.25.0.pom"
     },
     "org.slf4j:jul-to-slf4j:jar:2.0.16": {
       "layout": "org/slf4j/jul-to-slf4j/2.0.16/jul-to-slf4j-2.0.16.jar",
@@ -2860,15 +3015,20 @@
       "sha256": "f80f141c14a0b4fd9f4fd9e39d9d6ce352d46a5d9584498f652f476aae9c7c0c",
       "url": "https://repo.maven.apache.org/maven2/org/springframework/amqp/spring-amqp-bom/3.1.7/spring-amqp-bom-3.1.7.pom"
     },
-    "org.springframework.amqp:spring-amqp-bom:pom:3.1.8": {
-      "layout": "org/springframework/amqp/spring-amqp-bom/3.1.8/spring-amqp-bom-3.1.8.pom",
-      "sha256": "1bf65631ef69daa84d8fa9b11311e5f629f3279f3f14afc2122db7331782ddb0",
-      "url": "https://repo.maven.apache.org/maven2/org/springframework/amqp/spring-amqp-bom/3.1.8/spring-amqp-bom-3.1.8.pom"
+    "org.springframework.amqp:spring-amqp-bom:pom:3.2.1": {
+      "layout": "org/springframework/amqp/spring-amqp-bom/3.2.1/spring-amqp-bom-3.2.1.pom",
+      "sha256": "88e615cca976537839e3cbed55b1959fa80bfafec19cbfa236e0d804814bcb8c",
+      "url": "https://repo.maven.apache.org/maven2/org/springframework/amqp/spring-amqp-bom/3.2.1/spring-amqp-bom-3.2.1.pom"
     },
     "org.springframework.batch:spring-batch-bom:pom:5.1.2": {
       "layout": "org/springframework/batch/spring-batch-bom/5.1.2/spring-batch-bom-5.1.2.pom",
       "sha256": "b15bd655bec44a22ca7bf56785ca4f7ee6d47003816aa07026d1746db102c008",
       "url": "https://repo.maven.apache.org/maven2/org/springframework/batch/spring-batch-bom/5.1.2/spring-batch-bom-5.1.2.pom"
+    },
+    "org.springframework.batch:spring-batch-bom:pom:5.2.1": {
+      "layout": "org/springframework/batch/spring-batch-bom/5.2.1/spring-batch-bom-5.2.1.pom",
+      "sha256": "950385f3e4a017227295de800a4d7812226d3a17447bcb425d2014adc39397f8",
+      "url": "https://repo.maven.apache.org/maven2/org/springframework/batch/spring-batch-bom/5.2.1/spring-batch-bom-5.2.1.pom"
     },
     "org.springframework.boot:spring-boot-autoconfigure:jar:3.3.3": {
       "layout": "org/springframework/boot/spring-boot-autoconfigure/3.3.3/spring-boot-autoconfigure-3.3.3.jar",
@@ -2895,10 +3055,10 @@
       "sha256": "36e4aea86a949a07238411c01688dd49dcac85d34253a90ba20fb72fdc97316a",
       "url": "https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-dependencies/3.3.3/spring-boot-dependencies-3.3.3.pom"
     },
-    "org.springframework.boot:spring-boot-dependencies:pom:3.3.6": {
-      "layout": "org/springframework/boot/spring-boot-dependencies/3.3.6/spring-boot-dependencies-3.3.6.pom",
-      "sha256": "29b8a9152467b0ec903b63131aabf8f6843b85af02833c1735a0ccecdf3c7504",
-      "url": "https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-dependencies/3.3.6/spring-boot-dependencies-3.3.6.pom"
+    "org.springframework.boot:spring-boot-dependencies:pom:3.4.1": {
+      "layout": "org/springframework/boot/spring-boot-dependencies/3.4.1/spring-boot-dependencies-3.4.1.pom",
+      "sha256": "296a03b043f3a3896144592cb8d70abb41ae9c4a15bef0a158af040d32c4d5fe",
+      "url": "https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-dependencies/3.4.1/spring-boot-dependencies-3.4.1.pom"
     },
     "org.springframework.boot:spring-boot-loader-tools:jar:3.3.3": {
       "layout": "org/springframework/boot/spring-boot-loader-tools/3.3.3/spring-boot-loader-tools-3.3.3.jar",
@@ -3005,30 +3165,30 @@
       "sha256": "a119d36344c718a02793c4af9a707bac512f95143c1e1c53b920870a443e7422",
       "url": "https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-bom/2024.0.3/spring-data-bom-2024.0.3.pom"
     },
-    "org.springframework.data:spring-data-bom:pom:2024.0.6": {
-      "layout": "org/springframework/data/spring-data-bom/2024.0.6/spring-data-bom-2024.0.6.pom",
-      "sha256": "594f59f8a62e149dee6c1fc0dd66dcac6584b84550234c265cda08abb4ceac6e",
-      "url": "https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-bom/2024.0.6/spring-data-bom-2024.0.6.pom"
+    "org.springframework.data:spring-data-bom:pom:2024.1.1": {
+      "layout": "org/springframework/data/spring-data-bom/2024.1.1/spring-data-bom-2024.1.1.pom",
+      "sha256": "b2f5cc09c6777d972009b8e8e6759e417ec0d77daebc1b30c2b193b354f5f72c",
+      "url": "https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-bom/2024.1.1/spring-data-bom-2024.1.1.pom"
     },
     "org.springframework.integration:spring-integration-bom:pom:6.3.3": {
       "layout": "org/springframework/integration/spring-integration-bom/6.3.3/spring-integration-bom-6.3.3.pom",
       "sha256": "42d93b1a60f855a1417225b197ffeea08457f4e9924cfd650c0a71189e2846e1",
       "url": "https://repo.maven.apache.org/maven2/org/springframework/integration/spring-integration-bom/6.3.3/spring-integration-bom-6.3.3.pom"
     },
-    "org.springframework.integration:spring-integration-bom:pom:6.3.6": {
-      "layout": "org/springframework/integration/spring-integration-bom/6.3.6/spring-integration-bom-6.3.6.pom",
-      "sha256": "f7fbccdd598594eb788dec59fdc0270b7d0cf9f15f7b1290610c64ebb5e978cd",
-      "url": "https://repo.maven.apache.org/maven2/org/springframework/integration/spring-integration-bom/6.3.6/spring-integration-bom-6.3.6.pom"
+    "org.springframework.integration:spring-integration-bom:pom:6.4.1": {
+      "layout": "org/springframework/integration/spring-integration-bom/6.4.1/spring-integration-bom-6.4.1.pom",
+      "sha256": "e2a23c177ee2e7b21e2bd493735b6b8c5de1bec9efe62bd8ad130bf47f7d3092",
+      "url": "https://repo.maven.apache.org/maven2/org/springframework/integration/spring-integration-bom/6.4.1/spring-integration-bom-6.4.1.pom"
     },
     "org.springframework.pulsar:spring-pulsar-bom:pom:1.1.3": {
       "layout": "org/springframework/pulsar/spring-pulsar-bom/1.1.3/spring-pulsar-bom-1.1.3.pom",
       "sha256": "399169ac7c9235995d3b9aafe4d5de9bf51c6fb811b77e1c4e76724e52020bd1",
       "url": "https://repo.maven.apache.org/maven2/org/springframework/pulsar/spring-pulsar-bom/1.1.3/spring-pulsar-bom-1.1.3.pom"
     },
-    "org.springframework.pulsar:spring-pulsar-bom:pom:1.1.6": {
-      "layout": "org/springframework/pulsar/spring-pulsar-bom/1.1.6/spring-pulsar-bom-1.1.6.pom",
-      "sha256": "8c3d5633abd093dbe11860f096dddbc88481040a86c8d8c4cb746a85fd56aaf6",
-      "url": "https://repo.maven.apache.org/maven2/org/springframework/pulsar/spring-pulsar-bom/1.1.6/spring-pulsar-bom-1.1.6.pom"
+    "org.springframework.pulsar:spring-pulsar-bom:pom:1.2.1": {
+      "layout": "org/springframework/pulsar/spring-pulsar-bom/1.2.1/spring-pulsar-bom-1.2.1.pom",
+      "sha256": "f9026cf1a6a3ea96ee1e58e24ad4e64090378dfca1d41d07286a9098f961a10a",
+      "url": "https://repo.maven.apache.org/maven2/org/springframework/pulsar/spring-pulsar-bom/1.2.1/spring-pulsar-bom-1.2.1.pom"
     },
     "org.springframework.restdocs:spring-restdocs-bom:pom:3.0.1": {
       "layout": "org/springframework/restdocs/spring-restdocs-bom/3.0.1/spring-restdocs-bom-3.0.1.pom",
@@ -3045,20 +3205,20 @@
       "sha256": "e58e833922e3ca5ffa65a46e04bf826374d70769fdfb10f1040ef50f7429b656",
       "url": "https://repo.maven.apache.org/maven2/org/springframework/security/spring-security-bom/6.3.3/spring-security-bom-6.3.3.pom"
     },
-    "org.springframework.security:spring-security-bom:pom:6.3.5": {
-      "layout": "org/springframework/security/spring-security-bom/6.3.5/spring-security-bom-6.3.5.pom",
-      "sha256": "962718da4d07e068f88d396afbe13ac3afd4564ce244bc9efc2ebeb72a00957b",
-      "url": "https://repo.maven.apache.org/maven2/org/springframework/security/spring-security-bom/6.3.5/spring-security-bom-6.3.5.pom"
+    "org.springframework.security:spring-security-bom:pom:6.4.2": {
+      "layout": "org/springframework/security/spring-security-bom/6.4.2/spring-security-bom-6.4.2.pom",
+      "sha256": "5242742e7c4c658633d3e829de37436d373da8ea897a6c5c07a4d8b80082e644",
+      "url": "https://repo.maven.apache.org/maven2/org/springframework/security/spring-security-bom/6.4.2/spring-security-bom-6.4.2.pom"
     },
     "org.springframework.session:spring-session-bom:pom:3.3.2": {
       "layout": "org/springframework/session/spring-session-bom/3.3.2/spring-session-bom-3.3.2.pom",
       "sha256": "25e79e1afc7fbe4d4fa5bb417840f29ed8bff91927c547e7bb24a8d5a0ce1b71",
       "url": "https://repo.maven.apache.org/maven2/org/springframework/session/spring-session-bom/3.3.2/spring-session-bom-3.3.2.pom"
     },
-    "org.springframework.session:spring-session-bom:pom:3.3.3": {
-      "layout": "org/springframework/session/spring-session-bom/3.3.3/spring-session-bom-3.3.3.pom",
-      "sha256": "bd0b8117fd2e92e04c34cf4cb5a9377f1ba06f84f808748469ad403206c23512",
-      "url": "https://repo.maven.apache.org/maven2/org/springframework/session/spring-session-bom/3.3.3/spring-session-bom-3.3.3.pom"
+    "org.springframework.session:spring-session-bom:pom:3.4.1": {
+      "layout": "org/springframework/session/spring-session-bom/3.4.1/spring-session-bom-3.4.1.pom",
+      "sha256": "4270172f547bdc24bbc858c5a8e62d71b831fb250bd992e36e1e18ebb8f692dd",
+      "url": "https://repo.maven.apache.org/maven2/org/springframework/session/spring-session-bom/3.4.1/spring-session-bom-3.4.1.pom"
     },
     "org.springframework.ws:spring-ws-bom:pom:4.0.11": {
       "layout": "org/springframework/ws/spring-ws-bom/4.0.11/spring-ws-bom-4.0.11.pom",
@@ -3140,6 +3300,11 @@
       "sha256": "3eac70ac4154b8de2b2519a241625ddcaa538c1f071616623bd5727c2ecdd512",
       "url": "https://repo.maven.apache.org/maven2/org/springframework/spring-framework-bom/6.1.15/spring-framework-bom-6.1.15.pom"
     },
+    "org.springframework:spring-framework-bom:pom:6.2.1": {
+      "layout": "org/springframework/spring-framework-bom/6.2.1/spring-framework-bom-6.2.1.pom",
+      "sha256": "510ee5aec7ff508480e1213e094a1fadd8240672fbb7957103e755b49df22a51",
+      "url": "https://repo.maven.apache.org/maven2/org/springframework/spring-framework-bom/6.2.1/spring-framework-bom-6.2.1.pom"
+    },
     "org.springframework:spring-jcl:jar:6.1.12": {
       "layout": "org/springframework/spring-jcl/6.1.12/spring-jcl-6.1.12.jar",
       "sha256": "e8980fdc70ab44beb201939571232dfc40ed804d54b71554fc8fc886ed5d7bf9",
@@ -3209,6 +3374,11 @@
       "layout": "org/testcontainers/testcontainers-bom/1.19.8/testcontainers-bom-1.19.8.pom",
       "sha256": "364f24464bd26e87aff464e2d4917d3cc4d2f45342c2e32eba9be6a6193c954b",
       "url": "https://repo.maven.apache.org/maven2/org/testcontainers/testcontainers-bom/1.19.8/testcontainers-bom-1.19.8.pom"
+    },
+    "org.testcontainers:testcontainers-bom:pom:1.20.4": {
+      "layout": "org/testcontainers/testcontainers-bom/1.20.4/testcontainers-bom-1.20.4.pom",
+      "sha256": "a15147c2da8edec13401d1d3e6a0a01b619e6b67b66c103592cef3a70cc1ec89",
+      "url": "https://repo.maven.apache.org/maven2/org/testcontainers/testcontainers-bom/1.20.4/testcontainers-bom-1.20.4.pom"
     },
     "org.tomlj:tomlj:jar:1.0.0": {
       "layout": "org/tomlj/tomlj/1.0.0/tomlj-1.0.0.jar",
