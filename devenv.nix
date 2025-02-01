@@ -13,11 +13,6 @@
   package.operaton.path = ./fixture;
 
   packages = [
-    pkgs.entr
-    pkgs.git
-    pkgs.findutils
-    pkgs.gnumake
-    pkgs.openssl
     pkgs.uv
   ];
 
@@ -31,6 +26,7 @@
     unset PYTHONPATH
     export UV_LINK_MODE=copy
     export UV_PYTHON_DOWNLOADS=never
+    rm -rf .venv
     uv venv
     source .venv/bin/activate
     uv pip install -r requirements.txt
