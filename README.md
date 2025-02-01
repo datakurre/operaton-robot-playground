@@ -43,6 +43,7 @@ Once you have entered the shell with either `make start shell` or separately `ma
    ```sh
    $ mkdir hello-world
    $ cd hello-world
+   $ pur init
    ```
 
 2. Deploy and start the example process
