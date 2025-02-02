@@ -27,6 +27,7 @@
     export UV_LINK_MODE=copy
     export UV_PYTHON_DOWNLOADS=never
     if [ ! -d .venv ]; then uv venv; fi
+    if [ ! -e .venv/bin/uv ]; then ln -s $(which uv) .venv/bin/uv; fi
     uv pip install -r requirements.txt
     source .venv/bin/activate
   '';
