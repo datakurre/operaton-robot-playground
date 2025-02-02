@@ -1,5 +1,5 @@
 .prev-next-subtitle { display: none; }
-.#pst-back-to-top { display: none; }
+.pst-back-to-top { display: none; }
 .theme-pres-button a {
   color: var(--pst-color-text-muted);
 }
@@ -45,4 +45,11 @@ img.role-bpmn[src$="non-interrupting-message-start-event.svg"] { scale: 3; margi
   margin-bottom: 1ex;
 }
 
+button.btn[title="Close simulation"],
+button.btn[title="Token simulation"] {
+  padding: 0 1ex 0 0;
+}
 
+strong {
+  font-weight: bold;
+}

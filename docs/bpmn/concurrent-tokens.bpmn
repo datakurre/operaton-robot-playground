@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_18od9iq" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.6.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.21">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_18od9iq" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.6.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.21" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.20.0">
   <bpmn:process id="Process_0rqga0g" isExecutable="true">
-    <bpmn:startEvent id="Event_0uxrb10" name="Work requested">
+    <bpmn:startEvent id="Event_0uxrb10" name="Test triggered">
       <bpmn:outgoing>Flow_13drrwz</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:task id="Activity_1y9gpn5" name="Do work">
+    <bpmn:task id="Activity_1y9gpn5" name="Test Suite B">
       <bpmn:incoming>Flow_1ow0g4n</bpmn:incoming>
       <bpmn:outgoing>Flow_0fhvqif</bpmn:outgoing>
     </bpmn:task>
-    <bpmn:endEvent id="Event_179yhsy" name="Work done">
+    <bpmn:endEvent id="Event_179yhsy" name="Test completed">
       <bpmn:incoming>Flow_1hxk3w4</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_13drrwz" sourceRef="Event_0uxrb10" targetRef="Gateway_0z3nop7" />
     <bpmn:sequenceFlow id="Flow_1ow0g4n" sourceRef="Gateway_0z3nop7" targetRef="Activity_1y9gpn5" />
     <bpmn:sequenceFlow id="Flow_0fhvqif" sourceRef="Activity_1y9gpn5" targetRef="Gateway_14l743v" />
     <bpmn:sequenceFlow id="Flow_1hxk3w4" sourceRef="Gateway_14l743v" targetRef="Event_179yhsy" />
-    <bpmn:parallelGateway id="Gateway_0z3nop7" name="Split work">
+    <bpmn:parallelGateway id="Gateway_0z3nop7" name="Split&#10;execution">
       <bpmn:incoming>Flow_13drrwz</bpmn:incoming>
       <bpmn:outgoing>Flow_1ow0g4n</bpmn:outgoing>
       <bpmn:outgoing>Flow_0fgn6wq</bpmn:outgoing>
       <bpmn:outgoing>Flow_1pc8sxh</bpmn:outgoing>
     </bpmn:parallelGateway>
-    <bpmn:parallelGateway id="Gateway_14l743v" name="Join work">
+    <bpmn:parallelGateway id="Gateway_14l743v" name="Join&#10;execution">
       <bpmn:incoming>Flow_0fhvqif</bpmn:incoming>
       <bpmn:incoming>Flow_1dksfc8</bpmn:incoming>
       <bpmn:incoming>Flow_1cln2je</bpmn:incoming>
       <bpmn:outgoing>Flow_1hxk3w4</bpmn:outgoing>
     </bpmn:parallelGateway>
-    <bpmn:task id="Activity_10fppw3" name="Do work">
+    <bpmn:task id="Activity_10fppw3" name="Test Suite C">
       <bpmn:incoming>Flow_0fgn6wq</bpmn:incoming>
       <bpmn:outgoing>Flow_1dksfc8</bpmn:outgoing>
     </bpmn:task>
     <bpmn:sequenceFlow id="Flow_0fgn6wq" sourceRef="Gateway_0z3nop7" targetRef="Activity_10fppw3" />
     <bpmn:sequenceFlow id="Flow_1dksfc8" sourceRef="Activity_10fppw3" targetRef="Gateway_14l743v" />
-    <bpmn:task id="Activity_18ejjus" name="Do work">
+    <bpmn:task id="Activity_18ejjus" name="Test Suite A">
       <bpmn:incoming>Flow_1pc8sxh</bpmn:incoming>
       <bpmn:outgoing>Flow_1cln2je</bpmn:outgoing>
     </bpmn:task>
@@ -45,7 +45,7 @@
       <bpmndi:BPMNShape id="BPMNShape_0flvnbm" bpmnElement="Event_0uxrb10">
         <dc:Bounds x="172" y="232" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="152" y="275" width="78" height="14" />
+          <dc:Bounds x="158" y="275" width="67" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1y9gpn5_di" bpmnElement="Activity_1y9gpn5">
@@ -55,19 +55,19 @@
       <bpmndi:BPMNShape id="Event_179yhsy_di" bpmnElement="Event_179yhsy">
         <dc:Bounds x="615" y="232" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="607" y="275" width="53" height="14" />
+          <dc:Bounds x="597" y="275" width="74" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_0rbzach_di" bpmnElement="Gateway_0z3nop7">
         <dc:Bounds x="257" y="225" width="50" height="50" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="295" y="213" width="49" height="14" />
+          <dc:Bounds x="216" y="206" width="48" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_0rd4y11_di" bpmnElement="Gateway_14l743v">
         <dc:Bounds x="515" y="225" width="50" height="50" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="476" y="213" width="47" height="14" />
+          <dc:Bounds x="556" y="206" width="48" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_077f9n1" bpmnElement="Activity_10fppw3">
@@ -102,15 +102,15 @@
         <di:waypoint x="282" y="370" />
         <di:waypoint x="361" y="370" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1pc8sxh_di" bpmnElement="Flow_1pc8sxh">
-        <di:waypoint x="282" y="225" />
-        <di:waypoint x="282" y="120" />
-        <di:waypoint x="361" y="120" />
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1dksfc8_di" bpmnElement="Flow_1dksfc8">
         <di:waypoint x="461" y="370" />
         <di:waypoint x="540" y="370" />
         <di:waypoint x="540" y="275" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1pc8sxh_di" bpmnElement="Flow_1pc8sxh">
+        <di:waypoint x="282" y="225" />
+        <di:waypoint x="282" y="120" />
+        <di:waypoint x="361" y="120" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1cln2je_di" bpmnElement="Flow_1cln2je">
         <di:waypoint x="461" y="120" />

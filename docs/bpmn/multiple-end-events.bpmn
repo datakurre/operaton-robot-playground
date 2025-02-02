@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_18od9iq" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.6.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.21">
   <bpmn:process id="Process_0rqga0g" isExecutable="true">
-    <bpmn:startEvent id="Event_0uxrb10" name="Work requested">
+    <bpmn:startEvent id="Event_0uxrb10" name="Test triggered">
       <bpmn:outgoing>Flow_13drrwz</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:task id="Activity_1y9gpn5" name="Do the second thing">
+    <bpmn:task id="Activity_1y9gpn5" name="Test Suite B">
       <bpmn:incoming>Flow_1ow0g4n</bpmn:incoming>
       <bpmn:outgoing>Flow_0grcwgd</bpmn:outgoing>
     </bpmn:task>
-    <bpmn:endEvent id="Event_179yhsy" name="The first thing done">
+    <bpmn:endEvent id="Event_179yhsy" name="Test suite A completed">
       <bpmn:incoming>Flow_00qyja1</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_13drrwz" sourceRef="Event_0uxrb10" targetRef="Gateway_0z3nop7" />
     <bpmn:sequenceFlow id="Flow_1ow0g4n" sourceRef="Gateway_0z3nop7" targetRef="Activity_1y9gpn5" />
-    <bpmn:parallelGateway id="Gateway_0z3nop7" name="Split work">
+    <bpmn:parallelGateway id="Gateway_0z3nop7" name="Split&#10;execution">
       <bpmn:incoming>Flow_13drrwz</bpmn:incoming>
       <bpmn:outgoing>Flow_1ow0g4n</bpmn:outgoing>
       <bpmn:outgoing>Flow_0fgn6wq</bpmn:outgoing>
       <bpmn:outgoing>Flow_1pc8sxh</bpmn:outgoing>
     </bpmn:parallelGateway>
-    <bpmn:task id="Activity_10fppw3" name="Do the third thing">
+    <bpmn:task id="Activity_10fppw3" name="Test Suite C">
       <bpmn:incoming>Flow_0fgn6wq</bpmn:incoming>
       <bpmn:outgoing>Flow_0zmw90a</bpmn:outgoing>
     </bpmn:task>
     <bpmn:sequenceFlow id="Flow_0fgn6wq" sourceRef="Gateway_0z3nop7" targetRef="Activity_10fppw3" />
-    <bpmn:task id="Activity_18ejjus" name="Do the first thing">
+    <bpmn:task id="Activity_18ejjus" name="Test Suite A">
       <bpmn:incoming>Flow_1pc8sxh</bpmn:incoming>
       <bpmn:outgoing>Flow_00qyja1</bpmn:outgoing>
     </bpmn:task>
     <bpmn:sequenceFlow id="Flow_1pc8sxh" sourceRef="Gateway_0z3nop7" targetRef="Activity_18ejjus" />
     <bpmn:sequenceFlow id="Flow_00qyja1" sourceRef="Activity_18ejjus" targetRef="Event_179yhsy" />
-    <bpmn:endEvent id="Event_05axjie" name="The second thing done">
+    <bpmn:endEvent id="Event_05axjie" name="Test suite B completed">
       <bpmn:incoming>Flow_0grcwgd</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_0grcwgd" sourceRef="Activity_1y9gpn5" targetRef="Event_05axjie" />
-    <bpmn:endEvent id="Event_1bo4810" name="The third thing done">
+    <bpmn:endEvent id="Event_1bo4810" name="Test suite C completed">
       <bpmn:incoming>Flow_0zmw90a</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_0zmw90a" sourceRef="Activity_10fppw3" targetRef="Event_1bo4810" />
@@ -44,17 +44,23 @@
       <bpmndi:BPMNShape id="BPMNShape_0flvnbm" bpmnElement="Event_0uxrb10">
         <dc:Bounds x="172" y="232" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="152" y="275" width="78" height="14" />
+          <dc:Bounds x="158" y="275" width="67" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1y9gpn5_di" bpmnElement="Activity_1y9gpn5">
         <dc:Bounds x="361" y="210" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_179yhsy_di" bpmnElement="Event_179yhsy">
+        <dc:Bounds x="522" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="512" y="145" width="57" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_0rbzach_di" bpmnElement="Gateway_0z3nop7">
         <dc:Bounds x="257" y="225" width="50" height="50" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="295" y="213" width="49" height="14" />
+          <dc:Bounds x="216" y="206" width="48" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_077f9n1" bpmnElement="Activity_10fppw3">
@@ -68,19 +74,13 @@
       <bpmndi:BPMNShape id="Event_05axjie_di" bpmnElement="Event_05axjie">
         <dc:Bounds x="522" y="232" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="498" y="275" width="85" height="27" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_179yhsy_di" bpmnElement="Event_179yhsy">
-        <dc:Bounds x="522" y="102" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="507" y="145" width="67" height="27" />
+          <dc:Bounds x="512" y="275" width="57" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_1bo4810_di" bpmnElement="Event_1bo4810">
         <dc:Bounds x="522" y="352" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="505" y="395" width="71" height="27" />
+          <dc:Bounds x="512" y="395" width="58" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_13drrwz_di" bpmnElement="Flow_13drrwz">

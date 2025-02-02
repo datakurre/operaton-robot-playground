@@ -1,36 +1,51 @@
-# BPMN basics by examples
+# BPMN basics
 
 Business Process Model and Notation (BPMN) is a graphical representation for specifying business processes in a business process model [{sup}`Wikipedia`](https://en.wikipedia.org/wiki/Business_Process_Model_and_Notation).
 
-This is an opinionated introduction to some of the most common BPMN 2.0 symbols and their use.
+This is an opinionated introduction to some of the most common BPMN 2.0 symbols and their uses.
+
 
 ## Sequence flow
 
 ```{bpmn-figure} sequence-flow
-BPMN sequence flow is made of at least one {bpmn}`start-event` **start event**, {bpmn}`end-event` **end event** and any amount of {bpmn}`task` **tasks** (BPMN activities) in connection between them. {download}`sequence-flow.bpmn`
-```
-
-```{attention} ADD MORE EXAMPLES
+BPMN sequence flow is made up of at least one {bpmn}`start-event` **start event**, one {bpmn}`end-event` **end event**, and any number of {bpmn}`task` **tasks** (BPMN activities) in connection between them. {download}`sequence-flow.bpmn`
 ```
 
 
 ## Naming of elements
 
 ```{bpmn-figure} sequence-flow-annotated
-BPMN flow elements are named by using their process' business domain terms. Events are named to describe business state of the process. Tasks (BPMN activities) are named using verbs to describe what to do in the process. {download}`sequence-flow-annotated.bpmn`
+BPMN flow elements should be named using terms from the business domain of the process. Events are named to describe the business state of the process. Tasks (BPMN activities) are named using verbs to describe what actions to take in the process. {download}`sequence-flow-annotated.bpmn`
 ```
+
 
 ## Gateways and paths
 
 ```{bpmn-figure} gateways-and-paths
-BPMN gateways control which one of the available paths is taken at the time of execution. {bpmn}`exclusive-gateway` **exclusive gateway** in the example allows only one path at time to be followed at time (either to split or join the flow). {download}`gateways-and-paths.bpmn`
+BPMN gateways control which one of the available paths is taken at the time of execution. The {bpmn}`exclusive-gateway` **exclusive gateway** in the example allows only one path to be followed at a time (either to split or join the flow). {download}`gateways-and-paths.bpmn`
 ```
+
+
+## Conditional flows
+
+```{bpmn-figure} sequence-flow-redux
+With {bpmn}`exclusive-gateway` **exclusive gateways**, you can direct the flow of the process based on the results from the completed tasks. This already allows you to implement complex workflows beyond the plain `robot`. {download}`sequence-flow-redux.bpmn`
+```
+
 
 ## Concurrent tokens
 
 ```{bpmn-figure} concurrent-tokens
-BPMN token is a theoretical concept that is used as an aid to define the behavior of a process that is being performed. There can be any amount of concurrent tokens in a single running process. For example, {bpmn}`parallel-gateway` **parallel gateway** creates a new token for each outgoing path. Only when all tokens have been consumed, process is really completed. {download}`concurrent-tokens.bpmn`
+BPMN token is a theoretical concept used to define the behavior of a process being performed. There can be any number of concurrent tokens in a single running process. For example, a {bpmn}`parallel-gateway` **parallel gateway** creates a new token for each outgoing path. The process is only completed when all tokens have been consumed. {download}`concurrent-tokens.bpmn`
 ```
+
+
+## Inclusive gateway
+
+```{bpmn-figure} gateways-inclusive-paths
+The {bpmn}`inclusive-gateway` **inclusive gateway** in the example allows multiple paths to be followed simultaneously, depending on the conditions defined. This means that one or more paths can be taken based on the evaluation of the conditions. {download}`gateways-inclusive-paths.bpmn`
+```
+
 
 ## Multiple end events
 
