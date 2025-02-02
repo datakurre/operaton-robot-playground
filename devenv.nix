@@ -26,11 +26,9 @@
     unset PYTHONPATH
     export UV_LINK_MODE=copy
     export UV_PYTHON_DOWNLOADS=never
-    rm -rf .venv
-    uv venv
-    source .venv/bin/activate
+    if [ ! -d .venv ]; then uv venv; fi
     uv pip install -r requirements.txt
-    alias pip="uv pip"
+    source .venv/bin/activate
   '';
 
   cachix.pull = [ "datakurre" ];
