@@ -161,8 +161,12 @@ function minipres() {
         }
         switch(event.which) {
         case 27: // esc
-            window.location.href = window.location.href.split('?')[0];
-            event.preventDefault();
+            if ($(".fa-stop:visible").length > 0) {
+                $(".fa-stop:visible").click();
+            } else {
+                window.location.href = window.location.href.split('?')[0];
+                event.preventDefault();
+            }
             return false;
     	    break;
         case 37: // lef
