@@ -21,17 +21,19 @@ To get started, pick any of the following options:
 
 ## Down the rabbit hole
 
-Enter the playground shell with
+Activate the playground by starting its built-in Operaton build with
 
 ```bash
-$ make start shell
+$ make start
 ```
 
-where `start` starts the built-in Operaton build and `shell` enters a `devenv` shell with `uv` and `pur`(jo) pre-installed, and defauld Python virtualenv activated. Check the available `pur`(jo) commands with
+Next, check if `pur`(jo) is already available
 
 ```sh
 $ pur --help
 ```
+
+If not, run `make shell` to manually activate the playground `devenv`shell with `uv` and `pur`(jo) pre-installed, and defauld Python virtualenv activated.
 
 
 ## Hello World
