@@ -4,7 +4,7 @@
     <bpmn:startEvent id="Event_0uxrb10" name="Test triggered">
       <bpmn:outgoing>Flow_13drrwz</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:task id="Activity_1y9gpn5" name="Test Suite B">
+    <bpmn:task id="Activity_1y9gpn5" name="Run test B">
       <bpmn:incoming>Flow_1ow0g4n</bpmn:incoming>
       <bpmn:outgoing>Flow_0fhvqif</bpmn:outgoing>
     </bpmn:task>
@@ -27,13 +27,13 @@
       <bpmn:incoming>Flow_1cln2je</bpmn:incoming>
       <bpmn:outgoing>Flow_1hxk3w4</bpmn:outgoing>
     </bpmn:parallelGateway>
-    <bpmn:task id="Activity_10fppw3" name="Test Suite C">
+    <bpmn:task id="Activity_10fppw3" name="Run test C">
       <bpmn:incoming>Flow_0fgn6wq</bpmn:incoming>
       <bpmn:outgoing>Flow_1dksfc8</bpmn:outgoing>
     </bpmn:task>
     <bpmn:sequenceFlow id="Flow_0fgn6wq" sourceRef="Gateway_0z3nop7" targetRef="Activity_10fppw3" />
     <bpmn:sequenceFlow id="Flow_1dksfc8" sourceRef="Activity_10fppw3" targetRef="Gateway_14l743v" />
-    <bpmn:task id="Activity_18ejjus" name="Test Suite A">
+    <bpmn:task id="Activity_18ejjus" name="Run test A">
       <bpmn:incoming>Flow_1pc8sxh</bpmn:incoming>
       <bpmn:outgoing>Flow_1cln2je</bpmn:outgoing>
     </bpmn:task>

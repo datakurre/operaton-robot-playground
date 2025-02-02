@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0vvm2t9" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.6.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.21">
   <bpmn:process id="Process_1jrg0o0" isExecutable="true">
-    <bpmn:startEvent id="Event_0a0u1il" name="Work requested">
+    <bpmn:startEvent id="Event_0a0u1il" name="Test triggered">
       <bpmn:outgoing>Flow_0u37mp5</bpmn:outgoing>
     </bpmn:startEvent>
     <bpmn:sequenceFlow id="Flow_0u37mp5" sourceRef="Event_0a0u1il" targetRef="Activity_0x6zrhm" />
     <bpmn:sequenceFlow id="Flow_0abpf3a" sourceRef="Activity_0x6zrhm" targetRef="Event_0ozc0y3" />
-    <bpmn:endEvent id="Event_0ozc0y3" name="Work done">
+    <bpmn:endEvent id="Event_0ozc0y3" name="Test completed">
       <bpmn:incoming>Flow_0abpf3a</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:endEvent id="Event_1cu8tfb" name="Work abandoned">
+    <bpmn:endEvent id="Event_1cu8tfb" name="Test aborted">
       <bpmn:incoming>Flow_1e0a0yz</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:boundaryEvent id="Event_0sphwmf" name="After a week" attachedToRef="Activity_0x6zrhm">
+    <bpmn:boundaryEvent id="Event_0sphwmf" name="Test timeout" attachedToRef="Activity_0x6zrhm">
       <bpmn:outgoing>Flow_1e0a0yz</bpmn:outgoing>
       <bpmn:timerEventDefinition id="TimerEventDefinition_07t0tpd" />
     </bpmn:boundaryEvent>
     <bpmn:sequenceFlow id="Flow_1e0a0yz" sourceRef="Event_0sphwmf" targetRef="Event_1cu8tfb" />
-    <bpmn:callActivity id="Activity_0x6zrhm" name="Do work or&#10; keep reminding">
+    <bpmn:callActivity id="Activity_0x6zrhm" name="Call test&#10;process">
       <bpmn:extensionElements>
         <zeebe:calledElement propagateAllChildVariables="false" />
       </bpmn:extensionElements>
@@ -30,28 +30,29 @@
       <bpmndi:BPMNShape id="Event_0a0u1il_di" bpmnElement="Event_0a0u1il">
         <dc:Bounds x="192" y="102" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="171" y="143" width="78" height="14" />
+          <dc:Bounds x="177" y="143" width="67" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_0ozc0y3_di" bpmnElement="Event_0ozc0y3">
         <dc:Bounds x="440" y="102" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="431" y="143" width="53" height="14" />
+          <dc:Bounds x="421" y="143" width="74" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_1cu8tfb_di" bpmnElement="Event_1cu8tfb">
         <dc:Bounds x="440" y="192" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="416" y="233" width="84" height="14" />
+          <dc:Bounds x="428" y="233" width="61" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0knchi3_di" bpmnElement="Activity_0x6zrhm">
         <dc:Bounds x="280" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_08d005f_di" bpmnElement="Event_0sphwmf">
         <dc:Bounds x="342" y="142" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="279" y="173" width="61" height="14" />
+          <dc:Bounds x="280" y="173" width="60" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_0u37mp5_di" bpmnElement="Flow_0u37mp5">

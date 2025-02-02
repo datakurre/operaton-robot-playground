@@ -4,7 +4,7 @@
     <bpmn:startEvent id="StartEvent_1" name="Test triggered">
       <bpmn:outgoing>Flow_13drrwz</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:task id="Activity_1y9gpn5" name="Test Suite">
+    <bpmn:task id="Activity_1y9gpn5" name="Run test">
       <bpmn:incoming>Flow_13drrwz</bpmn:incoming>
       <bpmn:outgoing>Flow_0fhvqif</bpmn:outgoing>
     </bpmn:task>

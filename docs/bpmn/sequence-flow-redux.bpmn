@@ -4,7 +4,7 @@
     <bpmn:startEvent id="Event_0uxrb10" name="Test triggered">
       <bpmn:outgoing>Flow_13drrwz</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:task id="Activity_1y9gpn5" name="Test Suite A">
+    <bpmn:task id="Activity_1y9gpn5" name="Run test A">
       <bpmn:incoming>Flow_1ow0g4n</bpmn:incoming>
       <bpmn:outgoing>Flow_0fhvqif</bpmn:outgoing>
     </bpmn:task>
@@ -20,7 +20,7 @@
       <bpmn:outgoing>Flow_1hxk3w4</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:sequenceFlow id="Flow_1hxk3w4" sourceRef="Gateway_14l743v" targetRef="Activity_03pov0b" />
-    <bpmn:exclusiveGateway id="Gateway_0z3nop7" name="Which suite?">
+    <bpmn:exclusiveGateway id="Gateway_0z3nop7" name="Which test?">
       <bpmn:incoming>Flow_0xajjoh</bpmn:incoming>
       <bpmn:outgoing>Flow_1ow0g4n</bpmn:outgoing>
       <bpmn:outgoing>Flow_0d2zl5h</bpmn:outgoing>
@@ -28,22 +28,22 @@
     </bpmn:exclusiveGateway>
     <bpmn:sequenceFlow id="Flow_1ow0g4n" name="A" sourceRef="Gateway_0z3nop7" targetRef="Activity_1y9gpn5" />
     <bpmn:sequenceFlow id="Flow_0d2zl5h" name="B" sourceRef="Gateway_0z3nop7" targetRef="Activity_0885gad" />
-    <bpmn:task id="Activity_1md78dq" name="Request Test Data">
+    <bpmn:task id="Activity_1md78dq" name="Request test data">
       <bpmn:incoming>Flow_13drrwz</bpmn:incoming>
       <bpmn:outgoing>Flow_0xajjoh</bpmn:outgoing>
     </bpmn:task>
     <bpmn:sequenceFlow id="Flow_0xajjoh" sourceRef="Activity_1md78dq" targetRef="Gateway_0z3nop7" />
-    <bpmn:task id="Activity_03pov0b" name="Submit Test Results">
+    <bpmn:task id="Activity_03pov0b" name="Submit test results">
       <bpmn:incoming>Flow_1hxk3w4</bpmn:incoming>
       <bpmn:outgoing>Flow_0n8c8d7</bpmn:outgoing>
     </bpmn:task>
     <bpmn:sequenceFlow id="Flow_0n8c8d7" sourceRef="Activity_03pov0b" targetRef="Event_179yhsy" />
-    <bpmn:task id="Activity_0885gad" name="Test Suite B">
+    <bpmn:task id="Activity_0885gad" name="Run test B">
       <bpmn:incoming>Flow_0d2zl5h</bpmn:incoming>
       <bpmn:outgoing>Flow_0a6w5vo</bpmn:outgoing>
     </bpmn:task>
     <bpmn:sequenceFlow id="Flow_0a6w5vo" sourceRef="Activity_0885gad" targetRef="Gateway_14l743v" />
-    <bpmn:task id="Activity_11aqd07" name="Test Suite C">
+    <bpmn:task id="Activity_11aqd07" name="Run test C">
       <bpmn:incoming>Flow_00w8hy6</bpmn:incoming>
       <bpmn:outgoing>Flow_12ratsa</bpmn:outgoing>
     </bpmn:task>
@@ -77,7 +77,7 @@
       <bpmndi:BPMNShape id="Gateway_0z3nop7_di" bpmnElement="Gateway_0z3nop7" isMarkerVisible="true">
         <dc:Bounds x="407" y="155" width="50" height="50" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="401" y="133" width="63" height="14" />
+          <dc:Bounds x="404" y="133" width="58" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_1vxb8ov" bpmnElement="Activity_1md78dq">

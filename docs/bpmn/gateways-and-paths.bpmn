@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0u9s2x6" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.6.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.21">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0u9s2x6" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.6.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.21" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.20.0">
   <bpmn:process id="Process_1mv4dv6" isExecutable="true">
     <bpmn:startEvent id="Event_0uxrb10" name="Test triggered">
       <bpmn:outgoing>Flow_13drrwz</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:task id="Activity_1y9gpn5" name="Test Suite">
+    <bpmn:task id="Activity_1y9gpn5" name="Run test">
       <bpmn:incoming>Flow_1ow0g4n</bpmn:incoming>
       <bpmn:outgoing>Flow_0fhvqif</bpmn:outgoing>
     </bpmn:task>
@@ -19,7 +19,7 @@
       <bpmn:outgoing>Flow_1hxk3w4</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:sequenceFlow id="Flow_1hxk3w4" sourceRef="Gateway_14l743v" targetRef="Event_179yhsy" />
-    <bpmn:exclusiveGateway id="Gateway_0z3nop7" name="Skip suite?">
+    <bpmn:exclusiveGateway id="Gateway_0z3nop7" name="Skip test?">
       <bpmn:incoming>Flow_13drrwz</bpmn:incoming>
       <bpmn:outgoing>Flow_1ow0g4n</bpmn:outgoing>
       <bpmn:outgoing>Flow_0d2zl5h</bpmn:outgoing>
@@ -54,7 +54,7 @@
       <bpmndi:BPMNShape id="Gateway_0z3nop7_di" bpmnElement="Gateway_0z3nop7" isMarkerVisible="true">
         <dc:Bounds x="257" y="155" width="50" height="50" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="255" y="133" width="54" height="14" />
+          <dc:Bounds x="258" y="133" width="49" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_13drrwz_di" bpmnElement="Flow_13drrwz">
