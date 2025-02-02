@@ -30,7 +30,7 @@
       chmod u+w $(pwd)/.venv/bin/uv
       wrapProgram $(pwd)/.venv/bin/uv --prefix PATH : ${pkgs.python3}/bin
     fi
-    $(pwd)/.venv/bin/uv pip install -r requirements.txt
+    $(pwd)/.venv/bin/uv pip install -r requirements.txt --no-cache
     source $(pwd)/.venv/bin/activate
   '';
 
