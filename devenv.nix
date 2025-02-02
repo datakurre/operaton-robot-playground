@@ -16,6 +16,7 @@
 
   enterTest = ''
     wait_for_port 8080 60
+    pur --help
   '';
 
   enterShell = ''
