@@ -12,10 +12,6 @@
 
   package.operaton.path = ./fixture;
 
-  packages = [
-    pkgs.uv
-  ];
-
   dotenv.disableHint = true;
 
   enterTest = ''
@@ -26,10 +22,15 @@
     unset PYTHONPATH
     export UV_LINK_MODE=copy
     export UV_PYTHON_DOWNLOADS=never
-    if [ ! -d .venv ]; then uv venv; fi
-    if [ ! -e .venv/bin/uv ]; then ln -s $(which uv) .venv/bin/uv; fi
-    uv pip install -r requirements.txt
-    source .venv/bin/activate
+    if [ ! -d .venv ]; then
+      ${pkgs.uv}/bin/uv venv --python ${pkgs.python3}/bin/python
+      source ${pkgs.makeWrapper}/nix-support/setup-hook
+      cp ${pkgs.uv}/bin/uv $(pwd)/.venv/bin/uv
+      chmod u+w $(pwd)/.venv/bin/uv
+      wrapProgram $(pwd)/.venv/bin/uv --prefix PATH : ${pkgs.python3}/bin
+    fi
+    $(pwd)/.venv/bin/uv pip install -r requirements.txt
+    source $(pwd)/.venv/bin/activate
   '';
 
   cachix.pull = [ "datakurre" ];
