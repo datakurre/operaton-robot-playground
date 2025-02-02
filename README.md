@@ -6,6 +6,7 @@ This repository hosts a playground and documentation for orchestrating [Robot Fr
 
 ![Screenshot of GitHub Codespaces](./docs/README.png)
 
+
 ## Getting started
 
 To get started, pick any of the following options:
@@ -59,3 +60,5 @@ Once you have entered the shell with either `make start shell` or separately `ma
    ```sh
    $ pur serve .
    ```
+
+![Screenshot of GitHub Codespaces](./docs/operaton.png)
