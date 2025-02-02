@@ -52,7 +52,6 @@ Once you have entered the shell with either `make start shell` or separately `ma
    $ mkdir hello-world
    $ cd hello-world
    $ pur init
-   $ pur init
    Adding pyproject.toml
    Adding uv.lock
    Adding Hello.py
