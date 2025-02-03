@@ -57,6 +57,8 @@ RobotCode requires a Python virtualenv with the `robotframework` package preinst
 
 [`uv`](https://docs.astral.sh/uv/) is an extremely fast Python package and project manager, written in Rust. It is a single tool that replaces most of the existing Python packaging and virtual environment tools.
 
+![Screenshot of `uv`](./uv.png)
+
 The default Python virtual environment in the playground is managed with `uv`. New packages can be installed into it using the command `uv pip install`. Later, `uv` is also used for managing custom Robot Framework test/task suite package dependencies with its `uv add` command, and for executing them with the `pur`(jo) tool.
 
 If `uv` is not available in the terminal, it should become available with the command `make shell` in the terminal.
