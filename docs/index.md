@@ -18,6 +18,7 @@ This documentation accompanies a playground, which you can open in [GitHub Codes
 | 9.00          | Welcome                               |
 |               | **[BPMN basics](bpmn/index.md)**      |
 | Break         |                                       |
+|               | **[Playground introduction](playground/index.md)**      |
 |               | BPMN Modeling exercises               |
 | 12.00--13.00  | Lunch                                 |
 |               | Introduction to the playground        |
@@ -40,6 +41,7 @@ The workshop playground has been tested with GitHub Codespaces, but with some ef
 :maxdepth: 1
 
 bpmn/index.md
+playground/index.md
 ```
 
 
