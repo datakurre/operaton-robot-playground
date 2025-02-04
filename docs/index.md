@@ -20,13 +20,13 @@ This documentation accompanies a playground, which you can open in [GitHub Codes
 | Break         |                                       |
 |               | **[Playground introduction](playground/index.md)**      |
 |               | BPMN Modeling exercises               |
-| 12.00--13.00  | Lunch                                 |
+|               | **[BPMN advanced](bpmn/advanced.md)** |
+| 12.45--13.00  | Lunch                                 |
 |               | Introduction to the playground        |
 |               | Service tasks for Robot Framework     |
 |               | Service tasks in action               |
 |               | Service task exercises                |
 | Break         |                                       |
-|               | Advanced topics                       |
 | 16.00         | Discussion                            |
 |               | How to adapt the tools for your own use cases |
 | 17.00         | Workshop ends                         |
@@ -40,8 +40,8 @@ The workshop playground has been tested with GitHub Codespaces, but with some ef
 ```{toctree}
 :maxdepth: 1
 
-bpmn/index.md
 playground/index.md
+bpmn/index.md
+bpmn/advanced.md
+bpmn/juel.md
 ```
-
-

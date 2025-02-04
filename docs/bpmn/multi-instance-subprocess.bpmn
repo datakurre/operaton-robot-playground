@@ -1,50 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0vvm2t9" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.6.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.21">
   <bpmn:process id="Process_1jrg0o0" isExecutable="true">
-    <bpmn:subProcess id="Activity_0pck51p" name="Sequential batch of work loads">
+    <bpmn:subProcess id="Activity_0pck51p" name="Sequential batch of tests">
       <bpmn:incoming>Flow_1tnq973</bpmn:incoming>
       <bpmn:outgoing>Flow_0nymvbn</bpmn:outgoing>
       <bpmn:multiInstanceLoopCharacteristics isSequential="true" />
-      <bpmn:task id="Activity_1vq7ik7" name="Work in parallel">
+      <bpmn:task id="Activity_1vq7ik7" name="Run test in parallel">
         <bpmn:incoming>Flow_0eo1pyy</bpmn:incoming>
         <bpmn:outgoing>Flow_03zj22b</bpmn:outgoing>
         <bpmn:multiInstanceLoopCharacteristics />
       </bpmn:task>
-      <bpmn:endEvent id="Event_1k2nx19" name="Work completed">
+      <bpmn:endEvent id="Event_1k2nx19" name="Batch completed">
         <bpmn:incoming>Flow_03zj22b</bpmn:incoming>
       </bpmn:endEvent>
       <bpmn:sequenceFlow id="Flow_03zj22b" sourceRef="Activity_1vq7ik7" targetRef="Event_1k2nx19" />
-      <bpmn:startEvent id="Event_01o8v5z" name="Work started">
+      <bpmn:startEvent id="Event_01o8v5z" name="Batch started">
         <bpmn:outgoing>Flow_0eo1pyy</bpmn:outgoing>
       </bpmn:startEvent>
       <bpmn:sequenceFlow id="Flow_0eo1pyy" sourceRef="Event_01o8v5z" targetRef="Activity_1vq7ik7" />
     </bpmn:subProcess>
-    <bpmn:startEvent id="Event_03sxkp1" name="A lot of work requested">
+    <bpmn:startEvent id="Event_03sxkp1" name="Test triggered">
       <bpmn:outgoing>Flow_1tnq973</bpmn:outgoing>
     </bpmn:startEvent>
     <bpmn:sequenceFlow id="Flow_1tnq973" sourceRef="Event_03sxkp1" targetRef="Activity_0pck51p" />
-    <bpmn:endEvent id="Event_1q152um" name="All work done">
+    <bpmn:endEvent id="Event_1q152um" name="Test completed">
       <bpmn:incoming>Flow_0nymvbn</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_0nymvbn" sourceRef="Activity_0pck51p" targetRef="Event_1q152um" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1jrg0o0">
-      <bpmndi:BPMNShape id="Event_1q152um_di" bpmnElement="Event_1q152um">
-        <dc:Bounds x="662" y="177" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="648" y="220" width="66" height="14" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_03wpowj_di" bpmnElement="Activity_0pck51p" isExpanded="true">
         <dc:Bounds x="238" y="110" width="360" height="160" />
         <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_01o8v5z_di" bpmnElement="Event_01o8v5z">
-        <dc:Bounds x="270" y="172" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="257" y="215" width="63" height="14" />
-        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_0x0l52t" bpmnElement="Activity_1vq7ik7">
         <dc:Bounds x="368" y="150" width="100" height="80" />
@@ -53,7 +41,13 @@
       <bpmndi:BPMNShape id="BPMNShape_0cjy1pv" bpmnElement="Event_1k2nx19">
         <dc:Bounds x="522" y="172" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="501" y="215" width="80" height="14" />
+          <dc:Bounds x="500" y="215" width="82" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_01o8v5z_di" bpmnElement="Event_01o8v5z">
+        <dc:Bounds x="270" y="172" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="256" y="215" width="65" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="BPMNEdge_1eelg7a" bpmnElement="Flow_03zj22b">
@@ -67,7 +61,13 @@
       <bpmndi:BPMNShape id="Event_03sxkp1_di" bpmnElement="Event_03sxkp1">
         <dc:Bounds x="142" y="177" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="131" y="220" width="60" height="27" />
+          <dc:Bounds x="128" y="220" width="67" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1q152um_di" bpmnElement="Event_1q152um">
+        <dc:Bounds x="662" y="177" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="644" y="220" width="74" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_1tnq973_di" bpmnElement="Flow_1tnq973">
