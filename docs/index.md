@@ -11,7 +11,7 @@ This documentation accompanies a playground, which you can open in [GitHub Codes
 ![Screenshot of GitHub Codespaces](./README.png)
 
 
-## RoboCon.io Workshop 12th of Feb 2025
+## RoboCon.io 2025
 
 | Time          | Activity                              |
 |---------------|---------------------------------------|
