@@ -36,7 +36,7 @@ $ make start
 Next, check if `pur`(jo) is already available
 
 ```sh
-$ pur --help
+$ pur
 ```
 
 If not, run `make shell` to manually activate the playground `devenv`shell with `uv` and `pur`(jo) pre-installed, and defauld Python virtualenv activated.
@@ -71,7 +71,7 @@ Once you have entered the shell with either `make start shell` or separately `ma
 
    ```sh
    $ pur serve .
-   02-02-2025 14:39:49 | INFO | purjo.runner:267 | purjo | Subscription | My Task
+   02-02-2025 14:39:49 | INFO | purjo.runner:267 | Subscription | name=My Task
    02-02-2025 14:39:49 | INFO | operaton.tasks.worker:263 | External task worker started.
    ```
 
