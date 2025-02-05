@@ -17,7 +17,7 @@ The above example introduced the following new event type:
 ## Intermediate events
 
 ```{bpmn-figure} intermediate-events
-In addition to {bpmn}`start-event` **start event**, {bpmn}`end-event` **end event**, and {bpmn}`boundary-event` **boundary event**, BPMN has {bpmn}`intermediate-throw-event` **intermediate event** too. The simplest use case for them is to use empty intermediate events for marking relevant business states in the process (as metrics like KPIs in later data analysis). {download}`intermediate-events.bpmn`
+In addition to {bpmn}`start-event` **start event**, {bpmn}`end-event` **end event**, and {bpmn}`empty-boundary-event` **boundary event**, BPMN has {bpmn}`intermediate-throw-event` **intermediate event** too. The simplest use case for them is to use empty intermediate events for marking relevant business states in the process (as metrics like KPIs in later data analysis). {download}`intermediate-events.bpmn`
 ```
 
 
@@ -33,6 +33,23 @@ The above example introduced the following new event types:
 * {bpmn}`signal-start-event` **signal event**, for sending and receiving broadcasted signals, e.g. for mass-cancellation of processes
 * {bpmn}`conditional-start-event` **conditional event**, for being triggered on a condition, e.g. a process variable value change
 * {bpmn}`compensation-event` **compensation event**, for triggering compensation tasks for already completed, but now compensated tasks.
+
+
+## Compensation
+
+It is usual in BPMN that the same result can be achieved in multiple ways. For example, in testing, one must usually setup the environment before running the tests and clean up after the tests. Obviously, this can be achieved with just [the basic BPMN constructs](./index.md):
+
+```{bpmn-figure} without-compensation
+In this example, the test requires cloud resources, which are provisioned and waited for before the actual execution. {download}`without-compensation.bpmn`
+
+```{tip} BPMN pools and communication between the pools do not affect the execution of the model in the BPM engine but allow better visualization and documentation of the process in its context. 
+```
+
+Alternatively, the same can be achieved with a {bpmn}`compensation-event` **compensation event** and accompanying {bpmn}`task` **compensation tasks** {bpmn}`compensation-boundary-event` connected to the tasks they are about to compensate if tasks have been executed successfully:
+
+```{bpmn-figure} with-compensation
+When a process ends with {bpmn}`compensation-end-event` **compensation end event**, the process engine will automatically execute the {bpmn}`compensation-boundary-event` compensation tasks for the tasks that have been successfully executed. {download}`with-compensation.bpmn`
+```
 
 
 ## Multi-instance
