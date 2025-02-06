@@ -19,14 +19,16 @@ This documentation accompanies a playground, which you can open in [GitHub Codes
 |               | **[BPMN basics](bpmn/index.md)**      |
 | Break         |                                       |
 |               | **[Playground introduction](playground/index.md)**      |
-|               | BPMN Modeling exercises               |
+|               | **[Modeling exercises](modeling/index.md)** |
+| Break         |                                       |
 |               | **[BPMN advanced](bpmn/advanced.md)** |
-| 12.45--13.00  | Lunch                                 |
-|               | Introduction to the playground        |
-|               | Service tasks for Robot Framework     |
-|               | Service tasks in action               |
+|               | Serving robots with `pur`(jo)         |
+| 12.45--13.30  | Lunch                                 |
+|               | Service task in robot                 |
 |               | Service task exercises                |
 | Break         |                                       |
+|               | Test orchestration examples           |
+|               | Test orchestration exercises          |
 | 16.00         | Discussion                            |
 |               | How to adapt the tools for your own use cases |
 | 17.00         | Workshop ends                         |
