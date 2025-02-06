@@ -94,6 +94,7 @@ Local VSCode with Podman, might require the following `.devcontainer.json`:
     "vscode": {
       "extensions": [
         "d-biehl.robotcode",
+        "be5invis.toml",
         "/workspaces/operaton-robot-playground/resources/miranum-modeler.vsix"
       ]
     }
