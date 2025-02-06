@@ -44,6 +44,7 @@ The workshop playground has been tested with GitHub Codespaces, but with some ef
 
 playground/index.md
 bpmn/index.md
+modeling/index.md
 bpmn/advanced.md
 operaton/index.md
 bpmn/juel.md
