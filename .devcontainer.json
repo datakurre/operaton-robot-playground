@@ -2,7 +2,6 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "mkhl.direnv",
         "d-biehl.robotcode",
         "/workspaces/operaton-robot-playground/resources/miranum-modeler.vsix"
       ]

@@ -76,3 +76,33 @@ Once you have entered the shell with either `make start shell` or separately `ma
    ```
 
 ![Screenshot of GitHub Codespaces](./docs/operaton.png)
+
+
+## Troubleshooting
+
+### VSCode & Podman
+
+Local VSCode with Podman, might require the following `.devcontainer.json`:
+
+```json
+{
+  "containerEnv": {
+    "HOME": "/home/vscode"
+  },
+  "containerUser": "vscode",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "d-biehl.robotcode",
+        "/workspaces/operaton-robot-playground/resources/miranum-modeler.vsix"
+      ]
+    }
+  },
+  "image": "ghcr.io/cachix/devenv:latest",
+  "overrideCommand": false,
+  "runArgs": [
+    "--userns=keep-id"
+  ],
+  "updateContentCommand": "devenv test"
+}
+```
