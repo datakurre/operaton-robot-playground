@@ -30,10 +30,4 @@
   '';
 
   cachix.pull = [ "datakurre" ];
-
-  git-hooks.hooks.treefmt = {
-    enable = true;
-    settings.formatters = [
-    ];
-  };
 }
