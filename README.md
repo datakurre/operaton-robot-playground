@@ -24,7 +24,7 @@ To get started, pick any of the following options:
 
 Activate the playground by starting its built-in Operaton build with
 
-```bash
+```console
 $ make start
 ✔ Building shell in 6.2s.
 • PID is 56105
@@ -35,7 +35,7 @@ $ make start
 
 Next, check if `pur`(jo) is already available
 
-```sh
+```console
 $ pur
 ```
 
@@ -48,7 +48,7 @@ Once you have entered the shell with either `make start shell` or separately `ma
 
 1. Create directory for your bot
 
-   ```sh
+   ```console
    $ mkdir hello-world
    $ cd hello-world
    $ pur init
@@ -62,14 +62,14 @@ Once you have entered the shell with either `make start shell` or separately `ma
 
 2. Deploy and start the example process
 
-   ```sh
+   ```console
    $ pur run hello.bpmn
    Started: http://localhost:8080/operaton/app/cockpit/default/#/process-instance
    ```
 
 3. Serve the example bot
 
-   ```sh
+   ```console
    $ pur serve .
    02-02-2025 14:39:49 | INFO | purjo.runner:267 | Subscription | name=My Task
    02-02-2025 14:39:49 | INFO | operaton.tasks.worker:263 | External task worker started.
