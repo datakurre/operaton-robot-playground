@@ -1,0 +1,22 @@
+version = 1
+requires-python = ">=3.12"
+
+[[package]]
+name = "robot"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "robotframework" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "robotframework", specifier = ">=7.2" }]
+
+[[package]]
+name = "robotframework"
+version = "7.2"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/04/77/bdd9474f19fad4c285971169342924dae415fb4a5e49a488636acdbec08d/robotframework-7.2.tar.gz", hash = "sha256:9fc77d40283c26690bbc1563fb7fcadac789afe8695d332ced3fa4696df39eb9", size = 625495 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/19/fd/e3bcd6c9ff721491b02ca80538c02e051259f5eb3010e4a6a65f5644e924/robotframework-7.2-py3-none-any.whl", hash = "sha256:0b1caeb40be3d8c5fd4eb9303b221e384aa98f87f665bd66e6de8d7170d8a3c7", size = 777599 },
+]
