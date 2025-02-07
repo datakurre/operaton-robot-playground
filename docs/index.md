@@ -22,7 +22,7 @@ This documentation accompanies a playground, which you can open in [GitHub Codes
 |               | **[BPMN modeling exercises](modeling/index.md)** |
 | Break         |                                       |
 |               | **[BPMN advanced](bpmn/advanced.md)** |
-|               | **[BPMN for Robot Framework](purjo/index.md)** |
+|               | **[BPMN with Robot Framework](purjo/index.md)** |
 | 12.45--13.30  | Lunch                                 |
 |               | Service task in robot                 |
 |               | Service task exercises                |
