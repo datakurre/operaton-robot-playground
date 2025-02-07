@@ -100,6 +100,10 @@ Local VSCode with Podman, might require the following `.devcontainer.json`:
     }
   },
   "image": "ghcr.io/cachix/devenv:latest",
+  "containerEnv": {
+    "UV_LINK_MODE": "copy",
+    "UV_PYTHON_DOWNLOADS": "never"
+  },
   "overrideCommand": false,
   "runArgs": [
     "--userns=keep-id"
