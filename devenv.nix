@@ -15,6 +15,7 @@
     unset PYTHONPATH
     export UV_LINK_MODE=copy
     export UV_PYTHON_DOWNLOADS=never
+    export UV_PYTHON_PREFERENCE=system
     if [ ! -d .venv ]; then
       ${pkgs.uv}/bin/uv venv --python ${pkgs.python3}/bin/python
     fi
