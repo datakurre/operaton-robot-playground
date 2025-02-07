@@ -19,10 +19,10 @@ This documentation accompanies a playground, which you can open in [GitHub Codes
 |               | **[BPMN basics](bpmn/index.md)**      |
 | Break         |                                       |
 |               | **[Playground introduction](playground/index.md)**      |
-|               | **[Modeling exercises](modeling/index.md)** |
+|               | **[BPMN modeling exercises](modeling/index.md)** |
 | Break         |                                       |
 |               | **[BPMN advanced](bpmn/advanced.md)** |
-|               | Serving robots with `pur`(jo)         |
+|               | **[BPMN for Robot Framework](purjo/index.md)** |
 | 12.45--13.30  | Lunch                                 |
 |               | Service task in robot                 |
 |               | Service task exercises                |
@@ -47,5 +47,6 @@ bpmn/index.md
 modeling/index.md
 bpmn/advanced.md
 operaton/index.md
+purjo/index.md
 bpmn/juel.md
 ```
