@@ -1,4 +1,4 @@
 black >= 25.1.0 , <26
-purjo >= 1.0.0a13
+purjo >= 1.0.0a15
 robotframework >= 7, <8
 robotframework-tidy >= 4.16.0, <5
