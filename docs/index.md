@@ -51,6 +51,5 @@ bpmn/index.md
 modeling/index.md
 bpmn/advanced.md
 operaton/index.md
-bpmn/juel.md
 purjo/index.md
 ```
