@@ -6,9 +6,10 @@ After learning the [basics of BPMN modeling](../bpmn/index.md) and how to [model
 The playground ships with a [dedicated plugin](https://github.com/datakurre/camunda-modeler-robot-plugin) for rendering external {BPMN}`../bpmn/service-task` **Service Task** elements with a word *robot* in their *ID* with {BPMN}`../bpmn/robot-task` **robot icon**.
 ```
 
+
 ## Introducing `pur`(jo)
 
-[`pur`(jo)](https://pypi.org/project/purjo/) is an experimental command line tool for orchestrating [Robot Framework](https://robotframework.org/) test or task suites with the [Operaton](https://operaton.org/) BPM engine. It consumes external service tasks from the Operaton engine by executing Robot Framework test and task suites with the [uv](https://docs.astral.sh/uv/) Python environment manager and reporting the results back to the engine.
+[`pur`(jo)](https://pypi.org/project/purjo/) is an experimental command line tool for orchestrating [Robot Framework](https://robotframework.org/) test or task suites with the [Operaton](https://operaton.org/) BPM engine. It long-polls external service tasks from the Operaton engine, executes mapped Robot Framework test and task suites with the [uv](https://docs.astral.sh/uv/) Python environment manager, and finally reports the results or errors back to the engine.
 
 ```console
 $ pur
@@ -29,7 +30,8 @@ pur(jo) is a tool for managing and serving robot packages.
 Before trying out `pur`(jo) in the playground, first start the Operaton BPM engine with the `make start` command in the terminal.
 ```
 
-## Hello `pur`(jo)
+
+## "Hello World" for `pur`(jo)
 
 To get started, create a new directory for your bot:
 
@@ -44,7 +46,7 @@ Then initialize the directory with `pur`(jo):
 $ pur init
 ```
 
-This will create a new `hello-world` directory with the following files:
+This would create a new `hello-world` directory with the following files:
 
 * `.python-version` - Python version
 * `pyproject.toml` - Python dependencies and topic mapping
@@ -60,24 +62,28 @@ Next, start a new process instance with the example BPMN model:
 $ pur run hello.bpmn
 ```
 
-Finally, you should be able to see `pur`(jo) executing the Robot Framework test suite from the current directory and reporting the results back to Operaton with:
+Then, start the `pur`(jo) worker to execute the Robot Framework test suite:
 
 ```console
 $ pur serve .
 ```
 
-## BPMN topics to Robot Framework
+Now you should be able to see `pur`(jo) executing the Robot Framework test suite from the current project directory and reporting the results back to Operaton.
 
-`pyproject.toml` is a Python project configuration file, which also contains a mapping from BPMN topics to Robot Framework tests or tasks:
+
+## Mapping test and tasks
+
+Every `pur`(jo) project includes `pyproject.toml`, which is a Python project configuration file. For `pur`(jo) projects, it also contains a mapping from BPMN topics to Robot Framework tests or tasks:
 
 ```toml
 [tool.purjo.topics]
 "My Topic" = { name = "My Task" }
 ```
 
-In the mapping, `name` is passed as the argument `-t` to `robot` when executing the Robot Framework. For example, `{ name = "*" }` would run all tests or tasks in the package.
+In the mapped value, `name` is passed as the argument `-t` to `robot` when executing the Robot Framework. For example, `{ name = "*" }` would run all tests or tasks in the package.
 
-## Dependencies and packaging
+
+## Dependency management
 
 Test and task package dependencies are managed with the `uv` Python environment manager. For example:
 
@@ -86,6 +92,9 @@ $ uv add request
 ```
 
 would add the `request` Python package to the `pyproject.toml` and update the `uv.lock` files.
+
+
+## Project packaging
 
 To package the current directory into a deployable `robot.zip` file, use:
 
@@ -101,7 +110,8 @@ $ pur wrap --offline
 
 This will include `uv`'s project-specific `.cache` directory in the package. Packages with `.cache` can be executed with `uv`'s `--offline` flag, utilizing the packaged cache.
 
-## Developing with `pur`(jo)
+
+## Development helpers
 
 `pur`(jo) is designed to support fast iterations while developing Robot Framework test and task packages to be orchestrated with BPM. The following commands should be helpful:
 
@@ -119,17 +129,18 @@ Both `pur bpm start` and `pur run` accept option `--variables`, which accepts a 
 Both `pur bpm deploy` and `pur run` try to migrate previous process versions to the latest version deployed with the command, unless called with the `--no-migrate` flag.
 ```
 
-## Serving with `pur`(jo)
+
+## Executing test and task packages
 
 `pur serve <PACKAGES...>` serves the given `robot.zip` packages or directories with developed packages as external BPMN service task workers by following their topic mapping in `pyproject.toml`:
 
 ```console
 $ pur serve --help
 
- Usage: pur serve [OPTIONS] ROBOTS...                                                          
-                                                                                               
- Serve robot.zip packages (or directories) as BPMN service tasks.                              
-                                                                                               
+ Usage: pur serve [OPTIONS] ROBOTS...
+
+ Serve robot.zip packages (or directories) as BPMN service tasks.
+
 ╭─ Arguments ─────────────────────────────────────────────────────────────────────────────────╮
 │ *    robots      ROBOTS...  [default: None] [required]                                      │
 ╰─────────────────────────────────────────────────────────────────────────────────────────────╯
@@ -152,26 +163,54 @@ $ pur serve --help
 ```
 
 
-## BPMN variables into Robot Framework
+## BPMN variables in robot
 
-`pur(jo)` passes BPMN variables defined in external {BPMN}`../bpmn/service-task` **Service Task** inputs to Robot Framework execution as global variables using `--variablefile` command line argument.
+`pur`(jo) passes BPMN variables defined in external {BPMN}`../bpmn/service-task` **Service Task** inputs to Robot Framework execution as global variables using `--variablefile` command line argument.
 
 Therefore, robot variable `${message}` in the following robot suite
 
 ```robotframework
 *** Variables ***
 
-${message}  Hello?
+${message}    Hello?
 
 *** Test Cases ***
 
 Log message
-    Log  ${message}
+    Log    ${message}
 ```
 
 would be replaced with the value of local variable `message` defined in the {bpmn}`../bpmn/service-task` **Service Task** inputs.
 
 
-## Variables from Robot Framework
+## Robot variables to BPMN
 
-...
+Robot Framework as such does not have a concept of output or result variables. In other words, there is no single right way of defining, what should e returned back to BPM engine.
+
+At first, `pur`(jo) always returns `log.html` and `output.xml` files are local task variables into engine. On error, `pur`(jo) returns also the last Robot Framework test or task failure as local `erroeCode` and `errorMessage` variables or Operaton incident or BPMN error arguments.
+
+For custom variables, `pur`(jo) extends Robot Framework variable scope with a new `BPMN:TASK` scope. For example
+
+```robotframework
+*** Test Cases ***
+
+Set BPMN variable
+    VAR    ${message}    Hello World!    scope=BPMN:TASK
+```
+
+would set a BPMN variable `message` with value `Hello World!` for the current task scope in Operaton. This variable could then be exported from task to process scope with [task outputs](../operaton/index.md#inputs-and-outputs).
+
+Unfortunately, `scope=BPMN:TASK` is not valid robot syntax, because of undefined scope. Therefore, `pur`(jo) supports the following pattern, where `${BPMN:TASK}` variable with valid default value is used instead. `pur`(jo) would then replace the default value with its custom scope when executing robot.
+
+This would be valid robot syntax, that would also return a BPMN variable when executed with `pur`(jo):
+
+```robotframework
+*** Variables ***
+
+${BPMN:TASK}    local
+
+*** Test Cases ***
+
+Set BPMN variable
+    VAR    ${message}    Hello World!    scope=${BPMN:TASK}
+```
