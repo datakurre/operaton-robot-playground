@@ -1,4 +1,4 @@
-# Playground introduction
+# Operaton Robot Playground
 
 [Operaton Robot Playground](https://github.com/datakurre/operaton-robot-playground) is a [VSCode](https://code.visualstudio.com/) [Dev Container](https://code.visualstudio.com/docs/devcontainers/containers) based development environment that supports [GitHub Codespaces](https://codespaces.new/datakurre/operaton-robot-playground). It can also be run locally with the VSCode [extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers). For adventurers, the [README](https://github.com/datakurre/operaton-robot-playground#getting-started) also mentions more manual setups.
 

@@ -1,4 +1,7 @@
-# BPMN modeling exercises
+# Basic modeling exercises
+
+These exercises should familiarize you with the basic BPMN elements and flows, and using [BPMN.io](https://bpmn.io/) based BPMN modeling tools, like [Miranum Modeler](https://marketplace.visualstudio.com/items?itemName=miragon-gmbh.vs-code-bpmn-modeler) included in the playground.
+
 
 ## Sequence flow
 
@@ -11,6 +14,7 @@
 {download}`simple-flow.bpmn`
 ```
 
+
 ## Exclusive paths
 
 1. Model a flow that splits and joins with {bpmn}`../bpmn/exclusive-gateway` **exclusive gateways** (plain diamond symbol on the palette).
@@ -21,6 +25,7 @@
 ```{bpmn-figure} exclusive-paths
 {download}`exclusive-paths.bpmn`
 ```
+
 
 ## Concurrent paths
 
@@ -38,6 +43,7 @@
 {download}`concurrent-paths-doubled.bpmn`<br/>
 {download}`concurrent-paths-mixed.bpmn`
 
+
 ## Multiple end-events
 
 1. Re-use the model from the previous exercise.
@@ -48,6 +54,7 @@
 ```{bpmn-figure} multiple-end-events
 {download}`multiple-end-events.bpmn`
 ```
+
 
 ## Embedded sub-process
 

@@ -1,4 +1,4 @@
-# BPMN basics
+# Introduction to BPMN
 
 Business Process Model and Notation (BPMN) is a graphical representation for specifying business processes in a business process model [{sup}`Wikipedia`](https://en.wikipedia.org/wiki/Business_Process_Model_and_Notation).
 

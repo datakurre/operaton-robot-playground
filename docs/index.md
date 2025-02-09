@@ -16,28 +16,28 @@ This documentation accompanies a playground, which you can open in [GitHub Codes
 | Time          | Activity                              |
 |---------------|---------------------------------------|
 | 9.00          | Welcome                               |
-|               | **[BPMN basics](bpmn/index.md)**      |
+|               | **[Introduction to BPMN](bpmn/index.md)**      |
 | Break         |                                       |
-|               | **[Playground introduction](playground/index.md)**      |
-|               | **[BPMN modeling exercises](modeling/index.md)** |
+|               | **[Operaton Robot Playground](playground/index.md)**      |
+|               | **[Basic modeling exercises](modeling/index.md)** |
 | Break         |                                       |
-|               | **[BPMN advanced](bpmn/advanced.md)** |
+|               | **[Advanced BPMN concepts](bpmn/advanced.md)** |
+|               | **[Modeling for execution](operaton/index.md)** |
 |               | **[BPMN with Robot Framework](purjo/index.md)** |
 | 12.45--13.30  | Lunch                                 |
-|               | Service task in robot                 |
-|               | Service task exercises                |
+|               | Using BPMN and robot for system tests |
+|               | Executing and adapting examples       |
 | Break         |                                       |
-|               | Test orchestration examples           |
-|               | Test orchestration exercises          |
-| 16.00         | Discussion                            |
-|               | How to adapt the tools for your own use cases |
+|               | Hands-on exercises                    |
+| Break         |                                       |
+|               | Discussion and future plans           |
 | 17.00         | Workshop ends                         |
 
 ## Preparations
 
 The workshop playground has been tested with GitHub Codespaces, but with some effort, you can also run it locally. Check [Getting Started](https://github.com/datakurre/operaton-robot-playground#getting-started) at [the playground repository](https://github.com/datakurre/operation-robot-playground) for instructions on how to get the playground environment up and running.
 
-## Table of Contents
+## Index
 
 ```{toctree}
 :maxdepth: 1
@@ -47,6 +47,6 @@ bpmn/index.md
 modeling/index.md
 bpmn/advanced.md
 operaton/index.md
-purjo/index.md
 bpmn/juel.md
+purjo/index.md
 ```

@@ -1,4 +1,4 @@
-# BPMN advanced
+# Advanced BPMN concepts
 
 This section continues from the [BPMN basics](./index.md) and introduces more advanced BPMN concepts.
 
