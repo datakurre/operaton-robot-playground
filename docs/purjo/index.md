@@ -230,12 +230,16 @@ In Operaton engine an external {BPMN}`../bpmn/service-task` **Service Task** can
 
 * Task worker reports the task as completed with BPMN error, which allows directing the process with {BPMN}`../bpmn/bpmn-error-boundary-event` **BPMN error boundary event**.
 
-* Task workers reports the task as successfully completed, but the BPMN includes conditional BPMN error configuration, which could then be directied with {BPMN}`../bpmn/bpmn-error-boundary-event` **BPMN error boundary event**.
+* Task worker reports the task as successfully completed, but the BPMN includes conditional BPMN error configuration, which could then be directed with {BPMN}`../bpmn/bpmn-error-boundary-event` **BPMN error boundary event**.
+
+  ![Conditional BPMN error definition](./conditional-error.png)
 
 `pur serve` has option `--on-fail=FAIL|COMPLETE|ERROR` to configure how failed robot executions are reported back to the engine.
 
-By its default, `FAIL`, `pur serve` reports failed robot executions as failed tasks without automated retry, which creates manually managed incidents in the engine. `pur`(jo) might later support configuration for settings allowed per listened topic.
+By default, `FAIL`, `pur serve` reports failed robot executions as failed tasks without automated retry, creating manually managed incidents in the engine. `pur`(jo) might later support configuration settings allowed per listened topic.
 
 With `COMPLETE`, failed robot executions are reported as completed tasks, but two local task variables `errorCode` and `errorMessage`. `errorCode` contains the first line of the last Robot Framework test or task failure, and `errorMessage` contains the rest. This allows configuring an error in BPMN if `errorCode` has a value.
 
-With `ERROR`, failed robot executions are reported as completed tasks with BPMN error, which allows directing the process with {BPMN}`../bpmn/bpmn-error-boundary-event` **BPMN error boundary event** or capturing all errors with event based sub process with error start event.
+With `ERROR`, failed robot executions are reported as completed tasks with a BPMN error, which allows directing the process with a {BPMN}`../bpmn/bpmn-error-boundary-event` **BPMN error boundary event** or capturing all errors with an event-based subprocess with an error start event.
+
+![BPMN erron on Robot Framework failure](./complete-error.png)
