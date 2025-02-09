@@ -172,7 +172,7 @@ Therefore, robot variable `${message}` in the following robot suite
 ```robotframework
 *** Variables ***
 
-${message}    Hello?
+${message}    Hello World
 
 *** Test Cases ***
 
@@ -214,3 +214,28 @@ ${BPMN:TASK}    local
 Set BPMN variable
     VAR    ${message}    Hello World!    scope=${BPMN:TASK}
 ```
+
+
+## Handling failures
+
+Handling orchestrated Robot Framework test or task failures in BPMN may have different requirements in different processes. In task automation, for example, unexpected failure should usually halt the process for manual investigation (by rising incident at Operaton engine). In test automation, such failures are usually expected and it is enough to tear down the test environment and report the failure.
+
+In Operaton engine an external {BPMN}`../bpmn/service-task` **Service Task** can fail in few different ways:
+
+* Task worker disappears after locking the task and before completing it, and the task will be released for retry by another worker later.
+
+* Task worker reports the task as failed, but with automated retry with given timeout.
+
+* Task worker reports the task as failed without automated retry, which creates manually managed incident in the engine.
+
+* Task worker reports the task as completed with BPMN error, which allows directing the process with {BPMN}`../bpmn/bpmn-error-boundary-event` **BPMN error boundary event**.
+
+* Task workers reports the task as successfully completed, but the BPMN includes conditional BPMN error configuration, which could then be directied with {BPMN}`../bpmn/bpmn-error-boundary-event` **BPMN error boundary event**.
+
+`pur serve` has option `--on-fail=FAIL|COMPLETE|ERROR` to configure how failed robot executions are reported back to the engine.
+
+By its default, `FAIL`, `pur serve` reports failed robot executions as failed tasks without automated retry, which creates manually managed incidents in the engine. `pur`(jo) might later support configuration for settings allowed per listened topic.
+
+With `COMPLETE`, failed robot executions are reported as completed tasks, but two local task variables `errorCode` and `errorMessage`. `errorCode` contains the first line of the last Robot Framework test or task failure, and `errorMessage` contains the rest. This allows configuring an error in BPMN if `errorCode` has a value.
+
+With `ERROR`, failed robot executions are reported as completed tasks with BPMN error, which allows directing the process with {BPMN}`../bpmn/bpmn-error-boundary-event` **BPMN error boundary event** or capturing all errors with event based sub process with error start event.

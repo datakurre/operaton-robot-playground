@@ -90,5 +90,5 @@ In practice, user tasks {bpmn}`../bpmn/user-task` **User Tasks** are implemented
 Operaton's built-in tasklist application supports a few alternative form types. The **modeler used in the playground**, however, does not support "Camunda Forms", but only **Generated task Forms**.
 
 ```{warning}
-The alternative tasklist form definition supported by Operaton may change before the final 1.0 release.
+The form definitions options supported by Operaton's builtin tasklist application may change before its final 1.0 release.
 ```

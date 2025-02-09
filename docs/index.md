@@ -46,8 +46,8 @@ The workshop playground has been tested with GitHub Codespaces, but with some ef
 ```{toctree}
 :maxdepth: 1
 
-playground/index.md
 bpmn/index.md
+playground/index.md
 modeling/index.md
 bpmn/advanced.md
 operaton/index.md
