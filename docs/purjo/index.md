@@ -111,6 +111,10 @@ This will include `uv`'s project-specific `.cache` directory in the package. Pac
 * `pur run <RESOURCES...>` is a shortcut for both deploying resources to the BPM engine and starting a new process instance defined in them.
 * `pur serve .` serves the project from the current directory as an external BPMN service task worker, following the topic mapping defined in its `pyproject.toml`.
 
+```{tip}
+Both `pur bpm start` and `pur run` accept option `--variables`, which accepts a JSON string, a JSON filename or `-` to read JSON from *stdin*. JSON object would then be parse as key-value-pairs into initial process variables for the started process.
+```
+
 ```{note}
 Both `pur bpm deploy` and `pur run` try to migrate previous process versions to the latest version deployed with the command, unless called with the `--no-migrate` flag.
 ```
@@ -147,6 +151,27 @@ $ pur serve --help
 `pur serve --on-fail=ERROR` would report failed robot executions as BPMN errors, which allows easy routing of execution in BPMN using {BPMN}`../bpmn/bpmn-error-boundary-event` **Error Boundary Events**.
 ```
 
-## BPMN Variables in Robot Framework
 
-`pur(jo)` passes BPMN variables defined in external {BPMN}`../bpmn/service-task` **Service Task** inputs to Robot Framework execution as global variables using `--variablefile` command line arguments.
+## BPMN variables into Robot Framework
+
+`pur(jo)` passes BPMN variables defined in external {BPMN}`../bpmn/service-task` **Service Task** inputs to Robot Framework execution as global variables using `--variablefile` command line argument.
+
+Therefore, robot variable `${message}` in the following robot suite
+
+```robotframework
+*** Variables ***
+
+${message}  Hello?
+
+*** Test Cases ***
+
+Log message
+    Log  ${message}
+```
+
+would be replaced with the value of local variable `message` defined in the {bpmn}`../bpmn/service-task` **Service Task** inputs.
+
+
+## Variables from Robot Framework
+
+...
