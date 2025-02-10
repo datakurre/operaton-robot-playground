@@ -1,8 +1,8 @@
 # Operaton Robot Playground
 
-This repository hosts a playground and documentation for orchestrating [Robot Framework](https://robotframework.org/) test or task suites with [Operaton](https://operaton.org/) BPM engine. The playground was introduced for a workshop at [RoboCon.io](https://robocon.io/) Helsinki 2025.
+This repository hosts a playground and documentation for orchestrating [Robot Framework](https://robotframework.org/) test or task suites with [Operaton](https://operaton.org/) BPM engine. The playground was introduced for a workshop at [RoboCon.io](https://robocon.io/) Helsinki 2025. [![Documentation at GitHub Pages](https://github.com/datakurre/operaton-robot-playground/actions/workflows/pages/pages-build-deployment/badge.svg)](https://datakurre.github.io/operaton-robot-playground)
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/datakurre/operaton-robot-playground) [![Documentation at GitHub Pages](https://github.com/datakurre/operaton-robot-playground/actions/workflows/pages/pages-build-deployment/badge.svg)](https://datakurre.github.io/operaton-robot-playground)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/datakurre/operaton-robot-playground)
 
 ![Screenshot of GitHub Codespaces](./docs/README.png)
 
