@@ -241,7 +241,7 @@ With `ERROR`, failed robot executions are reported as completed tasks with a BPM
 ![BPMN error on Robot Framework failure](./complete-error.png)
 
 ```{note}
-In be more complete, external {BPMN}`../bpmn/service-task` **Service Task** can also fail in two other ways:
+To be more complete, external {BPMN}`../bpmn/service-task` **Service Task** can also fail in two other ways:
 
 * Task worker reports the task as failed, but with retry timeout as automated retry instrutions, and the task will be automatically and silently retried by the engine later.
 
