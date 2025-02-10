@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1yivj8x" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.28.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.22.0">
+  <bpmn:process id="example-variable-types" name="Example: Variable Types" isExecutable="true" camunda:historyTimeToLive="1">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_18z6j4t</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_18z6j4t" sourceRef="StartEvent_1" targetRef="Robot_Hello" />
+    <bpmn:endEvent id="Event_07zpz98">
+      <bpmn:incoming>Flow_14c806f</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_14c806f" sourceRef="Robot_Hello" targetRef="Event_07zpz98" />
+    <bpmn:serviceTask id="Robot_Hello" name="Test variable types" camunda:type="external" camunda:topic="Test Variable Types">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="String Input">Hello World!</camunda:inputParameter>
+          <camunda:inputParameter name="Number Input">${100}</camunda:inputParameter>
+          <camunda:inputParameter name="Boolean Input">${true}</camunda:inputParameter>
+          <camunda:inputParameter name="Date Input">${dateTime().toDate()}</camunda:inputParameter>
+          <camunda:inputParameter name="List Input">
+            <camunda:list>
+              <camunda:value>a</camunda:value>
+              <camunda:value>b</camunda:value>
+              <camunda:value>c</camunda:value>
+            </camunda:list>
+          </camunda:inputParameter>
+          <camunda:inputParameter name="Dict Input">
+            <camunda:map>
+              <camunda:entry key="a">${1}</camunda:entry>
+              <camunda:entry key="b">${2}</camunda:entry>
+              <camunda:entry key="c">${3}</camunda:entry>
+            </camunda:map>
+          </camunda:inputParameter>
+          <camunda:outputParameter name="String Output">${execution.getVariable("String Output")}</camunda:outputParameter>
+          <camunda:outputParameter name="Number Output">${execution.getVariable("Number Output")}</camunda:outputParameter>
+          <camunda:outputParameter name="Boolean Output">${execution.getVariable("Boolean Output")}</camunda:outputParameter>
+          <camunda:outputParameter name="Date Output">${execution.getVariable("Date Output")}</camunda:outputParameter>
+          <camunda:outputParameter name="List Output">${execution.getVariable("List Output")}</camunda:outputParameter>
+          <camunda:outputParameter name="Dict Output">${execution.getVariable("Dict Output")}</camunda:outputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_18z6j4t</bpmn:incoming>
+      <bpmn:outgoing>Flow_14c806f</bpmn:outgoing>
+    </bpmn:serviceTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="example-variable-types">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="99" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_07zpz98_di" bpmnElement="Event_07zpz98">
+        <dc:Bounds x="432" y="99" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1wvbd7e_di" bpmnElement="Robot_Hello">
+        <dc:Bounds x="270" y="77" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_18z6j4t_di" bpmnElement="Flow_18z6j4t">
+        <di:waypoint x="215" y="117" />
+        <di:waypoint x="270" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_14c806f_di" bpmnElement="Flow_14c806f">
+        <di:waypoint x="370" y="117" />
+        <di:waypoint x="432" y="117" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
