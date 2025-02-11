@@ -6,7 +6,7 @@ env:
 
 clean:
 	devenv gc
-	$(RM) -r .venv
+	$(RM) -r .venv .devenv*
 
 devenv-up:
 	devenv processes up -d

@@ -110,3 +110,26 @@ Local VSCode with Podman, might require the following `.devcontainer.json`:
   "updateContentCommand": "devenv test"
 }
 ```
+
+### Curious `devenv` errors
+
+Very occasional and rare errors like the following have been seen:
+
+```console
+operaton-robot-playground) vscode ➜ /workspaces/operaton-robot-playground (main) $ make start
+devenv processes up -d
+• Building processes ...
+• Using Cachix: devenv, datakurre
+don't know how to build these paths:
+  /nix/store/4g8f25hp2yblrhnwd8frmcjfscklb1cc-devenv-up
+error:
+       error: build of '/nix/store/4g8f25hp2yblrhnwd8frmcjfscklb1cc-devenv-up'
+```
+
+This should be fixed by running the following cleanup command
+
+```console
+$ make clean
+```
+
+and trying again. For example, rebuilding the local devcontainer.
