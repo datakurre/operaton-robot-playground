@@ -2,7 +2,7 @@
 
 # Operaton Robot Playground
 
-Welcome to this opinionated documentation for documentation for orchestrating [Robot Framework](https://robotframework.org/) test or task suites with [Operaton](https://operaton.org/) BPM engine. The documentation was introduced for a workshop at [RoboCon.io](https://robocon.io/) Helsinki 2025.
+Welcome to this opinionated documentation for orchestrating [Robot Framework](https://robotframework.org/) test or task suites with [Operaton](https://operaton.org/) BPM engine. The documentation was introduced for a workshop at [RoboCon.io](https://robocon.io/) Helsinki 2025.
 
 This documentation accompanies a playground, which you can open in [GitHub Codespaces](https://codespaces.new/datakurre/operaton-robot-playground).
 
