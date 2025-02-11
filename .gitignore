@@ -20,5 +20,9 @@ log.html
 output/
 output.xml
 report.html
+*.log
+logs/
+results/
 result
 src/operaton/__init__.py
+hello-world/
