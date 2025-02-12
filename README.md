@@ -85,9 +85,6 @@ Local VSCode with Podman, might require the following `.devcontainer.json`:
 
 ```json
 {
-  "containerEnv": {
-    "HOME": "/home/vscode"
-  },
   "containerUser": "vscode",
   "customizations": {
     "vscode": {
@@ -100,6 +97,7 @@ Local VSCode with Podman, might require the following `.devcontainer.json`:
   },
   "image": "ghcr.io/cachix/devenv:latest",
   "containerEnv": {
+    "HOME": "/home/vscode",
     "UV_LINK_MODE": "copy",
     "UV_PYTHON_DOWNLOADS": "never"
   },
