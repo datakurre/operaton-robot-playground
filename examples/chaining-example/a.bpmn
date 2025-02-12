@@ -7,7 +7,7 @@
     <bpmn:sequenceFlow id="Flow_1n70cph" sourceRef="StartEvent_1" targetRef="Event_079pw55" />
     <bpmn:endEvent id="Event_079pw55" name="Message:&#10;Start B">
       <bpmn:incoming>Flow_1n70cph</bpmn:incoming>
-      <bpmn:messageEventDefinition id="MessageEventDefinition_16v3vc5" camunda:expression="${execution.getProcessEngineServices().getRuntimeService().createMessageCorrelation(&#34;StartB&#34;).correlateWithResult()}" />
+      <bpmn:messageEventDefinition id="MessageEventDefinition_16v3vc5" camunda:expression="${execution.getProcessEngineServices().getRuntimeService().createMessageCorrelation(&#34;StartB&#34;).processInstanceBusinessKey(execution.getBusinessKey()).correlateWithResult()}" />
     </bpmn:endEvent>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">

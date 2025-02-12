@@ -8,7 +8,7 @@
     <bpmn:sequenceFlow id="Flow_0x8k83o" sourceRef="StartEvent_1" targetRef="Event_1okun4r" />
     <bpmn:endEvent id="Event_1okun4r" name="Message:&#10;Start C">
       <bpmn:incoming>Flow_0x8k83o</bpmn:incoming>
-      <bpmn:messageEventDefinition id="MessageEventDefinition_00it8qn" camunda:expression="${execution.getProcessEngineServices().getRuntimeService().createMessageCorrelation(&#34;StartC&#34;).correlateWithResult()}" />
+      <bpmn:messageEventDefinition id="MessageEventDefinition_00it8qn" camunda:expression="${execution.getProcessEngineServices().getRuntimeService().createMessageCorrelation(&#34;StartC&#34;).processInstanceBusinessKey(execution.getBusinessKey()).correlateWithResult()}" />
     </bpmn:endEvent>
   </bpmn:process>
   <bpmn:message id="Message_27ahnkn" name="StartB" />
