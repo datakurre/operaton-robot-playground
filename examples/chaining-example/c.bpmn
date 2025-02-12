@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_agd93yo" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.28.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.22.0">
+  <bpmn:process id="example-process-chaining-c" name="Example: Process Chaining C" isExecutable="true" camunda:historyTimeToLive="1">
+    <bpmn:sequenceFlow id="Flow_0lkkl1u" sourceRef="StartEvent_1" targetRef="Robot_CompleteC" />
+    <bpmn:endEvent id="Event_11rkook">
+      <bpmn:incoming>Flow_0h1dzc5</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0h1dzc5" sourceRef="Robot_CompleteC" targetRef="Event_11rkook" />
+    <bpmn:serviceTask id="Robot_CompleteC" name="Complete" camunda:type="external" camunda:topic="Complete C">
+      <bpmn:incoming>Flow_0lkkl1u</bpmn:incoming>
+      <bpmn:outgoing>Flow_0h1dzc5</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:startEvent id="StartEvent_1" name="Message received:&#10;Start C">
+      <bpmn:outgoing>Flow_0lkkl1u</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_1r7aux6" messageRef="Message_06jodno" />
+    </bpmn:startEvent>
+  </bpmn:process>
+  <bpmn:message id="Message_06jodno" name="StartC" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="example-process-chaining-c">
+      <bpmndi:BPMNShape id="Event_11rkook_di" bpmnElement="Event_11rkook">
+        <dc:Bounds x="432" y="79" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0wuth6l_di" bpmnElement="Robot_CompleteC">
+        <dc:Bounds x="270" y="57" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0b8gfm9_di" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="79" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="175" y="122" width="45" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0lkkl1u_di" bpmnElement="Flow_0lkkl1u">
+        <di:waypoint x="215" y="97" />
+        <di:waypoint x="270" y="97" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0h1dzc5_di" bpmnElement="Flow_0h1dzc5">
+        <di:waypoint x="370" y="97" />
+        <di:waypoint x="432" y="97" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
