@@ -10,5 +10,4 @@ dependencies = [
 
 [tool.purjo.topics]
 "Simulate SUT" = { name = "Simulate SUT" }
-"StimulateSut" = { name = "Simulate SUT" }
 "Simulate SUT Teardown" = { name = "Simulate SUT Teardown" }

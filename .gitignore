@@ -15,7 +15,6 @@ build/
 devenv.local.nix
 env
 fixture/target/
-hello-world/
 htmlcov/
 log.html
 logs/
