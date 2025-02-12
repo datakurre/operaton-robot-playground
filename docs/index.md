@@ -27,7 +27,8 @@ The workshop aims to provide a basic understanding of BPMN and its capabilities 
 |               | **[Modeling for execution](operaton/index.md)** |
 |               | **[BPMN with Robot Framework](purjo/index.md)** |
 | 12.45--13.30  | Lunch                                 |
-|               | Using BPMN and robot for system tests |
+|               | **[BPMN with Robot Framework](purjo/index.md)** |
+|               | **[Using BPMN and robot for system tests](tests/index.md)** |
 |               | Executing and adapting examples       |
 | Break         |                                       |
 |               | Hands-on exercises                    |
@@ -52,4 +53,5 @@ modeling/index.md
 bpmn/advanced.md
 operaton/index.md
 purjo/index.md
+tests/index.md
 ```

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:color="http://www.omg.org/spec/BPMN/non-normative/color/1.0" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0whfid6" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.22.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.20.0">
+  <bpmn:collaboration id="Collaboration_0639n0t">
+    <bpmn:participant id="Participant_0gbyset" name="System Test" processRef="Process_1s43cs6" />
+    <bpmn:participant id="Participant_1skfcdw" name="SUT" />
+    <bpmn:participant id="Participant_19ipne7" name="3rd Party SUT" />
+    <bpmn:messageFlow id="Flow_1iflaag" sourceRef="Participant_1skfcdw" targetRef="Participant_19ipne7" />
+    <bpmn:messageFlow id="Flow_0zkdh22" sourceRef="Participant_19ipne7" targetRef="Participant_1skfcdw" />
+    <bpmn:messageFlow id="Flow_1jxdaeg" sourceRef="Participant_0gbyset" targetRef="Participant_1skfcdw" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_1s43cs6" name="Test Process 2" isExecutable="true" camunda:historyTimeToLive="180">
+    <bpmn:laneSet id="LaneSet_09ufnjy">
+      <bpmn:lane id="Lane_1fbz4kq" name="Process Engine" />
+      <bpmn:lane id="Lane_1hojy8u" name="QA Team" />
+      <bpmn:lane id="Lane_0l5vi4g" name="Process Engine" />
+    </bpmn:laneSet>
+  </bpmn:process>
+  <bpmn:signal id="Signal_175t3m2" name="Signal_175t3m2" />
+  <bpmn:signal id="Signal_0o7687m" name="TriggerNextStep" />
+  <bpmn:error id="Error_0h98qtz" name="Error From Robot" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0639n0t">
+      <bpmndi:BPMNShape id="Participant_0gbyset_di" bpmnElement="Participant_0gbyset" isHorizontal="true" color:background-color="" color:border-color="">
+        <dc:Bounds x="125" y="320" width="583" height="400" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1fbz4kq_di" bpmnElement="Lane_1fbz4kq" isHorizontal="true">
+        <dc:Bounds x="155" y="320" width="553" height="140" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1hojy8u_di" bpmnElement="Lane_1hojy8u" isHorizontal="true">
+        <dc:Bounds x="155" y="460" width="553" height="110" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0l5vi4g_di" bpmnElement="Lane_0l5vi4g" isHorizontal="true">
+        <dc:Bounds x="155" y="570" width="553" height="150" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_1fnw344_di" bpmnElement="Participant_1skfcdw" isHorizontal="true" color:background-color="" color:border-color="">
+        <dc:Bounds x="125" y="220" width="583" height="60" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_09uhu8k_di" bpmnElement="Participant_19ipne7" isHorizontal="true" color:background-color="" color:border-color="">
+        <dc:Bounds x="125" y="120" width="583" height="60" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1iflaag_di" bpmnElement="Flow_1iflaag" color:border-color="">
+        <di:waypoint x="290" y="220" />
+        <di:waypoint x="290" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0zkdh22_di" bpmnElement="Flow_0zkdh22" color:border-color="">
+        <di:waypoint x="580" y="180" />
+        <di:waypoint x="580" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1jxdaeg_di" bpmnElement="Flow_1jxdaeg">
+        <di:waypoint x="417" y="320" />
+        <di:waypoint x="417" y="280" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
