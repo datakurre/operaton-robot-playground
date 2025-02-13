@@ -46,12 +46,13 @@ At the playground, a [dedicated plugin](https://github.com/datakurre/camunda-mod
 
 **Process variables** store data that can be accessed and manipulated throughout the lifecycle of a process instance. In addition to process level variables, Operaton engine supports nested **variables scopes**. These scopes are most often managed with **input and output mappings** for {bpmn}`../bpmn/task` tasks and {bpmn}`../bpmn/start-event` sub-processes.
 
+Use of **inputs and outputs is not mandatory**, but they support separation of generic re-usable services tasks with generic "arguments" for domain specific process variables. Use of inputs and outputs also protects for possible concurrent tasks later overriding each others process variables.
+
 To configure input and output mappings for {bpmn}`../bpmn/service-task` **Service task**, select the task in the modeler and navigate to the properties panel sections **inputs** and **outputs**.
 
 ![Inputs and outputs mapping in properties panel](./inputs-and-outputs.png)
 
 The default expression language available for inputs mapping in Operaton is [JUEL](../bpmn/juel.md). This language allows you to reference process variables and perform simple operations on them.
-
 
 ```{warning}
 Variables mapped in {bpmn}`../bpmn/service-task` **Service task inputs are only available within the task**. Once the task is completed, the variables are no longer accessible **unless they are exported at outputs**.

@@ -54,4 +54,5 @@ bpmn/advanced.md
 operaton/index.md
 purjo/index.md
 tests/index.md
+bpmn/juel.md
 ```

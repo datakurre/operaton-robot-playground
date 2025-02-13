@@ -76,11 +76,23 @@ Now you should be able to see `pur`(jo) executing the Robot Framework test suite
 Every `pur`(jo) project includes `pyproject.toml`, which is a Python project configuration file. For `pur`(jo) projects, it also contains a mapping from BPMN topics to Robot Framework tests or tasks:
 
 ```toml
-[tool.purjo.topics]
-"My Topic" = { name = "My Task" }
+[tool.purjo.topics."My Topic in BPMN"]
+name = "My Test in Robot"
+on-fail = "ERROR"
+process-variables = true
 ```
 
-In the mapped value, `name` is passed as the argument `-t` to `robot` when executing the Robot Framework. For example, `{ name = "*" }` would run all tests or tasks in the package.
+In the mapped value, `name` is passed as the argument `-t` to `robot` when executing the Robot Framework. For example, `name = "*"` would run all tests or tasks in the package.
+
+The other two options, `on-fail` and `process-variables` are optional. Option `on-fail` controls the behavior of purjo when the executed robot test or task fails:
+
+* `on-fail = "FAIL"` is the default, which raises on incident at the Operaton engine.
+
+* `on-fail = "COMPLETE"` completes the task at Operatin with success, but sets local task variables `errorCode` and `errorMessage` from the last Robot Framework test or task failure.
+
+* `on-fail = "ERROR"` completes the task at Operatin with a BPMN error, which allows catching the error in BPMN with a {BPMN}`../bpmn/bpmn-error-boundary-event` **BPMN error boundary event**.
+
+Finally, option `process-variables = true` makes purjo to pass all process variables to the Robot Framework test or task as global variables using `--variablefile` command line argument. The default behavior is `false`, which passes only the variables defined in the BPMN task inputs.
 
 
 ## Dependency management
@@ -187,9 +199,9 @@ would be replaced with the value of local variable `message` defined in the {bpm
 
 Robot Framework as such does not have a concept of output or result variables. In other words, there is no single right way of defining, what should e returned back to BPM engine.
 
-At first, `pur`(jo) always returns `log.html` and `output.xml` files are local task variables into engine. On error, `pur`(jo) returns also the last Robot Framework test or task failure as local `erroeCode` and `errorMessage` variables or Operaton incident or BPMN error arguments.
+At first, `pur`(jo) always returns `log.html` and `output.xml` files are local task variables into engine. On error, `pur`(jo) returns also the last Robot Framework test or task failure as local `errorCode` and `errorMessage` variables or Operaton incident or BPMN error arguments.
 
-For custom variables, `pur`(jo) extends Robot Framework variable scope with a new `BPMN:TASK` scope. For example
+For custom variables, `pur`(jo) extends Robot Framework variable scope with two new scopes: `BPMN:TASK` and `BPMN:PROCESS`. These scopes are used in robot test or task suites to define variables, which should be returned back to BPMN engine. For example:
 
 ```robotframework
 *** Test Cases ***
@@ -215,6 +227,23 @@ Set BPMN variable
     VAR    ${message}    Hello World!    scope=${BPMN:TASK}
 ```
 
+Simlarly, the following example would set the variables direcly onto process scope, not requiring definition of task outputs in the BPMN task:
+
+```robotframework
+*** Variables ***
+
+${BPMN:PROCESS}    local
+
+*** Test Cases ***
+
+Set BPMN variable
+    VAR    ${message}    Hello World!    scope=${BPMN:PROCESS}
+```
+
+```{warning}
+If a variable is defined in input mapping, `scope=${BPMN:PROCESS}` cannot pass the variable back to the process scope, but only updates the variable in the task scope instead. Therefore output mapping is still required for passing variables back to the process scope.
+```
+
 
 ## Handling failures
 
@@ -230,7 +259,7 @@ In Operaton engine an external {BPMN}`../bpmn/service-task` **Service Task** can
 
   ![Conditional BPMN error definition](./conditional-error.png)
 
-For handling these different failure types, `pur serve` has option `--on-fail=FAIL|COMPLETE|ERROR` to configure how failed robot executions are reported back to the engine.
+For handling these different failure types, `pur serve` has option `--on-fail=FAIL|COMPLETE|ERROR` to configure how failed robot executions are reported back to the engine, unless task have topic specific configuration in `pyproject.toml`.
 
 By the default value, `FAIL`, `pur serve` reports failed robot executions as failed tasks without automated instructions, creating incidents to be manually hangled at the engine. (Note: `pur`(jo) should eventually support configuration settings allowed per listened topic.)
 
