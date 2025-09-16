@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_14ou3p3" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.6.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+  <decision id="BusTicketPrice" name="Select test case">
+    <decisionTable id="DecisionTable_0vlcsn5" biodi:annotationsWidth="400">
+      <input id="Input_1" label="Hour of day" biodi:width="150">
+        <inputExpression id="InputExpression_1" typeRef="integer">
+          <text>hour</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1jelwl2" label="A / B" biodi:width="191">
+        <inputExpression id="LiteralExpression_0xnzxb8" typeRef="string">
+          <text>type</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_02sftzn">
+          <text></text>
+        </inputValues>
+      </input>
+      <output id="Output_1" label="Test case" name="test" typeRef="string" biodi:width="150" />
+      <rule id="DecisionRule_0116we3">
+        <description></description>
+        <inputEntry id="UnaryTests_1qlx0m9">
+          <text>[0..6]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vy3p5x">
+          <text>"A"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0gw4sh3">
+          <text>"Nightly Test A"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ckd55d">
+        <inputEntry id="UnaryTests_10unyud">
+          <text>[0..6]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tru9wz">
+          <text>"B"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wb8jqu">
+          <text>"Nightly Test B"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_132d8fs">
+        <description></description>
+        <inputEntry id="UnaryTests_0rtzdb7">
+          <text>[7..12]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0arsg87">
+          <text>"A"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0gr1w35">
+          <text>"Morning Test A"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0uu3yg4">
+        <inputEntry id="UnaryTests_00gomy7">
+          <text>[7..12]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1aw5h6r">
+          <text>"B"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fqnkn6">
+          <text>"Morning Test B"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1y24mll">
+        <inputEntry id="UnaryTests_060i93w">
+          <text>[13..18]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09keagb">
+          <text>"A"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_09zmwuc">
+          <text>"Daily Test A"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0jd662x">
+        <inputEntry id="UnaryTests_0oyv9e7">
+          <text>[13..18]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1k5j8a7">
+          <text>"B"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0y8aast">
+          <text>"Daily Test B"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0is7tp2">
+        <description></description>
+        <inputEntry id="UnaryTests_0k9qo93">
+          <text>[19..24]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ummwf6">
+          <text>"A"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0szzy4f">
+          <text>"Evening Test A"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1bkidhw">
+        <inputEntry id="UnaryTests_03t37bk">
+          <text>[19..24]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dixe7i">
+          <text>"B"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02f5he3">
+          <text>"Evening Test B"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="BusTicketPrice">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
