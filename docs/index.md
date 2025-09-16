@@ -39,7 +39,7 @@ The workshop aims to provide a basic understanding of BPMN and its capabilities 
 
 ## Preparations
 
-The workshop playground has been tested with GitHub Codespaces, but with some effort, you can also run it locally. Check [Getting Started](https://github.com/datakurre/operaton-robot-playground#getting-started) at [the playground repository](https://github.com/datakurre/operation-robot-playground) for instructions on how to get the playground environment up and running.
+The workshop playground has been tested with GitHub Codespaces, but with some effort, you can also run it locally. Check [Getting Started](https://github.com/datakurre/operaton-robot-playground#getting-started) at [the playground repository](https://github.com/datakurre/operaton-robot-playground) for instructions on how to get the playground environment up and running.
 
 
 ## Index
