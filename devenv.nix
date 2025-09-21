@@ -1,10 +1,12 @@
 { pkgs, ... }:
 {
-  imports = [
-    ./devenv/modules/operaton.nix
-  ];
+  package.operaton.port = 8080;
+  package.operaton.deployment = ./bpmn;
 
-  package.operaton.path = ./fixture;
+  process.managers.process-compose.settings.environment = [
+    "SERVER_USE_FORWARD_HEADERS=true"
+    "SERVER_FORWARD_HEADERS_STRATEGY=native"
+  ];
 
   enterTest = ''
     wait_for_port 8080 60
