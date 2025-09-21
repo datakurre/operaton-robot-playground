@@ -1,9 +1,15 @@
 # yaml-language-server: $schema=https://devenv.sh/devenv.schema.json
 inputs:
   nixpkgs:
-    url: github:nixos/nixpkgs/nixos-24.11
+    url: github:nixos/nixpkgs/master
   mvn2nix:
-    url: github:datakurre/mvn2nix
-  nix-vscode-extensions:
-    url: github:nix-community/nix-vscode-extensions
-allowUnfree: true
+    url: gitlab:vasara-bpm/mvn2nix
+  devenv-module-mvn2nix:
+    url: gitlab:vasara-bpm/devenv-module-mvn2nix
+    flake: false
+  devenv-module-operaton:
+    url: gitlab:vasara-bpm/devenv-module-operaton
+    flake: false
+imports:
+- devenv-module-mvn2nix
+- devenv-module-operaton

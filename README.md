@@ -89,13 +89,16 @@ Local VSCode with Podman, might require the following `.devcontainer.json`:
   "customizations": {
     "vscode": {
       "extensions": [
-        "d-biehl.robotcode",
+        "bbenoist.Nix",
         "be5invis.toml",
+        "charliermarsh.ruff",
+        "d-biehl.robotcode",
+        "ms-vscode.makefile-tools",
         "/workspaces/operaton-robot-playground/resources/miranum-modeler.vsix"
       ]
     }
   },
-  "image": "ghcr.io/cachix/devenv:latest",
+  "image": "ghcr.io/cachix/devenv/devcontainer:v1.8.2",
   "containerEnv": {
     "HOME": "/home/vscode",
     "UV_LINK_MODE": "copy",

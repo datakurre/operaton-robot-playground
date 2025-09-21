@@ -1,4 +1,4 @@
 black >= 25.1.0 , <26
-purjo >= 1.0.0a23
-robotframework >= 7, <8
-robotframework-tidy >= 4.16.0, <5
+git+https://github.com/datakurre/purjo.git@e2671d8987ee1011d6e10639ea34b9c42a67cdc5#purjo
+git+https://github.com/robotframework/robotframework.git@2f42ee808129903f597e3e284f0af4afa0abe8b7#egg=robotframework
+robotframework-tidy >= 4.18.0, <5
