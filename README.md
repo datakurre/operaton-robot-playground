@@ -134,3 +134,8 @@ $ make clean
 ```
 
 and trying again. For example, rebuilding the local devcontainer.
+
+
+## License
+
+This project is licensed under the [European Union Public Licence v. 1.2](LICENSE) (EUPL-1.2).
