@@ -8,6 +8,9 @@ clean:
 	devenv gc
 	$(RM) -r .venv .devenv*
 
+develop: ## Launch opinionated IDE
+	devenv --profile full-vim shell -- code .
+
 devenv-up:
 	devenv processes up -d
 

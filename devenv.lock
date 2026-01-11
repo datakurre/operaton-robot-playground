@@ -3,10 +3,10 @@
     "devenv": {
       "locked": {
         "dir": "src/modules",
-        "lastModified": 1757852601,
+        "lastModified": 1768133288,
         "owner": "cachix",
         "repo": "devenv",
-        "rev": "8190bcacd6077785bc35b03fb281cc410f74d629",
+        "rev": "b3d5f5d2fe88b78341ea30fec4fd5ae1a3a3c214",
         "type": "github"
       },
       "original": {
@@ -16,13 +16,28 @@
         "type": "github"
       }
     },
+    "devenv-module-devcontainer": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1767300658,
+        "owner": "datakurre",
+        "repo": "devenv-module-devcontainer",
+        "rev": "3894066fb330df796c8da9a55c2d62afc0fbdca8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "datakurre",
+        "repo": "devenv-module-devcontainer",
+        "type": "github"
+      }
+    },
     "devenv-module-mvn2nix": {
       "flake": false,
       "locked": {
-        "lastModified": 1747244750,
+        "lastModified": 1767793238,
         "owner": "vasara-bpm",
         "repo": "devenv-module-mvn2nix",
-        "rev": "8c8c821e20e82d7a12c900b8e9fdfe612aba5f7d",
+        "rev": "4a92ba94ee696eda9f7c4650d99bcb66a475698b",
         "type": "gitlab"
       },
       "original": {
@@ -34,10 +49,10 @@
     "devenv-module-operaton": {
       "flake": false,
       "locked": {
-        "lastModified": 1757529071,
+        "lastModified": 1768160984,
         "owner": "vasara-bpm",
         "repo": "devenv-module-operaton",
-        "rev": "a11d8aee593f7fd72e965b505bfae17157d41d4d",
+        "rev": "0ac0c1dfef0b637fad0389b4387beb43dd57bb99",
         "type": "gitlab"
       },
       "original": {
@@ -49,14 +64,14 @@
     "flake-compat": {
       "flake": false,
       "locked": {
-        "lastModified": 1747046372,
-        "owner": "edolstra",
+        "lastModified": 1767039857,
+        "owner": "NixOS",
         "repo": "flake-compat",
-        "rev": "9100a0f413b0c601e0533d1d94ffd501ce2e7885",
+        "rev": "5edf11c44bc78a0d334f6334cdaf7d60d732daab",
         "type": "github"
       },
       "original": {
-        "owner": "edolstra",
+        "owner": "NixOS",
         "repo": "flake-compat",
         "type": "github"
       }
@@ -70,10 +85,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1757588530,
+        "lastModified": 1767281941,
         "owner": "cachix",
         "repo": "git-hooks.nix",
-        "rev": "b084b2c2b6bc23e83bbfe583b03664eb0b18c411",
+        "rev": "f0927703b7b1c8d97511c4116eb9b4ec6645a0fa",
         "type": "github"
       },
       "original": {
@@ -90,10 +105,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1709087332,
+        "lastModified": 1762808025,
         "owner": "hercules-ci",
         "repo": "gitignore.nix",
-        "rev": "637db329424fd7e46cf4185293b9cc8c88c95394",
+        "rev": "cb5e3fdca1de58ccbc3ef53de65bd372b48f567c",
         "type": "github"
       },
       "original": {
@@ -122,10 +137,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1757745802,
+        "lastModified": 1767892417,
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "c23193b943c6c689d70ee98ce3128239ed9e32d1",
+        "rev": "3497aa5c9457a9d88d71fa93a4a8368816fbeeba",
         "type": "github"
       },
       "original": {
@@ -137,15 +152,15 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1757880283,
+        "lastModified": 1768028080,
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "ed9b583096fd0714dde4af6c9bfb6634df1f8ed6",
+        "rev": "d03088749a110d52a4739348f39a63f84bb0be14",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "master",
+        "ref": "nixos-25.11",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -153,6 +168,7 @@
     "root": {
       "inputs": {
         "devenv": "devenv",
+        "devenv-module-devcontainer": "devenv-module-devcontainer",
         "devenv-module-mvn2nix": "devenv-module-mvn2nix",
         "devenv-module-operaton": "devenv-module-operaton",
         "git-hooks": "git-hooks",

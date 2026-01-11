@@ -8,6 +8,7 @@ includes = ["*.nix"]
 command = "black"
 includes = ["*.py"]
 
-[formatter.robotidy]
-command = "robotidy"
+[formatter.robocop]
+command = "robocop"
+options = ["format"]
 includes = ["*.robot"]

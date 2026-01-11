@@ -1,18 +1,29 @@
 {
+  "containerUser": "vscode",
   "customizations": {
     "vscode": {
       "extensions": [
         "bbenoist.Nix",
         "be5invis.toml",
-        "charliermarsh.ruff",
-        "d-biehl.robotcode",
+        "eamodio.gitlens",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "google.gemini-cli-vscode-ide-companion",
+        "mkhl.direnv",
         "ms-vscode.makefile-tools",
-        "/workspaces/operaton-robot-playground/resources/miranum-modeler.vsix"
+        "d-biehl.robotcode",
+        "/workspaces/operaton-robot-playground/resources/vs-code-bpmn-modeler-0.6.2.vsix"
       ]
     }
   },
-  "image": "ghcr.io/cachix/devenv/devcontainer:v1.8.2",
+  "image": "ghcr.io/cachix/devenv/devcontainer:latest",
+  "containerEnv": {
+    "HOME": "/home/vscode"
+  },
   "overrideCommand": false,
+  "runArgs": [
+    "--userns=keep-id"
+  ],
   "updateContentCommand": "devenv test",
   "portsAttributes": {
     "8080": {
