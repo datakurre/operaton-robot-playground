@@ -17,13 +17,17 @@ Usage: pur [OPTIONS] COMMAND [ARGS]...
 
 pur(jo) is a tool for managing and serving robot packages.
 
-╭─ Commands ───────────────────────────────────────────────────────────────╮
-│ serve   Serve robot.zip packages (or directories) as BPMN service tasks. │
-│ init    Initialize a new robot package into the current directory.       │
-│ wrap    Wrap the current directory into a robot.zip package.             │
-│ run     Deploy process resources to BPM engine and start a new instance. │
-│ bpm     BPM engine operations as distinct sub commands.                  │
-╰──────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ────────────────────────────────────────────────────────────────╮
+│ serve    Serve robot.zip packages (or directories) as BPMN service tasks. │
+│ init     Initialize a new robot package into the current directory.       │
+│ wrap     Wrap the current directory into a robot.zip package.             │
+│ run      Deploy process resources to BPM engine and start a new instance. │
+│ operaton BPM engine operations as distinct sub commands.                  │
+╰───────────────────────────────────────────────────────────────────────────╯
+```
+
+```{note}
+The `operaton` subcommand is also available as `bpm` for backwards compatibility.
 ```
 
 ```{tip}
@@ -55,6 +59,11 @@ This would create a new `hello-world` directory with the following files:
 * `Hello.py` - example Robot Framework keyword library
 * `hello.robot` - example Robot Framework test suite
 * `README.md` - Empty README for your use.
+* `.wrapignore` - Specifies files to exclude when packaging with `pur wrap`.
+
+```{tip}
+Use `pur init --python` to create a pure Python template instead of a Robot Framework template.
+```
 
 Next, start a new process instance with the example BPMN model:
 
@@ -128,17 +137,18 @@ This will include `uv`'s project-specific `.cache` directory in the package. Pac
 `pur`(jo) is designed to support fast iterations while developing Robot Framework test and task packages to be orchestrated with BPM. The following commands should be helpful:
 
 * `pur init` initializes a new project in the current directory.
-* `pur bpm deploy <RESOURCES...>` deploys given resources as a single multi-file deployment to the Operaton BPM engine.
-* `pur bpm start <KEY>` starts a new process instance from the deployed process definition with the given key (*ID* in the modeler, but *Key* in the engine).
+* `pur operaton deploy <RESOURCES...>` deploys given resources as a single multi-file deployment to the Operaton BPM engine.
+* `pur operaton start <KEY>` starts a new process instance from the deployed process definition with the given key (*ID* in the modeler, but *Key* in the engine).
+* `pur operaton create <FILENAME>` creates a new BPMN, DMN, or Form file with unique IDs.
 * `pur run <RESOURCES...>` is a shortcut for both deploying resources to the BPM engine and starting a new process instance defined in them.
 * `pur serve .` serves the project from the current directory as an external BPMN service task worker, following the topic mapping defined in its `pyproject.toml`.
 
 ```{tip}
-Both `pur bpm start` and `pur run` accept option `--variables`, which accepts a JSON string, a JSON filename or `-` to read JSON from *stdin*. JSON object would then be parse as key-value-pairs into initial process variables for the started process.
+Both `pur operaton start` and `pur run` accept option `--variables`, which accepts a JSON string, a JSON filename or `-` to read JSON from *stdin*. JSON object would then be parse as key-value-pairs into initial process variables for the started process.
 ```
 
 ```{note}
-Both `pur bpm deploy` and `pur run` try to migrate previous process versions to the latest version deployed with the command, unless called with the `--no-migrate` flag.
+Both `pur operaton deploy` and `pur run` try to migrate previous process versions to the latest version deployed with the command, unless called with the `--no-migrate` flag.
 ```
 
 
@@ -157,14 +167,21 @@ $ pur serve --help
 │ *    robots      ROBOTS...  [default: None] [required]                                      │
 ╰─────────────────────────────────────────────────────────────────────────────────────────────╯
 ╭─ Options ───────────────────────────────────────────────────────────────────────────────────╮
-│ --base-url             TEXT                   [default: http://localhost:8080/engine-rest]  │
-│ --authorization        TEXT                   [default: None]                               │
-│ --timeout              INTEGER                [default: 20]                                 │
-│ --poll-ttl             INTEGER                [default: 10]                                 │
-│ --lock-ttl             INTEGER                [default: 30]                                 │
+│ --base-url             TEXT                   [env var: ENGINE_REST_BASE_URL]               │
+│                                               [default: http://localhost:8080/engine-rest]  │
+│ --authorization        TEXT                   [env var: ENGINE_REST_AUTHORIZATION]          │
+│ --secrets              TEXT                   [env var: TASKS_SECRETS_PROFILE]              │
+│ --timeout              INTEGER                [env var: ENGINE_REST_TIMEOUT_SECONDS]        │
+│                                               [default: 20]                                 │
+│ --poll-ttl             INTEGER                [env var: ENGINE_REST_POLL_TTL_SECONDS]       │
+│                                               [default: 10]                                 │
+│ --lock-ttl             INTEGER                [env var: ENGINE_REST_LOCK_TTL_SECONDS]       │
+│                                               [default: 30]                                 │
 │ --max-jobs             INTEGER                [default: 1]                                  │
-│ --worker-id            TEXT                   [default: operaton-robot-runner]              │
-│ --log-level            TEXT                   [default: DEBUG]                              │
+│ --worker-id            TEXT                   [env var: TASKS_WORKER_ID]                    │
+│                                               [default: operaton-robot-runner]              │
+│ --log-level            TEXT                   [env var: LOG_LEVEL]                          │
+│                                               [default: DEBUG]                              │
 │ --on-fail              [FAIL|COMPLETE|ERROR]  [default: FAIL]                               │
 │ --help                                        Show this message and exit.                   │
 ╰─────────────────────────────────────────────────────────────────────────────────────────────╯
@@ -276,3 +293,128 @@ To be more complete, external {BPMN}`../bpmn/service-task` **Service Task** can 
 
 * Task worker disappears after locking the task and before completing it, and the task will be automatically released for a retry by another worker later.
 ```
+
+
+## Managing secrets
+
+`pur`(jo) provides a flexible system for managing sensitive information (secrets) using different providers (e.g., local files, HashiCorp Vault). Secrets are injected into your tasks as variables, but handled securely to prevent accidental exposure.
+
+### Configuration
+
+Secrets are configured in `pyproject.toml` under `[tool.purjo.secrets]`. You can define multiple profiles.
+
+#### File provider
+
+The `file` provider loads secrets from a JSON file:
+
+```toml
+[tool.purjo.secrets.default]
+provider = "file"
+path = "secrets.json"
+```
+
+The corresponding `secrets.json` file:
+
+```json
+{
+  "api_key": "my-secret-key"
+}
+```
+
+#### Vault provider
+
+The `vault` provider loads secrets from HashiCorp Vault:
+
+```toml
+[tool.purjo.secrets.prod]
+provider = "vault"
+path = "secret/my-app"
+mount-point = "secret"
+```
+
+This requires `VAULT_ADDR` and `VAULT_TOKEN` environment variables to be set.
+
+### Using secrets
+
+When running `pur serve`, purjo uses the `default` profile if one exists. You can specify a different profile or a direct file path using the `--secrets` option:
+
+```console
+# Use the 'prod' profile from pyproject.toml
+$ pur serve --secrets prod .
+
+# Use a specific secrets file directly (bypassing pyproject.toml)
+$ pur serve --secrets ./my-secrets.json .
+```
+
+Secrets are injected as variables into your Robot Framework or Python tasks:
+
+```robotframework
+*** Tasks ***
+Use API Key
+    Log To Console    The API Key is: ${api_key}
+```
+
+```{tip}
+If `robotframework` >= 7.4b2 is used, secrets are automatically converted to `Secret` objects, which mask their values in logs.
+```
+
+```{warning}
+Never commit secrets files to version control. Add `secrets.json` (and any other secret files) to your `.gitignore`. Use the `vault` provider for production environments to avoid storing secrets on disk.
+```
+
+
+## Testing tasks
+
+`pur`(jo) includes a Robot Framework library, also named `purjo`, which facilitates testing your tasks in isolation without needing a running BPM engine.
+
+### The `purjo` library
+
+The `purjo` library allows you to execute tasks defined in your project as if they were being called by the BPM engine, but locally within a Robot Framework test suite. This is crucial for verifying task logic, variable mapping, and error handling before deployment.
+
+The core keyword provided by the library is `Get Output Variables`. It executes a specific task (identified by its topic) from a robot package using a set of input variables and returns the resulting output variables:
+
+```robotframework
+*** Settings ***
+Library    purjo
+Library    Collections
+
+*** Tasks ***
+Test My Task
+    # Define input variables
+    &{inputs}=    Create Dictionary    name=Alice
+
+    # Execute the task locally
+    &{outputs}=   Get Output Variables    path=.    topic=My Topic in BPMN    variables=${inputs}
+
+    # Verify the output
+    Should Be Equal    ${outputs}[message]    Hello, Alice!
+```
+
+The `Get Output Variables` keyword accepts the following arguments:
+
+* `path`: Path to the robot package. This can be the current directory (`.`) during development or a path to a packaged `robot.zip` file.
+* `topic`: The BPMN topic name as configured in your `pyproject.toml` file.
+* `variables`: A dictionary containing the input variables that the task expects.
+* `secrets`: (Optional) A dictionary containing the secrets that the task expects.
+
+### Testing with secrets
+
+If your task requires secrets, you can pass them as a dictionary using the `secrets` argument:
+
+```robotframework
+*** Settings ***
+Library     purjo
+Library     Collections
+
+*** Variables ***
+&{Input Variables}              name=John
+&{Expected Output Variables}    message=John's birthday is tomorrow
+&{Secret Variables}             birthday=tomorrow
+
+*** Test Cases ***
+Test Hello World
+    ${Output Variables}=    Get Output Variables    ${CURDIR}${/}hello    My Topic in BPMN    ${Input Variables}   ${Secret Variables}
+    Dictionaries Should Be Equal    ${Output Variables}    ${Expected Output Variables}
+```
+
+This approach allows you to build a comprehensive regression test suite for your BPMN tasks, ensuring they behave correctly with various inputs and edge cases.

@@ -2,7 +2,7 @@
 
 # Operaton Robot Playground
 
-Welcome to this opinionated documentation for orchestrating [Robot Framework](https://robotframework.org/) test or task suites with [Operaton](https://operaton.org/) BPM engine. The documentation was introduced for a workshop at [RoboCon.io](https://robocon.io/) Helsinki 2025.
+Welcome to this opinionated documentation for orchestrating [Robot Framework](https://robotframework.org/) test or task suites with [Operaton](https://operaton.org/) BPM engine. The documentation was introduced for a workshop at [RoboCon.io](https://robocon.io/) Helsinki 2025 and revised for 2026.
 
 This documentation accompanies a playground, which you can open in [GitHub Codespaces](https://codespaces.new/datakurre/operaton-robot-playground).
 
@@ -11,7 +11,7 @@ This documentation accompanies a playground, which you can open in [GitHub Codes
 ![Screenshot of GitHub Codespaces](./README.png)
 
 
-## RoboCon.io 2025
+## RoboCon.io 2026
 
 The workshop aims to provide a basic understanding of BPMN and its capabilities in orchestrating Robot Framework test or task suites using the Operaton BPM engine. Participants will gain the knowledge needed for further self-study, experimentation, and informed decision-making on integrating these tools into their own projects.
 
@@ -53,6 +53,7 @@ modeling/index.md
 bpmn/advanced.md
 operaton/index.md
 purjo/index.md
+forms/index.md
 tests/index.md
 bpmn/juel.md
 ```

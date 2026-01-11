@@ -1,0 +1,49 @@
+{
+    "components": [
+        {
+            "text": "Article: **{{title}}**\n\nPlease select an editor from the list below to assign to this submission.",
+            "type": "text",
+            "layout": {
+                "row": "Row_145mknt",
+                "columns": null
+            },
+            "id": "Field_0a6feee"
+        },
+        {
+            "label": "Editor for this article:",
+            "values": [
+                {
+                    "label": "John Doe",
+                    "value": "johndoe"
+                },
+                {
+                    "label": "Jane Doe",
+                    "value": "janedoe"
+                },
+                {
+                    "label": "Zoe Doe",
+                    "value": "zoedoe"
+                }
+            ],
+            "type": "select",
+            "layout": {
+                "row": "Row_0unkjbp",
+                "columns": null
+            },
+            "id": "Field_1ezhut7",
+            "key": "editor",
+            "validate": {
+                "required": true
+            }
+        }
+    ],
+    "type": "default",
+    "id": "Form_AssignEditor",
+    "exporter": {
+        "name": "Camunda Modeler",
+        "version": "5.28.0"
+    },
+    "executionPlatform": "Camunda Platform",
+    "executionPlatformVersion": "7.22.0",
+    "schemaVersion": 19
+}

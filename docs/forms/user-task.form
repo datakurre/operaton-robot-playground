@@ -1,0 +1,36 @@
+{
+    "components": [
+        {
+            "label": "Assign editor",
+            "values": [
+                {
+                    "label": "John Doe",
+                    "value": "john.doe@example.com"
+                },
+                {
+                    "label": "Jane Doe",
+                    "value": "jane.doe@example.com"
+                }
+            ],
+            "type": "select",
+            "layout": {
+                "row": "Row_0unkjbp",
+                "columns": null
+            },
+            "id": "Field_1ezhut7",
+            "key": "editor",
+            "validate": {
+                "required": true
+            }
+        }
+    ],
+    "type": "default",
+    "id": "Form_AssignEditor",
+    "exporter": {
+        "name": "Camunda Modeler",
+        "version": "5.28.0"
+    },
+    "executionPlatform": "Camunda Platform",
+    "executionPlatformVersion": "7.22.0",
+    "schemaVersion": 19
+}

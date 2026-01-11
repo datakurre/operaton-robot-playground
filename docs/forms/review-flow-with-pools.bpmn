@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_08c0mjs" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.6.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.22">
+  <bpmn:collaboration id="Collaboration_1i45u1x">
+    <bpmn:participant id="Participant_0jjbc21" name="Simple Peer Review" processRef="SimplePeerReview" />
+  </bpmn:collaboration>
+  <bpmn:process id="SimplePeerReview" isExecutable="true">
+    <bpmn:laneSet id="LaneSet_1vg2sd0">
+      <bpmn:lane id="Lane_1yvxr25" name="Reviewer">
+        <bpmn:flowNodeRef>Activity_0l53xey</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_0wk3lny</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_16fbv2z" name="Editor">
+        <bpmn:flowNodeRef>Activity_0ctozzv</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_0iwhkwv" name="Managing Editor">
+        <bpmn:flowNodeRef>Event_02837xc</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1hc8dwn</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:sequenceFlow id="Flow_0fbm495" sourceRef="Activity_0l53xey" targetRef="Event_0wk3lny" />
+    <bpmn:sequenceFlow id="Flow_0wf30se" sourceRef="Activity_0ctozzv" targetRef="Activity_0l53xey" />
+    <bpmn:sequenceFlow id="Flow_1ag4t0b" sourceRef="Activity_1hc8dwn" targetRef="Activity_0ctozzv" />
+    <bpmn:sequenceFlow id="Flow_1ngeacl" sourceRef="Event_02837xc" targetRef="Activity_1hc8dwn" />
+    <bpmn:userTask id="Activity_1hc8dwn" name="Assign editor" camunda:formRef="Form_AssignEditor" camunda:formRefBinding="latest">
+      <bpmn:incoming>Flow_1ngeacl</bpmn:incoming>
+      <bpmn:outgoing>Flow_1ag4t0b</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:startEvent id="Event_02837xc" name="Article submitted for peer review">
+      <bpmn:outgoing>Flow_1ngeacl</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:userTask id="Activity_0ctozzv" name="Select reviewers">
+      <bpmn:incoming>Flow_1ag4t0b</bpmn:incoming>
+      <bpmn:outgoing>Flow_0wf30se</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_0l53xey" name="Review article">
+      <bpmn:incoming>Flow_0wf30se</bpmn:incoming>
+      <bpmn:outgoing>Flow_0fbm495</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:endEvent id="Event_0wk3lny" name="Peer review complete">
+      <bpmn:incoming>Flow_0fbm495</bpmn:incoming>
+    </bpmn:endEvent>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1i45u1x">
+      <bpmndi:BPMNShape id="Participant_0jjbc21_di" bpmnElement="Participant_0jjbc21" isHorizontal="true">
+        <dc:Bounds x="100" y="-50" width="850" height="490" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0iwhkwv_di" bpmnElement="Lane_0iwhkwv" isHorizontal="true">
+        <dc:Bounds x="130" y="-50" width="820" height="160" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_16fbv2z_di" bpmnElement="Lane_16fbv2z" isHorizontal="true">
+        <dc:Bounds x="130" y="110" width="820" height="160" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1yvxr25_di" bpmnElement="Lane_1yvxr25" isHorizontal="true">
+        <dc:Bounds x="130" y="270" width="820" height="170" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_03c0vzs_di" bpmnElement="Activity_1hc8dwn">
+        <dc:Bounds x="280" y="-10" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_02837xc_di" bpmnElement="Event_02837xc">
+        <dc:Bounds x="182" y="12" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="160" y="55" width="81" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_05kqvb3_di" bpmnElement="Activity_0ctozzv">
+        <dc:Bounds x="480" y="150" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0rwpj0x_di" bpmnElement="Activity_0l53xey">
+        <dc:Bounds x="700" y="310" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0wk3lny_di" bpmnElement="Event_0wk3lny">
+        <dc:Bounds x="862" y="332" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="852" y="375" width="59" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0fbm495_di" bpmnElement="Flow_0fbm495">
+        <di:waypoint x="800" y="350" />
+        <di:waypoint x="862" y="350" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0wf30se_di" bpmnElement="Flow_0wf30se">
+        <di:waypoint x="580" y="190" />
+        <di:waypoint x="640" y="190" />
+        <di:waypoint x="640" y="350" />
+        <di:waypoint x="700" y="350" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ag4t0b_di" bpmnElement="Flow_1ag4t0b">
+        <di:waypoint x="380" y="30" />
+        <di:waypoint x="430" y="30" />
+        <di:waypoint x="430" y="190" />
+        <di:waypoint x="480" y="190" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ngeacl_di" bpmnElement="Flow_1ngeacl">
+        <di:waypoint x="218" y="30" />
+        <di:waypoint x="280" y="30" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
