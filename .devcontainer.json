@@ -11,7 +11,8 @@
         "mkhl.direnv",
         "ms-vscode.makefile-tools",
         "d-biehl.robotcode",
-        "/workspaces/operaton-robot-playground/resources/vs-code-bpmn-modeler-0.6.2.vsix"
+        "/workspaces/operaton-robot-playground/resources/vs-code-bpmn-modeler-0.6.2.vsix",
+        "DavidAnson.vscode-markdownlint"
       ]
     }
   },

@@ -2,3 +2,4 @@ black >= 25.12.0, <26
 purjo >= 1.0b6
 robotframework >= 7.3.1, <8
 robotframework-robocop >= 7.2.0, <8
+rf-mcp >= 0.26.0
