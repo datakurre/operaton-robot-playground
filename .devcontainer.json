@@ -1,5 +1,4 @@
 {
-  "containerUser": "vscode",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -17,13 +16,7 @@
     }
   },
   "image": "ghcr.io/cachix/devenv/devcontainer:latest",
-  "containerEnv": {
-    "HOME": "/home/vscode"
-  },
   "overrideCommand": false,
-  "runArgs": [
-    "--userns=keep-id"
-  ],
   "updateContentCommand": "devenv test",
   "portsAttributes": {
     "8080": {
