@@ -44,13 +44,23 @@ my-package/
 
 ### Step 1: Initialize with `pur init`
 
+**IMPORTANT**: Before running `pur init`, ensure the target directory is empty. The command will fail or produce unexpected results if files already exist.
+
 ```console
 $ mkdir my-package
 $ cd my-package
+# Verify directory is empty
+$ ls -la
+# Should show only . and ..
 $ pur init
 ```
 
-This creates the base structure with example files.
+This creates the base structure with example files including:
+- `hello.bpmn` - Example BPMN process
+- `hello.robot` - Example Robot Framework task
+- `Hello.py` - Example Python keyword library
+- `pyproject.toml` - Project configuration
+- `uv.lock` - Dependency lock file
 
 ### Step 2: Configure pyproject.toml
 
@@ -131,20 +141,29 @@ My Task
 
 ### Python Keyword Libraries
 
-Create custom keyword libraries using Robot Framework decorators:
+Create custom keyword libraries using Robot Framework decorators.
+
+**CRITICAL**: Always import AND use BOTH the `@library` AND `@keyword` decorators. Missing either decorator will cause the library or keywords to not be recognized:
 
 ```python
-from robot.api.deco import keyword
-from robot.api.deco import library
+# CORRECT: Import both decorators
+from robot.api.deco import keyword, library
 
 
-@library()
+@library()  # Required: marks class as a Robot Framework library
 class MyLibrary:
-    @keyword()
+    @keyword()  # Required: marks method as a keyword - DO NOT FORGET THIS
     def my_keyword(self, arg1: str, arg2: int) -> str:
         """Keyword documentation here."""
         return f"Result: {arg1} - {arg2}"
+
+    @keyword()  # Every public keyword method needs this decorator
+    def another_keyword(self, value: str) -> str:
+        """Another keyword."""
+        return value.upper()
 ```
+
+**Common mistake**: Forgetting the `@keyword()` decorator on methods. Without it, the method will not be available as a Robot Framework keyword.
 
 Import in Robot Framework:
 
@@ -196,6 +215,45 @@ ${result == "success"}
 ${count > 10}
 ${errorCode != null}
 ```
+
+### User Tasks with Dynamic Forms
+
+When creating demo or interactive processes, enhance the default BPMN from `pur init` by adding a User Task before the robot task. This allows manual submission of input values through Operaton Tasklist.
+
+**When to add User Tasks:**
+- Demo processes where users should provide input values
+- Testing robot tasks with different inputs without redeploying
+- Interactive workflows requiring human input before automation
+
+**Setting up User Task with Generated Form (Camunda 7 Dynamic Forms):**
+
+1. Add a User Task before the robot Service Task in your BPMN
+2. In properties panel, set **Form Type** to `Generated Task Form`
+3. Add form fields that match your robot's expected input variables:
+
+```
+Form Field ID: message
+Type: string
+Label: Message to process
+
+Form Field ID: count  
+Type: long
+Label: Number of iterations
+
+Form Field ID: enabled
+Type: boolean
+Label: Enable feature
+```
+
+**Example BPMN flow with User Task:**
+
+```
+[Start Event] → [User Task: Provide Input] → [Robot Task: Process Data] → [End Event]
+```
+
+The User Task will display a form in Operaton Tasklist where users can enter values. Upon form submission, these values become process variables available to the subsequent robot task through input mapping.
+
+**Tip**: Match the Form Field IDs exactly to the variable names expected by your robot task to simplify input mapping.
 
 
 ## Testing Robot Packages
