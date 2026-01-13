@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Project instructions for LLM coding agents creating **Robot Framework bots** orchestrated by **Operaton BPMN** using **purjo**. `rf-mcp` is available for keyword discovery and stepwise execution help.
+Project instructions for LLM coding agents creating **Robot Framework bots** orchestrated by **Operaton BPM** using **purjo**. `rf-mcp` is available for keyword discovery and stepwise execution help.
 
 
 ## Non‑Negotiables
@@ -23,8 +23,8 @@ pur init
 
 Then modify the generated template (do not add new scaffolding unless asked):
 - `pyproject.toml` (topic mapping, deps)
-- `hello.robot` / `Hello.py` (implement your task)
-- `hello.bpmn` (wire BPMN, often add a User Task + form)
+- `hello.robot` / `Hello.py` (implement your task, rename)
+- `hello.bpmn` (wire BPMN, often add a User Task + form, rename)
 
 
 ## Topic Mapping (`pyproject.toml`)
@@ -88,7 +88,7 @@ class MyLibrary:
 
 Rules:
 - Every exposed method MUST have `@keyword()`.
-- Prefer type hints.
+- Arguments must have type hints.
 
 
 ## BPMN Modeling
@@ -162,3 +162,7 @@ Use MCP to:
 - Prefer adding a User Task + Generated Form for demo inputs.
 - Use `@library()` + `@keyword()` correctly.
 - Don’t invent new scaffolding when `pur init` exists.
+
+## Documentation
+
+- https://datakurre.github.io/purjo/
