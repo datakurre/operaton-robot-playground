@@ -3,10 +3,10 @@
     "devenv": {
       "locked": {
         "dir": "src/modules",
-        "lastModified": 1768133288,
+        "lastModified": 1770574308,
         "owner": "cachix",
         "repo": "devenv",
-        "rev": "b3d5f5d2fe88b78341ea30fec4fd5ae1a3a3c214",
+        "rev": "819a2f6ab5366c456984b3c2eec3190fa9638314",
         "type": "github"
       },
       "original": {
@@ -19,10 +19,10 @@
     "devenv-module-devcontainer": {
       "flake": false,
       "locked": {
-        "lastModified": 1767300658,
+        "lastModified": 1769417663,
         "owner": "datakurre",
         "repo": "devenv-module-devcontainer",
-        "rev": "3894066fb330df796c8da9a55c2d62afc0fbdca8",
+        "rev": "9eed4c8aa468116648146635dd33dedd3c2e2688",
         "type": "github"
       },
       "original": {
@@ -34,10 +34,10 @@
     "devenv-module-mvn2nix": {
       "flake": false,
       "locked": {
-        "lastModified": 1767793238,
+        "lastModified": 1768338450,
         "owner": "vasara-bpm",
         "repo": "devenv-module-mvn2nix",
-        "rev": "4a92ba94ee696eda9f7c4650d99bcb66a475698b",
+        "rev": "5c4e57a2b520955578f1f337b8475e3b0318fbfe",
         "type": "gitlab"
       },
       "original": {
@@ -49,10 +49,10 @@
     "devenv-module-operaton": {
       "flake": false,
       "locked": {
-        "lastModified": 1768160984,
+        "lastModified": 1770580960,
         "owner": "vasara-bpm",
         "repo": "devenv-module-operaton",
-        "rev": "0ac0c1dfef0b637fad0389b4387beb43dd57bb99",
+        "rev": "18d8580078c7006049067182b36f46e3b2b9242a",
         "type": "gitlab"
       },
       "original": {
@@ -85,10 +85,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1767281941,
+        "lastModified": 1769939035,
         "owner": "cachix",
         "repo": "git-hooks.nix",
-        "rev": "f0927703b7b1c8d97511c4116eb9b4ec6645a0fa",
+        "rev": "a8ca480175326551d6c4121498316261cbb5b260",
         "type": "github"
       },
       "original": {
@@ -137,10 +137,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1767892417,
+        "lastModified": 1770197578,
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "3497aa5c9457a9d88d71fa93a4a8368816fbeeba",
+        "rev": "00c21e4c93d963c50d4c0c89bfa84ed6e0694df2",
         "type": "github"
       },
       "original": {
@@ -152,10 +152,10 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1768028080,
+        "lastModified": 1770464364,
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "d03088749a110d52a4739348f39a63f84bb0be14",
+        "rev": "23d72dabcb3b12469f57b37170fcbc1789bd7457",
         "type": "github"
       },
       "original": {

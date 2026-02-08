@@ -8,8 +8,11 @@ clean:
 	devenv gc
 	$(RM) -r .venv .devenv*
 
-develop: ## Launch opinionated IDE
-	devenv --profile full-vim shell -- code .
+develop: devenv.local.nix ## Launch opinionated IDE
+	devenv shell --profile devcontainer -- code .
+
+devenv.local.nix:
+	cp devenv.local.nix.example devenv.local.nix
 
 devenv-up:
 	devenv processes up -d

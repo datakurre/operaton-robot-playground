@@ -3,7 +3,12 @@
     "robotmcp": {
       "type": "stdio",
       "command": "uv",
-      "args": ["run", "robotmcp.server"]
+      "args": ["run", "robotmcp"]
+    },
+    "bpmnmcp": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "https://github.com/datakurre/BPMN-MCP.git"]
     }
   }
 }

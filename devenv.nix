@@ -1,14 +1,14 @@
 { pkgs, config, ... }:
 {
-  package.operaton.port = 8080;
-  package.operaton.deployment = ./bpmn;
+  services.operaton.port = 8080;
+  services.operaton.postgresql.enable = true;
+  services.operaton.deployment = ./bpmn;
 
-  profiles = {
-    full-vim.module = {
-      services.devcontainer.enable-vscode = true;
-      services.devcontainer.enable-vscode-vim = true;
-      services.devcontainer.enable-podman = true;
-    };
+  languages.javascript.enable = true;
+  languages.javascript.npm.enable = true;
+
+  profiles.devcontainer.module  = {
+    devcontainer.enable = true;
   };
 
   services.vault = {
@@ -45,6 +45,10 @@
       '';
     in
     "${configureScript}/bin/configure-vault-kv";
+  
+  packages = [
+    pkgs.vim
+  ];  
 
   enterTest = ''
     wait_for_port 8080 60
