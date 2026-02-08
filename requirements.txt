@@ -1,5 +1,5 @@
 black >= 25.12.0, <26
-purjo == git+https://github.com/datakurre/purjo.git@8b27da3d05b6a7367fea02384cf856409310c1da#egg=purjo
 robotframework >= 7.3.1, <8
 robotframework-robocop >= 7.2.0, <8
-rf-mcp >= 0.28.0
+rf-mcp >= 0.29.0
+git+https://github.com/datakurre/purjo.git@d2d09059a43ca3e3f887ca45ab2dac923158fef4#egg=purjo

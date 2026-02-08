@@ -4,6 +4,8 @@
   services.operaton.postgresql.enable = true;
   services.operaton.deployment = ./bpmn;
 
+  dotenv.enable = true;
+
   languages.javascript.enable = true;
   languages.javascript.npm.enable = true;
 

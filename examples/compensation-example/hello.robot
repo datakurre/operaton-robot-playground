@@ -8,7 +8,7 @@ ${BPMN:PROCESS}     local
 
 *** Tasks ***
 Simulate SUT
-    ${value}=    randint    ${0}    ${10}
+    ${value}    randint    ${0}    ${10}
     IF    ${value} < 3
         FAIL    Processing time is invalid
     ELSE IF    ${value} > 5

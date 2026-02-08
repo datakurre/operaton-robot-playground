@@ -16,7 +16,7 @@ ${Date Input}       ${None}
 
 *** Tasks ***
 Test Variable Tpyes
-    ${Date Input}=    Convert Date    ${Date Input}
+    ${Date Input}    Convert Date    ${Date Input}
     Log Variables
     VAR    ${String Output}    ${String Input}    scope=${BPMN:TASK}
     VAR    ${Number Output}    ${Number Input}    scope=${BPMN:TASK}
