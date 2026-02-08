@@ -26,15 +26,14 @@ The workshop aims to provide a basic understanding of BPMN and its capabilities 
 |               | **[Advanced BPMN concepts](bpmn/advanced.md)** |
 |               | **[Modeling for execution](operaton/index.md)** |
 |               | **[BPMN with Robot Framework](purjo/index.md)** |
-| 12.45--13.30  | Lunch                                 |
+| 12.15--13.00  | Lunch                                 |
 |               | **[BPMN with Robot Framework](purjo/index.md)** |
-|               | **[Using BPMN and robot for system tests](tests/index.md)** |
 |               | Executing and adapting examples       |
 | Break         |                                       |
 |               | Hands-on exercises                    |
 | Break         |                                       |
 |               | Discussion and future plans           |
-| 17.00         | Workshop ends                         |
+| 16.30         | Workshop ends                         |
 
 
 ## Preparations
