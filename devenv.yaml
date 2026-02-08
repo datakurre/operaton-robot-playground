@@ -1,5 +1,7 @@
 # yaml-language-server: $schema=https://devenv.sh/devenv.schema.json
 inputs:
+  devenv:
+    url: github:cachix/devenv/v1.11.2
   nixpkgs:
     url: github:nixos/nixpkgs/nixos-25.11
   mvn2nix:

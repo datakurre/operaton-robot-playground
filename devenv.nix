@@ -53,7 +53,7 @@
   ];  
 
   enterTest = ''
-    wait_for_port 8080 60
+    wait_for_port 8080 180
     wait_for_port 8200 60
   '';
 
