@@ -15,25 +15,27 @@ This documentation accompanies a playground, which you can open in [GitHub Codes
 
 The workshop aims to provide a basic understanding of BPMN and its capabilities in orchestrating Robot Framework test or task suites using the Operaton BPM engine. Participants will gain the knowledge needed for further self-study, experimentation, and informed decision-making on integrating these tools into their own projects.
 
-| Time          | Activity                              |
-|---------------|---------------------------------------|
-| 9.00          | Welcome                               |
-|               | **[Introduction to BPMN](bpmn/index.md)**      |
-| Break         |                                       |
-|               | **[Operaton Robot Playground](playground/index.md)**      |
-|               | **[Basic modeling exercises](modeling/index.md)** |
-| Break         |                                       |
-|               | **[Advanced BPMN concepts](bpmn/advanced.md)** |
-|               | **[Modeling for execution](operaton/index.md)** |
-|               | **[BPMN with Robot Framework](purjo/index.md)** |
-| 12.15--13.00  | Lunch                                 |
-|               | **[BPMN with Robot Framework](purjo/index.md)** |
-|               | Executing and adapting examples       |
-| Break         |                                       |
-|               | Hands-on exercises                    |
-| Break         |                                       |
-|               | Discussion and future plans           |
-| 16.30         | Workshop ends                         |
+| Time         | Activity                                         |
+|--------------|--------------------------------------------------|
+| 9.00         | Welcome                                          |
+|              | **[Introduction to BPMN](bpmn/index.md)**        |
+|              | **[Overview on the ecosystem](ecosystem.md)**    |
+| Break        |                                                  |
+|              | **[Playground introduction](playground/index.md)** |
+|              | **[Basic modeling exercises](modeling/index.md)** |
+| Break        |                                                  |
+|              | **[Modeling for execution](operaton/index.md)**  |
+|              | **[BPMN with Robot Framework](purjo/index.md)**  |
+|              | **[User tasks and forms](forms/index.md)**       |
+| 12.15--13.00 | Lunch                                            |
+|              | **[BPMN with Robot Framework](purjo/index.md)**  |
+|              | **[Advanced BPMN concepts](bpmn/advanced.md)**   |
+| Break        |                                                  |
+|              | **[Introduction to BPMN system tests](tests/index.md)** |
+|              | Executing and adapting examples                  |
+| Break        |                                                  |
+|              | Discussion and future plans                      |
+| 16.30        | Workshop ends                                    |
 
 
 ## Preparations
