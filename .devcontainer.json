@@ -1,28 +1,33 @@
 {
+  "containerEnv": {
+    "HOME": "/home/vscode"
+  },
+  "containerUser": "vscode",
   "customizations": {
     "vscode": {
       "extensions": [
+        "mkhl.direnv",
         "bbenoist.Nix",
         "be5invis.toml",
-        "eamodio.gitlens",
+        "d-biehl.robotcode",
         "GitHub.copilot",
         "GitHub.copilot-chat",
-        "google.gemini-cli-vscode-ide-companion",
-        "mkhl.direnv",
-        "ms-vscode.makefile-tools",
-        "d-biehl.robotcode",
-        "/workspaces/operaton-robot-playground/resources/vs-code-bpmn-modeler-0.6.2.vsix",
-        "DavidAnson.vscode-markdownlint"
+        "ms-vscode.makefile-tools"
       ]
     }
   },
-  "image": "ghcr.io/cachix/devenv/devcontainer:v1.11.2",
+  "image": "ghcr.io/cachix/devenv/devcontainer:latest",
+  "mounts": [
+    "source=${localEnv:XDG_RUNTIME_DIR}/gnupg/S.gpg-agent,target=/run/host-gpg-agent,type=bind,readonly"
+  ],
   "overrideCommand": false,
   "postCreateCommand": "direnv allow",
-  "updateContentCommand": "devenv test",
-  "portsAttributes": {
-    "8080": {
-      "label": "operaton"
-    }
-  }
+  "postStartCommand": "mkdir -p /home/vscode/.gnupg && rm -f /home/vscode/.gnupg/S.gpg-agent && ln -s /run/host-gpg-agent /home/vscode/.gnupg/S.gpg-agent",
+  "remoteEnv": {
+    "GPG_TTY": "/dev/pts/0"
+  },
+  "runArgs": [
+    "--userns=keep-id"
+  ],
+  "updateContentCommand": "devenv shell -- echo Ready."
 }

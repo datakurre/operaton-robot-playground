@@ -15,6 +15,7 @@
       <bpmn:incoming>Flow_13drrwz</bpmn:incoming>
       <bpmn:incoming>Flow_1sc4pue</bpmn:incoming>
       <bpmn:incoming>Flow_12iwzgg</bpmn:incoming>
+      <bpmn:incoming>Flow_038vdnu</bpmn:incoming>
       <bpmn:outgoing>Flow_1x0bvnr</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:sequenceFlow id="Flow_1x0bvnr" sourceRef="Gateway_0l7z14z" targetRef="Activity_1y9gpn5" />
@@ -32,6 +33,11 @@
     <bpmn:startEvent id="Event_1kslr7h" name="Test triggered by another test">
       <bpmn:outgoing>Flow_12iwzgg</bpmn:outgoing>
       <bpmn:messageEventDefinition id="MessageEventDefinition_0epldf8" />
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_038vdnu" sourceRef="Event_0cpcrer" targetRef="Gateway_0l7z14z" />
+    <bpmn:startEvent id="Event_0cpcrer" name="All tests triggered">
+      <bpmn:outgoing>Flow_038vdnu</bpmn:outgoing>
+      <bpmn:signalEventDefinition id="SignalEventDefinition_1jz3nc1" />
     </bpmn:startEvent>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
@@ -67,6 +73,12 @@
           <dc:Bounds x="149" y="315" width="82" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0h9u7f0_di" bpmnElement="Event_0cpcrer">
+        <dc:Bounds x="172" y="382" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="148" y="425" width="85" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_13drrwz_di" bpmnElement="Flow_13drrwz">
         <di:waypoint x="208" y="190" />
         <di:waypoint x="265" y="190" />
@@ -87,6 +99,11 @@
       <bpmndi:BPMNEdge id="Flow_12iwzgg_di" bpmnElement="Flow_12iwzgg">
         <di:waypoint x="208" y="290" />
         <di:waypoint x="290" y="290" />
+        <di:waypoint x="290" y="215" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_038vdnu_di" bpmnElement="Flow_038vdnu">
+        <di:waypoint x="208" y="400" />
+        <di:waypoint x="290" y="400" />
         <di:waypoint x="290" y="215" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>

@@ -47,12 +47,13 @@ The workshop playground has been tested with GitHub Codespaces, but with some ef
 :maxdepth: 1
 
 bpmn/index.md
+ecosystem.md
 playground/index.md
 modeling/index.md
-bpmn/advanced.md
 operaton/index.md
 purjo/index.md
 forms/index.md
+bpmn/advanced.md
 tests/index.md
 bpmn/juel.md
 ```

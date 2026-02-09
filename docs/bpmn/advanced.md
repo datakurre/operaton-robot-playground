@@ -1,78 +1,100 @@
 # Advanced BPMN concepts
 
-This section continues from the [BPMN basics](./index.md) and introduces more advanced BPMN concepts.
+This section builds on the [BPMN basics](./index.md) and introduces additional, more advanced BPMN concepts.
 
 
 ## Alternative start events
 
 ```{bpmn-figure} more-start-events
-While the plain {bpmn}`start-event` **start event** could be triggered through APIs to start processes in custom ways, also BPMN itself supports multiple ways to start processes. For example, {bpmn}`timer-start-event` **timer start event** can start a new process instance periodically, or {bpmn}`message-start-event` **message start event** from a BPMN message (even from an another process instance). {download}`more-start-events.bpmn`
+While a plain {bpmn}`start-event` **start event** can already be triggered through APIs to start processes programmatically, BPMN itself defines multiple specialised start mechanisms. For example, a {bpmn}`timer-start-event` **timer start event** can launch a new process instance periodically; a {bpmn}`message-start-event` **message start event** reacts to a correlated BPMN message (even from another process instance); and a {bpmn}`signal-start-event` **signal start event** broadcasts a signal that can start many process instances at once. {download}`more-start-events.bpmn`
 ```
 
-The above example introduced the following new event type:
+The above example introduced the following new event types:
 
-* {bpmn}`message-start-event` **message events**, for sending and receiving targeted messages, e.g. for inter-process communication
-
+* {bpmn}`message-start-event` **message events** – for sending and receiving targeted messages (e.g. inter‑process communication)
+* {bpmn}`signal-start-event` **signal events** – for broadcasting notifications to any process instance listening for the named signal
 
 ## Intermediate events
 
 ```{bpmn-figure} intermediate-events
-In addition to {bpmn}`start-event` **start event**, {bpmn}`end-event` **end event**, and {bpmn}`empty-boundary-event` **boundary event**, BPMN has {bpmn}`intermediate-throw-event` **intermediate event** too. The simplest use case for them is to use empty intermediate events for marking relevant business states in the process (as metrics like KPIs in later data analysis). {download}`intermediate-events.bpmn`
+In addition to {bpmn}`start-event` **start events**, {bpmn}`end-event` **end events**, and {bpmn}`empty-boundary-event` **boundary events**, BPMN defines {bpmn}`intermediate-throw-event` **intermediate events**. A simple use case is inserting empty intermediate events to mark relevant business states in the process (later usable as metrics or KPI anchors in data analysis). {download}`intermediate-events.bpmn`
 ```
 
 
 ## Even more events
 
 ```{bpmn-figure} more-events
-Events in BPMN 2.0: start events, interrupting and non-interrupting start events, intermediate throw events, intermediate catch events, interrupting and non-interrupting boundary events, and end events. All in many different types. 
+Events in BPMN 2.0 include: start events (interrupting and non‑interrupting), intermediate throw and catch events, boundary events (interrupting and non‑interrupting), and end events – each available in multiple specialised types. 
 {download}`more-events.bpmn`
 ```
 
 The above example introduced the following new event types:
 
-* {bpmn}`signal-start-event` **signal event**, for sending and receiving broadcasted signals, e.g. for mass-cancellation of processes
-* {bpmn}`conditional-start-event` **conditional event**, for being triggered on a condition, e.g. a process variable value change
-* {bpmn}`compensation-event` **compensation event**, for triggering compensation tasks for already completed, but now compensated tasks.
+* {bpmn}`signal-intermediate-throw-event` **signal event** – broadcasts a global signal that any listener can catch
+* {bpmn}`conditional-start-event` **conditional event** – triggers when a condition becomes true (e.g. a process variable value change)
+* {bpmn}`compensation-end-event` **compensation event** – triggers compensation handlers for already completed activities
 
 
-## Compensation
+### Message events
 
-It is usual in BPMN that the same result can be achieved in multiple ways. For example, in testing, one must usually setup the environment before running the tests and clean up after the tests. Obviously, this can be achieved with just [the basic BPMN constructs](./index.md):
+Message events are mainly a way to **achieve inter‑process communication** within the engine. In Operaton, they can also be configured to behave like a service task. Operaton further allows a single message to have multiple recipients (even though that is outside the BPMN specification).
+
+* {bpmn}`message-start-event` **message start event** – triggers a new process instance when a matching message is correlated in the engine
+* {bpmn}`message-intermediate-throw-event` **intermediate message throw event** – sends a one‑to‑one message from one process to another
+* {bpmn}`message-intermediate-catch-event` **intermediate message catch event** – waits for a matching message to be correlated
+* {bpmn}`message-end-event` **message end event** – throws a message and ends the process instance
+
+Operaton correlates messages by name plus flexible configuration criteria, ranging from an exact process ID to matching multiple variable values.
+
+
+### Signal events
+
+Signal events are the official BPMN way to broadcast messages to more than one receiving process.
+
+* {bpmn}`signal-start-event` **signal start event** – starts a new process instance when a signal is received
+* {bpmn}`signal-intermediate-throw-event` **intermediate signal throw event** – broadcasts a signal in the engine
+* {bpmn}`signal-intermediate-catch-event` **intermediate signal catch event** – waits for a signal
+* {bpmn}`signal-end-event` **signal end event** – broadcasts a signal and ends the process instance
+
+Operaton matches signals by name only.
+
+
+### Compensation
+
+It is common in BPMN that the same outcome can be modelled in multiple ways. For example, releasing a reserved resource when a process is cancelled can be achieved with just [basic BPMN constructs](./index.md):
 
 ```{bpmn-figure} without-compensation
-In this example, the test requires cloud resources, which are provisioned and waited for before the actual execution. {download}`without-compensation.bpmn`
-
-```{tip} BPMN pools and communication between the pools do not affect the execution of the model in the BPM engine but allow better visualization and documentation of the process in its context. 
+{download}`without-compensation.bpmn`
 ```
 
-Alternatively, the same can be achieved with a {bpmn}`compensation-event` **compensation event** and accompanying {bpmn}`task` **compensation tasks** {bpmn}`compensation-boundary-event` connected to the tasks they are about to compensate if tasks have been executed successfully:
+Alternatively, the same can be achieved with a {bpmn}`compensation-event` **compensation event** plus accompanying {bpmn}`task` **compensation tasks** attached via {bpmn}`compensation-boundary-event` boundary events to the tasks they would undo (assuming those tasks completed successfully):
 
 ```{bpmn-figure} with-compensation
-When a process ends with {bpmn}`compensation-end-event` **compensation end event**, the process engine will automatically execute the {bpmn}`compensation-boundary-event` compensation tasks for the tasks that have been successfully executed. {download}`with-compensation.bpmn`
+When a process ends with a {bpmn}`compensation-end-event` **compensation end event**, the engine automatically executes the attached {bpmn}`compensation-boundary-event` handlers for successfully completed tasks, in reverse completion order. {download}`with-compensation.bpmn`
 ```
 
 
 ## Multi-instance
 
 ```{bpmn-figure} multi-instance-subprocess
-**Tasks** and **embedded sub-processes** can be configured to be **multi-instance** -- the BPMN way to loop over a collection. The configuration can be either {bpmn}`parallel-multi-instance` **parallel** or {bpmn}`sequential-multi-instance` **sequential**. Multi-instance requires an input collection to be configured for it, but then it executes task or sub-process separately for every input item in the collection with one BPMN symbol. {download}`multi-instance-subprocess.bpmn`
+**Tasks** and **embedded sub‑processes** can be configured as **multi‑instance** – the BPMN way to loop over a collection. The mode can be {bpmn}`parallel-multi-instance` **parallel** or {bpmn}`sequential-multi-instance` **sequential**. A multi‑instance marker requires an input collection; the engine then executes the task or sub‑process once per item (each with isolated instance‑local variables) using a single BPMN symbol. {download}`multi-instance-subprocess.bpmn`
 ```
 
 ## Script task
 
-
 ```{bpmn-figure} script-task
+{download}`script-task.bpmn`
 ```
 
-**Script task** {bpmn}`script-task` is a task that allows executing custom scripts directly in the process engine being used. The supported scripting languages depend on the engine but typically include JavaScript, Groovy, or Python (Jython or GraalPy, which has not been implemented yet).
+**Script task** {bpmn}`script-task` executes custom script logic directly within the process engine. Supported scripting languages depend on the engine but commonly include JavaScript, Groovy, or Python (via Jython, or hopefully GraalPy in the future). 
 
-In Operaton BPMN engine, a script task can manipulate multiple process variables using its `execution.setVariable` API, or assign its return value to a single result variable.
+In the Operaton BPMN engine, a script task can manipulate multiple process variables through its `execution.setVariable` API, or assign its return value to a single result variable.
 
 
 ## Business rule task
 
 ```{bpmn-figure} ./business-rule-task
-**Business rule task** {bpmn}`business-rule-task` is a special task type reserved for automated rule-based decision making in a process. It's typically configured to use DMN (Decision Model and Notation) decision tables, designed to describe business rules. Additionally, DMN tables can be maintained separately from the process models, allowing for faster iterations.
+**Business rule task** {bpmn}`business-rule-task` is a specialised task type for automated, rule‑based decision making within a process. It is typically configured to use DMN (Decision Model and Notation) decision tables. DMN tables are designed to describe business rules in a tabular, testable format and can be maintained separately from process models, allowing faster iteration without redeploying the process definition.
 ```
 
 This test case selection example demonstrates how a business rule task with DMN decision table can be used to select test cases based on the test case selection criteria. Even in this simple example, the DMN table should be compact and easier to maintain than the equivalent conditional logic in classic programming languages.
@@ -80,3 +102,4 @@ This test case selection example demonstrates how a business rule task with DMN 
 ```{dmn-html} test-case-selection
 ```
 {download}`test-case-selection.dmn`
+```

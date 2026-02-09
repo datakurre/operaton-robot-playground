@@ -33,13 +33,13 @@ The raw `devenv` command to start Operaton and attach the monitor all at once in
 
 ## Miranum Modeler
 
-For creating and editing BPMN 2.0 and DMN diagrams for Operaton, the playground provides the [Miranum Modeler](https://marketplace.visualstudio.com/items?itemName=miragon-gmbh.vs-code-bpmn-modeler) extension preinstalled. Any `.bpmn` or `.dmn` file opened will be automatically opened in the modeler.
+For creating and editing BPMN 2.0 and DMN diagrams for Operaton, the playground provides [fork](https://github.com/datakurre/miranum-ide) of the [Miranum Modeler](https://marketplace.visualstudio.com/items?itemName=miragon-gmbh.vs-code-bpmn-modeler) extension preinstalled. Any `.bpmn`, `.dmn` or `.form` file opened will be automatically opened in the modeler.
 
 Miranum Modeler is based on free, source-available [BPMN.io](https://bpmn.io/) libraries, whose license requires the BPMN.io logo to be displayed in the bottom right corner of the modeler.
 
 ![Screenshot of Miranum Modeler](./modeler.png)
 
-The extension is missing a command for creating new diagrams, but you can create new files in the terminal with the command `pur bpm create` and then open them in the modeler.
+The extension is missing a command for creating new diagrams, but you can create new files in the terminal with the command `pur operaton create` and then open them in the modeler.
 
 
 ## RobotCode
@@ -51,6 +51,23 @@ RoboCode features are available in any `.robot` file opened in the editor.
 ![Screenshot of RobotCode](./robotcode.png)
 
 RobotCode requires a Python virtualenv with the `robotframework` package preinstalled. The playground provides one right at `.venv` to support the autodiscovery in the editor. If the virtualenv is missing for some reason, try `make shell` in the terminal to recreate it.
+
+
+## Vault / secrets management
+
+Sooner than later, running automation against external systems means you’ll need **secrets** (API keys, credentials, tokens). In this playground, secrets handling is primarily documented and implemented via `pur`(jo)’s secrets support.
+
+To keep this introduction page self-contained:
+
+- For local demos, `pur`(jo) can read secrets from a local JSON file (never commit it).
+- For real environments, prefer a dedicated secret manager. `pur`(jo) supports a Vault provider (and expects `VAULT_ADDR` + `VAULT_TOKEN`).
+
+The playground defines these automatically in its environment (check `env|grep VAULT` in terminal).
+
+
+See the full details in the `pur`(jo) docs: [Managing secrets](../purjo/index.md#managing-secrets).
+
+![Screenshot of Vault secrets](./vault.png)
 
 
 ## `uv`

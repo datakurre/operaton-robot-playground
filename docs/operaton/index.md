@@ -1,95 +1,99 @@
 # Modeling for execution
 
-BPMN does not end with visual modeling. BPMN 2.0 models can also contain all necessary execution instructions.
+**BPMN is designed** to support business process management **for both business and technical users**. Its visual notation makes models easier to understand than equivalent code while still allowing complex, executable behavior to be expressed.
 
-This is the use case of the properties panel of the modeler:
+Although the visual notation is standardized, concrete execution behavior depends on engine‑specific attributes stored in the model XML. For Operaton, these are configured in the properties panel.
 
-![Modeler Sidebar](./modeler-sidebar.png)
+![Modeler Sidebar](./execution-properties.png)
 
 ```{tip}
-At the playground, you can create a new BPMN file with the `pur bpm create hello-world.bpmn` command in the terminal and then open the created BPMN file in the editor.
+In the playground you can create a new BPMN file with `pur operaton create hello-world.bpmn` in the terminal, then open the created file in the editor.
 ```
 
+## Process name and ID
 
-## Process name and Id
+Every BPMN 2.0 process definition intended for execution should have:
 
-Every BPMN 2.0 model (*process definition*) for executable processes should have a descriptive display **Name** and a unique definition **ID** set, with the Executable option checked. These settings are available on the properties panel when no element is selected.
+* a descriptive display **Name**
+* a unique definition **ID**
+* the **Executable** option checked
 
-![Process name and Id](./process-name-and-id.png)
+These process‑level settings are available in the properties panel when no element is selected.
+
+In Operaton, you must also set a **Time to live** value that defines when historical execution data for completed processes may be cleaned up.
+
+![Process name and ID](./execution-process-id.png)
 
 ```{note}
-When using Pools and Lanes, the process Name and ID should be set at the Pool element.
+When using pools, set the process Name and ID on the Pool element.
 ```
 
+## Gateway paths
+
+Execution configuration includes how {bpmn}`../bpmn/exclusive-gateway` **Exclusive Gateways** and {bpmn}`../bpmn/inclusive-gateway` **Inclusive Gateways** determine which outgoing path a token should follow.
+
+One of the outgoing paths of an Exclusive Gateway can be marked as the **default path** using the element context (modeling) palette.
+
+![Setting exclusive gateway default path](./execution-default-path.png)
+
+All other outgoing paths should define a **condition expression** using [the expression language](../bpmn/juel.md).
+
+![Setting exclusive gateway condition](./execution-conditional-path.png)
+
+## User tasks
+
+{bpmn}`../bpmn/user-task` **User Tasks** are tasks performed by humans. They model interactions between a process and its users.
+
+In practice, a {bpmn}`../bpmn/user-task` **User Task** is implemented by presenting the user with a form (e.g. in a custom task list application). The form can display process variables and allow the user to update them. The **completed form is submitted back to the engine** via its API.
+
+[Read more about user tasks and forms.](../forms/index.md)
 
 ## External task pattern
 
-**External** {bpmn}`../bpmn/service-task` **Service task** is the feature of Operaton engine that allows to delegate work to be performed outside the BPM engine. Such work could include calling external services or performing long-running operations. And, of course, orchestrating {bpmn}`../bpmn/robot-task` **Robot Framework tasks**.
+An **External** {bpmn}`../bpmn/service-task` **Service Task** delegates work to be performed outside the engine—such as calling external services or executing long‑running operations. The playground supports implementing external tasks with Robot Framework or Python.
 
 To configure an external task in your BPMN model:
 
-1. **Add a {bpmn}`../bpmn/service-task` Service task** onto your process diagram.
+1. **Add a {bpmn}`../bpmn/service-task` Service Task** to your process diagram.
+2. Set **Implementation** in the properties panel to `External`.
+3. **Specify a Topic**: define a topic name that external workers will subscribe to. This acts as a queue that task workers will fetch and complete.
 
-2. **Set implementation** type in the properties panel to `External`.
+![External Task Configuration](./execution-service-task.png)
 
-3. **Specify topic**. Define a topic name that external workers will subscribe to. This topic acts as a queue for tasks that workers will fetch and complete.
-
-![External Task Configuration](./service-task.png)
-
-External task workers, like `pur`(jo) will then poll Operaton engine REST API for tasks with the specified topic, execute the required work, and report the completion results back to the engine.
+External task workers (e.g. `purjo`) poll the Operaton REST API for tasks with the specified topic, execute the required work, and report completion back to the engine.
 
 ```{tip}
-At the playground, a [dedicated plugin](https://github.com/datakurre/camunda-modeler-robot-plugin) renders {bpmn}`../bpmn/robot-task` **robot icon** for all {bpmn}`../bpmn/service-task` **Service Tasks** with a word *robot* in their *ID*.
+In the playground a [dedicated plugin](https://github.com/datakurre/camunda-modeler-robot-plugin) renders a {bpmn}`../bpmn/robot-task` **robot icon** for any {bpmn}`../bpmn/service-task` **Service Task** whose *ID* contains the word *robot*.
 ```
 
 ## Inputs and outputs
 
-**Process variables** store data that can be accessed and manipulated throughout the lifecycle of a process instance. In addition to process level variables, Operaton engine supports nested **variables scopes**. These scopes are most often managed with **input and output mappings** for {bpmn}`../bpmn/task` tasks and {bpmn}`../bpmn/start-event` sub-processes.
+```{note}
+**Inputs and outputs** are an advanced concept. Feel free to skip this section until you are comfortable executing processes using only process‑level variables.
+```
 
-Use of **inputs and outputs is not mandatory**, but they support separation of generic re-usable services tasks with generic "arguments" for domain specific process variables. Use of inputs and outputs also protects for possible concurrent tasks later overriding each others process variables.
+**Process variables** store data that can be accessed and manipulated throughout the lifecycle of a process instance. In addition to process‑level variables, the Operaton engine supports nested **variable scopes**. These scopes are usually managed with **input and output mappings** for {bpmn}`../bpmn/task` tasks and {bpmn}`../bpmn/start-event` sub‑processes.
 
-To configure input and output mappings for {bpmn}`../bpmn/service-task` **Service task**, select the task in the modeler and navigate to the properties panel sections **inputs** and **outputs**.
+Using **inputs and outputs is optional**, but they enable you to:
 
-![Inputs and outputs mapping in properties panel](./inputs-and-outputs.png)
+* Separate generic, reusable service tasks (with generic "arguments") from domain‑specific process variables.
+* Reduce the risk of concurrent tasks overwriting each other's process variables.
 
-The default expression language available for inputs mapping in Operaton is [JUEL](../bpmn/juel.md). This language allows you to reference process variables and perform simple operations on them.
+To configure input and output mappings for a {bpmn}`../bpmn/service-task` **Service Task**, select the task in the modeler and use the **Inputs** and **Outputs** sections in the properties panel.
+
+![Inputs and outputs mapping in properties panel](./execution-inputs-outputs.png)
+
+The default expression language for input mappings in Operaton is [JUEL](../bpmn/juel.md), which lets you reference process variables and perform simple operations on them.
 
 ```{warning}
-Variables mapped in {bpmn}`../bpmn/service-task` **Service task inputs are only available within the task**. Once the task is completed, the variables are no longer accessible **unless they are exported at outputs**.
+Variables mapped in {bpmn}`../bpmn/service-task` **Service Task** inputs exist only within the task. After the task completes, they are no longer accessible **unless exported via outputs**.
 ```
 
 ```{tip}
-**Inputs and outputs** can be used to map domain-specific process-level variables to generic task-level variables, to **allow for generic, reusable, external task workers**. This is similar to how functions in traditional programming are implemented and used.
+Inputs and outputs can map domain‑specific process‑level variables to generic task‑level variables, enabling **generic, reusable external task workers**—analogous to how functions are defined and invoked in traditional programming.
 ```
 
 ```{tip}
-File variables need to be mapped with the special expression `${execution.getVariableTyped("name")}` or they could be coerced to the "Bytes" variable type.
+File variables must be mapped with the special expression `${execution.getVariableTyped("name")}`; otherwise they may be coerced to the generic "Bytes" variable type.
 ```
 
-
-## Gateway paths
-
-Execution instructions include how {bpmn}`../bpmn/exclusive-gateway` **Exclusive Gateways** and {bpmn}`../bpmn/inclusive-gateway` **Inclusive Gateways** determine which path the token should be directed to.
-
-One of the outgoing paths from an exclusive gateway can be configured as **the default path** using the element context modeling palette.
-
-![Setting exclusive gateway default path](./default-path.png)
-
-The rest of the paths should have **condition expressions** defined, using [the expression language](../bpmn/juel.md).
-
-![Setting exclusive gateway condition](./conditional-path.png)
-
-
-## User tasks
-
-{bpmn}`../bpmn/user-task` **User Tasks** are tasks performed by human actors. These tasks are typically used to model interactions between the process and users.
-
-In practice, user tasks {bpmn}`../bpmn/user-task` **User Tasks** are implemented by displaying the user a form. The implementation can be a completely custom "tasklist application". The form can be configured to display process variables and allow the user to manipulate them. The **filled form is submitted back to the engine** by calling using its API.
-
-![User Task configuration](./user-task.png)
-
-Operaton's built-in tasklist application supports a few alternative form types. The **modeler used in the playground**, however, does not support "Camunda Forms", but only **Generated task Forms**.
-
-```{warning}
-The form definitions options supported by Operaton's builtin tasklist application may change before its final 1.0 release.
-```

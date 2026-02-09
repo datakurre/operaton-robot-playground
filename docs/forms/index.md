@@ -1,30 +1,28 @@
 # User tasks and forms
 
-It's about time to bring humans into the loop.
+What if we need to have humans in the loop?
 
 
 ## User tasks
 
-Until now, we have been learning BPMN 2.0 modeling with plain {bpmn}`../bpmn/task` **Undefined task activities**. This is the simplest and most distraction-free way to get started when thinking about your problems in BPMN. Eventually the question arises: who performs those tasks?
-
-The first answer for many processes is usually a person. Tasks completed by humans are called {bpmn}`../bpmn/user-task` **User task**.
+Until now, we have been learning BPMN 2.0 modeling with plain {bpmn}`../bpmn/task` **Undefined task activities** and automated {bpmn}`../bpmn/service-task` **Service task activities**. These are good enough for designing processes and implementing straightforward testing and automation flows, but they don’t add much compared to other automation or orchestration solutions. Not everything can be fully automated at once, and there are often good reasons to keep humans in the loop. In BPMN, this is possible with {bpmn}`../bpmn/user-task` **User task**.
 
 Remember the first sequence flow example:
 
 ```{bpmn-figure} ../modeling/simple-flow.bpmn
 ```
 
-With {bpmn}`../bpmn/user-task` user tasks, it would look like:
+With {bpmn}`../bpmn/user-task` user tasks, it would look like this:
 
 ```{bpmn-figure} simple-flow-user-tasks.bpmn
 ```
 
-With the modeler, use **Change element** tool (with tool symbol) to change the existing task activities to user task activities.
+In the modeler, use the **Change element** tool (wrench icon) to change the existing task activities to user task activities.
 
 
 ## Pools
 
-Not all users are equal. It's usual that different persons are responsible to complete different tasks. BPMN 2.0 defines two concepts for grouping user tasks by their respective domain specific user roles: vertical lanes and horizontal pools. Unfortunately, our modeler supports only pools.
+Not all users are equal. It’s common for different people to be responsible for completing different tasks. BPMN 2.0 defines two concepts for grouping user tasks by their respective domain-specific user roles: vertical lanes and horizontal pools. Unfortunately, our modeler supports only pools.
 
 This is how our simple example looks with pools:
 
@@ -55,7 +53,7 @@ Although the symbols and flow control are defined by the standard, execution det
 
 ### Candidate groups
 
-Candidate groups are groups of users, who will be able to see, claim and complete the task.
+Candidate groups are groups of users who will be able to see, claim, and complete the task.
 
 ![Setting candidate groups in modeler](./user-task-candidate-groups.png)
 
@@ -69,22 +67,29 @@ A task can also be automatically claimed for a single specific user by setting t
 
 ### Candidate users
 
-Candidate users is a list of specific users who will be able to see, claim, and complete the task.
+Candidate users are a list of specific users who will be able to see, claim, and complete the task.
 
 ![Setting candidate users in modeler](./user-task-candidate-users.png)
 
 
 ## Forms
 
-
 The most common way to let an end user complete a user task is to present a form. For external BPMN engines, it’s also common to build custom front‑ends that use familiar or widely adopted form libraries.
 
-With this playground, you will learn to model user task forms with [@bpmn-io/form-js](https://www.npmjs.com/package/@bpmn-io/form-js), a form library maintained by bpmn.io (a project by Camunda). The bpmn.io libraries are distributed under a custom license [bpmn.io/license](https://bpmn.io/license/) that is similar to MIT but requires a visible watermark linking to [bpmn.io](https://bpmn.io).
+Simple form definitions for Operaton can be defined directly in the BPMN model using so-called *Generated Task Forms*. They have limited features and no automatic layout, but they’re quick to define for simple inputs.
+
+![Generated Task Forms](./generated-user-task-form.png)
+
+In the playground, you can also model user task forms with [@bpmn-io/form-js](https://www.npmjs.com/package/@bpmn-io/form-js), a form library maintained by bpmn.io (a project by Camunda). The bpmn.io libraries are distributed under a custom license [bpmn.io/license](https://bpmn.io/license/) that is similar to MIT but requires a visible watermark linking to [bpmn.io](https://bpmn.io).
+
+```{note}
+There is no standard for defining {bpmn}`../bpmn/user-task` user task forms, but most of the technology is dictated by the chosen user interface.
+```
 
 
 ### Form Playground
 
-The provided component is the practical [form-js-playground](https://www.npmjs.com/package/@bpmn-io/form-js-playground), which is also integrated into our playground:
+The provided component is [form-js-playground](https://www.npmjs.com/package/@bpmn-io/form-js-playground), which is also integrated into our playground:
 
 ![form-js-playground](./form-js-playground.png)
 
@@ -98,7 +103,7 @@ These forms are also supported by default in the current version of Operaton Tas
 
 ## Bindings
 
-For historical reasons, bpmn.io forms may still be called "Camunda Forms", as is the case in our modeling tool. Forms are bound to tasks by choosing the type "Camunda Form" and setting the "Form Reference" to the form ID specified in the form editor.
+For historical reasons, bpmn.io forms may still be called “Camunda Forms”, as is the case in our modeling tool. Forms are bound to tasks by choosing the type “Camunda Form” and setting the “Form Reference” to the form ID specified in the form editor.
 
 ![form-js bindings in Modeler](./modeler-form-js.png)
 

@@ -40,6 +40,13 @@ on-fail = "FAIL"           # FAIL|COMPLETE|ERROR
 process-variables = false
 ```
 
+## BPMN authoring
+
+When working with .bpmn files, always use the BPMN MCP tools instead of editing BPMN XML directly. The MCP tools ensure valid BPMN 2.0 structure, proper diagram layout coordinates, and semantic correctness that hand-editing XML cannot guarantee.
+
+To modify an existing .bpmn file, use import_bpmn_xml to load it, make changes with the MCP tools, then export_bpmn and write the result back to the file.
+
+To create a new diagram, use create_bpmn_diagram, build it with add_bpmn_element / connect_bpmn_elements, then export_bpmn to get the XML.
 
 ## Robot Conventions
 

@@ -1,51 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_08c0mjs" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.6.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.22" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.20.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_08c0mjs" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.6.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.22">
   <bpmn:process id="Process_1d5o42o" isExecutable="true">
-    <bpmn:startEvent id="Event_02837xc" name="Article submitted for peer review">
+    <bpmn:startEvent id="Event_02837xc" name="Test triggered">
       <bpmn:outgoing>Flow_1ngeacl</bpmn:outgoing>
     </bpmn:startEvent>
     <bpmn:sequenceFlow id="Flow_1ngeacl" sourceRef="Event_02837xc" targetRef="Activity_1hc8dwn" />
     <bpmn:sequenceFlow id="Flow_1ag4t0b" sourceRef="Activity_1hc8dwn" targetRef="Activity_0ctozzv" />
     <bpmn:sequenceFlow id="Flow_0wf30se" sourceRef="Activity_0ctozzv" targetRef="Activity_0l53xey" />
-    <bpmn:endEvent id="Event_0wk3lny" name="Peer review complete">
+    <bpmn:endEvent id="Event_0wk3lny" name="Test completed">
       <bpmn:incoming>Flow_0fbm495</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_0fbm495" sourceRef="Activity_0l53xey" targetRef="Event_0wk3lny" />
-    <bpmn:userTask id="Activity_1hc8dwn" name="Assign editor">
+    <bpmn:userTask id="Activity_1hc8dwn" name="Setup test">
       <bpmn:incoming>Flow_1ngeacl</bpmn:incoming>
       <bpmn:outgoing>Flow_1ag4t0b</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:userTask id="Activity_0ctozzv" name="Select reviewers">
-      <bpmn:incoming>Flow_1ag4t0b</bpmn:incoming>
-      <bpmn:outgoing>Flow_0wf30se</bpmn:outgoing>
-    </bpmn:userTask>
-    <bpmn:userTask id="Activity_0l53xey" name="Review article">
+    <bpmn:userTask id="Activity_0l53xey" name="Teardown test">
       <bpmn:incoming>Flow_0wf30se</bpmn:incoming>
       <bpmn:outgoing>Flow_0fbm495</bpmn:outgoing>
     </bpmn:userTask>
+    <bpmn:serviceTask id="Activity_0ctozzv" name="Run test">
+      <bpmn:incoming>Flow_1ag4t0b</bpmn:incoming>
+      <bpmn:outgoing>Flow_0wf30se</bpmn:outgoing>
+    </bpmn:serviceTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1d5o42o">
       <bpmndi:BPMNShape id="Event_02837xc_di" bpmnElement="Event_02837xc">
         <dc:Bounds x="172" y="102" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="150" y="145" width="81" height="27" />
+          <dc:Bounds x="157" y="145" width="67" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_0wk3lny_di" bpmnElement="Event_0wk3lny">
         <dc:Bounds x="742" y="102" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="732" y="145" width="59" height="27" />
+          <dc:Bounds x="725" y="145" width="74" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_17sifsj_di" bpmnElement="Activity_1hc8dwn">
         <dc:Bounds x="260" y="80" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1c58dvg_di" bpmnElement="Activity_0ctozzv">
-        <dc:Bounds x="420" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1dtzvuj_di" bpmnElement="Activity_0l53xey">
         <dc:Bounds x="580" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1aqeui8_di" bpmnElement="Activity_0ctozzv">
+        <dc:Bounds x="420" y="80" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_1ngeacl_di" bpmnElement="Flow_1ngeacl">
         <di:waypoint x="208" y="120" />
