@@ -4,12 +4,9 @@
       "extensions": [
         "bbenoist.Nix",
         "be5invis.toml",
-        "eamodio.gitlens",
         "GitHub.copilot",
         "GitHub.copilot-chat",
-        "google.gemini-cli-vscode-ide-companion",
         "mkhl.direnv",
-        "ms-vscode.makefile-tools",
         "d-biehl.robotcode",
         "/workspaces/operaton-robot-playground/resources/vs-code-bpmn-modeler-0.6.2.vsix",
         "DavidAnson.vscode-markdownlint"
