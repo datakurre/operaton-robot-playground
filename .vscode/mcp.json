@@ -5,7 +5,7 @@
       "command": "uv",
       "args": ["run", "robotmcp"]
     },
-    "bpmnmcp": {
+    "bpmn-js-mcp": {
       "type": "stdio",
       "command": "npx",
       "args": ["-y", "https://github.com/datakurre/BPMN-MCP.git"]
