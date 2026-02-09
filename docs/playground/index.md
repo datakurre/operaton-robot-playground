@@ -46,7 +46,7 @@ The extension is missing a command for creating new diagrams, but you can create
 
 Another extension preinstalled in the playground is [RobotCode](https://marketplace.visualstudio.com/items?itemName=robotframework.robotframework). It's the famous extension adding Robot Framework IntelliSense, linting, test execution and debugging, code formatting, refactoring, and many more features right into the editor.
 
-RoboCode features are available in any `.robot` file opened in the editor.
+RobotCode features are available in any `.robot` file opened in the editor.
 
 ![Screenshot of RobotCode](./robotcode.png)
 

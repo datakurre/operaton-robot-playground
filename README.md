@@ -1,6 +1,6 @@
 # Operaton Robot Playground [![Documentation at GitHub Pages](https://github.com/datakurre/operaton-robot-playground/actions/workflows/pages/pages-build-deployment/badge.svg)](https://datakurre.github.io/operaton-robot-playground)
 
-This repository hosts a playground and documentation for orchestrating [Robot Framework](https://robotframework.org/) test or task suites with [Operaton](https://operaton.org/) BPM engine. The playground was introduced for a workshop at [RoboCon.io](https://robocon.io/) Helsinki 2025.
+Welcome to this opinionated documentation for orchestrating [Robot Framework](https://robotframework.org/) test or task suites with [Operaton](https://operaton.org/) BPM engine. The documentation was introduced for a workshop at [RoboCon.io](https://robocon.io/) Helsinki 2025 and revised for 2026.
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/datakurre/operaton-robot-playground)
 
@@ -51,12 +51,13 @@ Once you have entered the shell with either `make start shell` or separately `ma
    $ mkdir hello-world
    $ cd hello-world
    $ pur init
-   Adding pyproject.toml
    Adding uv.lock
-   Adding Hello.py
-   Adding .python-version
-   Adding README.md
+   Adding test_hello.robot
    Adding hello.robot
+   Adding pyproject.toml
+   Adding hello.bpmn
+   Adding Makefile
+   Adding README.md
    ```
 
 2. Deploy and start the example process
