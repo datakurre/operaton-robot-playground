@@ -18,6 +18,7 @@
   },
   "image": "ghcr.io/cachix/devenv/devcontainer:latest",
   "overrideCommand": false,
+  "postCreateCommand": "direnv allow",
   "updateContentCommand": "devenv test",
   "portsAttributes": {
     "8080": {
