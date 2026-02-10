@@ -29,10 +29,6 @@ Then modify the generated template (do not add new scaffolding unless asked):
 ## Topic Mapping (`pyproject.toml`)
 
 ```toml
-[tool.purjo.topics]
-"My Topic in BPMN" = { name = "My Task Name in Robot" }
-
-# Optional per-topic overrides
 [tool.purjo.topics."My Topic in BPMN"]
 name = "My Task Name in Robot"
 on-fail = "FAIL"           # FAIL|COMPLETE|ERROR
