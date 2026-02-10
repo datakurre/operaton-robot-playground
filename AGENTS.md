@@ -42,7 +42,7 @@ process-variables = false
 
 ## BPMN authoring
 
-When working with .bpmn files, always use the BPMN MCP tools instead of editing BPMN XML directly. The MCP tools ensure valid BPMN 2.0 structure, proper diagram layout coordinates, and semantic correctness that hand-editing XML cannot guarantee.
+When working with .bpmn files, always use the `#bpmn-js-mcp` tools instead of editing BPMN XML directly. The MCP tools ensure valid BPMN 2.0 structure, proper diagram layout coordinates, and semantic correctness that hand-editing XML cannot guarantee.
 
 To modify an existing .bpmn file, use import_bpmn_xml to load it, make changes with the MCP tools, then export_bpmn and write the result back to the file.
 
@@ -50,7 +50,7 @@ To create a new diagram, use create_bpmn_diagram, build it with add_bpmn_element
 
 ## Robot Framework authoring
 
-Use `rf-mcp` for tasks related to **Robot Framework test automation**. Use it when the user wants to create tests from natural language, execute steps interactively, explore or validate application behavior via automation, debug Robot Framework runs, inspect keywords/libraries/variables, or generate a complete `.robot` test suite. Prefer step-by-step execution first, verify results, then produce a clean, reproducible final test:
+Use `#robotmcp` for tasks related to **Robot Framework test automation**. Use it when the user wants to create tests from natural language, execute steps interactively, explore or validate application behavior via automation, debug Robot Framework runs, inspect keywords/libraries/variables, or generate a complete `.robot` test suite. Prefer step-by-step execution first, verify results, then produce a clean, reproducible final test:
 
 - `analyze_scenario` – understand intent and testing needs
 - `recommend_libraries` – suggest suitable Robot Framework libraries
