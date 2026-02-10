@@ -11,3 +11,5 @@ version = "0.1.0"
 [tool.purjo.topics]
 "StimulateSut" = {name = "Stimulate SUT"}
 "ValidateTestData" = {name = "Validate Test Data"}
+"Stimulate3rdPartySUT" = {name = "Stimulate 3rd Party SUT"}
+"Receive3rdPartySUT" = {name = "Receive 3rd Party SUT"}

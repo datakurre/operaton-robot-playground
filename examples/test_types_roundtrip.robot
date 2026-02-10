@@ -30,7 +30,7 @@ Test Hello World
     ...    Dict Output=${Dict Input}
     ...    Date Output=${Date Input}
     ${Output Variables}=    Get Output Variables
-    ...    ${CURDIR}${/}most-variables
+    ...    ${CURDIR}${/}types-roundtrip
     ...    Test Variable Types
     ...    ${Input Variables}
     Dictionaries Should Be Equal    ${Output Variables}    ${Expected Output Variables}

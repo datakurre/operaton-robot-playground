@@ -17,3 +17,12 @@ Stimulate SUT
     Sleep    ${processing_time}
     IF    not $processing_time    FAIL    Processing time is invalid
     VAR    ${userid} =    ${processing_time}    scope=${BPMN:TASK}
+
+Stimulate3rdPartySUT
+    ${processing_time} =    randint    ${0}    ${5}
+    Sleep    ${processing_time}
+
+Receive3rdPartySUT
+    ${processing_time} =    randint    ${0}    ${5}
+    Sleep    ${processing_time}
+
