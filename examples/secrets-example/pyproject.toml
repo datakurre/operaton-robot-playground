@@ -1,0 +1,29 @@
+[project]
+name = "secrets-example"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "robotframework>=7.4.1",
+]
+
+[dependency-groups]
+dev = [
+    "robotframework-robotlibrary>=1.0a3",
+]
+
+[tool.purjo.topics."Use API Key"]
+name = "Use API Key"
+on-fail = "ERROR"
+process-variables = true
+
+[tool.purjo.secrets.default]
+provider = "file"
+path = "secrets.json"
+
+# Example alternative profile. Requires VAULT_ADDR and VAULT_TOKEN.
+[tool.purjo.secrets.prod]
+provider = "vault"
+path = "secret/my-app"
+mount-point = "secret"

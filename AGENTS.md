@@ -48,6 +48,21 @@ To modify an existing .bpmn file, use import_bpmn_xml to load it, make changes w
 
 To create a new diagram, use create_bpmn_diagram, build it with add_bpmn_element / connect_bpmn_elements, then export_bpmn to get the XML.
 
+## Robot Framework authoring
+
+Use `rf-mcp` for tasks related to **Robot Framework test automation**. Use it when the user wants to create tests from natural language, execute steps interactively, explore or validate application behavior via automation, debug Robot Framework runs, inspect keywords/libraries/variables, or generate a complete `.robot` test suite. Prefer step-by-step execution first, verify results, then produce a clean, reproducible final test:
+
+- `analyze_scenario` – understand intent and testing needs
+- `recommend_libraries` – suggest suitable Robot Framework libraries
+- `create_session` / `attach_session` – start or connect to a RF execution session
+- `import_library` / `import_resource` – load test dependencies
+- `run_step` – execute a single keyword/step interactively
+- `get_state` / `get_variables` – inspect execution state and variables
+- `search_keywords` – discover available keywords
+- `generate_test` – produce a final `.robot` test from successful steps
+- `run_suite` – execute and validate a generated test suite
+- `debug_session` – troubleshoot failures in a live session
+
 ## Robot Conventions
 
 ### Inputs

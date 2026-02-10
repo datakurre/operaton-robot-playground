@@ -1,0 +1,14 @@
+# Local secrets (never commit)
+secrets.json
+
+# Local scratch files
+secret.txt
+
+# Robot outputs
+log.html
+report.html
+output.xml
+
+# Virtual env
+.venv/
+__pycache__/

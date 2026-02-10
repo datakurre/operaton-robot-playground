@@ -1,0 +1,43 @@
+version = 1
+revision = 3
+requires-python = ">=3.13"
+
+[[package]]
+name = "robotframework"
+version = "7.4.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/93/0e/08078c015d564d6a587e10e0b285620781c1a91b27230ec5b582994e421b/robotframework-7.4.1.tar.gz", hash = "sha256:d645487248a86db1e1a865ce792502792edf5342873f4e4f35d333219cd246c5", size = 653746, upload-time = "2025-12-23T17:08:02.497Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/f3/f9/a5f59b75c92be85b18b9dc8a7fd20c52ace79b53e358f9a8402c8721ad7e/robotframework-7.4.1-py3-none-any.whl", hash = "sha256:3f75cae8a24797f1953efdb51399569767d742bb31f549ee9856db5545062728", size = 806871, upload-time = "2025-12-23T17:07:57.579Z" },
+]
+
+[[package]]
+name = "robotframework-robotlibrary"
+version = "1.0a3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "robotframework" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/a8/4d/71cc21d80a1608d4fa36d62eb8bed6e1a06ce228975d82ed785a362aa1c9/robotframework_robotlibrary-1.0a3.tar.gz", hash = "sha256:404d061dcaa8c49b13cc0d4e3a5e402fde52227cd1f3b69f42c8019a5ce991bf", size = 18360, upload-time = "2026-02-08T23:16:40.379Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b2/3e/f40f69227382fdadf3ee61a35f255968a056b87f7d28e1b7089a2030e305/robotframework_robotlibrary-1.0a3-py3-none-any.whl", hash = "sha256:0e70fdd82c21983700a09df3fc114aa9979653f2b76e91f62627df2fcf2de703", size = 15640, upload-time = "2026-02-08T23:16:39.254Z" },
+]
+
+[[package]]
+name = "secrets-example"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "robotframework" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "robotframework-robotlibrary" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "robotframework", specifier = ">=7.4.1" }]
+
+[package.metadata.requires-dev]
+dev = [{ name = "robotframework-robotlibrary", specifier = ">=1.0a3" }]
