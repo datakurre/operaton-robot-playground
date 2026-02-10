@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>User tasks and forms &#8212; Operaton Robot Playground  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/diagram-js.css?v=505e4d83" />
+    <link rel="stylesheet" type="text/css" href="../_static/bpmn-js.css?v=0f9ede43" />
+    <link rel="stylesheet" type="text/css" href="../_static/bpmn-embedded.css?v=8cc3f80f" />
+    <link rel="stylesheet" type="text/css" href="../_static/bpmn-js-token-simulation.css?v=e9ffd314" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f50d73a4" />
+    <link rel="stylesheet" type="text/css" href="../_static/dmn-js-shared.css?v=0658bf72" />
+    <link rel="stylesheet" type="text/css" href="../_static/dmn-js-decision-table.css?v=01c888f2" />
+    <link rel="stylesheet" type="text/css" href="../_static/dmn-js-literal-expression.css?v=47813765" />
+    <link rel="stylesheet" type="text/css" href="../_static/dmn.css?v=c299ab64" />
+    <link rel="stylesheet" type="text/css" href="../_static/form-js.css?v=7e5b69fd" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'forms/index';</script>
+    <script src="../_static/minipres.js?v=f6b07af5"></script>
+    <script src="../_static/bpmn-js-token-simulation.js?v=8425ad49"></script>
+    <script src="../_static/form-viewer.umd.js?v=8086ff6e"></script>
+    <script src="../_static/custom.js?v=9c411ee9"></script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Advanced BPMN concepts" href="../bpmn/advanced.html" />
+    <link rel="prev" title="BPMN with Robot Framework" href="../purjo/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Operaton Robot Playground</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../bpmn/index.html">Introduction to BPMN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem.html">Open source ecosystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playground/index.html">Operaton Robot Playground</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/index.html">Basic modeling exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operaton/index.html">Modeling for execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../purjo/index.html">BPMN with Robot Framework</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">User tasks and forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bpmn/advanced.html">Advanced BPMN concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tests/index.html">Towards system testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bpmn/juel.html">Expression language</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item"><div class="article-header-buttons">
+
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+
+<button class="btn btn-sm navbar-btn theme-pres-button" title="presentation" aria-label="Toggle presentation mode" data-bs-placement="bottom" data-bs-toggle="tooltip"><a href="?pres"><i class="fa-solid fa-film fa-lg"></i><span class="nav-link"></span></a></button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>User tasks and forms</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-tasks">User tasks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pools">Pools</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignments">Assignments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-panel">Properties panel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#candidate-groups">Candidate groups</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assignee-user">Assignee user</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#candidate-users">Candidate users</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forms">Forms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#form-playground">Form Playground</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operaton-tasklist">Operaton Tasklist</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bindings">Bindings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demo">Demo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Forms</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="user-tasks-and-forms">
+<h1>User tasks and forms<a class="headerlink" href="#user-tasks-and-forms" title="Link to this heading">#</a></h1>
+<p>What if we need to have humans in the loop?</p>
+<section id="user-tasks">
+<h2>User tasks<a class="headerlink" href="#user-tasks" title="Link to this heading">#</a></h2>
+<p>Until now, we have been learning BPMN 2.0 modeling with plain <img alt="" class="role-bpmn" src="../_images/task.svg" /> <strong>Undefined task activities</strong> and automated <img alt="" class="role-bpmn" src="../_images/service-task.svg" /> <strong>Service task activities</strong>. These are good enough for designing processes and implementing straightforward testing and automation flows, but they don’t add much compared to other automation or orchestration solutions. Not everything can be fully automated at once, and there are often good reasons to keep humans in the loop. In BPMN, this is possible with <img alt="" class="role-bpmn" src="../_images/user-task.svg" /> <strong>User task</strong>.</p>
+<p>Remember the first sequence flow example:</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/simple-flow.svg"><img alt="../_images/simple-flow.svg" src="../_images/simple-flow.svg" />
+</a>
+</figure>
+<p>With <img alt="" class="role-bpmn" src="../_images/user-task.svg" /> user tasks, it would look like this:</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/simple-flow-user-tasks.svg"><img alt="../_images/simple-flow-user-tasks.svg" src="../_images/simple-flow-user-tasks.svg" />
+</a>
+</figure>
+<p>In the modeler, use the <strong>Change element</strong> tool (wrench icon) to change the existing task activities to user task activities.</p>
+</section>
+<section id="pools">
+<h2>Pools<a class="headerlink" href="#pools" title="Link to this heading">#</a></h2>
+<p>Not all users are equal. It’s common for different people to be responsible for completing different tasks. BPMN 2.0 defines two concepts for grouping user tasks by their respective domain-specific user roles: vertical lanes and horizontal pools. Unfortunately, our modeler supports only pools.</p>
+<p>This is how our simple example looks with pools:</p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/review-flow-with-pools.svg"><img alt="../_images/review-flow-with-pools.svg" src="../_images/review-flow-with-pools.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text"><a class="reference download internal" download="" href="../_downloads/201cd139e16a85fb65b01e4adb7e76ca/review-flow-with-pools.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">review-flow-with-pools.bpmn</span></code></a></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Pools and lanes are purely visual</strong> — they do not affect how BPMN engines interpret or execute a process.</p>
+<p>Many modelers prefer to omit them to keep diagrams cleaner and easier to read; in particular, pools can disrupt a straightforward left‑to‑right “happy path” layout.</p>
+</div>
+</section>
+<section id="assignments">
+<h2>Assignments<a class="headerlink" href="#assignments" title="Link to this heading">#</a></h2>
+<p>From this point forward, behavior depends on the process engine used. The Playground provides the free, open-source BPMN and DMN execution engine <a class="reference external" href="https://operaton.org/">Operaton BPM</a>, which is a fork of the discontinued Camunda 7 CE.</p>
+<p>In our engine, user tasks are not automatically assigned to the correct users; they must be mapped either using fixed values or variables.</p>
+<section id="properties-panel">
+<h3>Properties panel<a class="headerlink" href="#properties-panel" title="Link to this heading">#</a></h3>
+<p>Although the symbols and flow control are defined by the standard, execution details depend on engine-specific attributes in the model XML. For Operaton, these can be set using the properties panel.</p>
+<p><img alt="Properties panel in modeler" src="../_images/user-task-properties.png" /></p>
+</section>
+<section id="candidate-groups">
+<h3>Candidate groups<a class="headerlink" href="#candidate-groups" title="Link to this heading">#</a></h3>
+<p>Candidate groups are groups of users who will be able to see, claim, and complete the task.</p>
+<p><img alt="Setting candidate groups in modeler" src="../_images/user-task-candidate-groups.png" /></p>
+</section>
+<section id="assignee-user">
+<h3>Assignee user<a class="headerlink" href="#assignee-user" title="Link to this heading">#</a></h3>
+<p>A task can also be automatically claimed for a single specific user by setting the assignee.</p>
+<p><img alt="Setting assignee user in modeler" src="../_images/user-task-assignee.png" /></p>
+</section>
+<section id="candidate-users">
+<h3>Candidate users<a class="headerlink" href="#candidate-users" title="Link to this heading">#</a></h3>
+<p>Candidate users are a list of specific users who will be able to see, claim, and complete the task.</p>
+<p><img alt="Setting candidate users in modeler" src="../_images/user-task-candidate-users.png" /></p>
+</section>
+</section>
+<section id="forms">
+<h2>Forms<a class="headerlink" href="#forms" title="Link to this heading">#</a></h2>
+<p>The most common way to let an end user complete a user task is to present a form. For external BPMN engines, it’s also common to build custom front‑ends that use familiar or widely adopted form libraries.</p>
+<p>Simple form definitions for Operaton can be defined directly in the BPMN model using so-called <em>Generated Task Forms</em>. They have limited features and no automatic layout, but they’re quick to define for simple inputs.</p>
+<p><img alt="Generated Task Forms" src="../_images/generated-user-task-form.png" /></p>
+<p>In the playground, you can also model user task forms with <a class="reference external" href="https://www.npmjs.com/package/&#64;bpmn-io/form-js">&#64;bpmn-io/form-js</a>, a form library maintained by bpmn.io (a project by Camunda). The bpmn.io libraries are distributed under a custom license <a class="reference external" href="https://bpmn.io/license/">bpmn.io/license</a> that is similar to MIT but requires a visible watermark linking to <a class="reference external" href="https://bpmn.io">bpmn.io</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is no standard for defining <img alt="" class="role-bpmn" src="../_images/user-task.svg" /> user task forms, but most of the technology is dictated by the chosen user interface.</p>
+</div>
+<section id="form-playground">
+<h3>Form Playground<a class="headerlink" href="#form-playground" title="Link to this heading">#</a></h3>
+<p>The provided component is <a class="reference external" href="https://www.npmjs.com/package/&#64;bpmn-io/form-js-playground">form-js-playground</a>, which is also integrated into our playground:</p>
+<p><img alt="form-js-playground" src="../_images/form-js-playground.png" /></p>
+</section>
+<section id="operaton-tasklist">
+<h3>Operaton Tasklist<a class="headerlink" href="#operaton-tasklist" title="Link to this heading">#</a></h3>
+<p>These forms are also supported by default in the current version of Operaton Tasklist:</p>
+<p><img alt="Operaton Tasklist with form" src="../_images/operaton-tasklist.png" /></p>
+</section>
+</section>
+<section id="bindings">
+<h2>Bindings<a class="headerlink" href="#bindings" title="Link to this heading">#</a></h2>
+<p>For historical reasons, bpmn.io forms may still be called “Camunda Forms”, as is the case in our modeling tool. Forms are bound to tasks by choosing the type “Camunda Form” and setting the “Form Reference” to the form ID specified in the form editor.</p>
+<p><img alt="form-js bindings in Modeler" src="../_images/modeler-form-js.png" /></p>
+</section>
+<section id="demo">
+<h2>Demo<a class="headerlink" href="#demo" title="Link to this heading">#</a></h2>
+<p>The following demo can be deployed into the running playground (after <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">start</span></code>) with:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pur<span class="w"> </span>operaton<span class="w"> </span>deploy<span class="w"> </span>docs/forms/example/*
+</pre></div>
+</div>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="../_images/simple-peer-review.svg"><img alt="../_images/simple-peer-review.svg" src="../_images/simple-peer-review.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text"><a class="reference download internal" download="" href="../_downloads/dc326077142e3a0c7853b6f743090afc/simple-peer-review.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">./example/simple-peer-review.bpmn</span></code></a></span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="id1">
+<h3>Forms<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Start event: <a class="reference download internal" download="" href="../_downloads/3063cb1aa5cc35a5c90200d760558754/simple-peer-review.form"><code class="xref download docutils literal notranslate"><span class="pre">./example/simple-peer-review.form</span></code></a></p></li>
+<li><p>Assign editor: <a class="reference download internal" download="" href="../_downloads/1ffb74e7ddb6e05af04631a90c675fcb/simple-assign-editor.form"><code class="xref download docutils literal notranslate"><span class="pre">./example/simple-assign-editor.form</span></code></a></p></li>
+<li><p>Select reviewers: <a class="reference download internal" download="" href="../_downloads/81279aea570864a3c380330b0da4e405/simple-select-reviewers.form"><code class="xref download docutils literal notranslate"><span class="pre">./example/simple-select-reviewers.form</span></code></a></p></li>
+<li><p>Review article: <a class="reference download internal" download="" href="../_downloads/a80b416e9b1e562c8425cb0d8988bbf5/simple-submit-review.form"><code class="xref download docutils literal notranslate"><span class="pre">./example/simple-submit-review.form</span></code></a></p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../purjo/index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">BPMN with Robot Framework</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../bpmn/advanced.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Advanced BPMN concepts</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-tasks">User tasks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pools">Pools</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignments">Assignments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-panel">Properties panel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#candidate-groups">Candidate groups</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assignee-user">Assignee user</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#candidate-users">Candidate users</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forms">Forms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#form-playground">Form Playground</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operaton-tasklist">Operaton Tasklist</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bindings">Bindings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demo">Demo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Forms</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

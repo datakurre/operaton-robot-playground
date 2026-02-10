@@ -1,0 +1,489 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Advanced BPMN concepts &#8212; Operaton Robot Playground  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/diagram-js.css?v=505e4d83" />
+    <link rel="stylesheet" type="text/css" href="../_static/bpmn-js.css?v=0f9ede43" />
+    <link rel="stylesheet" type="text/css" href="../_static/bpmn-embedded.css?v=8cc3f80f" />
+    <link rel="stylesheet" type="text/css" href="../_static/bpmn-js-token-simulation.css?v=e9ffd314" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f50d73a4" />
+    <link rel="stylesheet" type="text/css" href="../_static/dmn-js-shared.css?v=0658bf72" />
+    <link rel="stylesheet" type="text/css" href="../_static/dmn-js-decision-table.css?v=01c888f2" />
+    <link rel="stylesheet" type="text/css" href="../_static/dmn-js-literal-expression.css?v=47813765" />
+    <link rel="stylesheet" type="text/css" href="../_static/dmn.css?v=c299ab64" />
+    <link rel="stylesheet" type="text/css" href="../_static/form-js.css?v=7e5b69fd" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'bpmn/advanced';</script>
+    <script src="../_static/minipres.js?v=f6b07af5"></script>
+    <script src="../_static/bpmn-js-token-simulation.js?v=8425ad49"></script>
+    <script src="../_static/form-viewer.umd.js?v=8086ff6e"></script>
+    <script src="../_static/custom.js?v=9c411ee9"></script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Towards system testing" href="../tests/index.html" />
+    <link rel="prev" title="User tasks and forms" href="../forms/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Operaton Robot Playground</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Introduction to BPMN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem.html">Open source ecosystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playground/index.html">Operaton Robot Playground</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/index.html">Basic modeling exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operaton/index.html">Modeling for execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../purjo/index.html">BPMN with Robot Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../forms/index.html">User tasks and forms</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Advanced BPMN concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tests/index.html">Towards system testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="juel.html">Expression language</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item"><div class="article-header-buttons">
+
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+
+<button class="btn btn-sm navbar-btn theme-pres-button" title="presentation" aria-label="Toggle presentation mode" data-bs-placement="bottom" data-bs-toggle="tooltip"><a href="?pres"><i class="fa-solid fa-film fa-lg"></i><span class="nav-link"></span></a></button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Advanced BPMN concepts</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-start-events">Alternative start events</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intermediate-events">Intermediate events</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#even-more-events">Even more events</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#message-events">Message events</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-events">Signal events</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compensation">Compensation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-instance">Multi-instance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#script-task">Script task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-rule-task">Business rule task</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="advanced-bpmn-concepts">
+<h1>Advanced BPMN concepts<a class="headerlink" href="#advanced-bpmn-concepts" title="Link to this heading">#</a></h1>
+<p>This section builds on the <a class="reference internal" href="index.html"><span class="std std-doc">BPMN basics</span></a> and introduces additional, more advanced BPMN concepts.</p>
+<section id="alternative-start-events">
+<h2>Alternative start events<a class="headerlink" href="#alternative-start-events" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/more-start-events.svg"><img alt="../_images/more-start-events.svg" src="../_images/more-start-events.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text">While a plain <img alt="" class="role-bpmn" src="../_images/start-event.svg" /> <strong>start event</strong> can already be triggered through APIs to start processes programmatically, BPMN itself defines multiple specialised start mechanisms. For example, a <img alt="" class="role-bpmn" src="../_images/timer-start-event.svg" /> <strong>timer start event</strong> can launch a new process instance periodically; a <img alt="" class="role-bpmn" src="../_images/message-start-event.svg" /> <strong>message start event</strong> reacts to a correlated BPMN message (even from another process instance); and a <img alt="" class="role-bpmn" src="../_images/signal-start-event.svg" /> <strong>signal start event</strong> broadcasts a signal that can start many process instances at once. <a class="reference download internal" download="" href="../_downloads/c1644af3ea51d0676ffe93ef63309e68/more-start-events.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">more-start-events.bpmn</span></code></a></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The above example introduced the following new event types:</p>
+<ul class="simple">
+<li><p><img alt="" class="role-bpmn" src="../_images/message-start-event.svg" /> <strong>message events</strong> – for sending and receiving targeted messages (e.g. inter‑process communication)</p></li>
+<li><p><img alt="" class="role-bpmn" src="../_images/signal-start-event.svg" /> <strong>signal events</strong> – for broadcasting notifications to any process instance listening for the named signal</p></li>
+</ul>
+</section>
+<section id="intermediate-events">
+<h2>Intermediate events<a class="headerlink" href="#intermediate-events" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/intermediate-events.svg"><img alt="../_images/intermediate-events.svg" src="../_images/intermediate-events.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text">In addition to <img alt="" class="role-bpmn" src="../_images/start-event.svg" /> <strong>start events</strong>, <img alt="" class="role-bpmn" src="../_images/end-event.svg" /> <strong>end events</strong>, and <img alt="" class="role-bpmn" src="../_images/empty-boundary-event.svg" /> <strong>boundary events</strong>, BPMN defines <img alt="" class="role-bpmn" src="../_images/intermediate-throw-event.svg" /> <strong>intermediate events</strong>. A simple use case is inserting empty intermediate events to mark relevant business states in the process (later usable as metrics or KPI anchors in data analysis). <a class="reference download internal" download="" href="../_downloads/292185ca9a86bfba62d2ff64ad3e04b2/intermediate-events.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">intermediate-events.bpmn</span></code></a></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="even-more-events">
+<h2>Even more events<a class="headerlink" href="#even-more-events" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="../_images/more-events.svg"><img alt="../_images/more-events.svg" src="../_images/more-events.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text">Events in BPMN 2.0 include: start events (interrupting and non‑interrupting), intermediate throw and catch events, boundary events (interrupting and non‑interrupting), and end events – each available in multiple specialised types.
+<a class="reference download internal" download="" href="../_downloads/8ea58ad39d4e726278eaf6112bef2492/more-events.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">more-events.bpmn</span></code></a></span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The above example introduced the following new event types:</p>
+<ul class="simple">
+<li><p><img alt="" class="role-bpmn" src="../_images/signal-intermediate-throw-event.svg" /> <strong>signal event</strong> – broadcasts a global signal that any listener can catch</p></li>
+<li><p><img alt="" class="role-bpmn" src="../_images/conditional-start-event.svg" /> <strong>conditional event</strong> – triggers when a condition becomes true (e.g. a process variable value change)</p></li>
+<li><p><img alt="" class="role-bpmn" src="../_images/compensation-end-event.svg" /> <strong>compensation event</strong> – triggers compensation handlers for already completed activities</p></li>
+</ul>
+<section id="message-events">
+<h3>Message events<a class="headerlink" href="#message-events" title="Link to this heading">#</a></h3>
+<p>Message events are mainly a way to <strong>achieve inter‑process communication</strong> within the engine. In Operaton, they can also be configured to behave like a service task. Operaton further allows a single message to have multiple recipients (even though that is outside the BPMN specification).</p>
+<ul class="simple">
+<li><p><img alt="" class="role-bpmn" src="../_images/message-start-event.svg" /> <strong>message start event</strong> – triggers a new process instance when a matching message is correlated in the engine</p></li>
+<li><p><img alt="" class="role-bpmn" src="../_images/message-intermediate-throw-event.svg" /> <strong>intermediate message throw event</strong> – sends a one‑to‑one message from one process to another</p></li>
+<li><p><img alt="" class="role-bpmn" src="../_images/message-intermediate-catch-event.svg" /> <strong>intermediate message catch event</strong> – waits for a matching message to be correlated</p></li>
+<li><p><img alt="" class="role-bpmn" src="../_images/message-end-event.svg" /> <strong>message end event</strong> – throws a message and ends the process instance</p></li>
+</ul>
+<p>Operaton correlates messages by name plus flexible configuration criteria, ranging from an exact process ID to matching multiple variable values.</p>
+</section>
+<section id="signal-events">
+<h3>Signal events<a class="headerlink" href="#signal-events" title="Link to this heading">#</a></h3>
+<p>Signal events are the official BPMN way to broadcast messages to more than one receiving process.</p>
+<ul class="simple">
+<li><p><img alt="" class="role-bpmn" src="../_images/signal-start-event.svg" /> <strong>signal start event</strong> – starts a new process instance when a signal is received</p></li>
+<li><p><img alt="" class="role-bpmn" src="../_images/signal-intermediate-throw-event.svg" /> <strong>intermediate signal throw event</strong> – broadcasts a signal in the engine</p></li>
+<li><p><img alt="" class="role-bpmn" src="../_images/signal-intermediate-catch-event.svg" /> <strong>intermediate signal catch event</strong> – waits for a signal</p></li>
+<li><p><img alt="" class="role-bpmn" src="../_images/signal-end-event.svg" /> <strong>signal end event</strong> – broadcasts a signal and ends the process instance</p></li>
+</ul>
+<p>Operaton matches signals by name only.</p>
+</section>
+<section id="compensation">
+<h3>Compensation<a class="headerlink" href="#compensation" title="Link to this heading">#</a></h3>
+<p>It is common in BPMN that the same outcome can be modelled in multiple ways. For example, releasing a reserved resource when a process is cancelled can be achieved with just <a class="reference internal" href="index.html"><span class="std std-doc">basic BPMN constructs</span></a>:</p>
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="../_images/without-compensation.svg"><img alt="../_images/without-compensation.svg" src="../_images/without-compensation.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text"><a class="reference download internal" download="" href="../_downloads/09fc957f7c9d5716e2cbb7628a0e958d/without-compensation.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">without-compensation.bpmn</span></code></a></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Alternatively, the same can be achieved with a <img alt="" class="role-bpmn" src="../_images/compensation-event.svg" /> <strong>compensation event</strong> plus accompanying <img alt="" class="role-bpmn" src="../_images/task.svg" /> <strong>compensation tasks</strong> attached via <img alt="" class="role-bpmn" src="../_images/compensation-boundary-event.svg" /> boundary events to the tasks they would undo (assuming those tasks completed successfully):</p>
+<figure class="align-default" id="id5">
+<a class="reference internal image-reference" href="../_images/with-compensation.svg"><img alt="../_images/with-compensation.svg" src="../_images/with-compensation.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text">When a process ends with a <img alt="" class="role-bpmn" src="../_images/compensation-end-event.svg" /> <strong>compensation end event</strong>, the engine automatically executes the attached <img alt="" class="role-bpmn" src="../_images/compensation-boundary-event.svg" /> handlers for successfully completed tasks, in reverse completion order. <a class="reference download internal" download="" href="../_downloads/8888d5d9a795c3f5371d95b257501677/with-compensation.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">with-compensation.bpmn</span></code></a></span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="multi-instance">
+<h2>Multi-instance<a class="headerlink" href="#multi-instance" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="id6">
+<a class="reference internal image-reference" href="../_images/multi-instance-subprocess.svg"><img alt="../_images/multi-instance-subprocess.svg" src="../_images/multi-instance-subprocess.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Tasks</strong> and <strong>embedded sub‑processes</strong> can be configured as <strong>multi‑instance</strong> – the BPMN way to loop over a collection. The mode can be <img alt="" class="role-bpmn" src="../_images/parallel-multi-instance.svg" /> <strong>parallel</strong> or <img alt="" class="role-bpmn" src="../_images/sequential-multi-instance.svg" /> <strong>sequential</strong>. A multi‑instance marker requires an input collection; the engine then executes the task or sub‑process once per item (each with isolated instance‑local variables) using a single BPMN symbol. <a class="reference download internal" download="" href="../_downloads/d5ccdaddb91d30cf9d70205a201778e0/multi-instance-subprocess.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">multi-instance-subprocess.bpmn</span></code></a></span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="script-task">
+<h2>Script task<a class="headerlink" href="#script-task" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="id7">
+<a class="reference internal image-reference" href="../_images/script-task.svg"><img alt="../_images/script-task.svg" src="../_images/script-task.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text"><a class="reference download internal" download="" href="../_downloads/6a2694aee2b5edf93a2beda390b58405/script-task.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">script-task.bpmn</span></code></a></span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Script task</strong> <img alt="" class="role-bpmn" src="../_images/script-task.svg" /> executes custom script logic directly within the process engine. Supported scripting languages depend on the engine but commonly include JavaScript, Groovy, or Python (via Jython, or hopefully GraalPy in the future).</p>
+<p>In the Operaton BPMN engine, a script task can manipulate multiple process variables through its <code class="docutils literal notranslate"><span class="pre">execution.setVariable</span></code> API, or assign its return value to a single result variable.</p>
+</section>
+<section id="business-rule-task">
+<h2>Business rule task<a class="headerlink" href="#business-rule-task" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="id8">
+<a class="reference internal image-reference" href="../_images/business-rule-task.svg"><img alt="../_images/business-rule-task.svg" src="../_images/business-rule-task.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Business rule task</strong> <img alt="" class="role-bpmn" src="../_images/business-rule-task.svg" /> is a specialised task type for automated, rule‑based decision making within a process. It is typically configured to use DMN (Decision Model and Notation) decision tables. DMN tables are designed to describe business rules in a tabular, testable format and can be maintained separately from process models, allowing faster iteration without redeploying the process definition.</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This test case selection example demonstrates how a business rule task with DMN decision table can be used to select test cases based on the test case selection criteria. Even in this simple example, the DMN table should be compact and easier to maintain than the equivalent conditional logic in classic programming languages.</p>
+<div class="dmn-js-parent" style="width: 100%; height: 100%; position: relative;"><div class="dmn-decision-table-container"><div class="tjs-container"><div class="powered-by"><div class="powered-by__logo" title="Powered by bpmn.io"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.02 5.57" width="53" height="21" style="vertical-align: middle;"><path fill="#000000" d="M1.88.92v.14c0 .41-.13.68-.4.8.33.14.46.44.46.86v.33c0 .61-.33.95-.95.95H0V0h.95c.65 0 .93.3.93.92zM.63.57v1.06h.24c.24 0 .38-.1.38-.43V.98c0-.28-.1-.4-.32-.4zm0 1.63v1.22h.36c.2 0 .32-.1.32-.39v-.35c0-.37-.12-.48-.4-.48H.63zM4.18.99v.52c0 .64-.31.98-.94.98h-.3V4h-.62V0h.92c.63 0 .94.35.94.99zM2.94.57v1.35h.3c.2 0 .3-.09.3-.37v-.6c0-.29-.1-.38-.3-.38h-.3zm2.89 2.27L6.25 0h.88v4h-.6V1.12L6.1 3.99h-.6l-.46-2.82v2.82h-.55V0h.87zM8.14 1.1V4h-.56V0h.79L9 2.4V0h.56v4h-.64zm2.49 2.29v.6h-.6v-.6zM12.12 1c0-.63.33-1 .95-1 .61 0 .95.37.95 1v2.04c0 .64-.34 1-.95 1-.62 0-.95-.37-.95-1zm.62 2.08c0 .28.13.39.33.39s.32-.1.32-.4V.98c0-.29-.12-.4-.32-.4s-.33.11-.33.4z"></path><path fill="#000000" d="M0 4.53h14.02v1.04H0zM11.08 0h.63v.62h-.63zm.63 4V1h-.63v2.98z"></path></svg></div></div><div class="decision-table-properties"><div class="decision-table-name" title="Decision Name: Select test case">Select test case</div><div class="decision-table-header-separator"></div><div class="hit-policy header" title="No overlap is possible and all rules are disjoint. Only a single rule can be matched"><label class="dms-label">Hit Policy:</label><span class="hit-policy-value">Unique</span></div></div><div class="tjs-table-container"><table class="tjs-table"><thead><tr><th class="index-column"></th><th class=" input-cell" data-col-id="Input_1"><div class="clause">When</div><div class="input-label" title="Input Label">Hour of day</div><div class="input-variable" title="Input Type">integer</div></th><th class=" input-cell" data-col-id="InputClause_1jelwl2"><div class="clause">And</div><div class="input-label" title="Input Label">A / B</div><div class="input-variable" title="Input Type">string</div></th><th class=" output-cell"><div class="clause">Then</div><div class="output-label" title="Output Label">Test case</div><div class="output-variable" title="Output Type">string</div></th><th class="annotation header" style="width: 400px;">Annotations</th></tr></thead><tbody><tr><td class="rule-index" data-element-id="DecisionRule_0116we3" data-row-id="DecisionRule_0116we3">1</td><td class="cell input-cell" data-element-id="UnaryTests_1qlx0m9" data-row-id="DecisionRule_0116we3" data-col-id="Input_1">[0..6]</td><td class="cell input-cell" data-element-id="UnaryTests_0vy3p5x" data-row-id="DecisionRule_0116we3" data-col-id="InputClause_1jelwl2">"A"</td><td class="cell output-cell" data-element-id="LiteralExpression_0gw4sh3" data-row-id="DecisionRule_0116we3" data-col-id="Output_1">"Nightly Test A"</td><td class="cell annotation" data-element-id="DecisionRule_0116we3">-</td></tr><tr><td class="rule-index" data-element-id="DecisionRule_0ckd55d" data-row-id="DecisionRule_0ckd55d">2</td><td class="cell input-cell" data-element-id="UnaryTests_10unyud" data-row-id="DecisionRule_0ckd55d" data-col-id="Input_1">[0..6]</td><td class="cell input-cell" data-element-id="UnaryTests_1tru9wz" data-row-id="DecisionRule_0ckd55d" data-col-id="InputClause_1jelwl2">"B"</td><td class="cell output-cell" data-element-id="LiteralExpression_0wb8jqu" data-row-id="DecisionRule_0ckd55d" data-col-id="Output_1">"Nightly Test B"</td><td class="cell annotation" data-element-id="DecisionRule_0ckd55d">-</td></tr><tr><td class="rule-index" data-element-id="DecisionRule_132d8fs" data-row-id="DecisionRule_132d8fs">3</td><td class="cell input-cell" data-element-id="UnaryTests_0rtzdb7" data-row-id="DecisionRule_132d8fs" data-col-id="Input_1">[7..12]</td><td class="cell input-cell" data-element-id="UnaryTests_0arsg87" data-row-id="DecisionRule_132d8fs" data-col-id="InputClause_1jelwl2">"A"</td><td class="cell output-cell" data-element-id="LiteralExpression_0gr1w35" data-row-id="DecisionRule_132d8fs" data-col-id="Output_1">"Morning Test A"</td><td class="cell annotation" data-element-id="DecisionRule_132d8fs">-</td></tr><tr><td class="rule-index" data-element-id="DecisionRule_0uu3yg4" data-row-id="DecisionRule_0uu3yg4">4</td><td class="cell input-cell" data-element-id="UnaryTests_00gomy7" data-row-id="DecisionRule_0uu3yg4" data-col-id="Input_1">[7..12]</td><td class="cell input-cell" data-element-id="UnaryTests_1aw5h6r" data-row-id="DecisionRule_0uu3yg4" data-col-id="InputClause_1jelwl2">"B"</td><td class="cell output-cell" data-element-id="LiteralExpression_0fqnkn6" data-row-id="DecisionRule_0uu3yg4" data-col-id="Output_1">"Morning Test B"</td><td class="cell annotation" data-element-id="DecisionRule_0uu3yg4">-</td></tr><tr><td class="rule-index" data-element-id="DecisionRule_1y24mll" data-row-id="DecisionRule_1y24mll">5</td><td class="cell input-cell" data-element-id="UnaryTests_060i93w" data-row-id="DecisionRule_1y24mll" data-col-id="Input_1">[13..18]</td><td class="cell input-cell" data-element-id="UnaryTests_09keagb" data-row-id="DecisionRule_1y24mll" data-col-id="InputClause_1jelwl2">"A"</td><td class="cell output-cell" data-element-id="LiteralExpression_09zmwuc" data-row-id="DecisionRule_1y24mll" data-col-id="Output_1">"Daily Test A"</td><td class="cell annotation" data-element-id="DecisionRule_1y24mll">-</td></tr><tr><td class="rule-index" data-element-id="DecisionRule_0jd662x" data-row-id="DecisionRule_0jd662x">6</td><td class="cell input-cell" data-element-id="UnaryTests_0oyv9e7" data-row-id="DecisionRule_0jd662x" data-col-id="Input_1">[13..18]</td><td class="cell input-cell" data-element-id="UnaryTests_1k5j8a7" data-row-id="DecisionRule_0jd662x" data-col-id="InputClause_1jelwl2">"B"</td><td class="cell output-cell" data-element-id="LiteralExpression_0y8aast" data-row-id="DecisionRule_0jd662x" data-col-id="Output_1">"Daily Test B"</td><td class="cell annotation" data-element-id="DecisionRule_0jd662x">-</td></tr><tr><td class="rule-index" data-element-id="DecisionRule_0is7tp2" data-row-id="DecisionRule_0is7tp2">7</td><td class="cell input-cell" data-element-id="UnaryTests_0k9qo93" data-row-id="DecisionRule_0is7tp2" data-col-id="Input_1">[19..24]</td><td class="cell input-cell" data-element-id="UnaryTests_0ummwf6" data-row-id="DecisionRule_0is7tp2" data-col-id="InputClause_1jelwl2">"A"</td><td class="cell output-cell" data-element-id="LiteralExpression_0szzy4f" data-row-id="DecisionRule_0is7tp2" data-col-id="Output_1">"Evening Test A"</td><td class="cell annotation" data-element-id="DecisionRule_0is7tp2">-</td></tr><tr><td class="rule-index" data-element-id="DecisionRule_1bkidhw" data-row-id="DecisionRule_1bkidhw">8</td><td class="cell input-cell" data-element-id="UnaryTests_03t37bk" data-row-id="DecisionRule_1bkidhw" data-col-id="Input_1">[19..24]</td><td class="cell input-cell" data-element-id="UnaryTests_1dixe7i" data-row-id="DecisionRule_1bkidhw" data-col-id="InputClause_1jelwl2">"B"</td><td class="cell output-cell" data-element-id="LiteralExpression_02f5he3" data-row-id="DecisionRule_1bkidhw" data-col-id="Output_1">"Evening Test B"</td><td class="cell annotation" data-element-id="DecisionRule_1bkidhw">-</td></tr></tbody></table></div></div></div></div><p><a class="reference download internal" download="" href="../_downloads/4443a6677b552b24b527ea7ad6d0c36d/test-case-selection.dmn"><code class="xref download docutils literal notranslate"><span class="pre">test-case-selection.dmn</span></code></a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../forms/index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">User tasks and forms</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../tests/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Towards system testing</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-start-events">Alternative start events</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intermediate-events">Intermediate events</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#even-more-events">Even more events</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#message-events">Message events</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-events">Signal events</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compensation">Compensation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-instance">Multi-instance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#script-task">Script task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-rule-task">Business rule task</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

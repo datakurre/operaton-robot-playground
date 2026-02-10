@@ -1,0 +1,23 @@
+{
+    "components": [
+        {
+            "label": "Article title",
+            "type": "textfield",
+            "layout": {
+                "row": "Row_0rwsak7",
+                "columns": null
+            },
+            "id": "Field_1glk1k9",
+            "key": "title"
+        }
+    ],
+    "type": "default",
+    "id": "Form_SimplePeerReview",
+    "exporter": {
+        "name": "Camunda Modeler",
+        "version": "5.28.0"
+    },
+    "executionPlatform": "Camunda Platform",
+    "executionPlatformVersion": "7.22.0",
+    "schemaVersion": 19
+}

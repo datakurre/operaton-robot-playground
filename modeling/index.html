@@ -1,0 +1,487 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Basic modeling exercises &#8212; Operaton Robot Playground  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/diagram-js.css?v=505e4d83" />
+    <link rel="stylesheet" type="text/css" href="../_static/bpmn-js.css?v=0f9ede43" />
+    <link rel="stylesheet" type="text/css" href="../_static/bpmn-embedded.css?v=8cc3f80f" />
+    <link rel="stylesheet" type="text/css" href="../_static/bpmn-js-token-simulation.css?v=e9ffd314" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f50d73a4" />
+    <link rel="stylesheet" type="text/css" href="../_static/dmn-js-shared.css?v=0658bf72" />
+    <link rel="stylesheet" type="text/css" href="../_static/dmn-js-decision-table.css?v=01c888f2" />
+    <link rel="stylesheet" type="text/css" href="../_static/dmn-js-literal-expression.css?v=47813765" />
+    <link rel="stylesheet" type="text/css" href="../_static/dmn.css?v=c299ab64" />
+    <link rel="stylesheet" type="text/css" href="../_static/form-js.css?v=7e5b69fd" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'modeling/index';</script>
+    <script src="../_static/minipres.js?v=f6b07af5"></script>
+    <script src="../_static/bpmn-js-token-simulation.js?v=8425ad49"></script>
+    <script src="../_static/form-viewer.umd.js?v=8086ff6e"></script>
+    <script src="../_static/custom.js?v=9c411ee9"></script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Modeling for execution" href="../operaton/index.html" />
+    <link rel="prev" title="Operaton Robot Playground" href="../playground/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Operaton Robot Playground</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../bpmn/index.html">Introduction to BPMN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem.html">Open source ecosystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playground/index.html">Operaton Robot Playground</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Basic modeling exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operaton/index.html">Modeling for execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../purjo/index.html">BPMN with Robot Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../forms/index.html">User tasks and forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bpmn/advanced.html">Advanced BPMN concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tests/index.html">Towards system testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bpmn/juel.html">Expression language</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item"><div class="article-header-buttons">
+
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+
+<button class="btn btn-sm navbar-btn theme-pres-button" title="presentation" aria-label="Toggle presentation mode" data-bs-placement="bottom" data-bs-toggle="tooltip"><a href="?pres"><i class="fa-solid fa-film fa-lg"></i><span class="nav-link"></span></a></button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Basic modeling exercises</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-flow">Sequence flow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exclusive-paths">Exclusive paths</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concurrent-paths">Concurrent paths</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-end-events">Multiple end-events</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embedded-sub-process">Embedded sub-process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-event">Boundary event</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-boundary-events">More boundary events</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="basic-modeling-exercises">
+<h1>Basic modeling exercises<a class="headerlink" href="#basic-modeling-exercises" title="Link to this heading">#</a></h1>
+<p>These exercises should familiarize you with the basic BPMN elements and flows, and using <a class="reference external" href="https://bpmn.io/">BPMN.io</a> based BPMN modeling tools, like <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=miragon-gmbh.vs-code-bpmn-modeler">Miranum Modeler</a> included in the playground.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The playground has a <code class="docutils literal notranslate"><span class="pre">./exercises</span></code> folder with an empty <code class="docutils literal notranslate"><span class="pre">template.bpmn</span></code> to get you started.</p>
+</div>
+<section id="sequence-flow">
+<h2>Sequence flow<a class="headerlink" href="#sequence-flow" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Start with a <strong>simple flow</strong> with multiple <img alt="" class="role-bpmn" src="../_images/task.svg" /> tasks in sequence from <img alt="" class="role-bpmn" src="../_images/start-event.svg" /> start to <img alt="" class="role-bpmn" src="../_images/end-event.svg" /> end.</p></li>
+<li><p>Toggle <strong>Token Simulation</strong> to observe how each token flows through the process one task at a time.</p></li>
+<li><p>While on the simulator, hover over a task to <strong>toggle pause</strong>.</p></li>
+<li><p>Observe how tokens stop on paused tasks and wait for you to <strong>release them with the play button</strong>.</p></li>
+</ol>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/simple-flow.svg"><img alt="../_images/simple-flow.svg" src="../_images/simple-flow.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text"><a class="reference download internal" download="" href="../_downloads/6e62b83c0efb6e1d438e8a58fbaa3626/simple-flow.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">simple-flow.bpmn</span></code></a></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="exclusive-paths">
+<h2>Exclusive paths<a class="headerlink" href="#exclusive-paths" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Model a flow that splits and joins with <img alt="" class="role-bpmn" src="../_images/exclusive-gateway.svg" /> <strong>exclusive gateways</strong> (plain diamond symbol on the palette).</p></li>
+<li><p><strong>Toggle Simulation</strong> to observe how tokens choose their path at splits and joins.</p></li>
+<li><p>While on the simulator, use the <strong>switch button</strong> on gateways to change the path.</p></li>
+<li><p>See also, how the <img alt="" class="role-bpmn" src="../_images/start-event.svg" /> start event and the <img alt="" class="role-bpmn" src="../_images/end-event.svg" /> end event are vertically aligned with the <strong>happy path</strong> of the process. This usually makes the process easier to understand.</p></li>
+</ol>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/exclusive-paths.svg"><img alt="../_images/exclusive-paths.svg" src="../_images/exclusive-paths.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text"><a class="reference download internal" download="" href="../_downloads/96f7302250c4d825e7ea6876f94f7f8f/exclusive-paths.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">exclusive-paths.bpmn</span></code></a></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="concurrent-paths">
+<h2>Concurrent paths<a class="headerlink" href="#concurrent-paths" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Re-use the model from the previous exercise.</p></li>
+<li><p>One at a time, choose the <img alt="" class="role-bpmn" src="../_images/exclusive-gateway.svg" /> exclusive gateways on your diagram and use their <strong>context modeling palette</strong> to turn them into <img alt="" class="role-bpmn" src="../_images/parallel-gateway.svg" /> parallel gateways.</p></li>
+<li><p><strong>Toggle Simulation</strong> to observe how tokens multiply on splits and merge back at joins.</p></li>
+<li><p>While on the simulator, <strong>toggle pause</strong> on tasks to observe how joining gateways wait for all incoming paths before letting the merged token continue.</p></li>
+<li><p>Turn the first <img alt="" class="role-bpmn" src="../_images/parallel-gateway.svg" /> parallel gateway back to <img alt="" class="role-bpmn" src="../_images/exclusive-gateway.svg" /> exclusive gateway and simulate. What happens at the joining gateways? Why?</p></li>
+<li><p>Revert the last step, and turn one of the latter <img alt="" class="role-bpmn" src="../_images/parallel-gateway.svg" /> parallel gateways back to <img alt="" class="role-bpmn" src="../_images/exclusive-gateway.svg" /> exclusive gateway and simulate. What happens now? Why?</p></li>
+</ol>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="../_images/concurrent-paths.svg"><img alt="../_images/concurrent-paths.svg" src="../_images/concurrent-paths.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text"><a class="reference download internal" download="" href="../_downloads/492082a63b935019fe706899705e0d2c/concurrent-paths.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">concurrent-paths.bpmn</span></code></a></span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><a class="reference download internal" download="" href="../_downloads/5ecc4a64175ac19d6cd487a87d103ac6/concurrent-paths-locked.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">concurrent-paths-locked.bpmn</span></code></a><br/>
+<a class="reference download internal" download="" href="../_downloads/4096c8797c8a830a103661c239e60a24/concurrent-paths-doubled.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">concurrent-paths-doubled.bpmn</span></code></a><br/>
+<a class="reference download internal" download="" href="../_downloads/735c6d3eb5bcb194fc3890e9544b74e8/concurrent-paths-mixed.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">concurrent-paths-mixed.bpmn</span></code></a></p>
+</section>
+<section id="multiple-end-events">
+<h2>Multiple end-events<a class="headerlink" href="#multiple-end-events" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Re-use the model from the previous exercise.</p></li>
+<li><p>Replace some of the joining <img alt="" class="role-bpmn" src="../_images/parallel-gateway.svg" /> parallel gateways with additional <img alt="" class="role-bpmn" src="../_images/end-event.svg" /> end events.</p></li>
+<li><p><strong>Toggle Simulation</strong> to observe how the process completes only when all parallelized tokens have reached at least one of the end events.</p></li>
+<li><p>While on the simulator, <strong>toggle pause</strong> on tasks to observe more easily how completion of the process is delayed, even when some tokens reach end events on their paths.</p></li>
+</ol>
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="../_images/multiple-end-events1.svg"><img alt="../_images/multiple-end-events1.svg" src="../_images/multiple-end-events1.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text"><a class="reference download internal" download="" href="../_downloads/38fea7677641c2ed7e5339fe894d5c9d/multiple-end-events.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">multiple-end-events.bpmn</span></code></a></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="embedded-sub-process">
+<h2>Embedded sub-process<a class="headerlink" href="#embedded-sub-process" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Re-use the model from the previous exercise.</p></li>
+<li><p>Wrap some of the <img alt="" class="role-bpmn" src="../_images/task.svg" /> tasks with an embedded subprocess by looking up <strong>Expanded SubProcess</strong> in the modeling palette.</p></li>
+<li><p><strong>Toggle Simulation</strong> to ensure that your process is still integrated (all tokens reach end events and process completes).</p></li>
+</ol>
+<p>All this should just refactor your model with an abstraction useful for the next practice. Tasks or their execution order should not change.</p>
+<figure class="align-default" id="id5">
+<a class="reference internal image-reference" href="../_images/embedded-sub-process.svg"><img alt="../_images/embedded-sub-process.svg" src="../_images/embedded-sub-process.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text"><a class="reference download internal" download="" href="../_downloads/e9e9195e3526dd7dd52cfa6eb1f25cee/embedded-sub-process.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">embedded-sub-process.bpmn</span></code></a></span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="boundary-event">
+<h2>Boundary event<a class="headerlink" href="#boundary-event" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Re-use the model from the previous exercise.</p></li>
+<li><p>Allow the tasks within the embedded sub-process to be cancelled with a timeout using <img alt="" class="role-bpmn" src="../_images/interrupting-timer-boundary-event.svg" /> interrupting timer boundary event.</p></li>
+<li><p>Add a path from the <img alt="" class="role-bpmn" src="../_images/interrupting-timer-boundary-event.svg" /> boundary event to a new joining <img alt="" class="role-bpmn" src="../_images/exclusive-gateway.svg" /> to properly merge the tokens before the <img alt="" class="role-bpmn" src="../_images/end-event.svg" /> end event.</p></li>
+<li><p><strong>Toggle Simulation</strong> and <strong>toggle pause</strong> for a task within the sub-process to manually simulate the timer event and confirm that the process completes properly when you trigger the timeout.</p></li>
+<li><p>Investigate what happens if you use <img alt="" class="role-bpmn" src="../_images/non-interrupting-timer-boundary-event.svg" /> non-interrupting timer boundary event instead.</p></li>
+</ol>
+<figure class="align-default" id="id6">
+<a class="reference internal image-reference" href="../_images/boundary-event.svg"><img alt="../_images/boundary-event.svg" src="../_images/boundary-event.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text"><a class="reference download internal" download="" href="../_downloads/33f732380116b65e19b44b78fce2d1ca/boundary-event.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">boundary-event.bpmn</span></code></a></span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><a class="reference download internal" download="" href="../_downloads/eab97e5dd80c0ffe417c0f7ce62dcabe/wrong-boundary-event.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">wrong-boundary-event.bpmn</span></code></a></p>
+</section>
+<section id="more-boundary-events">
+<h2>More boundary events<a class="headerlink" href="#more-boundary-events" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Re-use the model from the previous exercise.</p></li>
+<li><p>Add at least two more boundary events into the model with necessary paths and other elements. Make at least one of these a <img alt="" class="role-bpmn" src="../_images/non-interrupting-timer-boundary-event.svg" /> non-interrupting timer boundary event.</p></li>
+<li><p><strong>Toggle Simulation</strong> to ensure your model’s integrity. Make sure to try out your new boundary events.</p></li>
+</ol>
+<figure class="align-default" id="id7">
+<a class="reference internal image-reference" href="../_images/more-boundary-events.svg"><img alt="../_images/more-boundary-events.svg" src="../_images/more-boundary-events.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text"><a class="reference download internal" download="" href="../_downloads/0bdf037b4bbd1fd259afb18d03649b3e/more-boundary-events.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">more-boundary-events.bpmn</span></code></a></span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Be aware of a possible issue in the token simulator where multiple boundary timer events on the same element boundary don’t trigger correctly.</p>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../playground/index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Operaton Robot Playground</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../operaton/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Modeling for execution</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-flow">Sequence flow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exclusive-paths">Exclusive paths</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concurrent-paths">Concurrent paths</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-end-events">Multiple end-events</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embedded-sub-process">Embedded sub-process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-event">Boundary event</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-boundary-events">More boundary events</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

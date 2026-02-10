@@ -1,0 +1,642 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introduction to BPMN &#8212; Operaton Robot Playground  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/diagram-js.css?v=505e4d83" />
+    <link rel="stylesheet" type="text/css" href="../_static/bpmn-js.css?v=0f9ede43" />
+    <link rel="stylesheet" type="text/css" href="../_static/bpmn-embedded.css?v=8cc3f80f" />
+    <link rel="stylesheet" type="text/css" href="../_static/bpmn-js-token-simulation.css?v=e9ffd314" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f50d73a4" />
+    <link rel="stylesheet" type="text/css" href="../_static/dmn-js-shared.css?v=0658bf72" />
+    <link rel="stylesheet" type="text/css" href="../_static/dmn-js-decision-table.css?v=01c888f2" />
+    <link rel="stylesheet" type="text/css" href="../_static/dmn-js-literal-expression.css?v=47813765" />
+    <link rel="stylesheet" type="text/css" href="../_static/dmn.css?v=c299ab64" />
+    <link rel="stylesheet" type="text/css" href="../_static/form-js.css?v=7e5b69fd" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'bpmn/index';</script>
+    <script src="../_static/minipres.js?v=f6b07af5"></script>
+    <script src="../_static/bpmn-js-token-simulation.js?v=8425ad49"></script>
+    <script src="../_static/form-viewer.umd.js?v=8086ff6e"></script>
+    <script src="../_static/custom.js?v=9c411ee9"></script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Open source ecosystem" href="../ecosystem.html" />
+    <link rel="prev" title="Operaton Robot Playground" href="../index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Operaton Robot Playground</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to BPMN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem.html">Open source ecosystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playground/index.html">Operaton Robot Playground</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/index.html">Basic modeling exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operaton/index.html">Modeling for execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../purjo/index.html">BPMN with Robot Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../forms/index.html">User tasks and forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced BPMN concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tests/index.html">Towards system testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="juel.html">Expression language</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item"><div class="article-header-buttons">
+
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+
+<button class="btn btn-sm navbar-btn theme-pres-button" title="presentation" aria-label="Toggle presentation mode" data-bs-placement="bottom" data-bs-toggle="tooltip"><a href="?pres"><i class="fa-solid fa-film fa-lg"></i><span class="nav-link"></span></a></button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction to BPMN</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-flow">Sequence flow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-of-elements">Naming of elements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gateways-and-paths">Gateways and paths</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-flows">Conditional flows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concurrent-tokens">Concurrent tokens</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inclusive-gateway">Inclusive gateway</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-end-events">Multiple end events</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#events-at-boundary">Events at boundary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#errors-at-boundary">Errors at boundary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embedded-sub-process">Embedded sub-process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#event-sub-process">Event sub-process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#externalized-sub-process">Externalized sub-process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-task-types">Basic task types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#service-task">Service task</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#service-task-custom">Service task (custom)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#call-activity">Call activity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#user-task">User task</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symbol-summary">Symbol summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="introduction-to-bpmn">
+<h1>Introduction to BPMN<a class="headerlink" href="#introduction-to-bpmn" title="Link to this heading">#</a></h1>
+<p>Business Process Model and Notation (BPMN) is a graphical representation for specifying business processes in a business process model <a class="reference external" href="https://en.wikipedia.org/wiki/Business_Process_Model_and_Notation"><sup>Wikipedia</sup></a>. Its design was influenced by <a class="reference external" href="http://www.workflowpatterns.com/">the Workflow Patterns initiative</a> to cover most of the identified control-flow patterns.</p>
+<p>Although originally designed for business workflows, BPMN is now widely used for general process automation and orchestration across IT systems—including microservice choreography, RPA, and integration workflows.</p>
+<p>This is an opinionated introduction to some of the most common BPMN 2.0 symbols and their use from a task automation perspective.</p>
+<section id="sequence-flow">
+<h2>Sequence flow<a class="headerlink" href="#sequence-flow" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/sequence-flow.svg"><img alt="../_images/sequence-flow.svg" src="../_images/sequence-flow.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text">A BPMN sequence flow consists of at least one <img alt="" class="role-bpmn" src="../_images/start-event.svg" /> <strong>start event</strong>, one <img alt="" class="role-bpmn" src="../_images/end-event.svg" /> <strong>end event</strong>, and any number of <img alt="" class="role-bpmn" src="../_images/task.svg" /> <strong>tasks</strong> (BPMN activities) connected between them. <a class="reference download internal" download="" href="../_downloads/e08a076cf5d3680a4c611be7f24755aa/sequence-flow.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">sequence-flow.bpmn</span></code></a></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="naming-of-elements">
+<h2>Naming of elements<a class="headerlink" href="#naming-of-elements" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/sequence-flow-annotated.svg"><img alt="../_images/sequence-flow-annotated.svg" src="../_images/sequence-flow-annotated.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text">BPMN flow elements should be named using terms from the business domain of the process. Events should be named to describe the business state of the process. Tasks (BPMN activities) are named using verbs to describe what actions to take in the process. <a class="reference download internal" download="" href="../_downloads/1e4b5ce8e800770cf2507be4d37f95ad/sequence-flow-annotated.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">sequence-flow-annotated.bpmn</span></code></a></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Element</p></th>
+<th class="head"><p>Label Pattern</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Start Event</strong></p></td>
+<td><p>Noun + Past Participle / Trigger</p></td>
+<td><p>“Request received”</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Task</strong></p></td>
+<td><p>Verb + Object</p></td>
+<td><p>“Handle request”</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>End Event</strong></p></td>
+<td><p>Result or Outcome</p></td>
+<td><p>“Request handled”</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="gateways-and-paths">
+<h2>Gateways and paths<a class="headerlink" href="#gateways-and-paths" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="../_images/gateways-and-paths.svg"><img alt="../_images/gateways-and-paths.svg" src="../_images/gateways-and-paths.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text">BPMN gateways control which one of the available paths is taken at the time of execution. The <img alt="" class="role-bpmn" src="../_images/exclusive-gateway.svg" /> <strong>exclusive gateway</strong> in the example allows only one path to be followed at a time, either splitting or joining the flow. <a class="reference download internal" download="" href="../_downloads/fa3c55b527bb6fa917d43d79a2411de4/gateways-and-paths.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">gateways-and-paths.bpmn</span></code></a></span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="conditional-flows">
+<h2>Conditional flows<a class="headerlink" href="#conditional-flows" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="../_images/sequence-flow-redux.svg"><img alt="../_images/sequence-flow-redux.svg" src="../_images/sequence-flow-redux.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text">With <img alt="" class="role-bpmn" src="../_images/exclusive-gateway.svg" /> <strong>exclusive gateways</strong>, you can direct the flow of the process based on the results from completed tasks. <a class="reference download internal" download="" href="../_downloads/b231cdc5b6d7224abd57ff822cdacb0c/sequence-flow-redux.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">sequence-flow-redux.bpmn</span></code></a></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="concurrent-tokens">
+<h2>Concurrent tokens<a class="headerlink" href="#concurrent-tokens" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="id5">
+<a class="reference internal image-reference" href="../_images/concurrent-tokens.svg"><img alt="../_images/concurrent-tokens.svg" src="../_images/concurrent-tokens.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text">A BPMN token is a theoretical concept used to define the behavior of a process being performed. There can be any number of concurrent tokens in a single running process. For example, a <img alt="" class="role-bpmn" src="../_images/parallel-gateway.svg" /> <strong>parallel gateway</strong> creates a new token for each outgoing path. The process is completed only when all tokens have been consumed. <a class="reference download internal" download="" href="../_downloads/8ad0921ec6e500fd37c194bb02ae934f/concurrent-tokens.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">concurrent-tokens.bpmn</span></code></a></span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="inclusive-gateway">
+<h2>Inclusive gateway<a class="headerlink" href="#inclusive-gateway" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="id6">
+<a class="reference internal image-reference" href="../_images/gateways-inclusive-paths.svg"><img alt="../_images/gateways-inclusive-paths.svg" src="../_images/gateways-inclusive-paths.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text">The <img alt="" class="role-bpmn" src="../_images/inclusive-gateway.svg" /> <strong>inclusive gateway</strong> in the example allows multiple paths to be followed simultaneously, depending on the conditions defined. This means one or more paths can be taken based on the evaluation of the conditions. <a class="reference download internal" download="" href="../_downloads/8e82dcf9622c0104632fba2a8b0d34cd/gateways-inclusive-paths.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">gateways-inclusive-paths.bpmn</span></code></a></span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="multiple-end-events">
+<h2>Multiple end events<a class="headerlink" href="#multiple-end-events" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="id7">
+<a class="reference internal image-reference" href="../_images/multiple-end-events.svg"><img alt="../_images/multiple-end-events.svg" src="../_images/multiple-end-events.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text">Not all BPMN tokens need to reach the same <img alt="" class="role-bpmn" src="../_images/end-event.svg" /> <strong>end event</strong> for the process to be considered complete. A BPMN process may have as many end events as it makes sense for the business process it describes. Not all end events need to be reached for the process to complete; the process completes when there are no more tokens alive. <a class="reference download internal" download="" href="../_downloads/0f2e8bc143c164aeb31db05fa4ee74bf/multiple-end-events.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">multiple-end-events.bpmn</span></code></a></span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="events-at-boundary">
+<h2>Events at boundary<a class="headerlink" href="#events-at-boundary" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="id8">
+<a class="reference internal image-reference" href="../_images/boundary-events.svg"><img alt="../_images/boundary-events.svg" src="../_images/boundary-events.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text">Attaching events to element boundaries is where BPMN really shines. In this example, a <img alt="" class="role-bpmn" src="../_images/non-interrupting-timer-boundary-event.svg" /> <strong>non-interrupting timer boundary event</strong> is used to send a notification about a test execution taking too much time. Non-interrupting events, as the name suggests, do not interrupt the task they are connected to. Instead, they create a new token for the path they start (in the example, once or repeatedly as long as the task has not been completed). <a class="reference download internal" download="" href="../_downloads/062a088664630b0d1b2d51943db42777/boundary-events.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">boundary-events.bpmn</span></code></a></span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="errors-at-boundary">
+<h2>Errors at boundary<a class="headerlink" href="#errors-at-boundary" title="Link to this heading">#</a></h2>
+<p>There are two kinds of errors in BPMN-driven process automation:</p>
+<ul class="simple">
+<li><p><strong>Application errors</strong>, which are caused by technical issues like network outages or programming errors and can be <strong>fixed by retrying</strong> the failing part of the process once the technical issue has been resolved.</p></li>
+<li><p><strong>Business errors</strong>, which are known exceptions in the process itself and cannot be fixed by simply retrying, but must be expected and <strong>handled at the BPMN diagram level</strong> instead.</p></li>
+</ul>
+<figure class="align-default" id="id9">
+<a class="reference internal image-reference" href="../_images/boundary-bpmn-error.svg"><img alt="../_images/boundary-bpmn-error.svg" src="../_images/boundary-bpmn-error.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text">In this example, a business error is expected with a <img alt="" class="role-bpmn" src="../_images/bpmn-error-boundary-event.svg" /> <strong>error boundary event</strong> (which is always interrupting), and it is used to route the process to an alternative <img alt="" class="role-bpmn" src="../_images/error-end-event.svg" /> <strong>business error end event</strong> for further rerouting in the calling parent process. <a class="reference download internal" download="" href="../_downloads/6e6ea996d2dfd91ae1cd53779abc0d8a/boundary-bpmn-error.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">boundary-bpmn-error.bpmn</span></code></a></span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="embedded-sub-process">
+<h2>Embedded sub-process<a class="headerlink" href="#embedded-sub-process" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="id10">
+<a class="reference internal image-reference" href="../_images/embedded-subprocess.svg"><img alt="../_images/embedded-subprocess.svg" src="../_images/embedded-subprocess.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text">An <strong>embedded sub-process</strong> is a process with its own <img alt="" class="role-bpmn" src="../_images/start-event.svg" /> <strong>start event</strong> and <img alt="" class="role-bpmn" src="../_images/end-event.svg" /> <strong>end event(s)</strong> within its host process. It is a powerful pattern for wrapping tasks that should share boundary events. In this example, an <img alt="" class="role-bpmn" src="../_images/interrupting-timer-boundary-event.svg" /> <strong>interrupting boundary timer event</strong> is used to cancel the whole sub-process. <a class="reference download internal" download="" href="../_downloads/7be425a219ca207abc9e1338e3edba99/embedded-subprocess.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">embedded-subprocess.bpmn</span></code></a></span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The example above could also be implemented using multiple boundary events on a task. However, this would change the behavior by allowing the task to handle multiple events simultaneously. Each boundary event could trigger different actions or paths, providing more flexibility and complexity in the process flow.</p>
+<p>This approach is useful when a task needs to respond to various conditions or events without interrupting the main process flow.</p>
+<a class="reference internal image-reference" href="../_images/multiple-boundary-events.svg"><img alt="../_images/multiple-boundary-events.svg" src="../_images/multiple-boundary-events.svg" />
+</a>
+</div>
+</section>
+<section id="event-sub-process">
+<h2>Event sub-process<a class="headerlink" href="#event-sub-process" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="id11">
+<a class="reference internal image-reference" href="../_images/event-subprocess.svg"><img alt="../_images/event-subprocess.svg" src="../_images/event-subprocess.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text">An <strong>event sub-process</strong> can either interrupt the execution of the main process (with an interrupting start event) or run sub-processes in parallel to the main process (with a non-interrupting start event). The example demonstrates the latter with a <img alt="" class="role-bpmn" src="../_images/non-interrupting-timer-subprocess-start-event.svg" /> <strong>non-interrupting start timer event</strong>.
+<a class="reference download internal" download="" href="../_downloads/2ad9f56109fe4b256be5f00cd9d4d026/event-subprocess.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">event-subprocess.bpmn</span></code></a></span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="externalized-sub-process">
+<h2>Externalized sub-process<a class="headerlink" href="#externalized-sub-process" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="id12">
+<a class="reference internal image-reference" href="../_images/call-activity-process.svg"><img alt="../_images/call-activity-process.svg" src="../_images/call-activity-process.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text">A <img alt="" class="role-bpmn" src="../_images/call-activity-task.svg" /> <strong>call activity</strong> is used to encapsulate and reference a reusable sub-process (or another process), allowing for modular and maintainable process designs. In this example, it is used to hide the embedded sub-process details from the earlier examples.
+<a class="reference download internal" download="" href="../_downloads/445faec0c8ebc8c2e785ef55a1ff6939/call-activity-process.bpmn"><code class="xref download docutils literal notranslate"><span class="pre">call-activity-process.bpmn</span></code></a></span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="basic-task-types">
+<h2>Basic task types<a class="headerlink" href="#basic-task-types" title="Link to this heading">#</a></h2>
+<p>The examples above use only the so-called <img alt="" class="role-bpmn" src="../_images/task.svg" /> <strong>undefined task</strong>. This is useful for drafting and documenting processes, but not for actually implementing and automating them. There are many more specific task types available.</p>
+<section id="service-task">
+<h3>Service task<a class="headerlink" href="#service-task" title="Link to this heading">#</a></h3>
+<figure class="align-default" id="id13">
+<a class="reference internal image-reference" href="../_images/service-task.svg"><img alt="../_images/service-task.svg" src="../_images/service-task.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text">A <strong>service task</strong> <img alt="" class="role-bpmn" src="../_images/service-task.svg" /> represents an automated task. All <img alt="" class="role-bpmn" src="../_images/robot-task.svg" /> <strong>Robot Framework</strong> tests and tasks are modeled as service tasks.</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="service-task-custom">
+<h3>Service task (custom)<a class="headerlink" href="#service-task-custom" title="Link to this heading">#</a></h3>
+<figure class="align-default" id="id14">
+<a class="reference internal image-reference" href="../_images/robot-task.svg"><img alt="../_images/robot-task.svg" src="../_images/robot-task.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text">Now that <img alt="" class="role-bpmn" src="../_images/service-task.svg" /> <strong>service task</strong> has become the core component in process automation, it has also become common to customize its symbol to make it easier to recognize service tasks by category. So, when you see a task element with a unique symbol, like the <img alt="" class="role-bpmn" src="../_images/robot-task.svg" /> <strong>Robot Framework</strong> logo, it is safe to assume that it is a service task with a custom symbol.</span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="call-activity">
+<h3>Call activity<a class="headerlink" href="#call-activity" title="Link to this heading">#</a></h3>
+<figure class="align-default" id="id15">
+<a class="reference internal image-reference" href="../_images/call-activity-task.svg"><img alt="../_images/call-activity-task.svg" src="../_images/call-activity-task.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Call activity</strong> <img alt="" class="role-bpmn" src="../_images/call-activity-task.svg" /> calls a separately configured sub-process, which is defined outside of the main process (unlike an embedded sub-process). It allows abstraction of recurring parts of a process into reusable sub-processes, reducing clutter.</span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="user-task">
+<h3>User task<a class="headerlink" href="#user-task" title="Link to this heading">#</a></h3>
+<figure class="align-default" id="id16">
+<a class="reference internal image-reference" href="../_images/user-task.svg"><img alt="../_images/user-task.svg" src="../_images/user-task.svg" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>User task</strong> <img alt="" class="role-bpmn" src="../_images/user-task.svg" /> is a task meant to be completed by a human via a connected user interface. The most common way to implement a user task is to show the user a form.</span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="symbol-summary">
+<h2>Symbol summary<a class="headerlink" href="#symbol-summary" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Symbol</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><img alt="" class="role-bpmn" src="../_images/start-event.svg" /></p></td>
+<td><p>Start event</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><img alt="" class="role-bpmn" src="../_images/end-event.svg" /></p></td>
+<td><p>End event</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><img alt="" class="role-bpmn" src="../_images/task.svg" /></p></td>
+<td><p>Task</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><img alt="" class="role-bpmn" src="../_images/service-task.svg" /></p></td>
+<td><p>Service task</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><img alt="" class="role-bpmn" src="../_images/user-task.svg" /></p></td>
+<td><p>User task</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><img alt="" class="role-bpmn" src="../_images/call-activity-task.svg" /></p></td>
+<td><p>Call activity</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><img alt="" class="role-bpmn" src="../_images/exclusive-gateway.svg" /></p></td>
+<td><p>Exclusive gateway</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><img alt="" class="role-bpmn" src="../_images/parallel-gateway.svg" /></p></td>
+<td><p>Parallel gateway</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><img alt="" class="role-bpmn" src="../_images/inclusive-gateway.svg" /></p></td>
+<td><p>Inclusive gateway</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><img alt="" class="role-bpmn" src="../_images/non-interrupting-timer-boundary-event.svg" /></p></td>
+<td><p>Non-interrupting timer boundary event</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><img alt="" class="role-bpmn" src="../_images/bpmn-error-boundary-event.svg" /></p></td>
+<td><p>Error boundary event</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><img alt="" class="role-bpmn" src="../_images/interrupting-timer-boundary-event.svg" /></p></td>
+<td><p>Interrupting timer boundary event</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><img alt="" class="role-bpmn" src="../_images/non-interrupting-timer-subprocess-start-event.svg" /></p></td>
+<td><p>Non-interrupting timer sub-process start event</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Operaton Robot Playground</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../ecosystem.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Open source ecosystem</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-flow">Sequence flow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-of-elements">Naming of elements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gateways-and-paths">Gateways and paths</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-flows">Conditional flows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concurrent-tokens">Concurrent tokens</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inclusive-gateway">Inclusive gateway</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-end-events">Multiple end events</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#events-at-boundary">Events at boundary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#errors-at-boundary">Errors at boundary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embedded-sub-process">Embedded sub-process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#event-sub-process">Event sub-process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#externalized-sub-process">Externalized sub-process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-task-types">Basic task types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#service-task">Service task</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#service-task-custom">Service task (custom)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#call-activity">Call activity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#user-task">User task</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symbol-summary">Symbol summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,440 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Open source ecosystem &#8212; Operaton Robot Playground  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/diagram-js.css?v=505e4d83" />
+    <link rel="stylesheet" type="text/css" href="_static/bpmn-js.css?v=0f9ede43" />
+    <link rel="stylesheet" type="text/css" href="_static/bpmn-embedded.css?v=8cc3f80f" />
+    <link rel="stylesheet" type="text/css" href="_static/bpmn-js-token-simulation.css?v=e9ffd314" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=f50d73a4" />
+    <link rel="stylesheet" type="text/css" href="_static/dmn-js-shared.css?v=0658bf72" />
+    <link rel="stylesheet" type="text/css" href="_static/dmn-js-decision-table.css?v=01c888f2" />
+    <link rel="stylesheet" type="text/css" href="_static/dmn-js-literal-expression.css?v=47813765" />
+    <link rel="stylesheet" type="text/css" href="_static/dmn.css?v=c299ab64" />
+    <link rel="stylesheet" type="text/css" href="_static/form-js.css?v=7e5b69fd" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/jquery.js?v=5d32c60e"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ecosystem';</script>
+    <script src="_static/minipres.js?v=f6b07af5"></script>
+    <script src="_static/bpmn-js-token-simulation.js?v=8425ad49"></script>
+    <script src="_static/form-viewer.umd.js?v=8086ff6e"></script>
+    <script src="_static/custom.js?v=9c411ee9"></script>
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Operaton Robot Playground" href="playground/index.html" />
+    <link rel="prev" title="Introduction to BPMN" href="bpmn/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Operaton Robot Playground</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="bpmn/index.html">Introduction to BPMN</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Open source ecosystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="playground/index.html">Operaton Robot Playground</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeling/index.html">Basic modeling exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operaton/index.html">Modeling for execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="purjo/index.html">BPMN with Robot Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forms/index.html">User tasks and forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpmn/advanced.html">Advanced BPMN concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests/index.html">Towards system testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpmn/juel.html">Expression language</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item"><div class="article-header-buttons">
+
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+
+<button class="btn btn-sm navbar-btn theme-pres-button" title="presentation" aria-label="Toggle presentation mode" data-bs-placement="bottom" data-bs-toggle="tooltip"><a href="?pres"><i class="fa-solid fa-film fa-lg"></i><span class="nav-link"></span></a></button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Open source ecosystem</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operaton-bpm">Operaton BPM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bpmn-io">bpmn.io</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selected-plugins">Selected plugins</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wks-platform">WKS Platform</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bpm-crafters">BPM Crafters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spiffworkflow-and-spiffarena">SpiffWorkflow and SpiffArena</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spiffworkflow">SpiffWorkflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spiffarena">SpiffArena</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="open-source-ecosystem">
+<h1>Open source ecosystem<a class="headerlink" href="#open-source-ecosystem" title="Link to this heading">#</a></h1>
+<p>The Business Process Model and Notation (BPMN) 2.0 standard has fostered a rich and diverse ecosystem of open-source tools. These projects range from powerful execution engines to web-based modelers and entire low-code platforms, enabling developers and organizations to implement process automation freely.</p>
+<section id="operaton-bpm">
+<h2>Operaton BPM<a class="headerlink" href="#operaton-bpm" title="Link to this heading">#</a></h2>
+<p>For many years, <strong>Camunda 7 Community Edition (CE)</strong> was a cornerstone of the open-source BPMN world. As a robust, embeddable Java-based engine, it gained widespread adoption. However, with Camunda shifting focus to its cloud-native Camunda 8 platform, the community edition of Camunda 7 is now at (or approaching) end-of-life.</p>
+<p>To fill this gap and ensure the continuation of the classic Camunda 7 architecture, the <strong>Operaton</strong> project was born. Operaton is a community-driven fork of Camunda 7, dedicated to maintaining and extending the legacy codebase. It provides a future for projects that rely on the embeddable, Java-centric approach to workflow automation. Yet, with its comprehensive REST API, it works as well as an external process orchestration service.</p>
+<ul class="simple">
+<li><p>Camunda 7 CE (engine): <a class="github reference external" href="https://github.com/camunda/camunda-bpm-platform">camunda/camunda-bpm-platform</a> (Apache-2.0)</p></li>
+<li><p>Operaton (project site): <a class="reference external" href="https://operaton.org/">https://operaton.org/</a></p></li>
+<li><p>Operaton (source): <a class="github reference external" href="https://github.com/operaton">operaton</a> (Apache-2.0)</p></li>
+</ul>
+</section>
+<section id="bpmn-io">
+<h2>bpmn.io<a class="headerlink" href="#bpmn-io" title="Link to this heading">#</a></h2>
+<p>At the heart of modern web-based BPMN tooling is <strong>bpmn.io</strong>. It is a suite of JavaScript libraries for rendering and modeling BPMN, DMN (Decision Model and Notation) and forms directly in the browser. Core libraries include a BPMN modeler, DMN editor and form builder. These libraries are used also in <a class="reference external" href="https://github.com/camunda/camunda-modeler">Camunda Desktop Modeler</a>, which still supports Camunda 7 (and also Operaton) compatible modeling.</p>
+<ul class="simple">
+<li><p>bpmn.io: <a class="reference external" href="https://bpmn.io/">https://bpmn.io/</a> (Custom)</p></li>
+<li><p>bpmn-js: <a class="github reference external" href="https://github.com/bpmn-io/bpmn-js">bpmn-io/bpmn-js</a></p></li>
+<li><p>dmn-js: <a class="github reference external" href="https://github.com/bpmn-io/dmn-js">bpmn-io/dmn-js</a></p></li>
+<li><p>form-js: <a class="github reference external" href="https://github.com/bpmn-io/form-js">bpmn-io/form-js</a></p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The core bpmn.io libraries are not distributed under an OSI‑approved open source license. They use a custom license (see https://bpmn.io/license/) that is largely based on the MIT license but requires the bpmn.io watermark and a link to bpmn.io to remain visible.</p>
+</div>
+<section id="selected-plugins">
+<h3>Selected plugins<a class="headerlink" href="#selected-plugins" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Token Simulation: <a class="github reference external" href="https://github.com/bpmn-io/bpmn-js-token-simulation">bpmn-io/bpmn-js-token-simulation</a> (MIT)</p></li>
+<li><p>bpmnlint rules: <a class="github reference external" href="https://github.com/bpmn-io/bpmnlint">bpmn-io/bpmnlint</a> (MIT)</p></li>
+<li><p>bpmn-js-bpmnlint integration: <a class="github reference external" href="https://github.com/bpmn-io/bpmn-js-bpmnlint">bpmn-io/bpmn-js-bpmnlint</a> (MIT)</p></li>
+<li><p>Transaction Boundaries overlay: <a class="github reference external" href="https://github.com/bpmn-io/camunda-transaction-boundaries">bpmn-io/camunda-transaction-boundaries</a> (MIT)</p></li>
+<li><p>MCP: <a class="github reference external" href="https://github.com/datakurre/bpmn-js-mcp">datakurre/bpmn-js-mcp</a> (MIT)</p></li>
+</ul>
+</section>
+</section>
+<section id="wks-platform">
+<h2>WKS Platform<a class="headerlink" href="#wks-platform" title="Link to this heading">#</a></h2>
+<p>The <strong>WKS Platform</strong> is an example of a comprehensive, open-source Adaptive Case Management (ACM) solution built upon this ecosystem. It leverages the power of the Camunda engine on the backend and often utilizes <code class="docutils literal notranslate"><span class="pre">bpmn.io</span></code> for the front-end modeling experience. It demonstrates how foundational open-source components can be assembled into a feature-rich, low-code platform for managing complex and unpredictable workflows.</p>
+<ul class="simple">
+<li><p>WKS Platform (org): <a class="github reference external" href="https://github.com/wkspower/wks-platform">wkspower/wks-platform</a> (MIT)</p></li>
+</ul>
+</section>
+<section id="bpm-crafters">
+<h2>BPM Crafters<a class="headerlink" href="#bpm-crafters" title="Link to this heading">#</a></h2>
+<p>BPM Crafters is a small open-source GitHub organization focused on building implementation-agnostic tooling for workflow and business process management (BPM), mainly using Kotlin. Its core project is a portable Process Engine API that lets developers write workflow-driven applications independent of a specific engine, supported by adapters for platforms such as Camunda 7 and Camunda 8. The organization also provides Spring Boot–based worker tooling, shared build configuration, documentation, and a website, aiming to make process automation more flexible, reusable, and engine-neutral across different BPM technologies.</p>
+<ul class="simple">
+<li><p>BPM Crafters (website): <a class="reference external" href="https://bpm-crafters.dev/">https://bpm-crafters.dev/</a></p></li>
+<li><p>BPM Crafters (org): <a class="github reference external" href="https://github.com/bpm-crafters">bpm-crafters</a> (Apache-2.0)</p></li>
+</ul>
+</section>
+<section id="spiffworkflow-and-spiffarena">
+<h2>SpiffWorkflow and SpiffArena<a class="headerlink" href="#spiffworkflow-and-spiffarena" title="Link to this heading">#</a></h2>
+<p>For those preferring Python native approach, <strong>SpiffWorkflow</strong> could provise a promising alternative in the future.</p>
+<section id="spiffworkflow">
+<h3>SpiffWorkflow<a class="headerlink" href="#spiffworkflow" title="Link to this heading">#</a></h3>
+<p><strong>SpiffWorkflow</strong> is a mature, pure-Python library that can parse and execute the most elements in BPMN 2.0 diagrams. It is highly flexible and designed to be integrated into any Python application, offering developers a robust base for a BPMN capable workflow engine without requiring a Java virtual machine.</p>
+<ul class="simple">
+<li><p>SpiffWorkflow website: <a class="reference external" href="https://spiffworkflow.org/">https://spiffworkflow.org/</a></p></li>
+<li><p>SpiffWorkflow source: <a class="github reference external" href="https://github.com/sartography/SpiffWorkflow">sartography/SpiffWorkflow</a> (LGPL-3.0)</p></li>
+</ul>
+</section>
+<section id="spiffarena">
+<h3>SpiffArena<a class="headerlink" href="#spiffarena" title="Link to this heading">#</a></h3>
+<p>Built on top of SpiffWorkflow, <strong>SpiffArena</strong> aims to be a full-featured, low-code web application. It provides a complete user interface for designing, launching, and managing workflows. Users can interact with task lists, fill out forms, and monitor process execution.</p>
+<ul class="simple">
+<li><p>SpiffWorks website: https://spiff.works/</p></li>
+<li><p>SpiffArena source: <a class="github reference external" href="https://github.com/sartography/spiff-arena">sartography/spiff-arena</a> (LGPL-2.1)</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="bpmn/index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction to BPMN</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="playground/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Operaton Robot Playground</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operaton-bpm">Operaton BPM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bpmn-io">bpmn.io</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selected-plugins">Selected plugins</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wks-platform">WKS Platform</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bpm-crafters">BPM Crafters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spiffworkflow-and-spiffarena">SpiffWorkflow and SpiffArena</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spiffworkflow">SpiffWorkflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spiffarena">SpiffArena</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

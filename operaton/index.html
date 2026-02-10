@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Modeling for execution &#8212; Operaton Robot Playground  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/diagram-js.css?v=505e4d83" />
+    <link rel="stylesheet" type="text/css" href="../_static/bpmn-js.css?v=0f9ede43" />
+    <link rel="stylesheet" type="text/css" href="../_static/bpmn-embedded.css?v=8cc3f80f" />
+    <link rel="stylesheet" type="text/css" href="../_static/bpmn-js-token-simulation.css?v=e9ffd314" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f50d73a4" />
+    <link rel="stylesheet" type="text/css" href="../_static/dmn-js-shared.css?v=0658bf72" />
+    <link rel="stylesheet" type="text/css" href="../_static/dmn-js-decision-table.css?v=01c888f2" />
+    <link rel="stylesheet" type="text/css" href="../_static/dmn-js-literal-expression.css?v=47813765" />
+    <link rel="stylesheet" type="text/css" href="../_static/dmn.css?v=c299ab64" />
+    <link rel="stylesheet" type="text/css" href="../_static/form-js.css?v=7e5b69fd" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'operaton/index';</script>
+    <script src="../_static/minipres.js?v=f6b07af5"></script>
+    <script src="../_static/bpmn-js-token-simulation.js?v=8425ad49"></script>
+    <script src="../_static/form-viewer.umd.js?v=8086ff6e"></script>
+    <script src="../_static/custom.js?v=9c411ee9"></script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="BPMN with Robot Framework" href="../purjo/index.html" />
+    <link rel="prev" title="Basic modeling exercises" href="../modeling/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Operaton Robot Playground</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../bpmn/index.html">Introduction to BPMN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem.html">Open source ecosystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playground/index.html">Operaton Robot Playground</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/index.html">Basic modeling exercises</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Modeling for execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../purjo/index.html">BPMN with Robot Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../forms/index.html">User tasks and forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bpmn/advanced.html">Advanced BPMN concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tests/index.html">Towards system testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bpmn/juel.html">Expression language</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item"><div class="article-header-buttons">
+
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+
+<button class="btn btn-sm navbar-btn theme-pres-button" title="presentation" aria-label="Toggle presentation mode" data-bs-placement="bottom" data-bs-toggle="tooltip"><a href="?pres"><i class="fa-solid fa-film fa-lg"></i><span class="nav-link"></span></a></button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Modeling for execution</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process-name-and-id">Process name and ID</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gateway-paths">Gateway paths</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-tasks">User tasks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#external-task-pattern">External task pattern</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs-and-outputs">Inputs and outputs</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="modeling-for-execution">
+<h1>Modeling for execution<a class="headerlink" href="#modeling-for-execution" title="Link to this heading">#</a></h1>
+<p><strong>BPMN is designed</strong> to support business process management <strong>for both business and technical users</strong>. Its visual notation makes models easier to understand than equivalent code while still allowing complex, executable behavior to be expressed.</p>
+<p>Although the visual notation is standardized, concrete execution behavior depends on engine‑specific attributes stored in the model XML. For Operaton, these are configured in the properties panel.</p>
+<p><img alt="Modeler Sidebar" src="../_images/execution-properties.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In the playground you can create a new BPMN file with <code class="docutils literal notranslate"><span class="pre">pur</span> <span class="pre">operaton</span> <span class="pre">create</span> <span class="pre">hello-world.bpmn</span></code> in the terminal, then open the created file in the editor.</p>
+</div>
+<section id="process-name-and-id">
+<h2>Process name and ID<a class="headerlink" href="#process-name-and-id" title="Link to this heading">#</a></h2>
+<p>Every BPMN 2.0 process definition intended for execution should have:</p>
+<ul class="simple">
+<li><p>a descriptive display <strong>Name</strong></p></li>
+<li><p>a unique definition <strong>ID</strong></p></li>
+<li><p>the <strong>Executable</strong> option checked</p></li>
+</ul>
+<p>These process‑level settings are available in the properties panel when no element is selected.</p>
+<p>In Operaton, you must also set a <strong>Time to live</strong> value that defines when historical execution data for completed processes may be cleaned up.</p>
+<p><img alt="Process name and ID" src="../_images/execution-process-id.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When using pools, set the process Name and ID on the Pool element.</p>
+</div>
+</section>
+<section id="gateway-paths">
+<h2>Gateway paths<a class="headerlink" href="#gateway-paths" title="Link to this heading">#</a></h2>
+<p>Execution configuration includes how <img alt="" class="role-bpmn" src="../_images/exclusive-gateway.svg" /> <strong>Exclusive Gateways</strong> and <img alt="" class="role-bpmn" src="../_images/inclusive-gateway.svg" /> <strong>Inclusive Gateways</strong> determine which outgoing path a token should follow.</p>
+<p>One of the outgoing paths of an Exclusive Gateway can be marked as the <strong>default path</strong> using the element context (modeling) palette.</p>
+<p><img alt="Setting exclusive gateway default path" src="../_images/execution-default-path.png" /></p>
+<p>All other outgoing paths should define a <strong>condition expression</strong> using <a class="reference internal" href="../bpmn/juel.html"><span class="std std-doc">the expression language</span></a>.</p>
+<p><img alt="Setting exclusive gateway condition" src="../_images/execution-conditional-path.png" /></p>
+</section>
+<section id="user-tasks">
+<h2>User tasks<a class="headerlink" href="#user-tasks" title="Link to this heading">#</a></h2>
+<p><img alt="" class="role-bpmn" src="../_images/user-task.svg" /> <strong>User Tasks</strong> are tasks performed by humans. They model interactions between a process and its users.</p>
+<p>In practice, a <img alt="" class="role-bpmn" src="../_images/user-task.svg" /> <strong>User Task</strong> is implemented by presenting the user with a form (e.g. in a custom task list application). The form can display process variables and allow the user to update them. The <strong>completed form is submitted back to the engine</strong> via its API.</p>
+<p><a class="reference internal" href="../forms/index.html"><span class="std std-doc">Read more about user tasks and forms.</span></a></p>
+</section>
+<section id="external-task-pattern">
+<h2>External task pattern<a class="headerlink" href="#external-task-pattern" title="Link to this heading">#</a></h2>
+<p>An <strong>External</strong> <img alt="" class="role-bpmn" src="../_images/service-task.svg" /> <strong>Service Task</strong> delegates work to be performed outside the engine—such as calling external services or executing long‑running operations. The playground supports implementing external tasks with Robot Framework or Python.</p>
+<p>To configure an external task in your BPMN model:</p>
+<ol class="arabic simple">
+<li><p><strong>Add a <img alt="" class="role-bpmn" src="../_images/service-task.svg" /> Service Task</strong> to your process diagram.</p></li>
+<li><p>Set <strong>Implementation</strong> in the properties panel to <code class="docutils literal notranslate"><span class="pre">External</span></code>.</p></li>
+<li><p><strong>Specify a Topic</strong>: define a topic name that external workers will subscribe to. This acts as a queue that task workers will fetch and complete.</p></li>
+</ol>
+<p><img alt="External Task Configuration" src="../_images/execution-service-task.png" /></p>
+<p>External task workers (e.g. <code class="docutils literal notranslate"><span class="pre">purjo</span></code>) poll the Operaton REST API for tasks with the specified topic, execute the required work, and report completion back to the engine.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In the playground a <a class="reference external" href="https://github.com/datakurre/camunda-modeler-robot-plugin">dedicated plugin</a> renders a <img alt="" class="role-bpmn" src="../_images/robot-task.svg" /> <strong>robot icon</strong> for any <img alt="" class="role-bpmn" src="../_images/service-task.svg" /> <strong>Service Task</strong> whose <em>ID</em> contains the word <em>robot</em>.</p>
+</div>
+</section>
+<section id="inputs-and-outputs">
+<h2>Inputs and outputs<a class="headerlink" href="#inputs-and-outputs" title="Link to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Inputs and outputs</strong> are an advanced concept. Feel free to skip this section until you are comfortable executing processes using only process‑level variables.</p>
+</div>
+<p><strong>Process variables</strong> store data that can be accessed and manipulated throughout the lifecycle of a process instance. In addition to process‑level variables, the Operaton engine supports nested <strong>variable scopes</strong>. These scopes are usually managed with <strong>input and output mappings</strong> for <img alt="" class="role-bpmn" src="../_images/task.svg" /> tasks and <img alt="" class="role-bpmn" src="../_images/start-event.svg" /> sub‑processes.</p>
+<p>Using <strong>inputs and outputs is optional</strong>, but they enable you to:</p>
+<ul class="simple">
+<li><p>Separate generic, reusable service tasks (with generic “arguments”) from domain‑specific process variables.</p></li>
+<li><p>Reduce the risk of concurrent tasks overwriting each other’s process variables.</p></li>
+</ul>
+<p>To configure input and output mappings for a <img alt="" class="role-bpmn" src="../_images/service-task.svg" /> <strong>Service Task</strong>, select the task in the modeler and use the <strong>Inputs</strong> and <strong>Outputs</strong> sections in the properties panel.</p>
+<p><img alt="Inputs and outputs mapping in properties panel" src="../_images/execution-inputs-outputs.png" /></p>
+<p>The default expression language for input mappings in Operaton is <a class="reference internal" href="../bpmn/juel.html"><span class="std std-doc">JUEL</span></a>, which lets you reference process variables and perform simple operations on them.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Variables mapped in <img alt="" class="role-bpmn" src="../_images/service-task.svg" /> <strong>Service Task</strong> inputs exist only within the task. After the task completes, they are no longer accessible <strong>unless exported via outputs</strong>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Inputs and outputs can map domain‑specific process‑level variables to generic task‑level variables, enabling <strong>generic, reusable external task workers</strong>—analogous to how functions are defined and invoked in traditional programming.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>File variables must be mapped with the special expression <code class="docutils literal notranslate"><span class="pre">${execution.getVariableTyped(&quot;name&quot;)}</span></code>; otherwise they may be coerced to the generic “Bytes” variable type.</p>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../modeling/index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Basic modeling exercises</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../purjo/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">BPMN with Robot Framework</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process-name-and-id">Process name and ID</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gateway-paths">Gateway paths</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-tasks">User tasks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#external-task-pattern">External task pattern</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs-and-outputs">Inputs and outputs</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
