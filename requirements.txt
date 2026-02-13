@@ -2,5 +2,5 @@ black >= 25.12.0, <26
 robotframework >= 7.3.1, <8
 robotframework-robocop >= 7.2.0, <8
 rf-mcp >= 0.29.0
-git+https://github.com/datakurre/purjo.git@11c0c9f9e73628ecd5060ec2cde78e0f10143a68#egg=purjo
+git+https://github.com/datakurre/purjo.git@4a66813c208952b318ea18f9850dcf2e949397ff#egg=purjo
 robotframework-robotlibrary >= 1.0a3
