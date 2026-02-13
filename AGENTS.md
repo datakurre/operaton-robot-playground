@@ -20,6 +20,11 @@ ls -la
 pur init
 ```
 
+Rule of thumb for dependencies:
+- **Single source of truth:** for bot deps, always edit the bot’s `pyproject.toml` and run via `uv`.
+- Don’t `pip install` (or `install_python_packages`) into the workspace root expecting `uv run` to see it.
+- If you add Python deps: update `pyproject.toml` in the bot dir and validate with `uv run …`.
+
 Then modify the generated template (do not add new scaffolding unless asked):
 - `pyproject.toml` (topic mapping, deps)
 - `hello.robot` / `Hello.py` (implement your task, rename)
@@ -39,9 +44,15 @@ process-variables = true   # false for Input/Output in BPMN
 
 When working with .bpmn files, always use the `#bpmn-js-mcp` tools instead of editing BPMN XML directly. The MCP tools ensure valid BPMN 2.0 structure, proper diagram layout coordinates, and semantic correctness that hand-editing XML cannot guarantee.
 
+Identify ids first (guardrail):
+- Import existing BPMN with `import_bpmn_xml`.
+- Inspect using `summarize_bpmn_diagram` and/or `list_bpmn_elements`.
+- Then set properties / mappings using the ids you just inspected.
+- Don’t assume element ids (especially for processes/participants).
+
 To modify an existing .bpmn file, use import_bpmn_xml to load it, make changes with the MCP tools, then export_bpmn with file path to write the result back to the file.
 
-To create a new diagram, use create_bpmn_diagram, build it with batch_bpmn_opreations, then export_bpmn with file path to serialize back to XML.
+To create a new diagram, use create_bpmn_diagram, build it with batch_bpmn_operations, then export_bpmn with file path to serialize back to XML.
 
 ## Robot Framework authoring
 
@@ -76,7 +87,7 @@ Do Work
     VAR    ${result}    ${result}    scope=${BPMN:PROCESS}
 ```
 
-Note: if a value was introduced via **BPMN input mapping**, exporting to process scope still typically requires **BPMN output mapping** (`process_variables=false`).
+Note: if a value was introduced via **BPMN input mapping**, exporting to process scope still typically requires **BPMN output mapping** (`process-variables = false`).
 
 
 ## Python Keyword Libraries (Do Not Get This Wrong)
@@ -96,6 +107,10 @@ Rules:
 - Every exposed method MUST have `@keyword()`.
 - Arguments must have type hints.
 
+Guardrail (name collisions):
+- Never give a Python `@keyword()` the same name as a Task/Test Case in the `.robot` suite.
+- If you want a human-readable task name, keep the Robot task named for the BPMN topic, and name the Python keyword something else (e.g. “Build …” vs “Generate …”).
+
 
 ## BPMN Modeling
 
@@ -110,6 +125,11 @@ Rules:
 - Outputs: task variables → process variables
 - File variables: use `${execution.getVariableTyped("name")}`
 - Gateways: use JUEL like `${errorCode != null}`
+
+Decision table: BPMN I/O mapping vs `process-variables`
+- If BPMN uses **camunda:inputOutput mappings**, set `process-variables = false` in `pyproject.toml`.
+- If you want Purjo to push/pull variables automatically (no BPMN I/O mapping), set `process-variables = true`.
+- For **file variables** with mappings: use `${execution.getVariableTyped("<taskVar>")}` in BPMN outputs.
 
 
 ## Add a User Task + Camunda 7 Generated Task Form (Recommended for Demos)
@@ -162,16 +182,25 @@ Hello Jane          Jane Doe
 *** Keywords ***
 Test Hello
     [Arguments]    ${name}
-    Run Robot Test    ${CURDIR}/hello.robot
+    ${suite}=    Join Path    ${EXECDIR}    hello.robot
+    Run Robot Test    ${suite}
     ...    My Test in Robot
     ...    BPMN:PROCESS=global
     ...    name=${name}
     Should Be Equal    ${message}    Hello ${name}!
+
+Guardrail: `Run Robot Test` pathing
+- Avoid `${CURDIR}` when locating the target suite from within an integration test.
+- Prefer `${EXECDIR}` + `Join Path` so the suite path follows where you launched `robot` from.
 ```
 
 Run locally:
 
 - `uv run --group dev robot test_hello.robot` (or `make test` inside the bot dir if it has a `Makefile`)
+
+Preferred validation command:
+- Default: `uv run --group dev robot test_*.robot` (inside the bot directory).
+- Why: ensures the same environment as `pur serve`.
 
 
 ## Run with Engine (Playground)
@@ -186,9 +215,16 @@ pur serve .
 
 - Start new bots with `pur init` (empty dir).
 - Keep BPMN topic and `pyproject.toml` mapping identical.
+- Keep bot dependencies in the bot’s `pyproject.toml` and validate with `uv run …`.
 - Prefer adding a User Task + Generated Form for demo inputs.
 - Use `@library()` + `@keyword()` correctly.
+- Confirm Python keyword names do not collide with Robot task names.
+- Confirm tests run with `uv run --group dev robot test_*.robot` in the bot dir.
+- After BPMN edits: run `validate_bpmn_diagram`, then `layout_bpmn_diagram`, then export.
 - Don’t invent new scaffolding when `pur init` exists.
+
+Fallback when VS Code terminal execution fails:
+- If terminal tool execution fails, prefer running commands via `#robotmcp` (e.g. execute `Run Process`) to validate `pur init` / `uv run` / `robot` steps.
 
 ## Documentation
 
