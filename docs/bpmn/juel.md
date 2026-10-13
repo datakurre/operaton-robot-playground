@@ -76,7 +76,7 @@ For example, if you have an execution object (like in Operaton expressions), you
 | Expression                                   | Description                          |
 |----------------------------------------------|--------------------------------------|
 | `${execution.getBusinessKey()}`              | Refers to the business key property  |
-| `${execution.getProcessInstancesId()}`       | Refers to the process instance ID    |
+| `${execution.getProcessInstanceId()}`        | Refers to the process instance ID    |
 | `${execution.getVariable("variableName")}`   | Calls `getVariable` method on execution |
 | `${filevariable.getFilename()}`              | Calls `getFilename` method on file variable |
 | `${jsonvariable.prop("key").booleanValue()}` | Calls `prop("key")` and `booleanValue` methods on JSON variable |

@@ -215,9 +215,9 @@ would be replaced with the value of local variable `message` defined in the {bpm
 
 ## Robot variables to BPMN
 
-Robot Framework as such does not have a concept of output or result variables. In other words, there is no single right way of defining, what should e returned back to BPM engine.
+Robot Framework as such does not have a concept of output or result variables. In other words, there is no single right way of defining, what should be returned back to BPM engine.
 
-At first, `pur`(jo) always returns `log.html` and `output.xml` files are local task variables into engine. On error, `pur`(jo) returns also the last Robot Framework test or task failure as local `errorCode` and `errorMessage` variables or Operaton incident or BPMN error arguments.
+At first, `pur`(jo) always returns `log.html` and `output.xml` files as local task variables into the engine. On error, `pur`(jo) returns also the last Robot Framework test or task failure as local `errorCode` and `errorMessage` variables or Operaton incident or BPMN error arguments.
 
 For custom variables, `pur`(jo) extends Robot Framework variable scope with two new scopes: `BPMN:TASK` and `BPMN:PROCESS`. These scopes are used in robot test or task suites to define variables, which should be returned back to BPMN engine. For example:
 
@@ -245,7 +245,7 @@ Set BPMN variable
     VAR    ${message}    Hello World!    scope=${BPMN:TASK}
 ```
 
-Simlarly, the following example would set the variables direcly onto process scope, not requiring definition of task outputs in the BPMN task:
+Similarly, the following example would set the variables directly onto process scope, not requiring definition of task outputs in the BPMN task:
 
 ```robotframework
 *** Variables ***
@@ -277,12 +277,12 @@ In Operaton engine an external {bpmn}`../bpmn/service-task` **Service Task** can
 
   ![Conditional BPMN error definition](./conditional-error.png)
 
-For handling these different failure types, `pur serve` has option `--on-fail=FAIL|COMPLETE|ERROR` to configure how failed robot executions are reported back to the engine, unless task have topic specific configuration in `pyproject.toml`.
+For handling these different failure types, `pur serve` has option `--on-fail=FAIL|COMPLETE|ERROR` to configure how failed robot executions are reported back to the engine, unless tasks have topic-specific configuration in `pyproject.toml`.
 
 By the default value, `FAIL`, `pur serve` reports failed robot executions as failed tasks without automated instructions, creating incidents to be manually handled at the engine. (Note: `pur`(jo) should eventually support configuration settings allowed per listened topic.)
 
 
-With `COMPLETE`, failed robot executions are reported as successfully completed tasks, but two local task variables `errorCode` and `errorMessage`. These variables are `null` on Robot Framework PASS. On Robot Framework FAIL, `errorCode` contains the first line of the last Robot Framework test or task failure, and `errorMessage` contains the rest. This allows configuring an throw expression BPMN when `errorCode` has a value.
+With `COMPLETE`, failed robot executions are reported as successfully completed tasks, but with two local task variables `errorCode` and `errorMessage`. These variables are `null` on Robot Framework PASS. On Robot Framework FAIL, `errorCode` contains the first line of the last Robot Framework test or task failure, and `errorMessage` contains the rest. This allows configuring a throw expression in BPMN when `errorCode` has a value.
 
 With `ERROR`, failed robot executions are reported as completed tasks with a BPMN error, which allows redirecting the process with a {bpmn}`../bpmn/bpmn-error-boundary-event` **BPMN error boundary event** or capturing all errors with an event-based subprocess with an error start event.
 
@@ -291,7 +291,7 @@ With `ERROR`, failed robot executions are reported as completed tasks with a BPM
 ```{note}
 To be more complete, external {bpmn}`../bpmn/service-task` **Service Task** can also fail in two other ways:
 
-* Task worker reports the task as failed, but with retry timeout as automated retry instrutions, and the task will be automatically and silently retried by the engine later.
+* Task worker reports the task as failed, but with retry timeout as automated retry instructions, and the task will be automatically and silently retried by the engine later.
 
 * Task worker disappears after locking the task and before completing it, and the task will be automatically released for a retry by another worker later.
 ```
@@ -420,6 +420,7 @@ When you run the target suite via `RobotLibrary`, output variables written with 
 
 ```robotframework
 *** Settings ***
+Library            OperatingSystem
 Library            RobotLibrary
 
 Test Template      Test Hello
@@ -433,7 +434,8 @@ Hello Jane           Jane Doe
 *** Keywords ***
 Test Hello
     [Arguments]    ${name}
-    Run Robot Test    ${CURDIR}/hello.robot    My Test in Robot
+    ${suite}=    Join Path    ${EXECDIR}    hello.robot
+    Run Robot Test    ${suite}    My Test in Robot
     ...    BPMN:PROCESS=global
     ...    name=${name}
     Should Be Equal    ${message}    Hello ${name}!

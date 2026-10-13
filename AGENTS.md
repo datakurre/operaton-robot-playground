@@ -136,7 +136,7 @@ uv run operaton-contracts generate   # Outputs to .operaton/element-templates/
 uv run operaton-contracts check      # Validates consistency
 ```
 
-Element templates in `.operaton/element-templates/` are automatically discovered by the VS Code Modeler (`vscode-operaton-bpmn-js-modeler`).
+Element templates in `.operaton/element-templates/` are automatically discovered by the VS Code Modeler (`datakurre.vscode-operaton-bpmn-js-modeler`).
 
 
 ## Robot Framework authoring
@@ -273,11 +273,11 @@ Test Hello
     ...    BPMN:PROCESS=global
     ...    name=${name}
     Should Be Equal    ${message}    Hello ${name}!
+```
 
 Guardrail: `Run Robot Test` pathing
 - Avoid `${CURDIR}` when locating the target suite from within an integration test.
 - Prefer `${EXECDIR}` + `Join Path` so the suite path follows where you launched `robot` from.
-```
 
 Run locally:
 

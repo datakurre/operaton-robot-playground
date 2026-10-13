@@ -38,7 +38,7 @@ Next, check if `pur`(jo) is already available
 $ pur
 ```
 
-If not, run `make shell` to manually activate the playground `devenv`shell with `uv` and `pur`(jo) pre-installed, and default Python virtualenv activated.
+If not, run `make shell` to manually activate the playground `devenv` shell with `uv` and `pur`(jo) pre-installed, and default Python virtualenv activated.
 
 
 ## Hello World
@@ -102,8 +102,7 @@ Local VSCode with Podman might require the following `.devcontainer/devcontainer
         "datakurre.vscode-operaton-form-js-modeler",
         "datakurre.devenv",
         "DavidAnson.vscode-markdownlint",
-        "mkhl.direnv",
-        "ms-vscode.makefile-tools"
+        "mkhl.direnv"
       ],
       "settings": {
         "bpmnModeler.engineRestUrl": "http://localhost:8080/engine-rest"

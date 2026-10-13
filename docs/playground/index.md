@@ -58,7 +58,7 @@ The modeler includes a dedicated **Deploy** button in the editor toolbar. Clicki
 
 ## RobotCode
 
-Another extension preinstalled in the playground is [RobotCode](https://marketplace.visualstudio.com/items?itemName=robotframework.robotframework). It's the famous extension adding Robot Framework IntelliSense, linting, test execution and debugging, code formatting, refactoring, and many more features right into the editor.
+Another extension preinstalled in the playground is [RobotCode](https://marketplace.visualstudio.com/items?itemName=d-biehl.robotcode). It's the famous extension adding Robot Framework IntelliSense, linting, test execution and debugging, code formatting, refactoring, and many more features right into the editor.
 
 RobotCode features are available in any `.robot` file opened in the editor.
 

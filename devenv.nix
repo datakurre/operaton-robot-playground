@@ -79,6 +79,16 @@
   enterTest = ''
     wait_for_port 8080 180
     wait_for_port 8200 60
+    if [ -d examples/secrets-example ]; then
+      pushd examples/secrets-example
+      uv run --group dev robot test_secrets.robot
+      popd
+    fi
+    if [ -d examples/contract-example ]; then
+      pushd examples/contract-example
+      uv run --group dev robot test_order_process.robot
+      popd
+    fi
   '';
 
   enterShell = ''
