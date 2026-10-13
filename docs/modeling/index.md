@@ -1,6 +1,6 @@
 # Basic modeling exercises
 
-These exercises should familiarize you with the basic BPMN elements and flows, and using [BPMN.io](https://bpmn.io/) based BPMN modeling tools, like [Miranum Modeler](https://marketplace.visualstudio.com/items?itemName=miragon-gmbh.vs-code-bpmn-modeler) included in the playground.
+These exercises should familiarize you with the basic BPMN elements and flows, and using [BPMN.io](https://bpmn.io/) based BPMN modeling tools, like the [Opinionated BPMN 2.0 Modeler](https://marketplace.visualstudio.com/items?itemName=datakurre.vscode-operaton-bpmn-js-modeler) included in the playground.
 
 ```{tip}
 The playground has a `./exercises` folder with an empty `template.bpmn` to get you started.

@@ -35,6 +35,9 @@ The core bpmn.io libraries are not distributed under an OSI‑approved open sour
 - bpmn-js-bpmnlint integration: <https://github.com/bpmn-io/bpmn-js-bpmnlint> (MIT)
 - Transaction Boundaries overlay: <https://github.com/bpmn-io/camunda-transaction-boundaries> (MIT)
 - MCP: <https://github.com/datakurre/bpmn-js-mcp> (MIT)
+- VS Code Operaton BPMN Modeler: <https://marketplace.visualstudio.com/items?itemName=datakurre.vscode-operaton-bpmn-js-modeler> (Apache-2.0)
+- VS Code Operaton DMN Modeler: <https://marketplace.visualstudio.com/items?itemName=datakurre.vscode-operaton-dmn-js-modeler> (Apache-2.0)
+- VS Code Operaton Form Modeler: <https://marketplace.visualstudio.com/items?itemName=datakurre.vscode-operaton-form-js-modeler> (Apache-2.0)
 
 
 ## WKS Platform
@@ -54,7 +57,7 @@ BPM Crafters is a small open-source GitHub organization focused on building impl
 
 ## SpiffWorkflow and SpiffArena
 
-For those preferring Python native approach, **SpiffWorkflow** could provise a promising alternative in the future.
+For those preferring Python native approach, **SpiffWorkflow** could provide a promising alternative in the future.
 
 
 ### SpiffWorkflow

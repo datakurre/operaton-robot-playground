@@ -31,15 +31,29 @@ If you need to see the console output of Operaton, you can attach to its monitor
 The raw `devenv` command to start Operaton and attach the monitor all at once in the same terminal is `devenv up`.
 
 
-## Miranum Modeler
+## Operaton BPMN, DMN & Form Modelers
 
-For creating and editing BPMN 2.0 and DMN diagrams for Operaton, the playground provides [fork](https://github.com/datakurre/miranum-ide) of the [Miranum Modeler](https://marketplace.visualstudio.com/items?itemName=miragon-gmbh.vs-code-bpmn-modeler) extension preinstalled. Any `.bpmn`, `.dmn` or `.form` file opened will be automatically opened in the modeler.
+For creating and editing BPMN 2.0, DMN, and form diagrams for Operaton, the playground uses opinionated extensions published by **datakurre** directly on the [Visual Studio Marketplace](https://marketplace.visualstudio.com/publishers/datakurre):
+- [Opinionated BPMN 2.0 Modeler](https://marketplace.visualstudio.com/items?itemName=datakurre.vscode-operaton-bpmn-js-modeler) (`datakurre.vscode-operaton-bpmn-js-modeler`)
+- [Opinionated DMN 1.3 Modeler](https://marketplace.visualstudio.com/items?itemName=datakurre.vscode-operaton-dmn-js-modeler) (`datakurre.vscode-operaton-dmn-js-modeler`)
+- [Opinionated Form Modeler](https://marketplace.visualstudio.com/items?itemName=datakurre.vscode-operaton-form-js-modeler) (`datakurre.vscode-operaton-form-js-modeler`)
 
-Miranum Modeler is based on free, source-available [BPMN.io](https://bpmn.io/) libraries, whose license requires the BPMN.io logo to be displayed in the bottom right corner of the modeler.
+Any `.bpmn`, `.dmn`, or `.form` file opened in the editor will be rendered automatically in the visual modeler. The modelers are based on [BPMN.io](https://bpmn.io/) libraries, enhanced with Operaton/Camunda 7 element templates, transaction boundary overlays, token simulation, and real-time linting.
 
-![Screenshot of Miranum Modeler](./modeler.png)
+![Screenshot of Modeler](./modeler.png)
 
-The extension is missing a command for creating new diagrams, but you can create new files in the terminal with the command `pur operaton create` and then open them in the modeler.
+### Creating diagrams directly from the modeler
+
+You can create new BPMN diagrams directly from VS Code without needing terminal commands:
+- **Command Palette**: Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS) and run **`BPMN Modeler: Create New Diagram`**.
+- **Explorer Context Menu**: Right-click any folder or empty space in the file explorer and select **`BPMN Modeler: Create New Diagram`**.
+- Enter your desired diagram filename (ending in `.bpmn`).
+
+*(Creating files via the terminal with `pur operaton create <filename>.bpmn` remains supported as well.)*
+
+### Deploying diagrams with the Deployment button
+
+The modeler includes a dedicated **Deploy** button in the editor toolbar. Clicking Deploy sends the active process diagram directly to the running Operaton engine's REST API (`http://localhost:8080/engine-rest`). You can also configure a custom REST endpoint in settings (`bpmnModeler.engineRestUrl`).
 
 
 ## RobotCode

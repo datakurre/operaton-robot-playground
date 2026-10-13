@@ -1,16 +1,39 @@
 { pkgs, config, ... }:
 {
+  services.operaton.enable = true;
   services.operaton.port = 8080;
-  services.operaton.postgresql.enable = true;
+  services.operaton.postgres.enable = true;
   services.operaton.deployment = ./bpmn;
+  services.operaton.adminUser.id = "demo";
+  services.operaton.adminUser.password = "demo";
 
   dotenv.enable = true;
+
+  languages.java.enable = true;
+  languages.java.jdk.package = pkgs.jdk25;
 
   languages.javascript.enable = true;
   languages.javascript.npm.enable = true;
 
-  profiles.devcontainer.module  = {
+  profiles.devcontainer.module = {
     devcontainer.enable = true;
+    devcontainer.settings.image = "ghcr.io/cachix/devenv/devcontainer:v2.4.0";
+    devcontainer.settings.customizations.vscode.extensions = [
+      "bbenoist.Nix"
+      "be5invis.toml"
+      "GitHub.copilot"
+      "GitHub.copilot-chat"
+      "mkhl.direnv"
+      "d-biehl.robotcode"
+      "datakurre.vscode-operaton-bpmn-js-modeler"
+      "datakurre.vscode-operaton-dmn-js-modeler"
+      "datakurre.vscode-operaton-form-js-modeler"
+      "datakurre.devenv"
+      "DavidAnson.vscode-markdownlint"
+    ];
+    devcontainer.settings.customizations.vscode.settings = {
+      "bpmnModeler.engineRestUrl" = "http://localhost:8080/engine-rest";
+    };
   };
 
   services.vault = {
@@ -79,5 +102,8 @@
     fi
   '';
 
-  cachix.pull = [ "datakurre" ];
+  cachix.pull = [
+    "datakurre"
+    "vasara-bpm"
+  ];
 }

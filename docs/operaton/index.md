@@ -7,7 +7,9 @@ Although the visual notation is standardized, concrete execution behavior depend
 ![Modeler Sidebar](./execution-properties.png)
 
 ```{tip}
-In the playground you can create a new BPMN file with `pur operaton create hello-world.bpmn` in the terminal, then open the created file in the editor.
+In the playground you can create a new BPMN file directly in VS Code using the Command Palette (`Ctrl+Shift+P` → **BPMN Modeler: Create New Diagram**) or by right-clicking a folder in the Explorer. You can also run `pur operaton create hello-world.bpmn` in the terminal.
+
+Once open, models can be deployed directly to the running Operaton engine using the **Deploy** button in the modeler toolbar, or via `pur run hello-world.bpmn`.
 ```
 
 ## Process name and ID

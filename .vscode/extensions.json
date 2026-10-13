@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "datakurre.vscode-operaton-bpmn-js-modeler",
+    "datakurre.vscode-operaton-dmn-js-modeler",
+    "datakurre.vscode-operaton-form-js-modeler",
+    "datakurre.devenv",
+    "d-biehl.robotcode",
+    "mkhl.direnv",
+    "bbenoist.Nix",
+    "be5invis.toml",
+    "DavidAnson.vscode-markdownlint"
+  ]
+}

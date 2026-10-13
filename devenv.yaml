@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://devenv.sh/devenv.schema.json
 inputs:
   devenv:
-    url: github:cachix/devenv/v1.11.2
+    url: github:cachix/devenv/v2.4.0
   nixpkgs:
     url: github:nixos/nixpkgs/nixos-25.11
   mvn2nix:
@@ -18,5 +18,5 @@ inputs:
 allowUnfree: true
 imports:
 - devenv-module-mvn2nix
-- devenv-module-operaton
+- devenv-module-operaton/module.nix
 - devenv-module-devcontainer

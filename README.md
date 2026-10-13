@@ -16,7 +16,7 @@ To get started, pick any of the following options:
 
 * Or clone this repository, and install [GNU Make](https://www.gnu.org/software/make/) and [devenv.sh](https://devenv.sh/).
 
-* Or choose your own adventure by manually installing [uv](https://docs.astral.sh/uv/), [purjo](https://pypi.org/project/purjo/) and [Operaton](https://operaton) or other compatible BPM engine.
+* Or choose your own adventure by manually installing [uv](https://docs.astral.sh/uv/), [purjo](https://pypi.org/project/purjo/) and [Operaton](https://operaton.org/) or other compatible BPM engine.
 
 
 ## Down the rabbit hole
@@ -38,7 +38,7 @@ Next, check if `pur`(jo) is already available
 $ pur
 ```
 
-If not, run `make shell` to manually activate the playground `devenv`shell with `uv` and `pur`(jo) pre-installed, and defauld Python virtualenv activated.
+If not, run `make shell` to manually activate the playground `devenv`shell with `uv` and `pur`(jo) pre-installed, and default Python virtualenv activated.
 
 
 ## Hello World
@@ -67,6 +67,10 @@ Once you have entered the shell with either `make start shell` or separately `ma
    Started: http://localhost:8080/operaton/app/cockpit/default/#/process-instance
    ```
 
+   *(Alternatively, you can deploy open diagrams directly from the VS Code BPMN Modeler using the **Deploy** button in the editor toolbar.)*
+
+   When accessing the Operaton Cockpit / Tasklist at `http://localhost:8080/operaton/`, log in with username **`demo`** and password **`demo`**.
+
 3. Serve the example bot
 
    ```console
@@ -82,7 +86,7 @@ Once you have entered the shell with either `make start shell` or separately `ma
 
 ### VSCode & Podman
 
-Local VSCode with Podman, might require the following `.devcontainer.json`:
+Local VSCode with Podman might require the following `.devcontainer/devcontainer.json`:
 
 ```json
 {
@@ -92,14 +96,21 @@ Local VSCode with Podman, might require the following `.devcontainer.json`:
       "extensions": [
         "bbenoist.Nix",
         "be5invis.toml",
-        "charliermarsh.ruff",
         "d-biehl.robotcode",
-        "ms-vscode.makefile-tools",
-        "/workspaces/operaton-robot-playground/resources/miranum-modeler.vsix"
-      ]
+        "datakurre.vscode-operaton-bpmn-js-modeler",
+        "datakurre.vscode-operaton-dmn-js-modeler",
+        "datakurre.vscode-operaton-form-js-modeler",
+        "datakurre.devenv",
+        "DavidAnson.vscode-markdownlint",
+        "mkhl.direnv",
+        "ms-vscode.makefile-tools"
+      ],
+      "settings": {
+        "bpmnModeler.engineRestUrl": "http://localhost:8080/engine-rest"
+      }
     }
   },
-  "image": "ghcr.io/cachix/devenv/devcontainer:v1.8.2",
+  "image": "ghcr.io/cachix/devenv/devcontainer:v2.4.0",
   "containerEnv": {
     "HOME": "/home/vscode",
     "UV_LINK_MODE": "copy",

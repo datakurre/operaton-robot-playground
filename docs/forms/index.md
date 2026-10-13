@@ -87,9 +87,9 @@ There is no standard for defining {bpmn}`../bpmn/user-task` user task forms, but
 ```
 
 
-### Form Playground
+### Form Playground & Editor
 
-The provided component is [form-js-playground](https://www.npmjs.com/package/@bpmn-io/form-js-playground), which is also integrated into our playground:
+The playground includes the [Opinionated Form Modeler](https://marketplace.visualstudio.com/items?itemName=datakurre.vscode-operaton-form-js-modeler) (`datakurre.vscode-operaton-form-js-modeler`) extension, allowing `.form` files to be created and edited interactively inside VS Code. The underlying component is based on [@bpmn-io/form-js](https://www.npmjs.com/package/@bpmn-io/form-js) and [form-js-playground](https://www.npmjs.com/package/@bpmn-io/form-js-playground):
 
 ![form-js-playground](./form-js-playground.png)
 
