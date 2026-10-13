@@ -1,0 +1,59 @@
+.DEFAULT_GOAL := help
+
+export UV_NO_SYNC=0
+
+WORKSPACE_DIR := $(shell realpath --relative-to="$(CURDIR)" "$(dir $(lastword $(MAKEFILE_LIST)))")
+WORKSPACE_CMD = cd "$(WORKSPACE_DIR)" &&
+
+# Configuration
+TASK_SUITES = {{package}}_{{topic_words}}.robot
+ROBOT_TESTS = tests/test_{{package}}_{{topic_words}}.robot
+EXAMPLE_BPMN = examples/example_{{package}}_{{topic_words}}.bpmn
+PYTHON_SOURCES = OperatonTasks.py {{Package}}Models.py \
+	{{Package}}Client.py tests
+COVERAGE = --cov=OperatonTasks --cov={{Package}}Models \
+	--cov={{Package}}Client --cov=tests.robot_manual_variables
+ROBOT_NO_OUTPUT = --output NONE --log NONE --report NONE
+
+.PHONY: help clean dist test check format element-templates check-element-templates deploy-example serve
+
+help: ## Show this help message
+	@echo 'Usage: make [target]'
+	@echo ''
+	@echo 'Available targets:'
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' "$(WORKSPACE_DIR)/Makefile" | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-24s\033[0m %s\n", $$1, $$2}'
+
+clean: ## Remove generated reports, robot package, and Python caches
+	$(WORKSPACE_CMD) rm -f -- output.xml log.html report.html robot.zip .coverage
+	$(WORKSPACE_CMD) rm -rf -- __pycache__ tests/__pycache__ .mypy_cache .pytest_cache .robotcode htmlcov
+
+dist: test ## Build distribution package
+	$(WORKSPACE_CMD) pur wrap
+
+test: ## Check element templates and run unit and Robot Framework tests
+	$(WORKSPACE_CMD) uv run --group dev python -m OperatonContracts check
+	$(WORKSPACE_CMD) python -m pytest $(COVERAGE) \
+		--cov-branch --cov-report=term-missing --cov-fail-under=100 tests
+	$(WORKSPACE_CMD) uv run --group dev python -m robot $(ROBOT_NO_OUTPUT) --dryrun $(TASK_SUITES)
+	$(WORKSPACE_CMD) uv run --group dev python -m robot $(ROBOT_NO_OUTPUT) $(ROBOT_TESTS)
+
+check: ## Check Python formatting and types
+	$(WORKSPACE_CMD) uv sync --group dev
+	$(WORKSPACE_CMD) black --target-version py312 --check $(PYTHON_SOURCES)
+	$(WORKSPACE_CMD) mypy --python-executable .venv/bin/python \
+		--strict --explicit-package-bases $(PYTHON_SOURCES)
+
+format: ## Format maintained Python sources with Black
+	$(WORKSPACE_CMD) black --target-version py312 $(PYTHON_SOURCES)
+
+element-templates: ## Generate bpmn.io templates from task contracts
+	$(WORKSPACE_CMD) uv run --group dev python -m OperatonContracts generate
+
+check-element-templates: ## Validate bpmn.io templates against the upstream schema
+	$(WORKSPACE_CMD) uv run --group dev python -m OperatonContracts validate
+
+deploy-example: ## Deploy the example BPMN process
+	$(WORKSPACE_CMD) pur operaton deploy $(EXAMPLE_BPMN)
+
+serve: ## Start external task worker
+	$(WORKSPACE_CMD) pur serve .

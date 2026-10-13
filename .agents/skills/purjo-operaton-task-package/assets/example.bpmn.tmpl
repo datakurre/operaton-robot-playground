@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_example_{{package}}_{{topic_words}}" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.28.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.22.0">
+  <bpmn:process id="example_{{package}}_{{topic_words}}" name="Example: {{Task Name}}" isExecutable="true" camunda:historyTimeToLive="1">
+    <bpmn:startEvent id="StartEvent_1" name="Enter {{Input label}}">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="{{inputAlias}}" label="{{Input label}}" type="string">
+            <camunda:validation>
+              <camunda:constraint name="required" />
+            </camunda:validation>
+          </camunda:formField>
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:outgoing>Flow_In</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="ServiceTask_1" name="{{Task Name}}" camunda:modelerTemplate="{{reverse.domain}}.{{template-id}}" camunda:modelerTemplateVersion="1" camunda:type="external" camunda:topic="{{topic}}">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="{{inputAlias}}">${{{inputAlias}}}</camunda:inputParameter>
+          <camunda:outputParameter name="{{outputAlias}}">${{{outputAlias}}}</camunda:outputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_In</bpmn:incoming>
+      <bpmn:outgoing>Flow_Out</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="EndEvent_1" name="Done">
+      <bpmn:incoming>Flow_Out</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_In" sourceRef="StartEvent_1" targetRef="ServiceTask_1" />
+    <bpmn:sequenceFlow id="Flow_Out" sourceRef="ServiceTask_1" targetRef="EndEvent_1" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="Diagram_1">
+    <bpmndi:BPMNPlane id="Plane_1" bpmnElement="example_{{package}}_{{topic_words}}">
+      <bpmndi:BPMNShape id="StartShape_1" bpmnElement="StartEvent_1">
+        <dc:Bounds x="100" y="122" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TaskShape_1" bpmnElement="ServiceTask_1">
+        <dc:Bounds x="280" y="100" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndShape_1" bpmnElement="EndEvent_1">
+        <dc:Bounds x="500" y="122" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Edge_In" bpmnElement="Flow_In">
+        <di:waypoint x="136" y="140" />
+        <di:waypoint x="280" y="140" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Out" bpmnElement="Flow_Out">
+        <di:waypoint x="380" y="140" />
+        <di:waypoint x="500" y="140" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

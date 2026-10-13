@@ -1,0 +1,23 @@
+# Append to pyproject.toml after project initialization. With devenv, keep
+# only robotframework-robotlibrary in the dev group; uv-only mode also adds
+# operaton-contracts[templates] and the Python development tools.
+
+[tool.operaton-contracts]
+specs = "OperatonTasks:TEMPLATES"
+icon = "{{package}}-logo.svg"
+reserved-topics = []
+
+[tool.purjo.topics."{{topic}}"]
+name = "{{Task Name}}"
+on-fail = "ERROR"
+process-variables = false
+
+[tool.purjo.secrets.default]
+provider = "vault"
+path = "{{vault/path}}/demo-api"
+mount-point = "kv"
+
+[tool.purjo.secrets.prod]
+provider = "vault"
+path = "{{vault/path}}/production-api"
+mount-point = "kv"

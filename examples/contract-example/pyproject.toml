@@ -1,0 +1,21 @@
+[project]
+name = "contract-example"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "operaton-contracts[robot]>=0.5.0",
+    "purjo",
+    "robotframework>=7.0",
+]
+
+[dependency-groups]
+dev = [
+    "robotframework-robotlibrary>=1.0a3",
+]
+
+[tool.purjo.topics."orders.process"]
+name = "Process Order"
+process-variables = false
+
+[tool.operaton-contracts]
+specs = "OrderTasks:TEMPLATES"

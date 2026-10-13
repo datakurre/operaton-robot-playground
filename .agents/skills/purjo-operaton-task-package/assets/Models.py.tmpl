@@ -1,0 +1,29 @@
+"""Pydantic models for {{Package}} keyword inputs and API rows."""
+
+from datetime import date
+
+from pydantic import BaseModel
+from pydantic import ConfigDict
+from pydantic import Field
+
+
+class {{Thing}}Input(BaseModel):
+    """Validates keyword arguments before any request is sent."""
+
+    model_config = ConfigDict(
+        extra="forbid",
+        populate_by_name=True,
+        strict=True,
+        str_strip_whitespace=True,
+    )
+
+    {{input_field}}: str = Field(alias="{{inputAlias}}", min_length=1)
+
+
+class {{Thing}}(BaseModel):
+    """One API row; nullability and date types match the source."""
+
+    model_config = ConfigDict(extra="forbid", populate_by_name=True)
+
+    {{thing_field}}_id: str = Field(alias="{{thingAlias}}Id")
+    start_date: date | None = Field(alias="startDate")

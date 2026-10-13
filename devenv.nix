@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, inputs, ... }:
 {
   services.operaton.enable = true;
   services.operaton.port = 8080;
@@ -73,6 +73,7 @@
   
   packages = [
     pkgs.vim
+    inputs.bpmn-js-mcp.packages.${pkgs.stdenv.system}.default
   ];  
 
   enterTest = ''

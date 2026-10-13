@@ -1,9 +1,9 @@
 *** Settings ***
-Library             RobotLibrary
+Library     RobotLibrary
 
 
 *** Variables ***
-${api_key}          s3cr3t
+${api_key}      s3cr3t
 
 
 *** Test Cases ***

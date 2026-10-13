@@ -1,0 +1,30 @@
+{ pkgs, ... }:
+let
+  python = pkgs.python312.withPackages (ps: with ps; [
+    black
+    jsonschema
+    mypy
+    pydantic
+    pytest
+    pytest-cov
+    robotframework
+    types-jsonschema
+  ]);
+in
+{
+  packages = [
+    python
+    pkgs.uv
+  ];
+
+  env.UV_PYTHON = "${python}/bin/python";
+  env.PYTHONPATH = "${toString ./.}:${toString ./.}/.venv/lib/python3.12/site-packages:${python}/lib/python3.12/site-packages";
+
+  scripts.operaton-contracts.exec = ''
+    uv run --group dev python -m OperatonContracts "$@"
+  '';
+
+  scripts.robotcode.exec = ''
+    uv run --group dev --with 'robotcode==2.7.0' robotcode "$@"
+  '';
+}

@@ -1,0 +1,66 @@
+"""Example BPMN processes match the generated element templates."""
+
+from __future__ import annotations
+
+import unittest
+import xml.etree.ElementTree as ET
+from pathlib import Path
+
+from OperatonTasks import TEMPLATES
+
+ROOT = Path(__file__).resolve().parents[1]
+NS = {
+    "bpmn": "http://www.omg.org/spec/BPMN/20100524/MODEL",
+    "camunda": "http://camunda.org/schema/1.0/bpmn",
+}
+CAMUNDA = "{http://camunda.org/schema/1.0/bpmn}"
+
+
+class ExampleProcessTests(unittest.TestCase):
+    def test_examples_use_templates_and_start_forms(self) -> None:
+        specs = {spec.template_id: spec for spec in TEMPLATES}
+        paths = sorted((ROOT / "examples").glob("*.bpmn"))
+        self.assertTrue(paths, "Add an example BPMN for each topic")
+        used: set[str] = set()
+        for path in paths:
+            with self.subTest(example=path.name):
+                process = ET.parse(path).find("bpmn:process", NS)
+                assert process is not None
+                self.assertEqual(process.get("id"), path.stem)
+                self.assertTrue(process.get("name", "").startswith("Example:"))
+                self.assertEqual(process.get("isExecutable"), "true")
+                self.assertEqual(len(process.findall("bpmn:startEvent", NS)), 1)
+                form = process.find(
+                    "bpmn:startEvent/bpmn:extensionElements/camunda:formData", NS
+                )
+                self.assertIsNotNone(form, "The start event needs a form")
+                for task in process.findall("bpmn:serviceTask", NS):
+                    spec = specs[task.get(f"{CAMUNDA}modelerTemplate", "")]
+                    used.add(spec.template_id)
+                    self.assertEqual(task.get(f"{CAMUNDA}type"), "external")
+                    self.assertEqual(task.get(f"{CAMUNDA}topic"), spec.topic)
+                    mapping = task.find(
+                        "bpmn:extensionElements/camunda:inputOutput", NS
+                    )
+                    assert mapping is not None
+                    inputs = {
+                        param.get("name")
+                        for param in mapping.findall("camunda:inputParameter", NS)
+                    }
+                    outputs = {
+                        param.get("name")
+                        for param in mapping.findall("camunda:outputParameter", NS)
+                    }
+                    self.assertEqual(
+                        inputs,
+                        {field.alias for field in spec.inputs.model_fields.values()},
+                    )
+                    self.assertEqual(
+                        outputs,
+                        {field.alias for field in spec.outputs.model_fields.values()},
+                    )
+        self.assertEqual(used, set(specs), "Every template needs an example")
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -25,4 +25,3 @@ Stimulate3rdPartySUT
 Receive3rdPartySUT
     ${processing_time} =    randint    ${0}    ${5}
     Sleep    ${processing_time}
-

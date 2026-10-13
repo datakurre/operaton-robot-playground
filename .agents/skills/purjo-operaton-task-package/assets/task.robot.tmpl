@@ -1,0 +1,21 @@
+*** Settings ***
+Library     OperatonContracts    OperatonTasks
+Library     {{Package}}Client.py
+
+
+*** Variables ***
+${BPMN:TASK}    local
+${{{inputAlias}}}    ${EMPTY}
+${{{package}}_api_endpoint}    %{{{PACKAGE}}_API_ENDPOINT=}
+${{{package}}_api_secret}    Secret:
+
+
+*** Tasks ***
+{{Task Name}}
+    VAR    ${{{outputAlias}}}=    ${None}    scope=${BPMN:TASK}
+    ${input}=    Validate Task Input    {{TaskName}}Input
+    ${rows}=    {{Fetch Keyword}}
+    ...    ${{{package}}_api_endpoint}
+    ...    ${{{package}}_api_secret}
+    ...    ${input}[{{inputAlias}}]
+    VAR    ${{{outputAlias}}}=    ${rows}    scope=${BPMN:TASK}

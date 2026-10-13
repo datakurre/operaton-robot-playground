@@ -15,6 +15,8 @@ inputs:
   devenv-module-devcontainer:
     url: github:datakurre/devenv-module-devcontainer
     flake: false
+  bpmn-js-mcp:
+    url: github:datakurre/bpmn-js-mcp
 allowUnfree: true
 imports:
 - devenv-module-mvn2nix

@@ -1,0 +1,32 @@
+*** Settings ***
+Library             RobotLibrary
+Library             ${CURDIR}/{{Package}}Stub.py
+Suite Setup         Start {{Package}} Stub
+Suite Teardown      Stop {{Package}} Stub
+
+
+*** Tasks ***
+{{Task Name}} returns validated rows
+    ${url}=    Get {{Package}} Stub URL
+    ${secret}=    Get Test Secret
+    # Caller variables must not share names with the task's inputs.
+    Run Robot Task    ${CURDIR}/../{{package}}_{{topic_words}}.robot
+    ...    {{Task Name}}
+    ...    BPMN:TASK=global
+    ...    {{inputAlias}}=${SPACE}id-1${SPACE}
+    ...    {{package}}_api_endpoint=${url}
+    ...    {{package}}_api_secret=${secret}
+    Should Be Equal    ${{{outputAlias}}}[0][{{thingAlias}}Id]    id-1
+
+{{Task Name}} rejects a blank input
+    # Input validation fails before any credential is used.
+    TRY
+        Run Robot Task    ${CURDIR}/../{{package}}_{{topic_words}}.robot
+        ...    {{Task Name}}
+        ...    BPMN:TASK=global
+        ...    {{inputAlias}}=${SPACE}
+    EXCEPT    *{{inputAlias}}*    type=GLOB
+        Log    Rejected a blank {{inputAlias}}
+    ELSE
+        Fail    A blank {{inputAlias}} was accepted
+    END

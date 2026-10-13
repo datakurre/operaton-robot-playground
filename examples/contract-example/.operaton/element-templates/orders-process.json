@@ -1,0 +1,82 @@
+{
+  "$schema": "https://gitlab.com/vasara-bpm/vscode-operaton-bpmn-js-modeler/-/jobs/artifacts/v0.8.3/raw/operaton-element-templates-schema-v0.8.3.json?job=release",
+  "name": "Process Order",
+  "id": "org.example.orders-process",
+  "description": "Process customer orders with contract validation.",
+  "version": 1,
+  "appliesTo": [
+    "bpmn:ServiceTask"
+  ],
+  "groups": [
+    {
+      "id": "main",
+      "label": "Order Processing"
+    }
+  ],
+  "properties": [
+    {
+      "label": "Implementation",
+      "type": "Hidden",
+      "value": "external",
+      "binding": {
+        "type": "property",
+        "name": "camunda:type"
+      }
+    },
+    {
+      "label": "External Task Topic",
+      "type": "Hidden",
+      "value": "orders.process",
+      "binding": {
+        "type": "property",
+        "name": "camunda:topic"
+      }
+    },
+    {
+      "label": "Order ID",
+      "type": "String",
+      "value": "${orderId}",
+      "constraints": {
+        "notEmpty": true
+      },
+      "group": "main",
+      "binding": {
+        "type": "camunda:inputParameter",
+        "name": "orderId"
+      }
+    },
+    {
+      "label": "Order Count",
+      "type": "String",
+      "value": "${orderCount}",
+      "group": "main",
+      "binding": {
+        "type": "camunda:inputParameter",
+        "name": "orderCount"
+      }
+    },
+    {
+      "label": "Urgent Order",
+      "type": "Boolean",
+      "value": false,
+      "group": "main",
+      "binding": {
+        "type": "camunda:inputParameter",
+        "name": "isUrgent"
+      }
+    },
+    {
+      "label": "Order Result",
+      "type": "String",
+      "value": "orderResult",
+      "group": "main",
+      "binding": {
+        "type": "camunda:outputParameter",
+        "source": "${orderResult}"
+      }
+    }
+  ],
+  "icon": {
+    "contents": "data:image/svg+xml;base64,"
+  }
+}

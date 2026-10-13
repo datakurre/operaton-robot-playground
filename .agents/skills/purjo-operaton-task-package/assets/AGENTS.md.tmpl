@@ -1,0 +1,66 @@
+# AGENTS.md
+
+## Purpose
+
+This repository is a Robot Framework robot package served as Operaton external
+tasks by purjo. `pur serve .` polls the engine for configured topics, executes
+the mapped Robot task, and returns process variables.
+
+Use the terms **Operaton**, **robot package**, and **external task**. Follow
+the `purjo-operaton-task-package` skill.
+
+## Repository map
+
+| Path | Role |
+|------|------|
+| `pyproject.toml` | Dependencies, purjo topics, and Vault profiles |
+| `{{package}}_{{topic_words}}.robot` | `{{Task Name}}` task |
+| `{{Package}}Client.py` | API client library |
+| `{{Package}}Models.py` | Domain types, keyword input models, and API row models |
+| `OperatonTasks.py` | Task contracts and (by default) element-template specs |
+| `operaton-contracts` | PyPI package providing `TaskContract`, `Validate Task Input`, and template tooling |
+| `OperatonTemplates.py` | Optional separate build-time template specs |
+| `{{package}}-logo.svg` | Root-level build-time template icon |
+| `.operaton/element-templates/` | Generated templates; never hand-edited |
+| `examples/` | Example BPMN processes with start forms |
+| `tests/` | pytest, RobotLibrary suites, HTTP stubs, manual variables |
+| `Makefile` | Test, package, and serve commands |
+| `uv.lock` | Resolved dependency graph; generated, never hand-edited |
+| `.wrapignore` | Files excluded from `pur wrap` |
+
+## Topic-to-task contract
+
+| Topic | Robot task | Inputs | Outputs |
+|---|---|---|---|
+| `{{topic}}` | `{{Task Name}}` | `{{inputAlias}}` | `{{outputAlias}}` |
+
+### Reserved topics
+
+List topic names owned by other workers here and in
+`[tool.operaton-contracts] reserved-topics`; `operaton-contracts check`
+rejects them.
+
+## Secrets
+
+The `default` Vault profile reads `{{vault/path}}/demo-api`; `prod` reads
+`{{vault/path}}/production-api`. Secrets are Robot `Secret` variables, never
+logged or returned. `VAULT_ADDR` and `VAULT_TOKEN` must be set when serving.
+The endpoint comes from `{{PACKAGE}}_API_ENDPOINT`.
+
+## Development
+
+```console
+{{run}} make format
+{{run}} make check
+{{run}} make element-templates
+{{run}} make test
+{{run}} make check-element-templates
+{{run}} make dist
+{{run}} make serve
+```
+
+`make test` is offline; `make check-element-templates` fetches the pinned
+schema from gitlab.com. Manage runtime dependencies with `uv add`, and
+development tools in `devenv.nix` (devenv) or uv's `dev` group (uv). In
+devenv mode, keep only `robotframework-robotlibrary` in the uv `dev` group;
+devenv supplies pytest, pytest-cov, mypy, Black, and jsonschema.

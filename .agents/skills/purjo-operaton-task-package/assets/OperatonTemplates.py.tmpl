@@ -1,0 +1,19 @@
+"""Separate build-time element-template specs for the {{Package}} package."""
+
+from OperatonContracts.templates import TaskTemplate
+from OperatonContracts.templates import TemplateGroup
+from OperatonTasks import {{TaskName}}Input
+from OperatonTasks import {{TaskName}}Output
+
+
+TEMPLATES = (
+    TaskTemplate(
+        topic="{{topic}}",
+        template_id="{{reverse.domain}}.{{template-id}}",
+        name="{{Package}}: {{Task Name}}",
+        description="{{One sentence.}}",
+        filename="{{template-id}}.json",
+        inputs={{TaskName}}Input,
+        outputs={{TaskName}}Output,
+    ),
+)

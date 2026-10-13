@@ -1,0 +1,38 @@
+"""Task contracts and element-template specs for the {{Package}} robot package.
+
+Each Robot task validates its inputs with ``Validate Task Input`` against the
+matching ``*Input`` model, and the element templates in
+``.operaton/element-templates/`` are generated from these models by
+``make element-templates``.
+"""
+
+from pydantic import Field
+
+from OperatonContracts import TaskContract
+from OperatonContracts.templates import TaskTemplate
+from {{Package}}Models import {{Thing}}
+
+
+class {{TaskName}}Input(TaskContract):
+    {{input_field}}: str = Field(
+        alias="{{inputAlias}}", title="{{Input label}}", min_length=1
+    )
+
+
+class {{TaskName}}Output(TaskContract):
+    {{output_field}}: list[{{Thing}}] = Field(
+        alias="{{outputAlias}}", title="Result variable"
+    )
+
+
+TEMPLATES = (
+    TaskTemplate(
+        topic="{{topic}}",
+        template_id="{{reverse.domain}}.{{template-id}}",
+        name="{{Package}}: {{Task Name}}",
+        description="{{One sentence.}}",
+        filename="{{template-id}}.json",
+        inputs={{TaskName}}Input,
+        outputs={{TaskName}}Output,
+    ),
+)

@@ -1,0 +1,42 @@
+"""Check generated templates against the installed operaton-contracts package."""
+
+from __future__ import annotations
+
+import unittest
+from pathlib import Path
+
+from OperatonContracts.checks import check_package
+from OperatonContracts.cli import load_config
+from OperatonContracts.templates import drift
+from OperatonContracts.templates import render_all
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+class ElementTemplatePackageTests(unittest.TestCase):
+    def test_committed_templates_match_contracts(self) -> None:
+        config = load_config(ROOT)
+        rendered = render_all(
+            config.specs,
+            icon_svg=config.icon_svg,
+            schema_url=config.schema_url,
+            icons=config.icons,
+            template_dir=config.template_dir,
+        )
+        self.assertEqual(drift(config.template_dir, rendered), [])
+
+    def test_topics_and_robot_suites_match_specs(self) -> None:
+        config = load_config(ROOT)
+        self.assertEqual(
+            check_package(
+                config.root,
+                config.specs,
+                reserved_topics=config.reserved_topics,
+                template_dir=config.template_dir,
+            ),
+            [],
+        )
+
+
+if __name__ == "__main__":
+    unittest.main()

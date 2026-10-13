@@ -1,0 +1,70 @@
+"""{{Package}} API client library."""
+
+from __future__ import annotations
+
+import json
+from typing import Any
+from urllib.parse import urlsplit
+from urllib.request import ProxyHandler
+from urllib.request import Request
+from urllib.request import build_opener
+
+from robot.api.deco import keyword
+from robot.api.deco import library
+from robot.api.types import Secret
+
+from {{Package}}Models import {{Thing}}
+from {{Package}}Models import {{Thing}}Input
+
+# Never route credentials through environment proxies.
+_DIRECT_OPENER = build_opener(ProxyHandler({}))
+_LOOPBACK = {"127.0.0.1", "localhost", "::1"}
+
+
+def _endpoint(url: Any) -> str:
+    endpoint = getattr(url, "value", url)
+    if not isinstance(endpoint, str):
+        raise ValueError("A valid HTTP(S) API URL is required")
+    parsed_url = urlsplit(endpoint)
+    if parsed_url.scheme not in {"http", "https"} or not parsed_url.netloc:
+        raise ValueError("A valid HTTP(S) API URL is required")
+    if parsed_url.scheme == "http" and parsed_url.hostname not in _LOOPBACK:
+        raise ValueError("Authenticated requests require HTTPS outside loopback")
+    return endpoint
+
+
+def _secret(value: Any, name: str) -> str:
+    if not isinstance(value, Secret):
+        raise ValueError(f"{name} must be a Robot Framework Secret")
+    if not value.value:
+        raise ValueError(f"{name} is required")
+    return str(value.value)
+
+
+@library(auto_keywords=False)
+class {{Package}}Client:
+    @keyword("{{Fetch Keyword}}")
+    def fetch(
+        self, api_endpoint: Any, api_secret: Secret, {{input_field}}: str
+    ) -> list[dict[str, Any]]:
+        inputs = {{Thing}}Input.model_validate({"{{inputAlias}}": {{input_field}}})
+        request = Request(
+            _endpoint(api_endpoint),
+            data=json.dumps(inputs.model_dump(by_alias=True)).encode(),
+            headers={
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "Authorization": f"Bearer {_secret(api_secret, 'api_secret')}",
+            },
+            method="POST",
+        )
+        with _DIRECT_OPENER.open(request, timeout=30) as response:
+            content = json.loads(response.read())
+        if not isinstance(content, list) or not all(
+            isinstance(row, dict) for row in content
+        ):
+            raise RuntimeError("API response must be a JSON array of objects")
+        return [
+            {{Thing}}.model_validate(row).model_dump(mode="json", by_alias=True)
+            for row in content
+        ]

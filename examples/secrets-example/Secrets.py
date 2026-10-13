@@ -28,7 +28,11 @@ class Secrets:
 
         # Keep the real secret value out of logs. Only derive stable values.
         secret_value = api_key.value
-        data = secret_value if isinstance(secret_value, bytes) else str(secret_value).encode("utf-8")
+        data = (
+            secret_value
+            if isinstance(secret_value, bytes)
+            else str(secret_value).encode("utf-8")
+        )
 
         digest = hashlib.sha256(data).hexdigest()
         return digest, len(data)

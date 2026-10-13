@@ -42,7 +42,7 @@ process-variables = true   # false for Input/Output in BPMN
 
 ## BPMN authoring
 
-When working with .bpmn files, always use the `#bpmn-js-mcp` tools instead of editing BPMN XML directly. The MCP tools ensure valid BPMN 2.0 structure, proper diagram layout coordinates, and semantic correctness that hand-editing XML cannot guarantee.
+When working with .bpmn files, always use the `#bpmn-js-mcp` tools instead of editing BPMN XML directly. `bpmn-js-mcp` is hermetically packaged in devenv and exposed via stdio in `.vscode/mcp.json`. The MCP tools ensure valid BPMN 2.0 structure, proper diagram layout coordinates, and semantic correctness that hand-editing XML cannot guarantee.
 
 Identify ids first (guardrail):
 - Import existing BPMN with `import_bpmn_xml`.
@@ -50,9 +50,94 @@ Identify ids first (guardrail):
 - Then set properties / mappings using the ids you just inspected.
 - Don’t assume element ids (especially for processes/participants).
 
-To modify an existing .bpmn file, use import_bpmn_xml to load it, make changes with the MCP tools, then export_bpmn with file path to write the result back to the file.
+To modify an existing .bpmn file, use import_bpmn_xml to load it, make changes with the MCP tools, then export_bpmn with file path to serialize back to XML.
 
 To create a new diagram, use create_bpmn_diagram, build it with batch_bpmn_operations, then export_bpmn with file path to serialize back to XML.
+
+
+## Contract-Driven Automation (`operaton-contracts`)
+
+For production bots, define strong input/output contracts using `operaton-contracts` (`TaskContract`, Pydantic v2).
+
+### 1. Define Contracts (`TaskContract`)
+
+```python
+from pydantic import Field
+from OperatonContracts import TaskContract, template_hints
+from OperatonContracts.templates import TaskTemplate, TemplateGroup
+
+
+class OrderInput(TaskContract):
+    order_id: str = Field(
+        alias="orderId",
+        title="Order ID",
+        min_length=3,
+        json_schema_extra=template_hints(value="${orderId}"),
+    )
+    order_count: int = Field(
+        alias="orderCount",
+        title="Order Count",
+        ge=1,
+        default=1,
+        strict=False,
+        json_schema_extra=template_hints(type="String", value="${orderCount}"),
+    )
+
+
+class OrderOutput(TaskContract):
+    order_result: dict = Field(alias="orderResult", title="Order Result")
+
+
+TEMPLATES = (
+    TaskTemplate(
+        topic="orders.process",
+        template_id="org.example.orders-process",
+        name="Process Order",
+        description="Process orders with contract validation.",
+        filename="orders-process.json",
+        inputs=OrderInput,
+        outputs=OrderOutput,
+        groups=(TemplateGroup("main", "Order Processing"),),
+        input_group="main",
+        output_group="main",
+    ),
+)
+```
+
+Rules:
+- In Camunda 7 element templates, numeric types must use `json_schema_extra=template_hints(type="String", value="${...}")` and `strict=False` in Pydantic.
+- Every topic using element templates MUST declare `process-variables = false` in `pyproject.toml`.
+
+### 2. Robot Task Implementation
+
+Outputs MUST be pre-initialized before calling `Validate Task Input`:
+
+```robotframework
+*** Settings ***
+Library     OperatonContracts    OrderTasks
+
+*** Tasks ***
+Process Order
+    VAR    ${orderResult}=    ${None}    scope=${BPMN:TASK}
+    ${input}=    Validate Task Input    OrderInput
+    # Perform task logic
+    VAR    ${orderResult}=    ${{ {"status": "CONFIRMED"} }}    scope=${BPMN:TASK}
+```
+
+- If validation fails, `Validate Task Input` raises `InvalidTaskInput`.
+- In BPMN, attach an Error Boundary Event (`camunda:errorCodeVariable="errorCode"`) to catch `InvalidTaskInput`.
+
+### 3. Verification & Element Templates
+
+Generate and check element templates inside the bot directory:
+
+```bash
+uv run operaton-contracts generate   # Outputs to .operaton/element-templates/
+uv run operaton-contracts check      # Validates consistency
+```
+
+Element templates in `.operaton/element-templates/` are automatically discovered by the VS Code Modeler (`vscode-operaton-bpmn-js-modeler`).
+
 
 ## Robot Framework authoring
 

@@ -7,8 +7,7 @@
     },
     "bpmn-js-mcp": {
       "type": "stdio",
-      "command": "npx",
-      "args": ["-y", "https://github.com/datakurre/bpmn-js-mcp.git"]
+      "command": "bpmn-js-mcp"
     }
   }
 }

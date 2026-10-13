@@ -1,0 +1,73 @@
+from __future__ import annotations
+
+import io
+import json
+import os
+import unittest
+from typing import Any
+from unittest.mock import patch
+
+from pydantic import ValidationError
+from robot.api.types import Secret
+
+import {{Package}}Client as client_module
+from {{Package}}Client import {{Package}}Client
+from tests.robot_manual_variables import get_variables
+
+URL = "https://api.example.invalid/api"
+
+
+class Response(io.BytesIO):
+    def __enter__(self) -> Response:
+        return self
+
+    def __exit__(self, *_args: object) -> None:
+        self.close()
+
+
+def fetch(content: Any, url: Any = URL, secret: Any = None) -> Any:
+    response = Response(json.dumps(content).encode())
+    with patch.object(
+        client_module._DIRECT_OPENER, "open", return_value=response
+    ) as opener:
+        rows = {{Package}}Client().fetch(
+            url, secret if secret is not None else Secret("s"), " id-1 "
+        )
+    return rows, opener.call_args.args[0]
+
+
+class ClientTests(unittest.TestCase):
+    def test_posts_validated_input_and_validates_rows(self) -> None:
+        rows, request = fetch([{"{{thingAlias}}Id": "id-1", "startDate": "2026-01-02"}])
+        self.assertEqual(rows, [{"{{thingAlias}}Id": "id-1", "startDate": "2026-01-02"}])
+        self.assertEqual(json.loads(request.data), {"{{inputAlias}}": "id-1"})
+        self.assertEqual(request.get_header("Authorization"), "Bearer s")
+
+    def test_rejects_unsafe_urls_and_plain_secrets(self) -> None:
+        for url in (None, "ftp://x", "http://api.example.invalid/api", "https://"):
+            with self.subTest(url=url), self.assertRaises(ValueError):
+                fetch([], url=url)
+        for secret in ("plain", Secret("")):
+            with self.subTest(secret=secret), self.assertRaises(ValueError):
+                fetch([], secret=secret)
+        rows, _request = fetch([], url=Secret("http://127.0.0.1:1/api"))
+        self.assertEqual(rows, [])
+
+    def test_rejects_malformed_responses(self) -> None:
+        malformed: tuple[Any, ...] = ({"rows": []}, [1])
+        for content in malformed:
+            with self.subTest(content=content), self.assertRaises(RuntimeError):
+                fetch(content)
+        with self.assertRaises(ValidationError):
+            fetch([{"unexpected": True}])
+
+    def test_manual_variables_wrap_the_secret(self) -> None:
+        environment = {"{{PACKAGE}}_API_ENDPOINT": URL, "{{PACKAGE}}_API_SECRET": "s"}
+        with patch.dict(os.environ, environment):
+            variables = get_variables()
+        self.assertEqual(variables["{{package}}_api_endpoint"], URL)
+        self.assertIsInstance(variables["{{package}}_api_secret"], Secret)
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -35,6 +35,7 @@ The core bpmn.io libraries are not distributed under an OSI‑approved open sour
 - bpmn-js-bpmnlint integration: <https://github.com/bpmn-io/bpmn-js-bpmnlint> (MIT)
 - Transaction Boundaries overlay: <https://github.com/bpmn-io/camunda-transaction-boundaries> (MIT)
 - MCP: <https://github.com/datakurre/bpmn-js-mcp> (MIT)
+- Operaton Contracts: <https://github.com/datakurre/operaton-contracts> (Apache-2.0)
 - VS Code Operaton BPMN Modeler: <https://marketplace.visualstudio.com/items?itemName=datakurre.vscode-operaton-bpmn-js-modeler> (Apache-2.0)
 - VS Code Operaton DMN Modeler: <https://marketplace.visualstudio.com/items?itemName=datakurre.vscode-operaton-dmn-js-modeler> (Apache-2.0)
 - VS Code Operaton Form Modeler: <https://marketplace.visualstudio.com/items?itemName=datakurre.vscode-operaton-form-js-modeler> (Apache-2.0)

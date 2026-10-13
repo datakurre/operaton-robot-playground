@@ -1,0 +1,15 @@
+"""Load endpoint and secret variables for standalone Robot runs.
+
+    robot --variablefile tests/robot_manual_variables.py <suite>.robot
+"""
+
+import os
+
+from robot.api.types import Secret
+
+
+def get_variables() -> dict[str, str | Secret]:
+    return {
+        "{{package}}_api_endpoint": os.environ["{{PACKAGE}}_API_ENDPOINT"],
+        "{{package}}_api_secret": Secret(os.environ["{{PACKAGE}}_API_SECRET"]),
+    }

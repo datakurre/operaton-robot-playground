@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_order_process" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.28.0">
+  <bpmn:error id="Error_InvalidInput" name="InvalidTaskInput" errorCode="InvalidTaskInput" />
+  <bpmn:process id="order-process" name="Order Processing Process" isExecutable="true" camunda:historyTimeToLive="1">
+    <bpmn:startEvent id="StartEvent_1" name="Order Received">
+      <bpmn:outgoing>Flow_1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="Activity_ProcessOrder" name="Process Order" camunda:modelerTemplate="org.example.orders-process" camunda:type="external" camunda:topic="orders.process">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="orderId">${orderId}</camunda:inputParameter>
+          <camunda:inputParameter name="orderCount">${orderCount}</camunda:inputParameter>
+          <camunda:inputParameter name="isUrgent">${isUrgent}</camunda:inputParameter>
+          <camunda:outputParameter name="orderResult">${orderResult}</camunda:outputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_2</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="Event_Success" name="Order Processed">
+      <bpmn:incoming>Flow_2</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:boundaryEvent id="BoundaryEvent_InvalidInput" name="Invalid Contract Input" attachedToRef="Activity_ProcessOrder">
+      <bpmn:outgoing>Flow_Error</bpmn:outgoing>
+      <bpmn:errorEventDefinition id="ErrorEventDef_1" errorRef="Error_InvalidInput" camunda:errorCodeVariable="errorCode" camunda:errorMessageVariable="errorMessage" />
+    </bpmn:boundaryEvent>
+    <bpmn:endEvent id="Event_Rejected" name="Order Rejected">
+      <bpmn:incoming>Flow_Error</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1" sourceRef="StartEvent_1" targetRef="Activity_ProcessOrder" />
+    <bpmn:sequenceFlow id="Flow_2" sourceRef="Activity_ProcessOrder" targetRef="Event_Success" />
+    <bpmn:sequenceFlow id="Flow_Error" sourceRef="BoundaryEvent_InvalidInput" targetRef="Event_Rejected" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="order-process">
+      <bpmndi:BPMNShape id="StartEvent_1_di" bpmnElement="StartEvent_1">
+        <dc:Bounds x="180" y="100" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="160" y="143" width="77" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_ProcessOrder_di" bpmnElement="Activity_ProcessOrder">
+        <dc:Bounds x="280" y="78" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_Success_di" bpmnElement="Event_Success">
+        <dc:Bounds x="450" y="100" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="427" y="143" width="83" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_Rejected_di" bpmnElement="Event_Rejected">
+        <dc:Bounds x="450" y="210" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="431" y="253" width="75" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BoundaryEvent_InvalidInput_di" bpmnElement="BoundaryEvent_InvalidInput">
+        <dc:Bounds x="332" y="140" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="363" y="176" width="74" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1_di" bpmnElement="Flow_1">
+        <di:waypoint x="216" y="118" />
+        <di:waypoint x="280" y="118" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_2_di" bpmnElement="Flow_2">
+        <di:waypoint x="380" y="118" />
+        <di:waypoint x="450" y="118" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_Error_di" bpmnElement="Flow_Error">
+        <di:waypoint x="350" y="176" />
+        <di:waypoint x="350" y="228" />
+        <di:waypoint x="450" y="228" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

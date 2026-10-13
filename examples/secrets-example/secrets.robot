@@ -15,5 +15,5 @@ Use API Key
     Should Be True    ${is_secret}
     Log To Console    api_key (masked) = ${api_key}
     ${fingerprint}    ${bytes}=    Api Key Fingerprint
-    VAR    ${api_key_fingerprint}    ${fingerprint}    scope=${BPMN:PROCESS}
-    VAR    ${api_key_bytes}          ${bytes}          scope=${BPMN:PROCESS}
+    VAR    ${api_key_fingerprint}=    ${fingerprint}    scope=${BPMN:PROCESS}
+    VAR    ${api_key_bytes}=    ${bytes}    scope=${BPMN:PROCESS}

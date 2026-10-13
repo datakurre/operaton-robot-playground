@@ -499,3 +499,112 @@ Test Hello World
 ```
 
 This approach allows you to build a comprehensive regression test suite for your BPMN tasks, ensuring they behave correctly with various inputs and edge cases.
+
+
+## Contract-driven automation (Operaton Contracts)
+
+In production workflows, process variables exchanged between the BPMN engine and Robot Framework tasks should follow typed, verifiable contracts. [`operaton-contracts`](https://github.com/datakurre/operaton-contracts) bridges Pydantic models, Robot Framework task validation, and Camunda 7 Element Templates.
+
+### 1. Defining Task Contracts
+
+Contracts subclass `TaskContract` (built on Pydantic v2). Each field provides an `alias` (the process variable name in Operaton) and `title` (the UI label shown in the Modeler):
+
+```python
+from pydantic import Field
+from OperatonContracts import TaskContract, template_hints
+from OperatonContracts.templates import TaskTemplate, TemplateGroup
+
+
+class OrderInput(TaskContract):
+    order_id: str = Field(
+        alias="orderId",
+        title="Order ID",
+        min_length=3,
+        json_schema_extra=template_hints(value="${orderId}"),
+    )
+    order_count: int = Field(
+        alias="orderCount",
+        title="Order Count",
+        ge=1,
+        default=1,
+        strict=False,
+        json_schema_extra=template_hints(type="String", value="${orderCount}"),
+    )
+
+
+class OrderOutput(TaskContract):
+    order_result: dict = Field(
+        alias="orderResult",
+        title="Order Result",
+    )
+
+
+TEMPLATES = (
+    TaskTemplate(
+        topic="orders.process",
+        template_id="org.example.orders-process",
+        name="Process Order",
+        description="Process customer orders with contract validation.",
+        filename="orders-process.json",
+        inputs=OrderInput,
+        outputs=OrderOutput,
+        groups=(TemplateGroup("main", "Order Processing"),),
+        input_group="main",
+        output_group="main",
+    ),
+)
+```
+
+```{note}
+In Camunda 7 element templates, numeric properties must use `json_schema_extra=template_hints(type="String", value="${...}")` and `strict=False` in Pydantic to support JUEL expressions and string-encoded form submissions.
+```
+
+### 2. Validating in Robot Framework
+
+In the Robot task suite, use the `OperatonContracts` library. Pre-initialize task output variables before invoking `Validate Task Input`:
+
+```robotframework
+*** Settings ***
+Library     OperatonContracts    OrderTasks
+
+
+*** Tasks ***
+Process Order
+    # Pre-initialize output to None
+    VAR    ${orderResult}=    ${None}    scope=${BPMN:TASK}
+
+    # Validate process variables against contract
+    ${input}=    Validate Task Input    OrderInput
+
+    # Execute business logic
+    VAR    ${orderResult}=    ${{ {"status": "CONFIRMED", "orderId": $input["orderId"]} }}    scope=${BPMN:TASK}
+```
+
+If any input variable is missing or violates schema constraints, `Validate Task Input` raises an `InvalidTaskInput` error.
+
+### 3. BPMN Error Boundary Event Handling
+
+Because validation errors raise `InvalidTaskInput`, you can attach a {bpmn}`../bpmn/bpmn-error-boundary-event` **Error Boundary Event** to your Service Task in the BPMN model with:
+
+- Error Code: `InvalidTaskInput`
+- Error Code Variable: `errorCode`
+- Error Message Variable: `errorMessage`
+
+This cleanly routes malformed orders to rejection or manual review paths rather than crashing unhandled in the engine.
+
+### 4. Element Templates for VS Code Modeler
+
+Generate Camunda 7 element templates for the VS Code Modeler:
+
+```console
+$ uv run operaton-contracts generate
+```
+
+This writes the template to `.operaton/element-templates/orders-process.json`. When opening BPMN files in the VS Code Modeler (`datakurre.vscode-operaton-bpmn-js-modeler`), the template is automatically discovered in the properties panel, allowing one-click template application with pre-configured input/output bindings.
+
+Verify consistency anytime using:
+
+```console
+$ uv run operaton-contracts check
+```
+
