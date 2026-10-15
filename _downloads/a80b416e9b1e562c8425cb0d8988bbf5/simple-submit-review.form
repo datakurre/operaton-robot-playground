@@ -1,0 +1,32 @@
+{
+    "components": [
+        {
+            "text": "Article: **{{title}}**\n\nPlease type and submit your comments.",
+            "type": "text",
+            "layout": {
+                "row": "Row_145mknt",
+                "columns": null
+            },
+            "id": "Field_0a6feee"
+        },
+        {
+            "label": "Comments",
+            "type": "textarea",
+            "layout": {
+                "row": "Row_0e598ox",
+                "columns": null
+            },
+            "id": "Field_0g3ibtq",
+            "key": "comments"
+        }
+    ],
+    "type": "default",
+    "id": "Form_SubmitReview",
+    "exporter": {
+        "name": "Camunda Modeler",
+        "version": "5.28.0"
+    },
+    "executionPlatform": "Camunda Platform",
+    "executionPlatformVersion": "7.22.0",
+    "schemaVersion": 19
+}

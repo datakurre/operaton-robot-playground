@@ -1,0 +1,76 @@
+{
+    "components": [
+        {
+            "text": "Article: **{{title}}**\n\nPlease select the reviewers for this article from the lists.",
+            "type": "text",
+            "layout": {
+                "row": "Row_145mknt",
+                "columns": null
+            },
+            "id": "Field_0a6feee"
+        },
+        {
+            "label": "First reviewer:",
+            "values": [
+                {
+                    "label": "John Doe",
+                    "value": "johndoe"
+                },
+                {
+                    "label": "Jane Doe",
+                    "value": "janedoe"
+                },
+                {
+                    "label": "Zoe Doe",
+                    "value": "zoedoe"
+                }
+            ],
+            "type": "select",
+            "layout": {
+                "row": "Row_0unkjbp",
+                "columns": null
+            },
+            "id": "Field_1ezhut7",
+            "key": "firstReviewer",
+            "validate": {
+                "required": true
+            }
+        },
+        {
+            "label": "Second reviewer:",
+            "values": [
+                {
+                    "label": "John Doe",
+                    "value": "johndoe"
+                },
+                {
+                    "label": "Jane Doe",
+                    "value": "janedoe"
+                },
+                {
+                    "label": "Zoe Doe",
+                    "value": "zoedoe"
+                }
+            ],
+            "type": "select",
+            "layout": {
+                "row": "Row_0unkjbq",
+                "columns": null
+            },
+            "id": "Field_1ezhut8",
+            "key": "secondReviewer",
+            "validate": {
+                "required": true
+            }
+        }
+    ],
+    "type": "default",
+    "id": "Form_SelectReviewers",
+    "exporter": {
+        "name": "Camunda Modeler",
+        "version": "5.28.0"
+    },
+    "executionPlatform": "Camunda Platform",
+    "executionPlatformVersion": "7.22.0",
+    "schemaVersion": 19
+}
